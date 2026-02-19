@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchCube - Your Research. Your Storage.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_roadmap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* RTL Support and Global UI Tweaks */
+        [dir="rtl"] {
+            font-family: 'Inter', sans-serif;
+            /* Could add Arabic font here if needed */
+        }
+
+        [dir="rtl"] .logo,
+        [dir="rtl"] .nav-links,
+        [dir="rtl"] .hero-actions,
+        [dir="rtl"] .spec-list li,
+        [dir="rtl"] .pricing-features li,
+        [dir="rtl"] .footer-logo {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .nav-links {
+            gap: 2rem;
+        }
+
+        [dir="rtl"] .badge,
+        [dir="rtl"] .section-header,
+        [dir="rtl"] .pricing-footer {
+            text-align: right;
+        }
+
+        [dir="rtl"] .hero,
+        [dir="rtl"] .navbar,
+        [dir="rtl"] .footer-content {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .hero-content {
+            text-align: right;
+        }
+
+        [dir="rtl"] .about-text-card {
+            border-left: none;
+            border-right: 4px solid var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo_white.png" alt="ResearchCube Logo" style="height: 128px;">
+        </div>
+        <div class="nav-links">
+            <a href="#about" data-i18n="navAbout">About</a>
+            <a href="#features" data-i18n="navFeatures">Features</a>
+            <a href="#pricing" data-i18n="navPricing">Pricing</a>
+            <div class="lang-dropdown">
+                <button class="lang-toggle">
+                    <i data-lucide="languages" style="width: 16px; height: 16px;"></i>
+                    <span id="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown-content">
+                    <button onclick="setLanguage('en')" data-lang="en">English</button>
+                    <button onclick="setLanguage('tr')" data-lang="tr">Türkçe</button>
+                    <button onclick="setLanguage('ar')" data-lang="ar">العربية</button>
+                    <button onclick="setLanguage('fr')" data-lang="fr">Français</button>
+                    <button onclick="setLanguage('es')" data-lang="es">Español</button>
+                    <button onclick="setLanguage('de')" data-lang="de">Deutsch</button>
+                    <button onclick="setLanguage('zh')" data-lang="zh">简体中文</button>
+                </div>
+            </div>
+            <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank" class="btn-primary"
+                data-i18n="navGetEarlyAccess">Get from Microsoft Store</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="heroTitle">Every Stage of Your Research.<br> <span class="gradient-text">One Professional
+                    Workspace.</span></h1>
+            <p class="hero-sub" data-i18n="heroSub">
+                A high-performance workspace that unifies every stage of your research pipeline. Experience the native
+                speed of local processing combined with seamless cloud synchronization through your Google Drive.
+            </p>
+            <div class="hero-actions">
+                <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank" class="btn-primary large"
+                    style="text-decoration:none;">
+                    <i data-lucide="shopping-bag" style="margin-right:8px;"></i> <span data-i18n="btnDownload">Get from
+                        Microsoft Store</span>
+                </a>
+                <button class="btn-secondary large" onclick="scrollToAbout()">
+                    <i data-lucide="play-circle"></i> <span data-i18n="btnWatchTour">Watch the Tour</span>
+                </button>
+            </div>
+            <p class="small-note" data-i18n="heroNote">* Compatible with Windows 10/11 & Google Drive</p>
+        </div>
+
+        <!-- VISUAL -->
+        <div class="hero-visual">
+            <div class="app-window glassy">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <!-- Mockup Content -->
+                <div class="window-body">
+                    <div class="sidebar">
+                        <div class="nav-item active"><i data-lucide="home"></i></div>
+                        <div class="nav-item"><i data-lucide="library"></i></div>
+                    </div>
+                    <div class="main-view">
+                        <h3 data-i18n="mockupSyncStatus"><i data-lucide="check-circle" class="text-green"></i> Synced to
+                            Your Drive</h3>
+                        <div class="file-card">
+                            <i data-lucide="file-text"></i>
+                            <div>
+                                <h4 data-i18n="mockupFileName">Thesis_Final.tex</h4>
+                                <span data-i18n="mockupFileStatus">Updated just now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glow-effect"></div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION (What is ResearchCube?) -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2 data-i18n="aboutTitle">Experience Research Excellence</h2>
+            <p data-i18n="aboutDesc">ResearchCube is a professional workspace designed to streamline academic workflows.
+                It centralizes literature discovery, document management, and AI-powered writing into a single, cohesive
+                environment.</p>
+        </div>
+
+        <div class="video-wrapper">
+            <div class="video-container glassy">
+                <div class="video-placeholder">
+                    <i data-lucide="play" class="play-icon"></i>
+                    <p data-i18n="videoPlaceholder">Introduction video coming soon</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text-card">
+                <h3 data-i18n="aboutVisionTitle">Unified Research Environment</h3>
+                <p data-i18n="aboutVisionText">Consolidate your academic workflow. ResearchCube brings literature
+                    search, PDF management, and advanced AI assistance together, ensuring your research context is
+                    preserved across all tools.</p>
+            </div>
+            <div class="about-text-card">
+                <h3 data-i18n="aboutControlTitle">Context-Aware AI Intelligence</h3>
+                <p data-i18n="aboutControlText">Our AI Assistant is uniquely designed to understand the entirety of your
+                    research. By maintaining awareness across your library and writing drafts, it provides deeply
+                    relevant, context-specific insights that standard models cannot match.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE PROPS (BYOS) -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 data-i18n="featuresTitle">Performance & Privacy First</h2>
+            <p data-i18n="featuresDesc">Engineered for speed and built on a foundation of absolute technical privacy.
+            </p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="icon-box blue"><i data-lucide="zap"></i></div>
+                <h3 data-i18n="cardSpeedTitle">Superior Performance</h3>
+                <p data-i18n="cardSpeedDesc">Our serverless architecture ensures lightning-fast local performance. Work
+                    offline with no latency, while benefiting from automatic synchronization with your private cloud
+                    storage.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box green"><i data-lucide="shield-check"></i></div>
+                <h3 data-i18n="cardPrivacyTitle">Data Security & Privacy</h3>
+                <p data-i18n="cardPrivacyDesc">Your research data is managed with the highest standards of privacy. By
+                    integrating directly with your Google Drive, we ensure your files remain within your secure
+                    perimeter at all times.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box purple"><i data-lucide="hard-drive"></i></div>
+                <h3 data-i18n="cardBYOSTitle">Native Cloud Integration</h3>
+                <p data-i18n="cardBYOSDesc">Leverage your existing Google Drive 15GB+ free storage seamlessly.
+                    ResearchCube acts as a powerful native interface for your academic cloud data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SPECS -->
+    <section class="tech-specs">
+        <div class="content">
+            <h2 data-i18n="specsTitle">Integrated Writing Suite</h2>
+            <p data-i18n="specsDesc">Experience a seamless transition between research and authorship with our
+                specialized toolkit.</p>
+
+            <ul class="spec-list">
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specLatex"><strong>LaTeX & Word Integration:</strong> Utilize professional editors
+                        within a unified workspace, supported by AI-driven citation and drafting assistance.</span>
+                </li>
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specBibtex"><strong>Smart Citations:</strong> Advanced reference management fully
+                        compatible with BibTeX and global library standards.</span>
+                </li>
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specAI"><strong>Deep AI Insights:</strong> A context-aware assistant that
+                        understands your papers to help you draft accurately and efficiently.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tech-visual">
+            <div class="connection-node"><span class="label">Word</span></div>
+            <div class="connection-line"></div>
+            <div class="connection-node center"><span class="label">ResearchCube</span></div>
+            <div class="connection-line"></div>
+            <div class="connection-node"><span class="label">LaTeX</span></div>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2 data-i18n="compTitle">Why ResearchCube?</h2>
+            <p data-i18n="compDesc">A strategic comparison between local-first performance and cloud-only constraints.
+            </p>
+        </div>
+        <div class="comparison-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="compHeadFeature">Feature</th>
+                        <th class="product-rc" data-i18n="compHeadRC">ResearchCube</th>
+                        <th data-i18n="compHeadCloud">Traditional Cloud Solutions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatOwnership">Data Ownership</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Ownership">Full Control. Local + Personal
+                            Drive.</td>
+                        <td data-i18n="compCloud_Ownership">Third-Party. Resides on provider servers.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatAI">AI Engine</td>
+                        <td class="product-rc highlight" data-i18n="compRC_AI">Flexible. Bring Your Own Key/Endpoint.
+                        </td>
+                        <td data-i18n="compCloud_AI">Locked. Fixed provider models.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatFormat">Format Support</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Format">Hybrid. LaTeX & Word simultaneously.
+                        </td>
+                        <td data-i18n="compCloud_Format">Limited. Often LaTeX only.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatOffline">Internet Independence</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Offline">Full Support. Works offline.</td>
+                        <td data-i18n="compCloud_Offline">Zero. Connection required to work.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section class="roadmap-section">
+        <div class="section-header">
+            <h2 data-i18n="roadmapTitle">Future of Research</h2>
+            <p data-i18n="roadmapDesc">We are building the next generation of academic tools. Here is what's coming
+                next.</p>
+        </div>
+
+        <div class="roadmap-grid">
+            <!-- Feature 1: GitHub -->
+            <div class="roadmap-card">
+                <h3 data-i18n="mapGitTitle"><i data-lucide="git-branch"></i> Deep Code Integration</h3>
+                <p data-i18n="mapGitDesc">Seamlessly link your research with GitHub & GitLab repositories. Manage code,
+                    data, and manuscript versions in one unified workflow.</p>
+                <div class="code-visual"
+                    style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">
+                    > git push origin main<br>
+                    <span style="color: var(--accent)">✓ Synced to repo</span>
+                </div>
+            </div>
+
+            <!-- Feature 2: Simulation -->
+            <div class="roadmap-card">
+                <h3 data-i18n="mapSimTitle"><i data-lucide="bar-chart-2"></i> Simulation Results</h3>
+                <p data-i18n="mapSimDesc">Native support for rendering academic simulation data. Import
+                    Python/Matplotlib results directly into your reports with interactive visualization.</p>
+                <!-- CSS Graph -->
+                <div class="graph-visual">
+                    <div class="graph-bar" style="height: 40%;"></div>
+                    <div class="graph-bar" style="height: 70%;"></div>
+                    <div class="graph-bar" style="height: 50%;"></div>
+                    <div class="graph-bar" style="height: 90%;"></div>
+                    <div class="graph-bar" style="height: 60%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <h2 data-i18n="pricingTitle">Professional Plans</h2>
+            <p data-i18n="pricingDesc">ResearchCube is built on a serverless architecture that drastically reduces
+                operational overhead—allowing us to offer premium features at exceptional value.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- FREE TIER -->
+            <div class="pricing-card">
+                <div class="tier-header">
+                    <h3 data-i18n="tierFreeTitle">Personal</h3>
+                    <div class="price" data-i18n="tierFreePrice">$0<span> forever</span></div>
+                    <p data-i18n="tierFreeSub">Great for getting started. Manage your personal research library and
+                        draft with native performance.</p>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="featFree1"><i data-lucide="check"></i> Native Windows Workspace</li>
+                    <li data-i18n="featFree2"><i data-lucide="check"></i> Google Drive Integration</li>
+                    <li data-i18n="featFree3"><i data-lucide="check"></i> Basic AI Assistant</li>
+                    <li data-i18n="featFree4"><i data-lucide="check"></i> BibTeX Reference Manager</li>
+                </ul>
+                <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank"
+                    class="btn-secondary full-width" style="text-decoration:none; text-align:center;"
+                    data-i18n="btnFree">Get from Microsoft Store</a>
+            </div>
+
+            <!-- PRO TIER -->
+            <div class="pricing-card featured">
+                <div class="tier-badge-featured" data-i18n="tierProBadge">Most Popular</div>
+                <div class="tier-header">
+                    <h3 data-i18n="tierProTitle">Professional</h3>
+                    <p data-i18n="tierProSub">Designed for advanced academic workflows. Tackle complex projects with
+                        context-aware AI and priority architecture.</p>
+                </div>
+
+                <div class="price-options">
+                    <div class="price-item">
+                        <span class="duration" data-i18n="priceMonthly">Monthly</span>
+                        <span class="amount">$5</span>
+                    </div>
+                    <div class="price-item highlight">
+                        <span class="duration" data-i18n="priceYearly">Yearly</span>
+                        <div>
+                            <span class="old-price">$60</span>
+                            <span class="amount">$49.9</span>
+                        </div>
+                    </div>
+                    <div class="price-item">
+                        <span class="duration" data-i18n="price3Year">3-Year</span>
+                        <div>
+                            <span class="old-price">$180</span>
+                            <span class="amount">$119.9</span>
+                        </div>
+                        <span class="best-value-tag" data-i18n="tagBestValue">Best Value</span>
+                    </div>
+                </div>
+
+                <ul class="pricing-features">
+                    <li data-i18n="featPro1"><i data-lucide="check"></i> Unlimited Projects</li>
+                    <li data-i18n="featPro2"><i data-lucide="check"></i> Advanced AI-Powered Search</li>
+                    <li data-i18n="featPro3"><i data-lucide="check"></i> Unlimited Report Creation</li>
+                    <li data-i18n="featPro4"><i data-lucide="check"></i> Advanced Cloud Synchronization</li>
+                </ul>
+                <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank"
+                    class="btn-primary full-width" style="text-decoration:none; text-align:center;"
+                    data-i18n="btnPro">Get Professional</a>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p data-i18n="pricingContact">For corporate licensing and AI integrations, please contact us at <a
+                    href="mailto:info@rcubetech.com">info@rcubetech.com</a>.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Logo" width="40">
+                <span>ResearchCube</span>
+            </div>
+            <p data-i18n="footerRights">&copy; 2026 ResearchCube. All rights reserved.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;" data-i18n="footerDevelopedBy">Developed by
+                <strong>rcubetech</strong>
+            </p>
+            <!-- Socials removed for now -->
+            <!-- <div class="socials">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div> -->
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navAbout: "About",
+                navFeatures: "Features",
+                navPricing: "Pricing",
+                navGetEarlyAccess: "Get from Microsoft Store",
+
+                heroTitle: "Every Stage of Your Research.<br> <span class=\"gradient-text\">One Professional Workspace.</span>",
+                heroSub: "A high-performance workspace that unifies every stage of your research pipeline. Experience the native speed of local processing combined with seamless cloud synchronization through your Google Drive.",
+                btnDownload: "Get from Microsoft Store",
+                btnWatchTour: "Explore the Architecture",
+                heroNote: "* Zero-Database Architecture | Native Windows 10/11",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> Securely Indexed to Your Drive",
+                mockupFileName: "Thesis_Final.tex",
+                mockupFileStatus: "Updated just now",
+                aboutTitle: "Experience Research Excellence",
+                aboutDesc: "ResearchCube is a professional workspace designed to streamline academic workflows. It centralizes literature discovery, document management, and AI-powered writing into a single, cohesive environment.",
+                videoPlaceholder: "Introduction video coming soon",
+                aboutVisionTitle: "Architecture Without Boundaries",
+                aboutVisionText: "We built ResearchCube with a zero-database philosophy. Every source, note, and task is stored directly within your 'Cube' directory as structured filesystem data, ensuring lightning-fast access and permanent ownership.",
+                aboutControlTitle: "Institutional Privacy & Custom AI",
+                aboutControlText: "Your research is yours. ResearchCube supports custom AI endpoints, allowing you to connect institutional LLMs (Llama, Mistral) directly. No data ever leaves your secure perimeter.",
+                featuresTitle: "Performance & Privacy First",
+                featuresDesc: "Engineered for speed and built on a foundation of absolute technical privacy.",
+                cardSpeedTitle: "Superior Performance",
+                cardSpeedDesc: "Our serverless architecture ensures high-speed local performance. Work offline with no latency, while benefiting from automatic synchronization with your private cloud storage.",
+                cardPrivacyTitle: "Google Drive is the Backend",
+                cardPrivacyDesc: "We don't host your data. We don't have a 'user database'. Your research lives in your own Google Drive perimeter, protected by Google’s enterprise security and our secure local indexing.",
+                cardBYOSTitle: "100% Data Ownership",
+                cardBYOSDesc: "Leverage your existing Google Drive 15GB+ free storage as a high-performance database. ResearchCube acts as the intelligent interface for your academic cloud.",
+                specsTitle: "Integrated Writing Suite",
+                specsDesc: "Experience a seamless transition between research and authorship with our specialized toolkit.",
+                specLatex: "<strong>LaTeX & Word Integration:</strong> Utilize professional editors within a unified workspace, supported by AI-driven citation and drafting assistance.",
+                specBibtex: "<strong>Smart Citations:</strong> Advanced reference management fully compatible with BibTeX and global library standards.",
+                specAI: "<strong>Deep AI Insights:</strong> An AI Research Assistant that understands your papers to help you draft accurately and efficiently.",
+                pricingTitle: "Value-Driven Architecture",
+                pricingDesc: "By eliminating server-side overhead, we pass 100% of the savings to you. We offer a significantly more advantageous solution compared to competitors and similar products.",
+                tierFreeTitle: "Personal",
+                tierFreePrice: "$0<span> forever</span>",
+                tierFreeSub: "Standard Access",
+                featFree1: "<i data-lucide=\"check\"></i> 1 Active Project",
+                featFree2: "<i data-lucide=\"check\"></i> Restricted AI Search (10/day)",
+                featFree3: "<i data-lucide=\"check\"></i> 1 Active Report Draft",
+                featFree4: "<i data-lucide=\"check\"></i> Basic Cloud Sync",
+                btnFree: "Get from Microsoft Store",
+                tierProTitle: "Professional",
+                tierProSub: "Premium Academic Membership",
+                priceMonthly: "Monthly",
+                priceYearly: "Yearly",
+                price3Year: "3-Year",
+                tagBestValue: "Best Value",
+                featPro1: "<i data-lucide=\"check\"></i> Unlimited Projects",
+                featPro2: "<i data-lucide=\"check\"></i> Advanced AI-Powered Search",
+                featPro3: "<i data-lucide=\"check\"></i> Unlimited Report Creation",
+                featPro4: "<i data-lucide=\"check\"></i> Advanced Cloud Synchronization",
+                btnPro: "Get Professional",
+                pricingContact: "For corporate licensing and AI integrations, please contact us at <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                compTitle: "Why ResearchCube?",
+                compDesc: "A strategic comparison between local-first performance and cloud-only constraints.",
+                compHeadFeature: "Feature",
+                compHeadRC: "ResearchCube",
+                compHeadCloud: "Traditional Cloud Solutions",
+                compFeatOwnership: "Data Ownership",
+                compRC_Ownership: "Full Control. Local + Personal Drive.",
+                compCloud_Ownership: "Third-Party. Resides on provider servers.",
+                compFeatAI: "AI Engine",
+                compRC_AI: "Flexible. Bring Your Own Key/Endpoint.",
+                compCloud_AI: "Locked. Fixed provider models.",
+                compFeatFormat: "Format Support",
+                compRC_Format: "Hybrid. LaTeX & Word simultaneously.",
+                compCloud_Format: "Limited. Often LaTeX only.",
+                compFeatOffline: "Local-First Performance",
+                compRC_Offline: "Maximum. Native hardware speed with full offline access.",
+                compCloud_Offline: "Limited. Dependent on internet speed and server latency.",
+                roadmapTitle: "Future of Research",
+                roadmapDesc: "We are building the next generation of academic tools. Here is what's coming next.",
+                mapGitTitle: "Deep Code Integration",
+                mapGitDesc: "Seamlessly link your research with GitHub & GitLab repositories. Manage code, data, and manuscript versions in one unified workflow.",
+                mapSimTitle: "Simulation Results",
+                mapSimDesc: "Native support for rendering academic simulation data. Import Python/Matplotlib results directly into your reports with interactive visualization.",
+                footerRights: "&copy; 2026 ResearchCube. All rights reserved.",
+                footerDevelopedBy: "Developed by <strong>rcubetech</strong>"
+            },
+            tr: {
+                navAbout: "Hakkında",
+                navFeatures: "Özellikler",
+                navGetEarlyAccess: "Microsoft Store'dan Edin",
+
+                heroTitle: "Akademik Araştırma İstasyonu.<br> <span class=\"gradient-text\">Verileriniz, Sizin Sınırlarınız İçinde.</span>",
+                heroSub: "Araştırma sürecinizin her aşamasını tek bir profesyonel yapıda birleştiren, yerel-öncelikli çalışma asistanı. Google Drive ve kurumsal AI API desteği ile tam kontrol.",
+                btnDownload: "Microsoft Store'dan İndir",
+                btnWatchTour: "Mimariyi Keşfedin",
+                heroNote: "* Sıfır Veritabanı Mimarisi | Windows 10/11",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> Güvenle Drive'ınıza İndekslendi",
+                mockupFileName: "Tez_Final.tex",
+                mockupFileStatus: "Az önce güncellendi",
+                aboutTitle: "Araştırmada Mükemmeliyeti Deneyimleyin",
+                aboutDesc: "ResearchCube, akademik iş akışlarını optimize etmek için tasarlanmış profesyonel bir çalışma alanıdır. Literatür keşfi, doküman yönetimi ve yapay zeka destekli yazımı tek bir tutarlı ortamda merkezileştirir.",
+                videoPlaceholder: "Tanıtım videosu yakında gelecek",
+                aboutVisionTitle: "Sınır Tanımayan Mimari",
+                aboutVisionText: "ResearchCube'ü 'sıfır veritabanı' felsefesiyle geliştirdik. Her makale, not ve görev, doğrudan 'Küp' dizininizde yapılandırılmış dosya sistemi verisi olarak saklanır; bu da yıldırım hızında erişim ve kalıcı sahiplik sağlar.",
+                aboutControlTitle: "Kurumsal Gizlilik ve Özel AI",
+                aboutControlText: "Araştırmanız size aittir. ResearchCube, özel AI endpoint desteği ile kurumsal dil modellerinizi (Llama, Mistral) doğrudan bağlamanıza olaniz tanır. Verileriniz asla güvenli alanınızdan dışarı çıkmaz.",
+                featuresTitle: "Önce Performans ve Gizlilik",
+                featuresDesc: "Hız için tasarlandı ve mutlak teknik gizlilik temeli üzerine inşa edildi.",
+                cardSpeedTitle: "Üstün Performans",
+                cardSpeedDesc: "Sunucusuz mimarimiz, çok hızlı yerel performans sağlar. Hiçbir gecikme olmadan çevrimdışı çalışın ve özel bulut depolama alanınızla otomatik senkronizasyonun avantajlarından yararlanın.",
+                cardPrivacyTitle: "Backend Sizin Google Drive'ınız",
+                cardPrivacyDesc: "Verilerinizi biz barındırmıyoruz, bir 'kullanıcı veritabanımız' yok. Araştırmanız, Google'ın kurumsal güvenliği ve bizim yerel indeksleme altyapımızla korunan kendi Drive'ınızda yaşar.",
+                cardBYOSTitle: "%100 Veri Sahipliği",
+                cardBYOSDesc: "Ücretsiz 15GB+ Drive depolama alanınızı yüksek performanslı bir veritabanı gibi kullanın. ResearchCube, özel akademik bulutunuz için akıllı bir arayüz görevi görür.",
+                specsTitle: "Entegre Yazım Paketi",
+                specsDesc: "Özel araç setimizle araştırma ve yazarlık arasında kusursuz bir geçiş deneyimleyin.",
+                specLatex: "<strong>LaTeX ve Word Entegrasyonu:</strong> AI destekli atıf ve taslak asistanıyla güçlendirilmiş profesyonel editörleri tek bir ortamda kullanın.",
+                specBibtex: "<strong>Akıllı Atıflar:</strong> BibTeX ve küresel kütüphane standartlarıyla tam uyumlu gelişmiş referans yönetimi.",
+                specAI: "<strong>Derin AI İçgörüleri:</strong> Doğru ve verimli bir şekilde taslak hazırlamanıza yardımcı olmak için makalelerinizi anlayan AI Araştırma Asistanı.",
+                navPricing: "Fiyatlandırma",
+                pricingTitle: "Verimlilik Odaklı Fiyatlandırma",
+                pricingDesc: "Sunucu maliyetlerini ortadan kaldırarak tasarrufun %100'ünü size yansıtıyoruz. Rakip ve benzer ürünlere kıyasla çok daha avantajlı bir çözüm sunuyoruz.",
+                tierFreeTitle: "Bireysel",
+                tierFreePrice: "$0<span> sonsuza dek</span>",
+                tierFreeSub: "Standart Erişim",
+                featFree1: "<i data-lucide=\"check\"></i> 1 Aktif Proje",
+                featFree2: "<i data-lucide=\"check\"></i> Kısıtlı AI Taraması (10/gün)",
+                featFree3: "<i data-lucide=\"check\"></i> 1 Aktif Rapor Taslağı",
+                featFree4: "<i data-lucide=\"check\"></i> Temel Bulut Senkronizasyonu",
+                btnFree: "Microsoft Store'dan İndir",
+                tierProTitle: "Profesyonel",
+                tierProSub: "Premium Akademik Üyelik",
+                priceMonthly: "Aylık",
+                priceYearly: "Yıllık",
+                price3Year: "3 Yıllık",
+                tagBestValue: "En İyi Değer",
+                featPro1: "<i data-lucide=\"check\"></i> Sınırsız Proje",
+                featPro2: "<i data-lucide=\"check\"></i> Gelişmiş AI Destekli Tarama",
+                featPro3: "<i data-lucide=\"check\"></i> Sınırsız Rapor Oluşturma",
+                featPro4: "<i data-lucide=\"check\"></i> Gelişmiş Bulut Senkronizasyonu",
+                btnPro: "Profesyonel'e Geçin",
+                pricingContact: "Kurumsal alımlar ve AI entegrasyonları için lütfen <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a> adresinden bizimle iletişime geçiniz.",
+                compTitle: "Neden ResearchCube?",
+                compDesc: "Yerel-öncelikli performans ile bulut-tabanlı kısıtlamalar arasında stratejik bir kıyaslama.",
+                compHeadFeature: "Özellik",
+                compHeadRC: "ResearchCube",
+                compHeadCloud: "Geleneksel Bulut Çözümleri",
+                compFeatOwnership: "Veri Sahipliği",
+                compRC_Ownership: "Tam Kontrol. Yerel + Kişisel Drive.",
+                compCloud_Ownership: "Üçüncü Taraf. Servis sağlayıcı sunucularında.",
+                compFeatAI: "AI Motoru",
+                compRC_AI: "Özgür. Kendi Anahtarını/API'ını Bağla.",
+                compCloud_AI: "Kilitli. Sadece sağlayıcı modelleri.",
+                compFeatFormat: "Format Desteği",
+                compRC_Format: "Hibrid. LaTeX ve Word aynı anda.",
+                compCloud_Format: "Kısıtlı. Genelde sadece LaTeX.",
+                compFeatOffline: "Yerel-Öncelikli Performans",
+                compRC_Offline: "Maksimum. Yerel donanım hızı ve çevrimdışı erişim.",
+                compCloud_Offline: "Kısıtlı. İnternet hızı ve sunucu yanıtına bağlı.",
+                roadmapTitle: "Araştırmanın Geleceği",
+                roadmapDesc: "Akademik araçların gelecek neslini inşa ediyoruz. İşte sırada gelenler.",
+                mapGitTitle: "Derin Kod Entegrasyonu",
+                mapGitDesc: "Araştırmanızı GitHub ve GitLab depolarıyla sorunsuz bir şekilde bağlayın. Kod, veri ve makale sürümlerini tek bir birleşik iş akışında yönetin.",
+                mapSimTitle: "Simülasyon Sonuçları",
+                mapSimDesc: "Akademik simülasyon verileri için yerel render desteği. Python/Matplotlib sonuçlarını doğrudan raporlarınıza interaktif görsellerle aktarın.",
+                footerRights: "&copy; 2026 ResearchCube. Tüm hakları saklıdır.",
+                footerDevelopedBy: "<strong>rcubetech</strong> tarafından geliştirilmiştir"
+            },
+            ar: {
+                navAbout: "حول",
+                navFeatures: "المميزات",
+                navPricing: "الأسعار",
+                navGetEarlyAccess: "احصل على وصول مبكر",
+                heroBadge: "مزامنة سحابية متقدمة",
+                heroTitle: "كل مرحلة من مراحل بحثك.<br> <span class=\"gradient-text\">مساحة عمل احترافية واحدة.</span>",
+                heroSub: "مساحة عمل عالية الأداء توحد كل مرحلة من مراحل البحث الخاصة بك. اختبر السرعة الأصلية للمعالجة المحلية مع مزامنة سحابية سلسة عبر Google Drive.",
+                btnDownload: "تحميل لويندوز",
+                btnWatchTour: "شاهد الجولة",
+                heroNote: "* متوافق مع ويندوز 10/11 و Google Drive",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> تم المزامنة مع Drive",
+                mockupFileName: "Thesis_Final.tex",
+                mockupFileStatus: "تم التحديث الآن",
+                aboutTitle: "تجربة التميز في البحث",
+                aboutDesc: "ResearchCube هي مساحة عمل احترافية مصممة لتبسيط سير العمل الأكاديمي. توحد اكتشاف الأدبيات وإدارة المستندات والكتابة المدعومة بالذكاء الاصطناعي في بيئة واحدة متماسكة.",
+                videoPlaceholder: "فيديو تعريفي قادم قريباً",
+                aboutVisionTitle: "بيئة بحثية موحدة",
+                aboutVisionText: "وحد سير عملك الأكاديمي. يجمع ResearchCube بين البحث عن الأدبيات وإدارة ملفات PDF والمساعدة المتقدمة من الذاء الاصطناعي، مما يضمن الحفاظ على سياق بحثك عبر جميع الأدوات.",
+                aboutControlTitle: "ذكاء اصطناعي واعي بالسياق",
+                aboutControlText: "تم تصميم مساعدنا الذكي خصيصاً لفهم بحثك بالكامل. من خلال الحفاظ على الوعي عبر مكتبتك ومسوداتك، فإنه يوفر رؤى عميقة ومناسبة للسياق لا يمكن للنماذج القياسية مضاهاتها.",
+                featuresTitle: "الأداء والخصوصية أولاً",
+                featuresDesc: "مصمم للسرعة ومبني على أساس من الخصوصية التقنية المطلقة.",
+                cardSpeedTitle: "أداء فائق",
+                cardSpeedDesc: "تضمن بنيتنا الخالية من الخوادم أداءً محلياً فائق السرعة. اعمل دون اتصال بالإنترنت مع مزامنة تلقائية مع مساحة التخزين السحابية الخاصة بك.",
+                cardPrivacyTitle: "أمن البيانات والخصوصية",
+                cardPrivacyDesc: "تُدار بياناتك البحثية بأعلى معايير الخصوصية. من خلال التكامل المباشر مع Google Drive، نضمن بقاء ملفاتك داخل نطاقك الآمن في جميع الأوقات.",
+                cardBYOSTitle: "تكامل سحابي أصلي",
+                cardBYOSDesc: "استفد من سعة تخزين Google Drive الحالية (15 جيجابايت+) بسلاسة. يعمل ResearchCube كواجهة محلية قوية لبياناتك السحابية الأكاديمية.",
+                specsTitle: "مجموعة كتابة متكاملة",
+                specsDesc: "اختبر انتقالاً سلساً بين البحث والتأليف من خلال مجموعة أدواتنا المتخصصة.",
+                specLatex: "<strong>تكامل LaTeX و Word:</strong> استخدم المحررات الاحترافية داخل مساحة عمل موحدة، مدعومة بالاقتباسات وتنسيق المسودات بمساعدة الذكاء الاصطناعي.",
+                specBibtex: "<strong>اقتباسات ذكية:</strong> إدارة مرجعية متقدمة متوافقة تماماً مع BibTeX ومعايير المكتبات العالمية.",
+                specAI: "<strong>رؤى عميقة للذكاء الاصطناعي:</strong> مساعد واعي بالسياق يفهم أوراقك البحثية لمساعدتك في كتابة المسودات بدقة وكفاءة.",
+                pricingTitle: "خطط احترافية",
+                pricingDesc: "بُني ResearchCube على بنية خالية من الخوادم تقلل التكاليف التشغيلية بشكل كبير - مما يتيح لنا تقديم ميزات متميزة بقيمة استثنائية.",
+                tierFreeTitle: "شخصي",
+                tierFreePrice: "$0<span> للأبد</span>",
+                tierFreeSub: "رائع للبدء. أدر مكتبتك البحثية الشخصية واكتب المسودات بأداء محلي حقيقي.",
+                featFree1: "<i data-lucide=\"check\"></i> مساحة عمل ويندوز أصلية",
+                featFree2: "<i data-lucide=\"check\"></i> تكامل Google Drive",
+                featFree3: "<i data-lucide=\"check\"></i> مساعد ذكاء اصطناعي أساسي",
+                featFree4: "<i data-lucide=\"check\"></i> مدير مراجع BibTeX",
+                btnFree: "ابدأ مجاناً",
+                tierProTitle: "احترافي",
+                tierProSub: "مصمم لسير العمل الأكاديمي المتقدم. تعامل مع المشاريع المعقدة بذكاء اصطناعي واعي بالسياق.",
+                tierProBadge: "الأكثر شعبية",
+                priceMonthly: "شهري",
+                priceYearly: "سنوي",
+                price3Year: "3 سنوات",
+                tagBestValue: "أفضل قيمة",
+                featPro1: "<i data-lucide=\"check\"></i> مشاريع غير محدودة",
+                featPro2: "<i data-lucide=\"check\"></i> بحث متقدم مدعوم بالذكاء الاصطناعي",
+                featPro3: "<i data-lucide=\"check\"></i> إنشاء تقارير غير محدود",
+                featPro4: "<i data-lucide=\"check\"></i> مزامنة سحابية متقدمة",
+                btnPro: "احصل على النسخة الاحترافية",
+                pricingContact: "هل تبحث عن ترخيص للمجموعات البحثية أو المؤسسات؟ <a href=\"mailto:info@rcubetech.com\">تواصل معنا</a> للحصول على عروض أسعار مخصصة.",
+                footerRights: "&copy; 2026 ResearchCube. جميع الحقوق محفوظة."
+            },
+            fr: {
+                navAbout: "À propos",
+                navFeatures: "Fonctionnalités",
+                navPricing: "Tarification",
+                navGetEarlyAccess: "Accès Anticipé",
+                heroBadge: "Sync Cloud Avancée",
+                heroTitle: "Chaque étape de votre recherche.<br> <span class=\"gradient-text\">Un espace de travail professionnel unique.</span>",
+                heroSub: "Un espace de travail haute performance qui unit chaque étape de votre recherche. Profitez de la vitesse native du traitement local et d'une synchronisation cloud via votre Google Drive.",
+                btnDownload: "Télécharger pour Windows",
+                btnWatchTour: "Voir la démo",
+                heroNote: "* Compatible avec Windows 10/11 et Google Drive",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> Synchronisé avec Drive",
+                mockupFileName: "These_Final.tex",
+                mockupFileStatus: "Mis à jour à l'instant",
+                aboutTitle: "L'Excellence en Recherche",
+                aboutDesc: "ResearchCube est un espace de travail professionnel conçu pour optimiser les flux académiques. Il centralise la découverte, la gestion et l'écriture assistée par IA.",
+                videoPlaceholder: "Vidéo de présentation bientôt disponible",
+                aboutVisionTitle: "Environnement de Recherche Unifié",
+                aboutVisionText: "Consolidez votre flux académique. ResearchCube réunit recherche, gestion PDF et assistance IA avancée pour préserver tout le contexte de votre recherche.",
+                aboutControlTitle: "IA Sensible au Contexte",
+                aboutControlText: "Notre assistant IA est conçu pour comprendre l'intégralité de votre recherche. En restant conscient de votre bibliothèque et de vos brouillons, il offre des insights hyper-pertinents.",
+                featuresTitle: "Performance & Confidentialité",
+                featuresDesc: "Conçu pour la vitesse et construit sur une base de confidentialité technique absolue.",
+                cardSpeedTitle: "Performance Supérieure",
+                cardSpeedDesc: "Notre architecture sans serveur garantit une vitesse locale fulgurante. Travaillez hors ligne avec une synchronisation automatique vers votre cloud privé.",
+                cardPrivacyTitle: "Sécurité & Confidentialité",
+                cardPrivacyDesc: "Vos données sont gérées selon les plus hauts standards. En s'intégrant directement à votre Google Drive, vos fichiers restent dans votre périmètre sécurisé.",
+                cardBYOSTitle: "Intégration Cloud Native",
+                cardBYOSDesc: "Utilisez vos 15 Go+ gratuits de Google Drive sans effort. ResearchCube agit comme une interface native puissante pour vos données académiques.",
+                specsTitle: "Suite d'Écriture Intégrée",
+                specsDesc: "Passez sans transition de la recherche à la rédaction avec nos outils spécialisés.",
+                specLatex: "<strong>Intégration LaTeX & Word:</strong> Utilisez vos éditeurs favoris dans un espace unifié, avec assistance à la citation et à la rédaction par IA.",
+                specBibtex: "<strong>Citations Intelligentes:</strong> Gestion de références avancée compatible avec BibTeX et les standards mondiaux.",
+                specAI: "<strong>Insights IA Profonds:</strong> Un assistant conscient du contexte qui comprend vos articles pour vous aider à rédiger efficacement.",
+                pricingTitle: "Plans Professionnels",
+                pricingDesc: "ResearchCube est bâti sur une architecture sans serveur qui réduit les coûts - nous permettant d'offrir le meilleur à un prix exceptionnel.",
+                tierFreeTitle: "Personnel",
+                tierFreePrice: "49,9 €<span> à vie</span>",
+                tierFreeSub: "Idéal pour débuter. Gérez votre bibliothèque personnelle et rédigez avec des performances natives.",
+                featFree1: "<i data-lucide=\"check\"></i> Espace Windows natif",
+                featFree2: "<i data-lucide=\"check\"></i> Intégration Google Drive",
+                featFree3: "<i data-lucide=\"check\"></i> Assistant IA de base",
+                featFree4: "<i data-lucide=\"check\"></i> Gestionnaire BibTeX",
+                btnFree: "Commencer gratuitement",
+                tierProTitle: "Professionnel",
+                tierProSub: "Conçu pour les chercheurs avancés. Gérez des projets complexes avec une IA sensible au contexte.",
+                tierProBadge: "Le Plus Populaire",
+                priceMonthly: "Mensuel",
+                priceYearly: "Annuel",
+                price3Year: "3 Ans",
+                tagBestValue: "Meilleure Offre",
+                featPro1: "<i data-lucide=\"check\"></i> Projets Illimités",
+                featPro2: "<i data-lucide=\"check\"></i> Recherche Avancée par IA",
+                featPro3: "<i data-lucide=\"check\"></i> Création de Rapports Illimitée",
+                featPro4: "<i data-lucide=\"check\"></i> Synchronisation Cloud Avancée",
+                btnPro: "Passer en Professionnel",
+                pricingContact: "Besoin d'une licence pour un groupe ou une institution ? <a href=\"mailto:info@rcubetech.com\">Contactez-nous</a> pour un devis personnalisé.",
+                footerRights: "&copy; 2026 ResearchCube. Tous droits réservés."
+            },
+            es: {
+                navAbout: "Sobre",
+                navFeatures: "Funciones",
+                navPricing: "Precios",
+                navGetEarlyAccess: "Acceso Anticipado",
+                heroBadge: "Sincronización Cloud Avanzada",
+                heroTitle: "Cada etapa de tu investigación.<br> <span class=\"gradient-text\">Un espacio de trabajo profesional único.</span>",
+                heroSub: "Un espacio de trabajo de alto rendimiento que unifica cada etapa de tu proceso de investigación. Experimenta la velocidad nativa sincronizada con Google Drive.",
+                btnDownload: "Descargar para Windows",
+                btnWatchTour: "Ver demostración",
+                heroNote: "* Compatible con Windows 10/11 y Google Drive",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> Sincronizado con Drive",
+                mockupFileName: "Tesis_Final.tex",
+                mockupFileStatus: "Actualizado ahora mismo",
+                aboutTitle: "Excelencia en Investigación",
+                aboutDesc: "ResearchCube es un espacio de trabajo profesional diseñado para optimizar los flujos académicos. Centraliza el descubrimiento, la gestión y la escritura con IA.",
+                videoPlaceholder: "Video de introducción próximamente",
+                aboutVisionTitle: "Entorno de Investigación Unificado",
+                aboutVisionText: "Consolida tu flujo académico. ResearchCube reúne búsqueda de literatura, gestión de PDFs y asistencia de IA avanzada en una sola herramienta.",
+                aboutControlTitle: "IA Sensible al Contexto",
+                aboutControlText: "Nuestro asistente de IA está diseñado para entender toda tu investigación. Al conocer tu biblioteca y borradores, ofrece insights profundamente relevantes.",
+                featuresTitle: "Rendimiento y Privacidad",
+                featuresDesc: "Diseñado para la velocidad y construido sobre una base de privacidad técnica absoluta.",
+                cardSpeedTitle: "Rendimiento Superior",
+                cardSpeedDesc: "Nuestra arquitectura sin servidor garantiza una velocidad local increíble. Trabaja offline con sincronización automática a tu nube privada.",
+                cardPrivacyTitle: "Seguridad y Privacidad",
+                cardPrivacyDesc: "Tus datos se gestionan con los más altos estándares. Al integrarse con Google Drive, tus archivos permanecen siempre en tu control.",
+                cardBYOSTitle: "Integración Cloud Nativa",
+                cardBYOSDesc: "Usa tus 15GB+ gratuitos de Google Drive sin esfuerzo. ResearchCube actúa como una interfaz nativa para tus datos académicos.",
+                specsTitle: "Suite de Escritura Integrada",
+                specsDesc: "Pasa de la investigación a la autoría sin interrupciones con nuestras herramientas especializadas.",
+                specLatex: "<strong>Integración LaTeX y Word:</strong> Usa editores profesionales en un espacio unificado, con asistencia de IA para citas y borradores.",
+                specBibtex: "<strong>Citas Inteligentes:</strong> Gestión de referencias avanzada compatible con BibTeX y estándares globales.",
+                specAI: "<strong>Insights de IA Profundos:</strong> Un asistente que entiende tus artículos para ayudarte a redactar con precisión.",
+                pricingTitle: "Planes Profesionales",
+                pricingDesc: "ResearchCube se basa en una arquitectura sin servidor que reduce costes, permitiéndonos ofrecer lo mejor a un precio excepcional.",
+                tierFreeTitle: "Personal",
+                tierFreePrice: "$0<span> para siempre</span>",
+                tierFreeSub: "Ideal para empezar. Gestiona tu biblioteca personal y redacta con rendimiento nativo.",
+                featFree1: "<i data-lucide=\"check\"></i> Espacio Windows nativo",
+                featFree2: "<i data-lucide=\"check\"></i> Integración Google Drive",
+                featFree3: "<i data-lucide=\"check\"></i> Asistente de IA básico",
+                featFree4: "<i data-lucide=\"check\"></i> Gestor de BibTeX",
+                btnFree: "Empezar Gratis",
+                tierProTitle: "Profesional",
+                tierProSub: "Diseñado para investigadores avanzados. Maneja proyectos complejos con IA sensible al contexto.",
+                tierProBadge: "Más Popular",
+                priceMonthly: "Mensual",
+                priceYearly: "Anual",
+                price3Year: "3 Años",
+                tagBestValue: "Mejor Valor",
+                featPro1: "<i data-lucide=\"check\"></i> Proyectos Ilimitados",
+                featPro2: "<i data-lucide=\"check\"></i> Búsqueda Avanzada por IA",
+                featPro3: "<i data-lucide=\"check\"></i> Creación de Informes Ilimitada",
+                featPro4: "<i data-lucide=\"check\"></i> Sincronización Cloud Avanzada",
+                btnPro: "Pasar a Profesional",
+                pricingContact: "¿Buscas licencias para grupos o instituciones? <a href=\"mailto:info@rcubetech.com\">Contáctanos</a> para un presupuesto.",
+                footerRights: "&copy; 2026 ResearchCube. Todos los derechos reservados."
+            },
+            de: {
+                navAbout: "Über uns",
+                navFeatures: "Features",
+                navPricing: "Preise",
+                navGetEarlyAccess: "Frühzeitiger Zugang",
+                heroBadge: "Erweiterte Cloud-Sync",
+                heroTitle: "Jede Phase Ihrer Forschung.<br> <span class=\"gradient-text\">Ein professioneller Arbeitsbereich.</span>",
+                heroSub: "Ein leistungsstarker Arbeitsbereich, der jede Phase Ihrer Forschung vereint. Erleben Sie native Geschwindigkeit kombiniert mit nahtloser Google Drive Synchronisierung.",
+                btnDownload: "Für Windows herunterladen",
+                btnWatchTour: "Tour ansehen",
+                heroNote: "* Kompatibel mit Windows 10/11 & Google Drive",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> Mit Drive synchronisiert",
+                mockupFileName: "Thesis_Final.tex",
+                mockupFileStatus: "Gerade aktualisiert",
+                aboutTitle: "Exzellenz in der Forschung",
+                aboutDesc: "ResearchCube ist ein professioneller Arbeitsbereich zur Optimierung akademischer Workflows. Er zentralisiert Suche, Verwaltung und KI-gestütztes Schreiben.",
+                videoPlaceholder: "Einführungsvideo in Kürze",
+                aboutVisionTitle: "Einheitliche Forschungsumgebung",
+                aboutVisionText: "Konsolidieren Sie Ihren Workflow. ResearchCube vereint Literatursuche, PDF-Verwaltung und KI-Unterstützung in einem Tool.",
+                aboutControlTitle: "Kontextsensitive KI",
+                aboutControlText: "Unser KI-Assistent versteht Ihre gesamte Forschung. Durch das Bewusstsein für Ihre Bibliothek bietet er hochrelevante Insights.",
+                featuresTitle: "Leistung & Datenschutz",
+                featuresDesc: "Auf Geschwindigkeit ausgelegt und auf absoluter technischer Privatsphäre aufgebaut.",
+                cardSpeedTitle: "Überlegene Leistung",
+                cardSpeedDesc: "Unsere serverlose Architektur garantiert blitzschnelle lokale Geschwindigkeit. Arbeiten Sie offline mit automatischer Synchronisierung.",
+                cardPrivacyTitle: "Datenschutz & Sicherheit",
+                cardPrivacyDesc: "Ihre Forschungsdaten werden nach höchsten Standards verwaltet. Durch die Drive-Integration bleiben Ihre Dateien in Ihrem Bereich.",
+                cardBYOSTitle: "Native Cloud-Integration",
+                cardBYOSDesc: "Nutzen Sie Ihre 15GB+ Google Drive Speicher nahtlos. ResearchCube ist das native Interface für Forschungsdaten.",
+                specsTitle: "Integrierte Schreib-Suite",
+                specsDesc: "Wechseln Sie nahtlos zwischen Forschung und Schreiben mit unseren spezialisierten Tools.",
+                specLatex: "<strong>LaTeX & Word Integration:</strong> Nutzen Sie Profi-Editoren in einem Bereich, unterstützt durch KI-Zitate.",
+                specBibtex: "<strong>Smarte Zitate:</strong> Fortgeschrittene Referenzverwaltung, voll kompatibel mit BibTeX.",
+                specAI: "<strong>Tiefe KI-Insights:</strong> Ein kontextsensitiver Assistent, der Ihre Paper versteht und beim Schreiben hilft.",
+                pricingTitle: "Profi-Pläne",
+                pricingDesc: "ResearchCube basiert auf einer serverlosen Architektur, die Kosten senkt - so bieten wir Premium-Features zum Bestpreis.",
+                tierFreeTitle: "Persönlich",
+                tierFreePrice: "0 €<span> für immer</span>",
+                tierFreeSub: "Ideal für den Einstieg. Verwalten Sie Ihre Bibliothek und schreiben Sie mit nativer Leistung.",
+                featFree1: "<i data-lucide=\"check\"></i> Native Windows-Umgebung",
+                featFree2: "<i data-lucide=\"check\"></i> Google Drive Integration",
+                featFree3: "<i data-lucide=\"check\"></i> Basis KI-Assistent",
+                featFree4: "<i data-lucide=\"check\"></i> BibTeX Referenz-Manager",
+                btnFree: "Kostenlos starten",
+                tierProTitle: "Professionell",
+                tierProSub: "Für fortgeschrittene akademische Workflows. Meistern Sie Projekte mit kontextsensitiver KI.",
+                tierProBadge: "Am Beliebtesten",
+                priceMonthly: "Monatlich",
+                priceYearly: "Jährlich",
+                price3Year: "3 Jahre",
+                tagBestValue: "Bestes Angebot",
+                featPro1: "<i data-lucide=\"check\"></i> Unbegrenzte Projekte",
+                featPro2: "<i data-lucide=\"check\"></i> Erweiterte KI-Suche",
+                featPro3: "<i data-lucide=\"check\"></i> Unbegrenzte Berichterstellung",
+                featPro4: "<i data-lucide=\"check\"></i> Erweiterte Cloud-Sync",
+                btnPro: "Profi werden",
+                pricingContact: "Suchen Sie Lizenzen für Forschungsgruppen? <a href=\"mailto:info@rcubetech.com\">Kontaktieren Sie uns</a> für ein Angebot.",
+                footerRights: "&copy; 2026 ResearchCube. Alle Rechte vorbehalten."
+            },
+            zh: {
+                navAbout: "关于",
+                navFeatures: "功能",
+                navPricing: "定价",
+                navGetEarlyAccess: "早期访问",
+                heroBadge: "高级云端同步",
+                heroTitle: "研究的每个阶段。<br> <span class=\"gradient-text\">一个专业的科研空间。</span>",
+                heroSub: "一站式学术科研工作空间。体验本地处理的原生速度，同时通过 Google Drive 实现无缝同步。",
+                btnDownload: "下载 Windows 版",
+                btnWatchTour: "观看演示",
+                heroNote: "* 兼容 Windows 10/11 和 Google Drive",
+                mockupSyncStatus: "<i data-lucide=\"check-circle\" class=\"text-green\"></i> 已同步至云端",
+                mockupFileName: "毕业论文_终稿.tex",
+                mockupFileStatus: "刚刚更新",
+                aboutTitle: "卓越的科研体验",
+                aboutDesc: "ResearchCube 是为优化科研流程而设计的专业空间。它集成了文献发现、文档管理和 AI 辅助写作。",
+                videoPlaceholder: "演示视频即将发布",
+                aboutVisionTitle: "统一的研究环境",
+                aboutVisionText: "整合您的学术流程。ResearchCube 将文献搜索、PDF 管理和高级 AI 辅助结合在一起。",
+                aboutControlTitle: "语境感知的 AI 智能",
+                aboutControlText: "我们的 AI 助手专为理解您的研究而设计。通过感知您的文献库和草稿，提供深度相关的建议。",
+                featuresTitle: "性能与隐私至上",
+                featuresDesc: "专为速度而生，建立在绝对的技术隐私基础之上。",
+                cardSpeedTitle: "卓越性能",
+                cardSpeedDesc: "无服务器架构确保闪电般的本地速度。支持离线工作，联网后自动同步。",
+                cardPrivacyTitle: "数据安全与隐私",
+                cardPrivacyDesc: "以最高标准管理您的数据。直接集成 Google Drive，确保文件始终在您的私有范围内。",
+                cardBYOSTitle: "原生云端集成",
+                cardBYOSDesc: "无缝利用 15GB+ 的免费云端空间。ResearchCube 是您科研数据的强大原生接口。",
+                specsTitle: "集成写作套件",
+                specsDesc: "通过我们的专业工具包，在研究与写作之间实现无缝切换。",
+                specLatex: "<strong>LaTeX 和 Word 集成:</strong> 在统一空间内使用专业编辑器，支持 AI 驱动的引文和草稿构思。",
+                specBibtex: "<strong>智能引文:</strong> 完全兼容 BibTeX 和全球图书馆标准的文献管理。",
+                specAI: "<strong>深度 AI 洞察:</strong> 语境感知助手，理解您的论文以帮助您高效构思。",
+                pricingTitle: "专业计划",
+                pricingDesc: "基于无服务器架构，大幅降低运营成本，让我们能以极高的性价比提供优质功能。",
+                tierFreeTitle: "个人版",
+                tierFreePrice: "￥0<span> 永久免费</span>",
+                tierFreeSub: "入门首选。管理个人科研文献库并体验原生写作性能。",
+                featFree1: "<i data-lucide=\"check\"></i> 原生 Windows 空间",
+                featFree2: "<i data-lucide=\"check\"></i> Google Drive 集成",
+                featFree3: "<i data-lucide=\"check\"></i> 基础 AI 助手",
+                featFree4: "<i data-lucide=\"check\"></i> BibTeX 文献管理",
+                btnFree: "免费开始",
+                tierProTitle: "专业版",
+                tierProPrice: "￥349<span>/年</span>",
+                tierProSub: "专为高级学术流程设计。通过语境感知 AI 处理复杂项目。",
+                tierProBadge: "最受欢迎",
+                priceMonthly: "按月",
+                priceYearly: "按年",
+                price3Year: "3年期",
+                tagBestValue: "最具价值",
+                featPro1: "<i data-lucide=\"check\"></i> 无限制项目",
+                featPro2: "<i data-lucide=\"check\"></i> 高级 AI 搜索",
+                featPro3: "<i data-lucide=\"check\"></i> 无限制报告创建",
+                featPro4: "<i data-lucide=\"check\"></i> 高级云端同步",
+                btnPro: "获取专业版",
+                pricingContact: "寻找研究团队或机构授权？<a href=\"mailto:info@rcubetech.com\">联系我们</a>获取报价。",
+                footerRights: "&copy; 2026 ResearchCube. 版权所有。"
+            }
+        };
+
+        let currentLang = navigator.language.startsWith('tr') ? 'tr' : (navigator.language.startsWith('ar') ? 'ar' : (navigator.language.startsWith('fr') ? 'fr' : (navigator.language.startsWith('es') ? 'es' : (navigator.language.startsWith('de') ? 'de' : (navigator.language.startsWith('zh') ? 'zh' : 'en')))));
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[currentLang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.innerHTML = t[key];
+                }
+            });
+            document.getElementById('current-lang').innerText = currentLang.toUpperCase();
+
+            // Highlight active lang in dropdown
+            document.querySelectorAll('.lang-dropdown-content button').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            lucide.createIcons();
+        }
+
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize content
+        setLanguage(currentLang);
+    </script>
+</body>
+
+</html>
