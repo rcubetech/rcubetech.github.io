@@ -504,7 +504,7 @@
                 navFeatures: "Özellikler",
                 navGetEarlyAccess: "Microsoft Store'dan Edin",
 
-                heroTitle: "Akademik Araştırma İstasyonu.<br> <span class=\"gradient-text\">Verileriniz, Sizin Sınırlarınız İçinde.</span>",
+                heroTitle: "Araştırmanızın Her Aşaması.<br> <span class=\"gradient-text\">Tek Bir Profesyonel Çalışma Alanı.</span>",
                 heroSub: "Araştırma sürecinizin her aşamasını tek bir profesyonel yapıda birleştiren, yerel-öncelikli çalışma asistanı. Google Drive ve kurumsal AI API desteği ile tam kontrol.",
                 btnDownload: "Microsoft Store'dan İndir",
                 btnWatchTour: "Mimariyi Keşfedin",
@@ -902,6 +902,17 @@
 
             lucide.createIcons();
         }
+
+        // Dropdown toggle for mobile
+        document.querySelector('.lang-toggle').addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.parentElement.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function () {
+            document.querySelector('.lang-dropdown').classList.remove('show');
+        });
 
         function scrollToAbout() {
             document.getElementById('about').scrollIntoView({ behavior: 'smooth' });

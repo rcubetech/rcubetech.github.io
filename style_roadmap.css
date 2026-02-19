@@ -1,6 +1,6 @@
 /* ROADMAP SECTION */
 .roadmap-section {
-    padding: 6rem 5%;
+    padding: var(--section-padding);
     background: #0f172a;
     position: relative;
     overflow: hidden;
