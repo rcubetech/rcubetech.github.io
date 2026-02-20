@@ -1,7 +1,9 @@
 /* RESET & BASE */
 :root {
-    --bg-dark: #0f172a;
+    /* DEFAULT DARK THEME */
+    --bg-body: #0f172a;
     --bg-card: #1e293b;
+    --bg-navbar: rgba(15, 23, 42, 0.8);
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --primary: #2563EB;
@@ -12,6 +14,22 @@
     --accent-glow: rgba(16, 185, 129, 0.4);
     --glass-border: rgba(255, 255, 255, 0.1);
     --section-padding: 6rem 5%;
+}
+
+.light-theme {
+    --bg-body: #f1f5f9;
+    /* Darker Slate 100 */
+    --bg-card: #ffffff;
+    --bg-navbar: rgba(255, 255, 255, 0.9);
+    --text-main: #020617;
+    /* Darker Slate 950 */
+    --text-muted: #334155;
+    /* Darker Slate 700 */
+    --primary: #2563EB;
+    --primary-dark: #1d4ed8;
+    --accent: #059669;
+    --accent-glow: rgba(5, 150, 105, 0.15);
+    --glass-border: rgba(15, 23, 42, 0.12);
 }
 
 @media (max-width: 768px) {
@@ -28,7 +46,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -41,15 +59,15 @@ html {
 
 /* TYPOGRAPHY */
 h1 {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-    font-weight: 800;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+    font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
-    font-weight: 700;
+    font-size: clamp(1.8rem, 6vw, 2.7rem);
+    font-weight: 800;
     margin-bottom: 1rem;
 }
 
@@ -65,7 +83,7 @@ p {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #60a5fa, #34d399);
+    background: linear-gradient(90deg, #1c4292, #29ba97);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -81,7 +99,7 @@ p {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--bg-navbar);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
 }
@@ -107,7 +125,8 @@ p {
 .nav-links a {
     text-decoration: none;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1rem;
     transition: color 0.2s;
 }
 
@@ -156,6 +175,11 @@ p {
     overflow: visible;
     /* Changed from hidden to allow pseudo-element bridge */
     backdrop-filter: blur(20px);
+}
+
+.light-theme .lang-dropdown-content {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .lang-dropdown-content::before {
@@ -271,6 +295,10 @@ p {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.light-theme .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
 button.large {
     padding: 0.8rem 1.5rem;
     font-size: 1.1rem;
@@ -284,7 +312,7 @@ button.large {
     justify-content: space-between;
     padding: 0 5%;
     position: relative;
-    padding-top: 80px;
+    padding-top: 10%;
     /* nav height */
 }
 
@@ -296,7 +324,8 @@ button.large {
 
 .badge {
     background: rgba(37, 99, 235, 0.1);
-    color: #60a5fa;
+    color: #3b82f6;
+    /* Brighter blue for default/dark */
     padding: 6px 12px;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -306,10 +335,16 @@ button.large {
     border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
+.light-theme .badge {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--primary);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
 .hero-sub {
     margin-bottom: 2.5rem;
     font-size: 1.25rem;
-    color: #cbd5e1;
+    color: var(--text-muted);
 }
 
 .hero-actions {
@@ -320,7 +355,7 @@ button.large {
 
 .small-note {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--text-muted);
 }
 
 /* HERO VISUAL (MOCKUP) */
@@ -354,6 +389,11 @@ button.large {
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: column;
+}
+
+.light-theme .app-window.glassy {
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
 }
 
 .app-window:hover {
@@ -434,10 +474,14 @@ button.large {
     width: 100%;
 }
 
+.light-theme .file-card {
+    background: rgba(15, 23, 42, 0.04);
+}
+
 /* FEATURES GRID */
 .features {
     padding: var(--section-padding);
-    background: #0f172a;
+    background: var(--bg-body);
 }
 
 .section-header {
@@ -498,6 +542,10 @@ button.large {
     gap: 4rem;
     flex-wrap: wrap;
     background: radial-gradient(circle at 100% 50%, #1e293b 0%, #0f172a 100%);
+}
+
+.light-theme .tech-specs {
+    background: radial-gradient(circle at 100% 50%, #e2e8f0 0%, #f1f5f9 100%);
 }
 
 .tech-specs .content {
@@ -872,7 +920,7 @@ footer {
 /* PRICING SECTION */
 .pricing-section {
     padding: var(--section-padding);
-    background: #0f172a;
+    background: var(--bg-body);
 }
 
 .pricing-grid {
@@ -1050,4 +1098,76 @@ footer {
 /* Comparison Table Refinement */
 .comparison-table .feature-name {
     vertical-align: middle;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: var(--section-padding);
+    background: radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    border-top: 1px solid var(--glass-border);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.light-theme .form-group input,
+.light-theme .form-group textarea {
+    background: rgba(15, 23, 42, 0.03);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.05);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 2rem 1.5rem;
+    }
 }
