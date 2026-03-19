@@ -116,6 +116,18 @@ p {
     height: 128px;
 }
 
+.logo-light {
+    display: none;
+}
+
+.light-theme .logo-light {
+    display: inline-block; /* or block depending on vertical layout, but inline-block is safer */
+}
+
+.light-theme .logo-dark {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
