@@ -91,21 +91,27 @@
     <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-content">
+            <div class="badge" data-i18n="heroBadge">For Academic and Industrial Research</div>
             <h1 data-i18n="heroTitle">Every Stage of Your Research.<br> <span class="gradient-text">One Professional
                     Workspace.</span></h1>
             <p class="hero-sub" data-i18n="heroSub">
-                A high-performance workspace that unifies every stage of your research pipeline. Experience the native
-                speed of local processing combined with seamless cloud synchronization through your Google Drive.
+                Stop getting lost between applications. Unify your literature search, PDF reading, note-taking, AI data
+                analysis, and report drafting into a single professional workspace.
             </p>
             <div class="hero-actions">
                 <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank" class="btn-primary large"
                     style="text-decoration:none;">
-                    <i data-lucide="shopping-bag" style="margin-right:8px;"></i> <span data-i18n="btnDownload">Get from
-                        Microsoft Store</span>
+                    <i data-lucide="zap" style="margin-right:8px;"></i> <span data-i18n="btnStartFree">Start for
+                        Free</span>
                 </a>
                 <button class="btn-secondary large" onclick="scrollToAbout()">
                     <i data-lucide="play-circle"></i> <span data-i18n="btnWatchTour">Watch the Tour</span>
                 </button>
+            </div>
+            <div class="social-proof">
+                <i data-lucide="users" class="text-blue"></i>
+                <span data-i18n="heroSocialBold" style="font-weight: 700; color: var(--text-main);">1000+</span>
+                <span data-i18n="heroSocialText">researchers actively using</span>
             </div>
             <p class="small-note" data-i18n="heroNote">* Compatible with Windows 10/11 & Google Drive</p>
         </div>
@@ -116,7 +122,7 @@
             <div class="hero-scene">
                 <!-- Floating Dashboard Cards -->
                 <div class="feature-cards-container">
-                    
+
                     <!-- Top Left: PDF Reader -->
                     <div class="floating-card card-tl">
                         <div class="card-icon blue"><i data-lucide="file-text"></i></div>
@@ -126,7 +132,10 @@
                             <div class="mock-line long"></div>
                         </div>
                         <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim"/></svg>
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
+                                    fill="none" stroke-dasharray="4" class="dash-anim" />
+                            </svg>
                         </div>
                     </div>
 
@@ -138,7 +147,10 @@
                             <div class="mock-search"><i data-lucide="search" style="width:10px;height:10px;"></i></div>
                         </div>
                         <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim"/></svg>
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2"
+                                    fill="none" stroke-dasharray="4" class="dash-anim" />
+                            </svg>
                         </div>
                     </div>
 
@@ -150,7 +162,10 @@
                             <div class="mock-dots"><span></span><span></span><span></span></div>
                         </div>
                         <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim reverse"/></svg>
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
+                                    fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                            </svg>
                         </div>
                     </div>
 
@@ -162,19 +177,34 @@
                             <div class="mock-type">|<span class="blink">_</span></div>
                         </div>
                         <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim reverse"/></svg>
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
+                                    fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                            </svg>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <!-- SVG Defs for Gradients -->
                 <svg width="0" height="0" style="position:absolute;">
                     <defs>
-                        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
-                        <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient>
-                        <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient>
-                        <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#34d399" stop-opacity="0.8"/><stop offset="100%" stop-color="#34d399" stop-opacity="0"/></linearGradient>
+                        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+                        </linearGradient>
                     </defs>
                 </svg>
 
@@ -191,7 +221,8 @@
                             <div class="nav-item"><i data-lucide="library"></i></div>
                         </div>
                         <div class="main-view">
-                            <h3 data-i18n="mockupSyncStatus"><i data-lucide="layers" class="text-accent"></i> Research Operating System (ReOS)</h3>
+                            <h3 data-i18n="mockupSyncStatus"><i data-lucide="layers" class="text-accent"></i> Research
+                                Operating System (ReOS)</h3>
                             <div class="file-card">
                                 <i data-lucide="file-text"></i>
                                 <div>
@@ -203,7 +234,8 @@
                     </div>
                 </div>
             </div>
-            <div class="glow-effect"></div>
+        </div>
+        <div class="glow-effect"></div>
         </div>
     </header>
 
@@ -364,12 +396,15 @@
             <!-- Feature 1: Data Integration -->
             <div class="roadmap-card">
                 <h3 data-i18n="mapGraphTitle"><i data-lucide="combine"></i> Cross-Disciplinary Integration</h3>
-                <p data-i18n="mapGraphDesc">Import your analysis results directly from specialized software (SPSS, MATLAB, Python, LabVIEW, etc.) into your workspace without any data loss.</p>
+                <p data-i18n="mapGraphDesc">Import your analysis results directly from specialized software (SPSS,
+                    MATLAB, Python, LabVIEW, etc.) into your workspace without any data loss.</p>
                 <div class="integration-visual">
-                    <div class="int-source source-1"><i data-lucide="pie-chart" style="width:14px;height:14px;"></i></div>
-                    <div class="int-source source-2"><i data-lucide="bar-chart" style="width:14px;height:14px;"></i></div>
+                    <div class="int-source source-1"><i data-lucide="pie-chart" style="width:14px;height:14px;"></i>
+                    </div>
+                    <div class="int-source source-2"><i data-lucide="bar-chart" style="width:14px;height:14px;"></i>
+                    </div>
                     <div class="int-source source-3"><i data-lucide="code" style="width:14px;height:14px;"></i></div>
-                    
+
                     <div class="int-line line-1"></div>
                     <div class="int-line line-2"></div>
                     <div class="int-line line-3"></div>
@@ -383,7 +418,8 @@
             <!-- Feature 2: Publication Ready -->
             <div class="roadmap-card">
                 <h3 data-i18n="mapExportTitle"><i data-lucide="book-open"></i> Publication-Ready Assembly</h3>
-                <p data-i18n="mapExportDesc">Transform your imported raw data, tables, and findings into a professional scientific format that perfectly complies with your target journal's guidelines.</p>
+                <p data-i18n="mapExportDesc">Transform your imported raw data, tables, and findings into a professional
+                    scientific format that perfectly complies with your target journal's guidelines.</p>
                 <div class="assembly-visual">
                     <div class="assembly-raw">
                         <div class="raw-data-item w-full"></div>
@@ -391,7 +427,7 @@
                         <div class="raw-data-chart"></div>
                         <div class="raw-data-item w-full"></div>
                     </div>
-                    
+
                     <div class="assembly-flow">
                         <div class="particles">
                             <span></span><span></span><span></span>
@@ -403,11 +439,13 @@
                         <div class="doc-header"></div>
                         <div class="doc-columns">
                             <div class="col">
-                                <div class="doc-line"></div><div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
                                 <div class="mini-chart"></div>
                             </div>
                             <div class="col">
-                                <div class="doc-line"></div><div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
                                 <div class="doc-line w-half"></div>
                             </div>
                         </div>
@@ -551,7 +589,14 @@
                 navGetEarlyAccess: "Get from Microsoft Store",
 
                 heroTitle: "Every Stage of Your Research.<br><span class=\"gradient-text\">One Professional Workspace.</span>",
-                heroSub: "Stop getting lost between applications: Literature search, PDF reading, AI data analysis, and professional reporting are now with you in a single secure, local workspace.",
+                heroBadge: "For Academic and Industrial Research",
+                btnStartFree: "Start for Free",
+                heroSocialBold: "1000+",
+                heroSocialText: "researchers actively using",
+                step1: "Source.pdf",
+                step2: "Analyzing...",
+                step3: "Drafting",
+                heroSub: "Stop getting lost between applications. Unify your literature search, PDF reading, note-taking, AI data analysis, and report drafting into a single professional workspace.",
                 btnDownload: "Get from Microsoft Store",
                 btnWatchTour: "Explore the Architecture",
                 heroNote: "✓ Your files stay with you  ✓ Works offline  ✓ Native Windows 10/11",
@@ -653,7 +698,14 @@
                 navGetEarlyAccess: "Microsoft Store'dan Edin",
 
                 heroTitle: "Araştırmanızın Her Aşaması.<br><span class=\"gradient-text\">Tek Bir Profesyonel Çalışma Alanı.</span>",
-                heroSub: "Uygulamalar arasında kaybolmaya son verin: Literatür taraması, PDF okuma, yapay zeka ile veri analizi ve profesyonel raporlama artık tek bir güvenli, yerel çalışma alanında sizinle.",
+                heroBadge: "Akademik ve Endüstriyel Araştırmalar İçin",
+                btnStartFree: "Ücretsiz Başla",
+                heroSocialBold: "1000+",
+                heroSocialText: "araştırmacı tarafından güvenle kullanılıyor",
+                step1: "Kaynak.pdf",
+                step2: "Analiz Ediliyor...",
+                step3: "Taslak Çıkarılıyor",
+                heroSub: "Uygulamalar arasında kaybolmaya son verin. Literatür araştırması, PDF okuma, not alma, yapay zeka desteği ve raporlama süreçlerinizi tek bir profesyonel çalışma alanında birleştirin.",
                 btnDownload: "Microsoft Store'dan İndir",
                 btnWatchTour: "Mimariyi Keşfedin",
                 heroNote: "✓ Dosyalarınız sizinle kalır  ✓ Çevrimdışı çalışır  ✓ Native Windows 10/11",
@@ -757,7 +809,7 @@
                 navGetEarlyAccess: "احصل على وصول مبكر",
                 heroBadge: "مزامنة سحابية متقدمة",
                 heroTitle: "كل مرحلة من مراحل بحثك.<br><span class=\"gradient-text\">مساحة عمل احترافية واحدة.</span>",
-                heroSub: "توقف عن الضياع بين التطبيقات: البحث في الأدبيات، قراءة ملفات PDF، تحليل البيانات بالذكاء الاصطناعي، والتقارير الاحترافية أصبحت الآن معك في مساحة عمل محلية وآمنة واحدة.",
+                heroSub: "قلل ساعات البحث إلى دقائق. قم بتلخيص ملفات PDF تلقائيًا على الفور، وقم بإدارة عملية البحث والتحليل والكتابة بالكامل في مساحة عمل واحدة آمنة.",
                 btnDownload: "تحميل لويندوز",
                 btnWatchTour: "شاهد الجولة",
                 heroNote: "✓ ملفاتك تبقى معك ✓ يعمل بدون اتصال بالإنترنت ✓ Native Windows 10/11",
@@ -857,7 +909,14 @@
                 navPricing: "Tarification",
                 navGetEarlyAccess: "Accès Anticipé",
                 heroTitle: "Chaque étape de votre recherche.<br> <span class=\"gradient-text\">Un espace de travail professionnel unique.</span>",
-                heroSub: "Ne vous perdez plus entre les applications : Recherche bibliographique, lecture de PDF, analyse de données par l'IA et rapports professionnels vous accompagnent désormais dans un seul espace de travail local et sécurisé.",
+                heroBadge: "Pour la Recherche Académique et Industrielle",
+                btnStartFree: "Commencer Gratuitement",
+                heroSocialBold: "1000+",
+                heroSocialText: "chercheurs l'utilisent activement",
+                step1: "Source.pdf",
+                step2: "Analyse en cours...",
+                step3: "Rédaction",
+                heroSub: "Réduisez des heures de recherche à quelques minutes. Résumez automatiquement les PDF instantanément et gérez tout votre processus de recherche, d'analyse et de rédaction dans un seul espace de travail sécurisé.",
                 btnDownload: "Télécharger pour Windows",
                 btnWatchTour: "Voir la démo",
                 heroNote: "✓ Vos fichiers restent avec vous ✓ Fonctionne hors ligne ✓ Native Windows 10/11",
@@ -958,7 +1017,14 @@
                 navPricing: "Precios",
                 navGetEarlyAccess: "Acceso Anticipado",
                 heroTitle: "Cada etapa de tu investigación.<br> <span class=\"gradient-text\">Un espacio de trabajo profesional único.</span>",
-                heroSub: "Deje de perderse entre aplicaciones: Búsqueda de literatura, lectura de PDF, análisis de datos con IA y la creación de informes profesionales ahora están con usted en un único espacio local y seguro.",
+                heroBadge: "Para Investigación Académica e Industrial",
+                btnStartFree: "Empieza Gratis",
+                heroSocialBold: "1000+",
+                heroSocialText: "investigadores lo usan activamente",
+                step1: "Fuente.pdf",
+                step2: "Analizando...",
+                step3: "Redactando",
+                heroSub: "Reduce horas de búsqueda a minutos. Resume automáticamente los PDF al instante y gestiona todo tu proceso de investigación, análisis y redacción en un único espacio de trabajo seguro.",
                 btnDownload: "Descargar para Windows",
                 btnWatchTour: "Ver demostración",
                 heroNote: "✓ Tus archivos se quedan contigo ✓ Funciona offline ✓ Native Windows 10/11",
@@ -1059,7 +1125,14 @@
                 navPricing: "Preise",
                 navGetEarlyAccess: "Frühzeitiger Zugang",
                 heroTitle: "Jede Phase Ihrer Forschung.<br><span class=\"gradient-text\">Ein professioneller Arbeitsbereich.</span>",
-                heroSub: "Verlieren Sie sich nicht länger zwischen Anwendungen: Literatursuche, PDF-Lektüre, KI-Datenanalyse und professionelle Berichterstattung sind jetzt vereint in einem einzigen sicheren, lokalen Arbeitsbereich bei Ihnen.",
+                heroBadge: "Für akademische und industrielle Forschung",
+                btnStartFree: "Kostenlos starten",
+                heroSocialBold: "1000+",
+                heroSocialText: "Forscher nutzen es aktiv",
+                step1: "Quelle.pdf",
+                step2: "Analysieren...",
+                step3: "Entwerfen",
+                heroSub: "Reduzieren Sie die stundenlange Literatursuche auf Minuten. Fassen Sie PDFs sofort automatisch zusammen und verwalten Sie Ihren gesamten Forschungs-, Analyse- und Schreibprozess in einem einzigen sicheren Arbeitsbereich.",
                 btnDownload: "Für Windows herunterladen",
                 btnWatchTour: "Tour ansehen",
                 heroNote: "✓ Ihre Dateien bleiben bei Ihnen ✓ Funktioniert offline ✓ Native Windows 10/11",
@@ -1160,7 +1233,14 @@
                 navPricing: "定价",
                 navGetEarlyAccess: "早期访问",
                 heroTitle: "研究的每个阶段。<br><span class=\"gradient-text\">一个专业的科研空间。</span>",
-                heroSub: "不再迷失于诸多应用之间：文献搜索、PDF 阅读、AI 数据分析以及专业报告现已在一个安全的本地工作空间中伴随您。",
+                heroBadge: "面向学术与工业研究",
+                btnStartFree: "免费开始",
+                heroSocialBold: "1000+",
+                heroSocialText: "名研究人员正在积极使用",
+                step1: "源文件.pdf",
+                step2: "分析中...",
+                step3: "起草中",
+                heroSub: "将数小时的文献搜索缩短至几分钟。即时自动总结 PDF，并在一个安全的工作空间中管理您的整个研究、分析和写作过程。",
                 btnDownload: "下载 Windows 版",
                 btnWatchTour: "观看演示",
                 heroNote: "✓ 文件保留在本地 ✓ 支持离线工作 ✓ Native Windows 10/11",
@@ -1262,7 +1342,14 @@
                 navPricing: "料金",
                 navGetEarlyAccess: "Microsoft Storeで入手",
                 heroTitle: "研究の全フェーズを、<br><span class=\"gradient-text\">一つのプロフェッショナルな空間で。</span>",
-                heroSub: "散在するアプリケーションに別れを告げましょう。文献検索、PDF リーダー、AI データ分析、プロフェッショナルなレポート作成が、安全性に優れた一つのローカルワークスペースで完結します。",
+                heroBadge: "学術および産業研究向け",
+                btnStartFree: "無料で開始",
+                heroSocialBold: "1000+",
+                heroSocialText: "人の研究者がアクティブに使用中",
+                step1: "ソース.pdf",
+                step2: "分析中...",
+                step3: "草稿作成中",
+                heroSub: "何時間もかかる文献検索を数分に短縮します。PDF を瞬時に自動要約し、研究、分析、執筆プロセスのすべてを 1 つの安全なワークスペースで管理します。",
                 btnDownload: "Windows版をダウンロード",
                 btnWatchTour: "ツアーを見る",
                 heroNote: "✓ ファイルはあなたの手元に ✓ オフライン動作 ✓ Native Windows 10/11",
@@ -1432,7 +1519,7 @@
             event.preventDefault();
             const btn = event.target.querySelector('button');
             const originalText = btn.innerText;
-            
+
             // Loading state
             btn.innerText = (currentLang === 'tr') ? 'Gönderiliyor...' : 'Sending...';
             btn.style.opacity = '0.7';
@@ -1445,7 +1532,7 @@
             // Send via Web3Forms AJAX
             fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { 
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
@@ -1458,30 +1545,30 @@
                     from_name: "ResearchCube Web Form"
                 })
             })
-            .then(response => response.json())
-            .then(data => {
-                // Success
-                btn.innerText = (currentLang === 'tr') ? 'Gönderildi!' : 'Sent!';
-                btn.style.background = 'var(--accent)';
-                btn.style.opacity = '1';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                    event.target.reset();
-                }, 3000);
-            })
-            .catch(error => {
-                // Error
-                btn.innerText = (currentLang === 'tr') ? 'Hata Oluştu!' : 'Error!';
-                btn.style.background = '#ef4444'; // red
-                btn.style.opacity = '1';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    // Success
+                    btn.innerText = (currentLang === 'tr') ? 'Gönderildi!' : 'Sent!';
+                    btn.style.background = 'var(--accent)';
+                    btn.style.opacity = '1';
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        event.target.reset();
+                    }, 3000);
+                })
+                .catch(error => {
+                    // Error
+                    btn.innerText = (currentLang === 'tr') ? 'Hata Oluştu!' : 'Error!';
+                    btn.style.background = '#ef4444'; // red
+                    btn.style.opacity = '1';
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
+                });
         }
 
         // Initialize content

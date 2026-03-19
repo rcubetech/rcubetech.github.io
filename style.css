@@ -361,7 +361,21 @@ button.large {
 .hero-actions {
     display: flex;
     gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-proof {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.social-proof strong {
+    color: var(--text-main);
 }
 
 .small-note {
@@ -656,8 +670,56 @@ button.large {
     align-items: center;
 }
 
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.step-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+}
+
+.light-theme .step-box {
+    background: rgba(15, 23, 42, 0.03);
+}
+
+.step-box.active.glow {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+    animation: pulseBorder 2s infinite;
+}
+
+.step-arrow {
+    width: 14px;
+    opacity: 0.5;
+}
+
+@keyframes pulseBorder {
+    0% { border-color: rgba(16, 185, 129, 0.2); }
+    50% { border-color: rgba(16, 185, 129, 0.8); }
+    100% { border-color: rgba(16, 185, 129, 0.2); }
+}
+
 .text-green {
     color: var(--accent);
+}
+
+.text-blue {
+    color: #3b82f6;
 }
 
 .file-card {
