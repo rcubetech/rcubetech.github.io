@@ -84,8 +84,6 @@
                     <button onclick="setLanguage('tr')" data-lang="tr">Türkçe</button>
                 </div>
             </div>
-            <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank" class="btn-primary"
-                data-i18n="navGetEarlyAccess">Get from Microsoft Store</a>
         </div>
     </nav>
 
@@ -112,27 +110,94 @@
         </div>
 
         <!-- VISUAL -->
+        <!-- VISUAL -->
         <div class="hero-visual">
-            <div class="app-window glassy">
-                <div class="window-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <!-- Mockup Content -->
-                <div class="window-body">
-                    <div class="sidebar">
-                        <div class="nav-item active"><i data-lucide="home"></i></div>
-                        <div class="nav-item"><i data-lucide="library"></i></div>
+            <div class="hero-scene">
+                <!-- Floating Dashboard Cards -->
+                <div class="feature-cards-container">
+                    
+                    <!-- Top Left: PDF Reader -->
+                    <div class="floating-card card-tl">
+                        <div class="card-icon blue"><i data-lucide="file-text"></i></div>
+                        <div class="card-info">
+                            <span class="card-title" data-i18n="orbitPdf">PDF Reader</span>
+                            <div class="mock-line short"></div>
+                            <div class="mock-line long"></div>
+                        </div>
+                        <div class="connection-line-svg">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim"/></svg>
+                        </div>
                     </div>
-                    <div class="main-view">
-                        <h3 data-i18n="mockupSyncStatus"><i data-lucide="check-circle" class="text-green"></i> Synced to
-                            Your Drive</h3>
-                        <div class="file-card">
-                            <i data-lucide="file-text"></i>
-                            <div>
-                                <h4 data-i18n="mockupFileName">Thesis_Final.tex</h4>
-                                <span data-i18n="mockupFileStatus">Updated just now</span>
+
+                    <!-- Bottom Left: Literature Search -->
+                    <div class="floating-card card-bl">
+                        <div class="card-icon purple"><i data-lucide="search"></i></div>
+                        <div class="card-info">
+                            <span class="card-title" data-i18n="orbitSearch">Literature Search</span>
+                            <div class="mock-search"><i data-lucide="search" style="width:10px;height:10px;"></i></div>
+                        </div>
+                        <div class="connection-line-svg">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- Top Right: AI Tools -->
+                    <div class="floating-card card-tr">
+                        <div class="card-icon accent"><i data-lucide="cpu"></i></div>
+                        <div class="card-info">
+                            <span class="card-title" data-i18n="orbitAI">AI Tools</span>
+                            <div class="mock-dots"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="connection-line-svg">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim reverse"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right: Editor -->
+                    <div class="floating-card card-br">
+                        <div class="card-icon green"><i data-lucide="edit-3"></i></div>
+                        <div class="card-info">
+                            <span class="card-title" data-i18n="orbitEditor">Smart Editor</span>
+                            <div class="mock-type">|<span class="blink">_</span></div>
+                        </div>
+                        <div class="connection-line-svg">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2" fill="none" stroke-dasharray="4" class="dash-anim reverse"/></svg>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- SVG Defs for Gradients -->
+                <svg width="0" height="0" style="position:absolute;">
+                    <defs>
+                        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
+                        <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient>
+                        <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient>
+                        <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#34d399" stop-opacity="0.8"/><stop offset="100%" stop-color="#34d399" stop-opacity="0"/></linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="app-window glassy">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <!-- Mockup Content -->
+                    <div class="window-body">
+                        <div class="sidebar">
+                            <div class="nav-item active"><i data-lucide="home"></i></div>
+                            <div class="nav-item"><i data-lucide="library"></i></div>
+                        </div>
+                        <div class="main-view">
+                            <h3 data-i18n="mockupSyncStatus"><i data-lucide="check-circle" class="text-green"></i> Synced to
+                                Your Drive</h3>
+                            <div class="file-card">
+                                <i data-lucide="file-text"></i>
+                                <div>
+                                    <h4 data-i18n="mockupFileName">Thesis_Final.tex</h4>
+                                    <span data-i18n="mockupFileStatus">Updated just now</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -296,30 +361,57 @@
         </div>
 
         <div class="roadmap-grid">
-            <!-- Feature 1: GitHub -->
+            <!-- Feature 1: Data Integration -->
             <div class="roadmap-card">
-                <h3 data-i18n="mapGitTitle"><i data-lucide="git-branch"></i> Deep Code Integration</h3>
-                <p data-i18n="mapGitDesc">Seamlessly link your research with GitHub & GitLab repositories. Manage code,
-                    data, and manuscript versions in one unified workflow.</p>
-                <div class="code-visual"
-                    style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">
-                    > git push origin main<br>
-                    <span style="color: var(--accent)">✓ Synced to repo</span>
+                <h3 data-i18n="mapGraphTitle"><i data-lucide="combine"></i> Cross-Disciplinary Integration</h3>
+                <p data-i18n="mapGraphDesc">Import your analysis results directly from specialized software (SPSS, MATLAB, Python, LabVIEW, etc.) into your workspace without any data loss.</p>
+                <div class="integration-visual">
+                    <div class="int-source source-1"><i data-lucide="pie-chart" style="width:14px;height:14px;"></i></div>
+                    <div class="int-source source-2"><i data-lucide="bar-chart" style="width:14px;height:14px;"></i></div>
+                    <div class="int-source source-3"><i data-lucide="code" style="width:14px;height:14px;"></i></div>
+                    
+                    <div class="int-line line-1"></div>
+                    <div class="int-line line-2"></div>
+                    <div class="int-line line-3"></div>
+
+                    <div class="int-core">
+                        <i data-lucide="database" style="color:var(--accent); width:20px;height:20px;"></i>
+                    </div>
                 </div>
             </div>
 
-            <!-- Feature 2: Simulation -->
+            <!-- Feature 2: Publication Ready -->
             <div class="roadmap-card">
-                <h3 data-i18n="mapSimTitle"><i data-lucide="bar-chart-2"></i> Simulation Results</h3>
-                <p data-i18n="mapSimDesc">Native support for rendering academic simulation data. Import
-                    Python/Matplotlib results directly into your reports with interactive visualization.</p>
-                <!-- CSS Graph -->
-                <div class="graph-visual">
-                    <div class="graph-bar" style="height: 40%;"></div>
-                    <div class="graph-bar" style="height: 70%;"></div>
-                    <div class="graph-bar" style="height: 50%;"></div>
-                    <div class="graph-bar" style="height: 90%;"></div>
-                    <div class="graph-bar" style="height: 60%;"></div>
+                <h3 data-i18n="mapExportTitle"><i data-lucide="book-open"></i> Publication-Ready Assembly</h3>
+                <p data-i18n="mapExportDesc">Transform your imported raw data, tables, and findings into a professional scientific format that perfectly complies with your target journal's guidelines.</p>
+                <div class="assembly-visual">
+                    <div class="assembly-raw">
+                        <div class="raw-data-item w-full"></div>
+                        <div class="raw-data-item w-half"></div>
+                        <div class="raw-data-chart"></div>
+                        <div class="raw-data-item w-full"></div>
+                    </div>
+                    
+                    <div class="assembly-flow">
+                        <div class="particles">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <i data-lucide="settings" class="spin-slow"></i>
+                    </div>
+
+                    <div class="export-doc formatted shadow-glow">
+                        <div class="doc-header"></div>
+                        <div class="doc-columns">
+                            <div class="col">
+                                <div class="doc-line"></div><div class="doc-line"></div>
+                                <div class="mini-chart"></div>
+                            </div>
+                            <div class="col">
+                                <div class="doc-line"></div><div class="doc-line"></div>
+                                <div class="doc-line w-half"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -458,7 +550,7 @@
                 navGetEarlyAccess: "Get from Microsoft Store",
 
                 heroTitle: "Every Stage of Your Research.<br><span class=\"gradient-text\">One Professional Workspace.</span>",
-                heroSub: "ResearchCube brings literature, notes, and documents together in a single local workspace. This unification allows the AI to gain a complete understanding of your project, providing superior, context-aware assistance while your files stay fully under your control.",
+                heroSub: "Stop getting lost between applications: Literature search, PDF reading, AI data analysis, and professional reporting are now with you in a single secure, local workspace.",
                 btnDownload: "Get from Microsoft Store",
                 btnWatchTour: "Explore the Architecture",
                 heroNote: "✓ Your files stay with you  ✓ Works offline  ✓ Native Windows 10/11",
@@ -506,6 +598,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> Advanced AI-Powered Search",
                 featPro3: "<i data-lucide=\"check\"></i> Unlimited Report Creation",
                 featPro4: "<i data-lucide=\"check\"></i> Advanced Cloud Synchronization",
+                orbitPdf: "PDF Reader",
+                orbitSearch: "Literature Search",
+                orbitEditor: "Smart Editor",
+                orbitAI: "AI Tools",
                 planProPrice: "Starting at $6 / month",
                 planProBillingNote: "Monthly: $9 / month<br>Yearly: $90 per year<br>3-Year: $216 every 3 years",
                 amtMonthly: "$9",
@@ -534,10 +630,10 @@
                 compCloud_Offline: "Limited. Dependent on internet speed and server latency.",
                 roadmapTitle: "Future of Research",
                 roadmapDesc: "We are building the next generation of academic tools. Here is what's coming next.",
-                mapGitTitle: "Deep Code Integration",
-                mapGitDesc: "Seamlessly link your research with GitHub & GitLab repositories. Manage code, data, and manuscript versions in one unified workflow.",
-                mapSimTitle: "Simulation Results",
-                mapSimDesc: "Native support for rendering academic simulation data. Import Python/Matplotlib results directly into your reports with interactive visualization.",
+                mapGraphTitle: "Cross-Disciplinary Integration",
+                mapGraphDesc: "Import your analysis results directly from specialized software (SPSS, MATLAB, Python, LabVIEW, etc.) into your workspace without any data loss.",
+                mapExportTitle: "Publication-Ready Assembly",
+                mapExportDesc: "Transform your imported raw data, tables, and findings into a professional scientific format that perfectly complies with your target journal's guidelines.",
                 footerRights: "&copy; 2026 ResearchCube. All rights reserved.",
                 footerDevelopedBy: "Developed by <strong>rcubetech</strong>",
                 contactTitle: "Get in Touch",
@@ -556,7 +652,7 @@
                 navGetEarlyAccess: "Microsoft Store'dan Edin",
 
                 heroTitle: "Araştırmanızın Her Aşaması.<br><span class=\"gradient-text\">Tek Bir Profesyonel Çalışma Alanı.</span>",
-                heroSub: "ResearchCube literatür, notlar ve belgeleri tek bir yerel çalışma alanında toplar. Bu bütünleşik yapı, yapay zekanın tüm projenize hakim olarak size çok daha üst düzey bir asistanlık sunmasını sağlar. Dosyalarınız bilgisayarınızda ve tamamen sizin kontrolünüzde kalır.",
+                heroSub: "Uygulamalar arasında kaybolmaya son verin: Literatür taraması, PDF okuma, yapay zeka ile veri analizi ve profesyonel raporlama artık tek bir güvenli, yerel çalışma alanında sizinle.",
                 btnDownload: "Microsoft Store'dan İndir",
                 btnWatchTour: "Mimariyi Keşfedin",
                 heroNote: "✓ Dosyalarınız sizinle kalır  ✓ Çevrimdışı çalışır  ✓ Native Windows 10/11",
@@ -605,6 +701,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> Gelişmiş AI Destekli Tarama",
                 featPro3: "<i data-lucide=\"check\"></i> Sınırsız Rapor Oluşturma",
                 featPro4: "<i data-lucide=\"check\"></i> Gelişmiş Bulut Senkronizasyonu",
+                orbitPdf: "PDF Okuyucu",
+                orbitSearch: "Literatür Taraması",
+                orbitEditor: "Akıllı Editör",
+                orbitAI: "Yapay Zeka Araçları",
                 planProPrice: "Aylık ₺119’dan başlayan fiyatlarla",
                 planProBillingNote: "Aylık: ₺179 / ay<br>Yıllık: ₺1.790 / yıl<br>3 Yıllık: ₺4.290 / 3 yıl",
                 amtMonthly: "₺179",
@@ -633,10 +733,10 @@
                 compCloud_Offline: "Kısıtlı. İnternet hızı ve sunucu yanıtına bağlı.",
                 roadmapTitle: "Araştırmanın Geleceği",
                 roadmapDesc: "Akademik araçların gelecek neslini inşa ediyoruz. İşte sırada gelenler.",
-                mapGitTitle: "Derin Kod Entegrasyonu",
-                mapGitDesc: "Araştırmanızı GitHub ve GitLab depolarıyla sorunsuz bir şekilde bağlayın. Kod, veri ve makale sürümlerini tek bir birleşik iş akışında yönetin.",
-                mapSimTitle: "Simülasyon Sonuçları",
-                mapSimDesc: "Akademik simülasyon verileri için yerel render desteği. Python/Matplotlib sonuçlarını doğrudan raporlarınıza interaktif görsellerle aktarın.",
+                mapGraphTitle: "Çok Disiplinli Veri Entegrasyonu",
+                mapGraphDesc: "Analiz sonuçlarınızı kullandığınız özel yazılımlardan (SPSS, MATLAB, Python, LabVIEW vb.) doğrudan çalışma alanınıza kayıpsız olarak aktarın.",
+                mapExportTitle: "Yayına Hazır Makale Derleme",
+                mapExportDesc: "İçe aktarılan ham verilerinizi, tablolarınızı ve bulgularınızı, hedef derginizin yayın kurallarına tam uyumlu, profesyonel bir bilimsel formata dönüştürün.",
                 footerRights: "&copy; 2026 ResearchCube. Tüm hakları saklıdır.",
                 footerDevelopedBy: "<strong>rcubetech</strong> tarafından geliştirilmiştir",
                 contactTitle: "İletişime Geçin",
@@ -656,7 +756,7 @@
                 navGetEarlyAccess: "احصل على وصول مبكر",
                 heroBadge: "مزامنة سحابية متقدمة",
                 heroTitle: "كل مرحلة من مراحل بحثك.<br><span class=\"gradient-text\">مساحة عمل احترافية واحدة.</span>",
-                heroSub: "يجمع ResearchCube بين مجموعات الأدب والملاحظات والمستندات في مساحة عمل محلية موحدة. يتيح هذا التكامل للذكاء الاصطناعي اكتساب فهم كامل لمشروعك، مما يوفر مساعدة فائقة ومدركة للسياق بينما تظل ملفاتك تحت سيطرتك الكاملة.",
+                heroSub: "توقف عن الضياع بين التطبيقات: البحث في الأدبيات، قراءة ملفات PDF، تحليل البيانات بالذكاء الاصطناعي، والتقارير الاحترافية أصبحت الآن معك في مساحة عمل محلية وآمنة واحدة.",
                 btnDownload: "تحميل لويندوز",
                 btnWatchTour: "شاهد الجولة",
                 heroNote: "✓ ملفاتك تبقى معك ✓ يعمل بدون اتصال بالإنترنت ✓ Native Windows 10/11",
@@ -704,6 +804,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> بحث متقدم مدعوم بالذكاء الاصطناعي",
                 featPro3: "<i data-lucide=\"check\"></i> إنشاء تقارير غير محدود",
                 featPro4: "<i data-lucide=\"check\"></i> مزامنة سحابية متقدمة",
+                orbitPdf: "قارئ PDF",
+                orbitSearch: "بحث المؤلفات",
+                orbitEditor: "محرر ذكي",
+                orbitAI: "أدوات الذكاء الاصطناعي",
                 amtMonthly: "$9",
                 amtYearlyOld: "$108",
                 amtYearlyMain: "$90",
@@ -730,10 +834,10 @@
                 compCloud_Offline: "محدود. يعتمد على سرعة الإنترنت واستجابة الخادم.",
                 roadmapTitle: "مستقبل البحث",
                 roadmapDesc: "نحن نبني الجيل القادم من الأدوات الأكاديمية. إليك ما سيأتي لاحقاً.",
-                mapGitTitle: "تكامل عميق مع الكود",
-                mapGitDesc: "اربط أبحاثك بمستودعات GitHub و GitLab بسلاسة. أدر إصدارات الكود والبيانات والمخطوطات في سير عمل موحد واحد.",
-                mapSimTitle: "نتائج المحاكاة",
-                mapSimDesc: "دعم أصلي لعرض بيانات المحاكاة الأكاديمية. استورد نتائج Python/Matplotlib مباشرة إلى تقاريرك مع تصورات تفاعلية.",
+                mapGraphTitle: "تكامل متعدد التخصصات",
+                mapGraphDesc: "استورد نتائج تحليلك مباشرة من البرامج المتخصصة (SPSS ، MATLAB ، Python ، LabVIEW ، إلخ) إلى مساحة عملك دون أي فقدان للبيانات.",
+                mapExportTitle: "تجميع جاهز للنشر",
+                mapExportDesc: "حول بياناتك الخام المستوردة، والجداول، والنتائج إلى تنسيق علمي احترافي يتوافق تماماً مع إرشادات المجلة المستهدفة.",
                 footerRights: "&copy; 2026 ResearchCube. جميع الحقوق محفوظة.",
                 footerDevelopedBy: "تم التطوير بواسطة <strong>rcubetech</strong>",
                 contactTitle: "اتصل بنا",
@@ -752,7 +856,7 @@
                 navPricing: "Tarification",
                 navGetEarlyAccess: "Accès Anticipé",
                 heroTitle: "Chaque étape de votre recherche.<br> <span class=\"gradient-text\">Un espace de travail professionnel unique.</span>",
-                heroSub: "ResearchCube réunit la littérature, les notes et les documents dans un seul espace de travail local. Cette unification permet à l'IA d'acquérir une compréhension complète de votre projet, offrant une assistance supérieure et contextuelle tout en gardant vos fichiers sous votre total contrôle.",
+                heroSub: "Ne vous perdez plus entre les applications : Recherche bibliographique, lecture de PDF, analyse de données par l'IA et rapports professionnels vous accompagnent désormais dans un seul espace de travail local et sécurisé.",
                 btnDownload: "Télécharger pour Windows",
                 btnWatchTour: "Voir la démo",
                 heroNote: "✓ Vos fichiers restent avec vous ✓ Fonctionne hors ligne ✓ Native Windows 10/11",
@@ -800,6 +904,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> Recherche Avancée par IA",
                 featPro3: "<i data-lucide=\"check\"></i> Création de Rapports Illimitée",
                 featPro4: "<i data-lucide=\"check\"></i> Synchronisation Cloud Avancée",
+                orbitPdf: "Lecteur PDF",
+                orbitSearch: "Recherche de Littérature",
+                orbitEditor: "Éditeur Intelligent",
+                orbitAI: "Outils d'IA",
                 amtMonthly: "9 €",
                 amtYearlyOld: "108 €",
                 amtYearlyMain: "90 €",
@@ -827,10 +935,10 @@
                 compCloud_Offline: "Limité. Dépendant de la vitesse internet et de la latence du serveur.",
                 roadmapTitle: "Futur de la Recherche",
                 roadmapDesc: "Nous construisons la prochaine génération d'outils académiques. Voici ce qui arrive bientôt.",
-                mapGitTitle: "Intégration Profonde du Code",
-                mapGitDesc: "Liez harmonieusement votre recherche avec les dépôts GitHub & GitLab. Gérez les versions de code, de données et de manuscrits dans un flux de travail unifié.",
-                mapSimTitle: "Résultats de Simulation",
-                mapSimDesc: "Support natif pour le rendu des données de simulation académique. Importez les résultats Python/Matplotlib directement dans vos rapports avec une visualisation interactive.",
+                mapGraphTitle: "Intégration Multidisciplinaire",
+                mapGraphDesc: "Importez vos résultats d'analyse directement depuis des logiciels spécialisés (SPSS, MATLAB, Python, LabVIEW, etc.) dans votre espace de travail sans aucune perte de données.",
+                mapExportTitle: "Assemblage Prêt à Publier",
+                mapExportDesc: "Transformez vos données brutes importées, vos tableaux et vos résultats en un format scientifique professionnel parfaitement conforme aux directives de votre revue cible.",
                 footerRights: "&copy; 2026 ResearchCube. Tous droits réservés.",
                 footerDevelopedBy: "Développé par <strong>rcubetech</strong>",
                 contactTitle: "Contactez-nous",
@@ -849,7 +957,7 @@
                 navPricing: "Precios",
                 navGetEarlyAccess: "Acceso Anticipado",
                 heroTitle: "Cada etapa de tu investigación.<br> <span class=\"gradient-text\">Un espacio de trabajo profesional único.</span>",
-                heroSub: "ResearchCube reúne literatura, notas y documentos en un solo espacio de trabajo local. Esta unificación permite que la IA obtenga una comprensión completa de su proyecto, brindando una asistencia superior y consciente del contexto mientras sus archivos permanecen bajo su total control.",
+                heroSub: "Deje de perderse entre aplicaciones: Búsqueda de literatura, lectura de PDF, análisis de datos con IA y la creación de informes profesionales ahora están con usted en un único espacio local y seguro.",
                 btnDownload: "Descargar para Windows",
                 btnWatchTour: "Ver demostración",
                 heroNote: "✓ Tus archivos se quedan contigo ✓ Funciona offline ✓ Native Windows 10/11",
@@ -897,6 +1005,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> Búsqueda Avanzada por IA",
                 featPro3: "<i data-lucide=\"check\"></i> Creación de Informes Ilimitada",
                 featPro4: "<i data-lucide=\"check\"></i> Sincronización Cloud Avanzada",
+                orbitPdf: "Lector PDF",
+                orbitSearch: "Búsqueda de Literatura",
+                orbitEditor: "Editor Inteligente",
+                orbitAI: "Herramientas de IA",
                 amtMonthly: "$9",
                 amtYearlyOld: "$108",
                 amtYearlyMain: "$90",
@@ -924,10 +1036,10 @@
                 compCloud_Offline: "Limitado. Depende de la velocidad de internet y la latencia del servidor.",
                 roadmapTitle: "Futuro de la Investigación",
                 roadmapDesc: "Estamos construyendo la próxima generación de herramientas académicas. Esto es lo que viene a continuación.",
-                mapGitTitle: "Integración Profunda de Código",
-                mapGitDesc: "Vincula perfectamente tu investigación con los repositorios de GitHub y GitLab. Gestiona las versiones de código, datos y manuscritos en un flujo de trabajo unificado.",
-                mapSimTitle: "Resultados de Simulación",
-                mapSimDesc: "Soporte nativo para el renderizado de datos de simulación académica. Importa resultados de Python/Matplotlib directamente en tus informes con visualización interactiva.",
+                mapGraphTitle: "Integración Multidisciplinaria",
+                mapGraphDesc: "Importe sus resultados de análisis directamente desde software especializado (SPSS, MATLAB, Python, LabVIEW, etc.) a su espacio de trabajo sin pérdida de datos.",
+                mapExportTitle: "Ensamblaje Listo para Publicar",
+                mapExportDesc: "Transforme sus datos brutos importados, tablas y hallazgos en un formato científico profesional que cumpla perfectamente con las pautas de su revista objetivo.",
                 footerRights: "&copy; 2026 ResearchCube. Todos los derechos reservados.",
                 footerDevelopedBy: "Desarrollado por <strong>rcubetech</strong>",
                 contactTitle: "Contáctenos",
@@ -946,7 +1058,7 @@
                 navPricing: "Preise",
                 navGetEarlyAccess: "Frühzeitiger Zugang",
                 heroTitle: "Jede Phase Ihrer Forschung.<br><span class=\"gradient-text\">Ein professioneller Arbeitsbereich.</span>",
-                heroSub: "ResearchCube bringt Literatur, Notizen und Dokumente in einem einzigen lokalen Arbeitsbereich zusammen. Diese Zusammenführung ermöglicht es der KI, ein umfassendes Verständnis Ihres Projekts zu erlangen und so eine erstklassige, kontextbezogene Unterstützung zu bieten, während Ihre Dateien unter Ihrer Kontrolle bleiben.",
+                heroSub: "Verlieren Sie sich nicht länger zwischen Anwendungen: Literatursuche, PDF-Lektüre, KI-Datenanalyse und professionelle Berichterstattung sind jetzt vereint in einem einzigen sicheren, lokalen Arbeitsbereich bei Ihnen.",
                 btnDownload: "Für Windows herunterladen",
                 btnWatchTour: "Tour ansehen",
                 heroNote: "✓ Ihre Dateien bleiben bei Ihnen ✓ Funktioniert offline ✓ Native Windows 10/11",
@@ -994,6 +1106,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> Erweiterte KI-Suche",
                 featPro3: "<i data-lucide=\"check\"></i> Unbegrenzte Berichterstellung",
                 featPro4: "<i data-lucide=\"check\"></i> Erweiterte Cloud-Sync",
+                orbitPdf: "PDF-Reader",
+                orbitSearch: "Literatursuche",
+                orbitEditor: "Intelligenter Editor",
+                orbitAI: "KI-Werkzeuge",
                 amtMonthly: "9 €",
                 amtYearlyOld: "108 €",
                 amtYearlyMain: "90 €",
@@ -1021,10 +1137,10 @@
                 compCloud_Offline: "Begrenzt. Abhängig von Internetgeschwindigkeit und Serverlatenz.",
                 roadmapTitle: "Zukunft der Forschung",
                 roadmapDesc: "Wir bauen die nächste Generation akademischer Tools. Hier ist, was als Nächstes kommt.",
-                mapGitTitle: "Tiefe Code-Integration",
-                mapGitDesc: "Verknüpfen Sie Ihre Forschung nahtlos mit GitHub- & GitLab-Repositories. Verwalten Sie Code-, Daten- und Manuskriptversionen in einem einheitlichen Arbeitsablauf.",
-                mapSimTitle: "Simulationsergebnisse",
-                mapSimDesc: "Nativer Support für das Rendering akademischer Simulationsdaten. Importieren Sie Python/Matplotlib-Ergebnisse direkt in Ihre Berichte mit interaktiver Visualisierung.",
+                mapGraphTitle: "Fachrichtungsübergreifende Integration",
+                mapGraphDesc: "Importieren Sie Ihre Analyseergebnisse direkt aus spezialisierter Software (SPSS, MATLAB, Python, LabVIEW usw.) ohne Datenverlust in Ihren Arbeitsbereich.",
+                mapExportTitle: "Publikationsfertige Zusammenstellung",
+                mapExportDesc: "Verwandeln Sie Ihre importierten Rohdaten, Tabellen und Ergebnisse in ein professionelles wissenschaftliches Format, das perfekt den Richtlinien Ihres Zieljournals entspricht.",
                 footerRights: "&copy; 2026 ResearchCube. Alle Rechte vorbehalten.",
                 footerDevelopedBy: "Entwickelt von <strong>rcubetech</strong>",
                 contactTitle: "Kontaktieren Sie uns",
@@ -1043,7 +1159,7 @@
                 navPricing: "定价",
                 navGetEarlyAccess: "早期访问",
                 heroTitle: "研究的每个阶段。<br><span class=\"gradient-text\">一个专业的科研空间。</span>",
-                heroSub: "ResearchCube 在本地工作空间中集成了文献、笔记和文档。这种统一性使 AI 能够全面理解您的项目，从而提供更高级、更具上下文感知的辅助，同时您的文件完全由您掌控。",
+                heroSub: "不再迷失于诸多应用之间：文献搜索、PDF 阅读、AI 数据分析以及专业报告现已在一个安全的本地工作空间中伴随您。",
                 btnDownload: "下载 Windows 版",
                 btnWatchTour: "观看演示",
                 heroNote: "✓ 文件保留在本地 ✓ 支持离线工作 ✓ Native Windows 10/11",
@@ -1092,6 +1208,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> 高级 AI 搜索",
                 featPro3: "<i data-lucide=\"check\"></i> 无限制报告创建",
                 featPro4: "<i data-lucide=\"check\"></i> 高级云端同步",
+                orbitPdf: "PDF 阅读器",
+                orbitSearch: "文献搜索",
+                orbitEditor: "智能编辑器",
+                orbitAI: "AI 工具",
                 amtMonthly: "$9",
                 amtYearlyOld: "$108",
                 amtYearlyMain: "$90",
@@ -1119,10 +1239,10 @@
                 compCloud_Offline: "有限。取决于网速和服务器延迟。",
                 roadmapTitle: "科研的未来",
                 roadmapDesc: "我们正在打造下一代学术工具。以下是即将推出的功能。",
-                mapGitTitle: "深度代码集成",
-                mapGitDesc: "将您的研究与 GitHub & GitLab 仓库无缝关联。在一个统一的工作流中管理代码、数据和稿件版本。",
-                mapSimTitle: "模拟结果展示",
-                mapSimDesc: "原生支持学术模拟数据渲染。通过交互式可视化，将 Python/Matplotlib 结果直接导入报告。",
+                mapGraphTitle: "跨学科数据集成",
+                mapGraphDesc: "将分析结果从专业软件 (SPSS、MATLAB、Python、LabVIEW 等) 直接无损导入您的工作区。",
+                mapExportTitle: "可发表级别排版",
+                mapExportDesc: "将导入的原始数据、表格和发现转换为完全符合目标期刊指南的专业科学格式。",
                 footerRights: "&copy; 2026 ResearchCube. 版权所有。",
                 footerDevelopedBy: "由 <strong>rcubetech</strong> 开发",
                 contactTitle: "联系我们",
@@ -1141,7 +1261,7 @@
                 navPricing: "料金",
                 navGetEarlyAccess: "Microsoft Storeで入手",
                 heroTitle: "研究の全フェーズを、<br><span class=\"gradient-text\">一つのプロフェッショナルな空間で。</span>",
-                heroSub: "ResearchCubeは文献、ノート、ドキュメントを一つのローカルワークスペースに統合します。この統合により、AIがプロジェクトを包括的に理解し、最高レベルのコンテキスト対応アシスタンスを提供します。ファイルは常にあなたの手元で安全に管理されます。",
+                heroSub: "散在するアプリケーションに別れを告げましょう。文献検索、PDF リーダー、AI データ分析、プロフェッショナルなレポート作成が、安全性に優れた一つのローカルワークスペースで完結します。",
                 btnDownload: "Windows版をダウンロード",
                 btnWatchTour: "ツアーを見る",
                 heroNote: "✓ ファイルはあなたの手元に ✓ オフライン動作 ✓ Native Windows 10/11",
@@ -1190,6 +1310,10 @@
                 featPro2: "<i data-lucide=\"check\"></i> 高度なAI検索",
                 featPro3: "<i data-lucide=\"check\"></i> 無制限のレポート作成",
                 featPro4: "<i data-lucide=\"check\"></i> 高度なクラウド同期",
+                orbitPdf: "PDFリーダー",
+                orbitSearch: "文献検索",
+                orbitEditor: "スマートエディタ",
+                orbitAI: "AIツール",
                 amtMonthly: "$9",
                 amtYearlyOld: "$108",
                 amtYearlyMain: "$90",
@@ -1217,10 +1341,10 @@
                 compCloud_Offline: "制限あり。ネット速度やサーバー遅延に依存。",
                 roadmapTitle: "研究の未来",
                 roadmapDesc: "次世代のアカデミックツールを構築中。今後の予定はこちら。",
-                mapGitTitle: "高度なコード統合",
-                mapGitDesc: "研究成果をGitHubやGitLabのリポジトリとシームレスにリンク。コード、データ、原稿のバージョンを一つのワークフローで管理。",
-                mapSimTitle: "シミュレーション結果表示",
-                mapSimDesc: "学術シミュレーション結果のレンダリングをネイティブサポート。Python/Matplotlibの結果をインタラクティブな可視化としてレポートに直接取り込み。",
+                mapGraphTitle: "専門分野横断データ統合",
+                mapGraphDesc: "分析結果を専用ソフトウェア (SPSS, MATLAB, Python, LabVIEWなど) からワークスペースへデータ損失なく直接インポートします。",
+                mapExportTitle: "公開用論文アセンブリ",
+                mapExportDesc: "インポートされた生のデータ、表、調査結果を、ターゲットとなるジャーナルのガイドラインに完全に準拠したプロフェッショナルな科学的フォーマットに変換します。",
                 footerDevelopedBy: "Developed by <strong>rcubetech</strong>",
                 contactTitle: "お問い合わせ",
                 contactDesc: "ご質問やフィードバックがありますか？お気軽にご連絡ください。",
