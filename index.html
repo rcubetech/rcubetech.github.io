@@ -117,125 +117,419 @@
         </div>
 
         <!-- VISUAL -->
-        <!-- VISUAL -->
         <div class="hero-visual">
-            <div class="hero-scene">
-                <!-- Floating Dashboard Cards -->
-                <div class="feature-cards-container">
+            <div class="carousel-container">
+                <!-- Slide 1: Main ReOS (existing) -->
+                <div class="carousel-slide active" id="slide-1">
+                    <div class="hero-scene">
+                        <!-- Floating Dashboard Cards -->
+                        <div class="feature-cards-container">
 
-                    <!-- Top Left: PDF Reader -->
-                    <div class="floating-card card-tl">
-                        <div class="card-icon blue"><i data-lucide="file-text"></i></div>
-                        <div class="card-info">
-                            <span class="card-title" data-i18n="orbitPdf">PDF Reader</span>
-                            <div class="mock-line short"></div>
-                            <div class="mock-line long"></div>
-                        </div>
-                        <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
-                                    fill="none" stroke-dasharray="4" class="dash-anim" />
-                            </svg>
-                        </div>
-                    </div>
+                            <!-- Top Left: PDF Reader -->
+                            <div class="floating-card card-tl">
+                                <div class="card-icon blue"><i data-lucide="file-text"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitPdf">PDF Reader</span>
+                                    <div class="mock-line short"></div>
+                                    <div class="mock-line long"></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg>
+                                </div>
+                            </div>
 
-                    <!-- Bottom Left: Literature Search -->
-                    <div class="floating-card card-bl">
-                        <div class="card-icon purple"><i data-lucide="search"></i></div>
-                        <div class="card-info">
-                            <span class="card-title" data-i18n="orbitSearch">Literature Search</span>
-                            <div class="mock-search"><i data-lucide="search" style="width:10px;height:10px;"></i></div>
-                        </div>
-                        <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2"
-                                    fill="none" stroke-dasharray="4" class="dash-anim" />
-                            </svg>
-                        </div>
-                    </div>
+                            <!-- Bottom Left: Literature Search -->
+                            <div class="floating-card card-bl">
+                                <div class="card-icon purple"><i data-lucide="search"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitSearch">Literature Search</span>
+                                    <div class="mock-search"><i data-lucide="search"
+                                            style="width:10px;height:10px;"></i></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg>
+                                </div>
+                            </div>
 
-                    <!-- Top Right: AI Tools -->
-                    <div class="floating-card card-tr">
-                        <div class="card-icon accent"><i data-lucide="cpu"></i></div>
-                        <div class="card-info">
-                            <span class="card-title" data-i18n="orbitAI">AI Tools</span>
-                            <div class="mock-dots"><span></span><span></span><span></span></div>
-                        </div>
-                        <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
-                                    fill="none" stroke-dasharray="4" class="dash-anim reverse" />
-                            </svg>
-                        </div>
-                    </div>
+                            <!-- Top Right: AI Tools -->
+                            <div class="floating-card card-tr">
+                                <div class="card-icon accent"><i data-lucide="cpu"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitAI">AI Tools</span>
+                                    <div class="mock-dots"><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg>
+                                </div>
+                            </div>
 
-                    <!-- Bottom Right: Editor -->
-                    <div class="floating-card card-br">
-                        <div class="card-icon green"><i data-lucide="edit-3"></i></div>
-                        <div class="card-info">
-                            <span class="card-title" data-i18n="orbitEditor">Smart Editor</span>
-                            <div class="mock-type">|<span class="blink">_</span></div>
-                        </div>
-                        <div class="connection-line-svg">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
-                                    fill="none" stroke-dasharray="4" class="dash-anim reverse" />
-                            </svg>
-                        </div>
-                    </div>
+                            <!-- Bottom Right: Editor -->
+                            <div class="floating-card card-br">
+                                <div class="card-icon green"><i data-lucide="edit-3"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitEditor">Smart Editor</span>
+                                    <div class="mock-type">|<span class="blink">_</span></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg>
+                                </div>
+                            </div>
 
-                </div>
-
-                <!-- SVG Defs for Gradients -->
-                <svg width="0" height="0" style="position:absolute;">
-                    <defs>
-                        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
-                            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
-                        </linearGradient>
-                        <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
-                            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
-                        </linearGradient>
-                        <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
-                            <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
-                        </linearGradient>
-                        <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%">
-                            <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
-                            <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-
-                <div class="app-window glassy">
-                    <div class="window-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-                    <!-- Mockup Content -->
-                    <div class="window-body">
-                        <div class="sidebar">
-                            <div class="nav-item active"><i data-lucide="home"></i></div>
-                            <div class="nav-item"><i data-lucide="library"></i></div>
                         </div>
-                        <div class="main-view">
-                            <h3 data-i18n="mockupSyncStatus"><i data-lucide="layers" class="text-accent"></i> Research
-                                Operating System (ReOS)</h3>
-                            <div class="file-card">
-                                <i data-lucide="file-text"></i>
-                                <div>
-                                    <h4 data-i18n="mockupFileName">Active_Session_Data</h4>
-                                    <span data-i18n="mockupFileStatus">Seamless research flow engaged</span>
+
+                        <!-- SVG Defs for Gradients -->
+                        <svg width="0" height="0" style="position:absolute;">
+                            <defs>
+                                <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <div class="app-window glassy">
+                            <div class="window-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <!-- Mockup Content -->
+                            <div class="window-body">
+                                <div class="sidebar">
+                                    <div class="nav-item active"><i data-lucide="home"></i></div>
+                                    <div class="nav-item"><i data-lucide="library"></i></div>
+                                </div>
+                                <div class="main-view">
+                                    <h3 data-i18n="mockupSyncStatus"><i data-lucide="layers" class="text-accent"></i>
+                                        Research
+                                        Operating System (ReOS)</h3>
+                                    <div class="file-card">
+                                        <i data-lucide="file-text"></i>
+                                        <div>
+                                            <h4 data-i18n="mockupFileName">Active_Session_Data</h4>
+                                            <span data-i18n="mockupFileStatus">Seamless research flow engaged</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End hero-scene -->
+                </div> <!-- End Slide 1 -->
+
+                <!-- Slide 2: Literature Search -->
+                <div class="carousel-slide" id="slide-2">
+                    <div class="hero-scene feature-scene search-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon purple"><i data-lucide="globe"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardAISuggestions">AI
+                                        Suggestions</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="floating-card card-br">
+                                <div class="card-icon purple"><i data-lucide="download"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardOneClickSave">One-Click
+                                        Save</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitSearch"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">
+                                    Literature Search</div>
+                            </div>
+                            <div class="window-body search-body" style="flex-direction: column; padding: 15px;">
+                                <div class="search-bar">
+                                    <i data-lucide="search"
+                                        style="width: 14px; height: 14px; color: var(--text-main);"></i>
+                                    <div class="search-text"></div>
+                                </div>
+                                <div class="search-results">
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 3: PDF Reader -->
+                <div class="carousel-slide" id="slide-3">
+                    <div class="hero-scene feature-scene pdf-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon blue"><i data-lucide="highlighter"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardSmartHighlight">Smart
+                                        Highlight</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon blue"><i data-lucide="message-square"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardPdfChat">PDF Chat</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon blue"><i data-lucide="zap"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAutoSummary">Auto-Summary</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon blue"><i data-lucide="bookmark"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAnnotation">Annotation</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitPdf"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">
+                                    PDF Reader</div>
+                            </div>
+                            <div class="window-body">
+                                <div class="sidebar pdf-sidebar">
+                                    <div class="pdf-thumb active"></div>
+                                    <div class="pdf-thumb"></div>
+                                    <div class="pdf-thumb"></div>
+                                </div>
+                                <div class="main-view pdf-main" style="align-items: flex-start; padding: 20px;">
+                                    <div class="pdf-line title"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line highlight"></div>
+                                    <div class="pdf-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: AI Tools -->
+                <div class="carousel-slide" id="slide-4">
+                    <div class="hero-scene feature-scene ai-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon accent"><i data-lucide="database"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardDataProcessing">Data
+                                        Processing</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon accent"><i data-lucide="code"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardCodeGen">Code Gen</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon accent"><i data-lucide="brain"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardConceptExtract">Concept
+                                        Extract</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon accent"><i data-lucide="pen-tool"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardDrafting">Drafting</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitAI"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">
+                                    AI Tools</div>
+                            </div>
+                            <div class="window-body ai-body" style="flex-direction: column; padding: 15px;">
+                                <div class="ai-chat">
+                                    <div class="chat-msg user">
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg ai"><i data-lucide="cpu" class="text-accent"
+                                            style="width: 14px; height: 14px;"></i>
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg user">
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg ai"><i data-lucide="cpu" class="text-accent"
+                                            style="width: 14px; height: 14px;"></i>
+                                        <div class="msg-box typing"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                                <div class="ai-input">
+                                    <div class="input-box"></div>
+                                    <div class="send-btn"><i data-lucide="send"
+                                            style="width: 12px; height: 12px; transform: translateX(-1px) translateY(1px);"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Smart Editor -->
+                <div class="carousel-slide" id="slide-5">
+                    <div class="hero-scene feature-scene editor-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon green"><i data-lucide="align-left"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAutoFormat">Auto-Format</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon green"><i data-lucide="file-text"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardMsWordAssistant">MS Word
+                                        Assistant</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon green"><i data-lucide="file-code"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardLatexEditor">LaTeX
+                                        Editor</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon green"><i data-lucide="users"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardLiveCollab">Live
+                                        Collab</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitEditor"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">
+                                    Smart Editor</div>
+                            </div>
+                            <div class="window-body editor-body" style="flex-direction: column;">
+                                <div class="editor-toolbar">
+                                    <div class="tool-icon"></div>
+                                    <div class="tool-icon"></div>
+                                    <div class="tool-icon"></div>
+                                </div>
+                                <div class="editor-content">
+                                    <div class="ed-title"></div>
+                                    <div class="ed-p">
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line half"></div>
+                                    </div>
+                                    <div class="ed-p" style="margin-top: 10px;">
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line"></div>
+                                        <div class="mock-type" style="margin-top: 4px;">|<span class="blink">_</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End carousel-container -->
+
+            <div class="carousel-pagination">
+                <span class="carousel-dot active" onclick="goToSlide(1)"></span>
+                <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                <span class="carousel-dot" onclick="goToSlide(4)"></span>
+                <span class="carousel-dot" onclick="goToSlide(5)"></span>
             </div>
-        </div>
-        <div class="glow-effect"></div>
+
+            <div class="glow-effect"></div>
         </div>
     </header>
 
@@ -250,10 +544,10 @@
 
         <div class="video-wrapper">
             <div class="video-container glassy">
-                <div class="video-placeholder">
-                    <i data-lucide="play" class="play-icon"></i>
-                    <p data-i18n="videoPlaceholder">Introduction video coming soon</p>
-                </div>
+                <iframe src="https://www.youtube.com/embed/wqa__Hcy1oM" title="ResearchCube Introduction Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="width: 100%; height: 100%; border: none;">
+                </iframe>
             </div>
         </div>
 
@@ -583,6 +877,20 @@
     <script>
         const translations = {
             en: {
+                "cardAISuggestions": "AI Suggestions",
+                "cardOneClickSave": "One-Click Save",
+                "cardSmartHighlight": "Smart Highlight",
+                "cardPdfChat": "PDF Chat",
+                "cardAutoSummary": "Auto-Summary",
+                "cardAnnotation": "Annotation",
+                "cardDataProcessing": "Data Processing",
+                "cardCodeGen": "Code Gen",
+                "cardConceptExtract": "Concept Extract",
+                "cardDrafting": "Drafting",
+                "cardAutoFormat": "Auto-Format",
+                "cardMsWordAssistant": "MS Word Assistant",
+                "cardLatexEditor": "LaTeX Editor",
+                "cardLiveCollab": "Live Collab",
                 navAbout: "About",
                 navFeatures: "Features",
                 navPricing: "Pricing",
@@ -596,7 +904,7 @@
                 step1: "Source.pdf",
                 step2: "Analyzing...",
                 step3: "Drafting",
-                heroSub: "Stop getting lost between applications. Unify your literature search, PDF reading, note-taking, AI data analysis, and report drafting into a single professional workspace.",
+                heroSub: "Stop getting lost between applications. Unify your literature search, PDF reading, note-taking, AI data analysis, and enjoy a premium AI-assisted writing experience in both LaTeX and Word within a single professional workspace.",
                 btnDownload: "Get from Microsoft Store",
                 btnWatchTour: "Explore the Architecture",
                 heroNote: "✓ Your files stay with you  ✓ Works offline  ✓ Native Windows 10/11",
@@ -693,6 +1001,20 @@
                 btnSubmit: "Send Message"
             },
             tr: {
+                "cardAISuggestions": "Yapay Zeka Önerileri",
+                "cardOneClickSave": "Tek Tıkla Kaydet",
+                "cardSmartHighlight": "Akıllı Vurgu",
+                "cardPdfChat": "PDF Sohbeti",
+                "cardAutoSummary": "Oto-Özet",
+                "cardAnnotation": "Not Alma",
+                "cardDataProcessing": "Veri İşleme",
+                "cardCodeGen": "Kod Üretimi",
+                "cardConceptExtract": "Kavram Çıkarımı",
+                "cardDrafting": "Taslak Hazırlama",
+                "cardAutoFormat": "Oto-Biçimlendirme",
+                "cardMsWordAssistant": "MS Word Asistanı",
+                "cardLatexEditor": "LaTeX Editörü",
+                "cardLiveCollab": "Canlı Çalışma",
                 navAbout: "Hakkında",
                 navFeatures: "Özellikler",
                 navGetEarlyAccess: "Microsoft Store'dan Edin",
@@ -705,7 +1027,7 @@
                 step1: "Kaynak.pdf",
                 step2: "Analiz Ediliyor...",
                 step3: "Taslak Çıkarılıyor",
-                heroSub: "Uygulamalar arasında kaybolmaya son verin. Literatür araştırması, PDF okuma, not alma, yapay zeka desteği ve raporlama süreçlerinizi tek bir profesyonel çalışma alanında birleştirin.",
+                heroSub: "Uygulamalar arasında kaybolmaya son verin. Literatür araştırması, PDF okuma, not alma, veri analizi ve hem LaTeX hem de Word'de premium bir yapay zeka destekli yazma deneyimini tek bir profesyonel çalışma alanında birleştirin.",
                 btnDownload: "Microsoft Store'dan İndir",
                 btnWatchTour: "Mimariyi Keşfedin",
                 heroNote: "✓ Dosyalarınız sizinle kalır  ✓ Çevrimdışı çalışır  ✓ Native Windows 10/11",
@@ -803,6 +1125,20 @@
                 btnSubmit: "Mesaj Gönder"
             },
             ar: {
+                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
+                "cardOneClickSave": "حفظ بنقرة واحدة",
+                "cardSmartHighlight": "تظليل ذكي",
+                "cardPdfChat": "دردشة PDF",
+                "cardAutoSummary": "تلخيص آلي",
+                "cardAnnotation": "تعليق توضيحي",
+                "cardDataProcessing": "معالجة البيانات",
+                "cardCodeGen": "توليد الكود",
+                "cardConceptExtract": "استخراج المفاهيم",
+                "cardDrafting": "صياغة",
+                "cardAutoFormat": "تنسيق آلي",
+                "cardMsWordAssistant": "مساعد MS Word",
+                "cardLatexEditor": "محرر LaTeX",
+                "cardLiveCollab": "تعاون مباشر",
                 navAbout: "حول",
                 navFeatures: "المميزات",
                 navPricing: "الأسعار",
@@ -815,7 +1151,7 @@
                 step1: "المصدر.pdf",
                 step2: "جاري التحليل...",
                 step3: "صياغة التقرير",
-                heroSub: "قلل ساعات البحث إلى دقائق. قم بتلخيص ملفات PDF تلقائيًا على الفور، وقم بإدارة عملية البحث والتحليل والكتابة بالكامل في مساحة عمل واحدة آمنة.",
+                heroSub: "قلل ساعات البحث إلى دقائق. قم بتوحيد البحث في المؤلفات، وقراءة ملفات PDF، وتدوين الملاحظات، وتحليل البيانات، واستمتع بتجربة كتابة احترافية مدعومة بالذكاء الاصطناعي في كل من LaTeX و Word داخل مساحة عمل واحدة.",
                 btnDownload: "تحميل لويندوز",
                 btnWatchTour: "شاهد الجولة",
                 heroNote: "✓ ملفاتك تبقى معك ✓ يعمل بدون اتصال بالإنترنت ✓ Native Windows 10/11",
@@ -910,6 +1246,20 @@
                 btnSubmit: "إرسال الرسالة"
             },
             fr: {
+                "cardAISuggestions": "Suggestions IA",
+                "cardOneClickSave": "Sauvegarde en 1 Clic",
+                "cardSmartHighlight": "Surlignage Intel.",
+                "cardPdfChat": "Chat PDF",
+                "cardAutoSummary": "Auto-Résumé",
+                "cardAnnotation": "Annotation",
+                "cardDataProcessing": "Traitement Data",
+                "cardCodeGen": "Gén. Code",
+                "cardConceptExtract": "Extrac. Concept",
+                "cardDrafting": "Rédaction",
+                "cardAutoFormat": "Formatage Auto",
+                "cardMsWordAssistant": "Assistant MS Word",
+                "cardLatexEditor": "Éditeur LaTeX",
+                "cardLiveCollab": "Collab. Direct",
                 navAbout: "À propos",
                 navFeatures: "Fonctionnalités",
                 navPricing: "Tarification",
@@ -922,7 +1272,7 @@
                 step1: "Source.pdf",
                 step2: "Analyse en cours...",
                 step3: "Rédaction",
-                heroSub: "Réduisez des heures de recherche à quelques minutes. Résumez automatiquement les PDF instantanément et gérez tout votre processus de recherche, d'analyse et de rédaction dans un seul espace de travail sécurisé.",
+                heroSub: "Ne vous perdez plus entre plusieurs applications. Unifiez votre recherche documentaire, la lecture de PDF, la prise de notes, l'analyse de données par IA et profitez d'une expérience de rédaction premium assistée par IA sur LaTeX et Word dans un seul espace de travail.",
                 btnDownload: "Télécharger pour Windows",
                 btnWatchTour: "Voir la démo",
                 heroNote: "✓ Vos fichiers restent avec vous ✓ Fonctionne hors ligne ✓ Native Windows 10/11",
@@ -1018,6 +1368,20 @@
                 btnSubmit: "Envoyer le message"
             },
             es: {
+                "cardAISuggestions": "Sugerencias de IA",
+                "cardOneClickSave": "Guardar con un clic",
+                "cardSmartHighlight": "Resaltado Inteligente",
+                "cardPdfChat": "Chat de PDF",
+                "cardAutoSummary": "Auto-Resumen",
+                "cardAnnotation": "Anotación",
+                "cardDataProcessing": "Proces. de Datos",
+                "cardCodeGen": "Gen. de Código",
+                "cardConceptExtract": "Extrac. de Conceptos",
+                "cardDrafting": "Borrador",
+                "cardAutoFormat": "Auto-Formato",
+                "cardMsWordAssistant": "Asistente MS Word",
+                "cardLatexEditor": "Editor LaTeX",
+                "cardLiveCollab": "Colab. en Vivo",
                 navAbout: "Sobre",
                 navFeatures: "Funciones",
                 navPricing: "Precios",
@@ -1030,7 +1394,7 @@
                 step1: "Fuente.pdf",
                 step2: "Analizando...",
                 step3: "Redactando",
-                heroSub: "Reduce horas de búsqueda a minutos. Resume automáticamente los PDF al instante y gestiona todo tu proceso de investigación, análisis y redacción en un único espacio de trabajo seguro.",
+                heroSub: "Deja de perderte entre aplicaciones. Unifica tu búsqueda de literatura, lectura de PDF, toma de notas, análisis de datos con IA y disfruta de una experiencia de escritura premium asistida por IA tanto en LaTeX como en Word en un solo espacio de trabajo.",
                 btnDownload: "Descargar para Windows",
                 btnWatchTour: "Ver demostración",
                 heroNote: "✓ Tus archivos se quedan contigo ✓ Funciona offline ✓ Native Windows 10/11",
@@ -1126,6 +1490,20 @@
                 btnSubmit: "Enviar mensaje"
             },
             de: {
+                "cardAISuggestions": "KI-Vorschläge",
+                "cardOneClickSave": "Ein-Klick Speichern",
+                "cardSmartHighlight": "Smartes Markieren",
+                "cardPdfChat": "PDF-Chat",
+                "cardAutoSummary": "Auto-Zusammenfassung",
+                "cardAnnotation": "Anmerkung",
+                "cardDataProcessing": "Datenverarbeitung",
+                "cardCodeGen": "Code-Gen",
+                "cardConceptExtract": "Konzept-Extraktion",
+                "cardDrafting": "Entwurf",
+                "cardAutoFormat": "Auto-Formatierung",
+                "cardMsWordAssistant": "MS Word Assistent",
+                "cardLatexEditor": "LaTeX-Editor",
+                "cardLiveCollab": "Live-Zusammenarbeit",
                 navAbout: "Über uns",
                 navFeatures: "Features",
                 navPricing: "Preise",
@@ -1138,7 +1516,7 @@
                 step1: "Quelle.pdf",
                 step2: "Analysieren...",
                 step3: "Entwerfen",
-                heroSub: "Reduzieren Sie die stundenlange Literatursuche auf Minuten. Fassen Sie PDFs sofort automatisch zusammen und verwalten Sie Ihren gesamten Forschungs-, Analyse- und Schreibprozess in einem einzigen sicheren Arbeitsbereich.",
+                heroSub: "Verlieren Sie sich nicht länger zwischen Anwendungen. Vereinen Sie Literatursuche, PDF-Lesen, Notizen, KI-Datenanalyse und genießen Sie ein erstklassiges, KI-gestütztes Schreiberlebnis in LaTeX und Word in einem einzigen Arbeitsbereich.",
                 btnDownload: "Für Windows herunterladen",
                 btnWatchTour: "Tour ansehen",
                 heroNote: "✓ Ihre Dateien bleiben bei Ihnen ✓ Funktioniert offline ✓ Native Windows 10/11",
@@ -1234,6 +1612,20 @@
                 btnSubmit: "Nachricht senden"
             },
             zh: {
+                "cardAISuggestions": "AI 建议",
+                "cardOneClickSave": "一键保存",
+                "cardSmartHighlight": "智能高亮",
+                "cardPdfChat": "PDF 聊天",
+                "cardAutoSummary": "自动摘要",
+                "cardAnnotation": "批注",
+                "cardDataProcessing": "数据处理",
+                "cardCodeGen": "代码生成",
+                "cardConceptExtract": "概念提取",
+                "cardDrafting": "起草",
+                "cardAutoFormat": "自动排版",
+                "cardMsWordAssistant": "MS Word 助手",
+                "cardLatexEditor": "LaTeX 编辑器",
+                "cardLiveCollab": "实时协作",
                 navAbout: "关于",
                 navFeatures: "功能",
                 navPricing: "定价",
@@ -1246,7 +1638,7 @@
                 step1: "源文件.pdf",
                 step2: "分析中...",
                 step3: "起草中",
-                heroSub: "将数小时的文献搜索缩短至几分钟。即时自动总结 PDF，并在一个安全的工作空间中管理您的整个研究、分析和写作过程。",
+                heroSub: "告别在多个应用程序之间迷失。将您的文献搜索、PDF 阅读、笔记记录、AI 数据分析统一起来，并在一个专业的科研空间中享受支持 LaTeX 和 Word 的高级 AI 辅助写作体验。",
                 btnDownload: "下载 Windows 版",
                 btnWatchTour: "观看演示",
                 heroNote: "✓ 文件保留在本地 ✓ 支持离线工作 ✓ Native Windows 10/11",
@@ -1343,6 +1735,20 @@
                 btnSubmit: "发送留言"
             },
             ja: {
+                "cardAISuggestions": "AIの提案",
+                "cardOneClickSave": "ワンクリック保存",
+                "cardSmartHighlight": "スマートハイライト",
+                "cardPdfChat": "PDFチャット",
+                "cardAutoSummary": "自動要約",
+                "cardAnnotation": "注釈",
+                "cardDataProcessing": "データ処理",
+                "cardCodeGen": "コード生成",
+                "cardConceptExtract": "概念抽出",
+                "cardDrafting": "下書き",
+                "cardAutoFormat": "自動フォーマット",
+                "cardMsWordAssistant": "MS Wordアシスタント",
+                "cardLatexEditor": "LaTeXエディタ",
+                "cardLiveCollab": "リアルタイム共同作業",
                 navAbout: "詳細",
                 navFeatures: "機能",
                 navPricing: "料金",
@@ -1355,7 +1761,7 @@
                 step1: "ソース.pdf",
                 step2: "分析中...",
                 step3: "草稿作成中",
-                heroSub: "何時間もかかる文献検索を数分に短縮します。PDF を瞬時に自動要約し、研究、分析、執筆プロセスのすべてを 1 つの安全なワークスペースで管理します。",
+                heroSub: "複数のアプリケーションを行き来するのはやめましょう。文献検索、PDFの閲覧、メモ取り、AIデータ分析を統合し、LaTeXとWordの両方でプレミアムなAI支援による執筆体験をプロフェッショナルな単一のワークスペースで実現します。",
                 btnDownload: "Windows版をダウンロード",
                 btnWatchTour: "ツアーを見る",
                 heroNote: "✓ ファイルはあなたの手元に ✓ オフライン動作 ✓ Native Windows 10/11",
@@ -1577,6 +1983,41 @@
                 });
         }
 
+        // Carousel Logic
+        let currentSlide = 1;
+        const totalSlides = 5;
+        let slideInterval;
+
+        function goToSlide(slideIndex) {
+            // Hide all slides
+            document.querySelectorAll('.carousel-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            // Uncheck all dots
+            document.querySelectorAll('.carousel-dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            // Show current slide
+            document.getElementById(`slide-${slideIndex}`).classList.add('active');
+            // Check current dot
+            document.querySelectorAll('.carousel-dot')[slideIndex - 1].classList.add('active');
+
+            currentSlide = slideIndex;
+            resetSlideInterval();
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next > totalSlides) next = 1;
+            goToSlide(next);
+        }
+
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
         // Initialize content
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
@@ -1584,6 +2025,7 @@
             updateThemeAssets(true);
         }
         setLanguage(currentLang);
+        resetSlideInterval(); // Start carousel
     </script>
 </body>
 
