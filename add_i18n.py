@@ -16,7 +16,14 @@ new_translations = {
         'cardAutoFormat': 'Auto-Format',
         'cardMsWordAssistant': 'MS Word Assistant',
         'cardLatexEditor': 'LaTeX Editor',
-        'cardLiveCollab': 'Live Collab'
+        'cardLiveCollab': 'Live Collab',
+        'orbitPdf': 'PDF Reader',
+        'orbitSearch': 'Literature Search',
+        'orbitEditor': 'Smart Editor',
+        'orbitAI': 'AI Tools',
+        'btnSending': 'Sending...',
+        'btnSent': 'Sent!',
+        'btnError': 'Error!'
     },
     'tr': {
         'cardAISuggestions': 'Yapay Zeka Önerileri',
@@ -32,7 +39,14 @@ new_translations = {
         'cardAutoFormat': 'Oto-Biçimlendirme',
         'cardMsWordAssistant': 'MS Word Asistanı',
         'cardLatexEditor': 'LaTeX Editörü',
-        'cardLiveCollab': 'Canlı Çalışma'
+        'cardLiveCollab': 'Canlı Çalışma',
+        'orbitPdf': 'PDF Okuyucu',
+        'orbitSearch': 'Literatür Taraması',
+        'orbitEditor': 'Akıllı Editör',
+        'orbitAI': 'Yapay Zeka Araçları',
+        'btnSending': 'Gönderiliyor...',
+        'btnSent': 'Gönderildi!',
+        'btnError': 'Hata Oluştu!'
     },
     'ar': {
         'cardAISuggestions': 'اقتراحات الذكاء الاصطناعي',
@@ -48,7 +62,14 @@ new_translations = {
         'cardAutoFormat': 'تنسيق آلي',
         'cardMsWordAssistant': 'مساعد MS Word',
         'cardLatexEditor': 'محرر LaTeX',
-        'cardLiveCollab': 'تعاون مباشر'
+        'cardLiveCollab': 'تعاون مباشر',
+        'orbitPdf': 'قارئ PDF',
+        'orbitSearch': 'البحث في المؤلفات',
+        'orbitEditor': 'محرر ذكي',
+        'orbitAI': 'أدوات الذكاء الاصطناعي',
+        'btnSending': 'جاري الإرسال...',
+        'btnSent': 'تم الإرسال!',
+        'btnError:': 'حدث خطأ!'
     },
     'de': {
         'cardAISuggestions': 'KI-Vorschläge',
@@ -64,7 +85,14 @@ new_translations = {
         'cardAutoFormat': 'Auto-Formatierung',
         'cardMsWordAssistant': 'MS Word Assistent',
         'cardLatexEditor': 'LaTeX-Editor',
-        'cardLiveCollab': 'Live-Zusammenarbeit'
+        'cardLiveCollab': 'Live-Zusammenarbeit',
+        'orbitPdf': 'PDF-Reader',
+        'orbitSearch': 'Literatursuche',
+        'orbitEditor': 'Smart-Editor',
+        'orbitAI': 'KI-Tools',
+        'btnSending': 'Wird gesendet...',
+        'btnSent': 'Gesendet!',
+        'btnError': 'Fehler!'
     },
     'es': {
         'cardAISuggestions': 'Sugerencias de IA',
@@ -80,7 +108,14 @@ new_translations = {
         'cardAutoFormat': 'Auto-Formato',
         'cardMsWordAssistant': 'Asistente MS Word',
         'cardLatexEditor': 'Editor LaTeX',
-        'cardLiveCollab': 'Colab. en Vivo'
+        'cardLiveCollab': 'Colab. en Vivo',
+        'orbitPdf': 'Lector de PDF',
+        'orbitSearch': 'Búsqueda de Literatura',
+        'orbitEditor': 'Editor Inteligente',
+        'orbitAI': 'Herramientas de IA',
+        'btnSending': 'Enviando...',
+        'btnSent': '¡Enviado!',
+        'btnError': '¡Error!'
     },
     'fr': {
         'cardAISuggestions': 'Suggestions IA',
@@ -96,7 +131,14 @@ new_translations = {
         'cardAutoFormat': 'Formatage Auto',
         'cardMsWordAssistant': 'Assistant MS Word',
         'cardLatexEditor': 'Éditeur LaTeX',
-        'cardLiveCollab': 'Collab. Direct'
+        'cardLiveCollab': 'Collab. Direct',
+        'orbitPdf': 'Lecteur PDF',
+        'orbitSearch': 'Recherche de Littérature',
+        'orbitEditor': 'Éditeur Intelligent',
+        'orbitAI': 'Outils IA',
+        'btnSending': 'Envoi en cours...',
+        'btnSent': 'Envoyé !',
+        'btnError': 'Erreur !'
     },
     'ja': {
         'cardAISuggestions': 'AIの提案',
@@ -112,7 +154,14 @@ new_translations = {
         'cardAutoFormat': '自動フォーマット',
         'cardMsWordAssistant': 'MS Wordアシスタント',
         'cardLatexEditor': 'LaTeXエディタ',
-        'cardLiveCollab': 'リアルタイム共同作業'
+        'cardLiveCollab': 'リアルタイム共同作業',
+        'orbitPdf': 'PDFリーダー',
+        'orbitSearch': '文献検索',
+        'orbitEditor': 'スマートエディタ',
+        'orbitAI': 'AIツール',
+        'btnSending': '送信中...',
+        'btnSent': '送信完了！',
+        'btnError': 'エラーが発生しました'
     },
     'zh': {
         'cardAISuggestions': 'AI 建议',
@@ -128,7 +177,14 @@ new_translations = {
         'cardAutoFormat': '自动排版',
         'cardMsWordAssistant': 'MS Word 助手',
         'cardLatexEditor': 'LaTeX 编辑器',
-        'cardLiveCollab': '实时协作'
+        'cardLiveCollab': '实时协作',
+        'orbitPdf': 'PDF 阅读器',
+        'orbitSearch': '文献检索',
+        'orbitEditor': '智能编辑器',
+        'orbitAI': 'AI 工具',
+        'btnSending': '发送中...',
+        'btnSent': '已发送！',
+        'btnError': '发送失败！'
     }
 }
 
