@@ -1000,7 +1000,16 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-socials {
+    text-align: right;
 }
 
 .footer-logo {
@@ -1013,16 +1022,56 @@ footer {
 
 .socials {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
+    align-items: center;
 }
 
 .socials a {
     color: var(--text-muted);
     text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
 }
 
-.socials a:hover {
-    color: var(--primary);
+.socials a svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease;
+}
+
+.x-btn:hover {
+    background: #000000 !important;
+    border-color: #333 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.linkedin-btn:hover {
+    background: #0077B5 !important;
+    border-color: #0077B5 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.3);
+}
+
+.light-theme .x-btn:hover {
+    background: #000000 !important;
+}
+
+.socials a:hover svg {
+    transform: scale(1.1);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* RESPONSIVE */
@@ -1164,6 +1213,23 @@ footer {
 
     .tech-visual {
         transform: scale(0.8);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .footer-brand,
+    .footer-socials {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: center;
     }
 }
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_roadmap.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.418.0/dist/umd/lucide.min.js"></script>
     <style>
         /* RTL Support and Global UI Tweaks */
         [dir="rtl"] {
@@ -863,27 +863,33 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">
-                <img src="assets/logo_white.png" alt="Logo" class="logo-dark" width="40">
-                <img src="assets/logo.png" alt="Logo" class="logo-light" width="40">
-                <span>ResearchCube</span>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/logo_white.png" alt="Logo" class="logo-dark" width="40">
+                    <img src="assets/logo.png" alt="Logo" class="logo-light" width="40">
+                    <span>ResearchCube</span>
+                </div>
+                <p data-i18n="footerRights" style="margin-top: 15px;">&copy; 2026 ResearchCube. All rights reserved.</p>
+                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;" data-i18n="footerDevelopedBy">Developed by <strong>rcubetech</strong></p>
             </div>
-            <p data-i18n="footerRights">&copy; 2026 ResearchCube. All rights reserved.</p>
-            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;" data-i18n="footerDevelopedBy">Developed by
-                <strong>rcubetech</strong>
-            </p>
-            <!-- Socials removed for now -->
-            <!-- <div class="socials">
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
-            </div> -->
+            
+            <div class="footer-socials">
+                <p data-i18n="footerFollowUs" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 12px; color: var(--text-main);">Follow us for updates</p>
+                <div class="socials">
+                    <a href="https://x.com/ResearchCubePro" target="_blank" rel="noopener noreferrer" title="Follow us on X (Twitter)" class="social-btn x-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/rcubetechcenter/" target="_blank" rel="noopener noreferrer" title="Follow us on LinkedIn" class="social-btn linkedin-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.981 0 1.775-.773 1.775-1.729V1.729C24 .774 23.206 0 22.222 0z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
         const translations = {
-            en: {
-                "cardAISuggestions": "AI Suggestions",
+            en: {                "cardAISuggestions": "AI Suggestions",
                 "cardOneClickSave": "One-Click Save",
                 "cardSmartHighlight": "Smart Highlight",
                 "cardPdfChat": "PDF Chat",
@@ -897,27 +903,6 @@
                 "cardMsWordAssistant": "MS Word Assistant",
                 "cardLatexEditor": "LaTeX Editor",
                 "cardLiveCollab": "Live Collab",
-                "orbitPdf": "PDF Reader",
-                "orbitSearch": "Literature Search",
-                "orbitEditor": "Smart Editor",
-                "orbitAI": "AI Tools",
-                "btnSending": "Sending...",
-                "btnSent": "Sent!",
-                "btnError": "Error!",
-                "cardAISuggestions": "AI Suggestions",
-                "cardOneClickSave": "One-Click Save",
-                "cardSmartHighlight": "Smart Highlight",
-                "cardPdfChat": "PDF Chat",
-                "cardAutoSummary": "Auto-Summary",
-                "cardAnnotation": "Annotation",
-                "cardDataProcessing": "Data Processing",
-                "cardCodeGen": "Code Gen",
-                "cardConceptExtract": "Concept Extract",
-                "cardDrafting": "Draft Creation",
-                "cardAutoFormat": "Smart Formatting",
-                "cardMsWordAssistant": "MS Word Integration",
-                "cardLatexEditor": "LaTeX Editor",
-                "cardLiveCollab": "Real-time Collaboration",
                 "orbitPdf": "PDF Reader",
                 "orbitSearch": "Literature Search",
                 "orbitEditor": "Smart Editor",
@@ -1009,6 +994,7 @@
                 "mapExportDesc": "Transform your imported raw data, tables, and findings into a professional scientific format that perfectly complies with your target journal's guidelines.",
                 "footerRights": "&copy; 2026 ResearchCube. All rights reserved.",
                 "footerDevelopedBy": "Developed by <strong>rcubetech</strong>",
+                "footerFollowUs": "Follow us for updates",
                 "contactTitle": "Get in Touch",
                 "contactDesc": "Have questions or feedback? We'd love to hear from you.",
                 "contactNameLabel": "Name",
@@ -1017,10 +1003,8 @@
                 "contactEmailPlace": "your@email.com",
                 "contactMessageLabel": "Message",
                 "contactMessagePlace": "How can we help?",
-                "btnSubmit": "Send Message"
-            },
-            tr: {
-                "cardAISuggestions": "Yapay Zeka Önerileri",
+                "btnSubmit": "Send Message"},
+            tr: {                "cardAISuggestions": "Yapay Zeka Önerileri",
                 "cardOneClickSave": "Tek Tıkla Kaydet",
                 "cardSmartHighlight": "Akıllı Vurgu",
                 "cardPdfChat": "PDF Sohbeti",
@@ -1034,27 +1018,6 @@
                 "cardMsWordAssistant": "MS Word Asistanı",
                 "cardLatexEditor": "LaTeX Editörü",
                 "cardLiveCollab": "Canlı Çalışma",
-                "orbitPdf": "PDF Okuyucu",
-                "orbitSearch": "Literatür Taraması",
-                "orbitEditor": "Akıllı Editör",
-                "orbitAI": "Yapay Zeka Araçları",
-                "btnSending": "Gönderiliyor...",
-                "btnSent": "Gönderildi!",
-                "btnError": "Hata Oluştu!",
-                "cardAISuggestions": "Yapay Zeka Önerileri",
-                "cardOneClickSave": "Tek Tıkla Kaydet",
-                "cardSmartHighlight": "Akıllı Vurgu",
-                "cardPdfChat": "PDF Sohbeti",
-                "cardAutoSummary": "Oto-Özet",
-                "cardAnnotation": "Not Alma",
-                "cardDataProcessing": "Veri İşleme",
-                "cardCodeGen": "Kod Üretimi",
-                "cardConceptExtract": "Kavram Çıkarımı",
-                "cardDrafting": "Taslak Oluşturma",
-                "cardAutoFormat": "Akıllı Biçimlendirme",
-                "cardMsWordAssistant": "MS Word Entegrasyonu",
-                "cardLatexEditor": "LaTeX Editörü",
-                "cardLiveCollab": "Eşzamanlı İşbirliği",
                 "orbitPdf": "PDF Okuyucu",
                 "orbitSearch": "Literatür Taraması",
                 "orbitEditor": "Akıllı Editör",
@@ -1119,10 +1082,6 @@
                 "featPro2": "<i data-lucide=\"check\"></i> Sınırsız Yapay Zeka Desteği",
                 "featPro3": "<i data-lucide=\"check\"></i> Sınırsız Rapor Oluşturma",
                 "featPro4": "<i data-lucide=\"check\"></i> Gelişmiş Bulut Senkronizasyonu",
-                "orbitPdf": "PDF Okuyucu",
-                "orbitSearch": "Literatür Taraması",
-                "orbitEditor": "Akıllı Editör",
-                "orbitAI": "Yapay Zeka Araçları",
                 "btnPro": "Profesyonel'e Geçin",
                 "pricingContact": "Kurumsal alımlar ve AI entegrasyonları için lütfen <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a> adresinden bizimle iletişime geçiniz.",
                 "compTitle": "Neden ResearchCube?",
@@ -1150,6 +1109,7 @@
                 "mapExportDesc": "İçe aktarılan ham verilerinizi, tablolarınızı ve bulgularınızı, hedef derginizin yayın kurallarına tam uyumlu, profesyonel bir bilimsel formata dönüştürün.",
                 "footerRights": "&copy; 2026 ResearchCube. Tüm hakları saklıdır.",
                 "footerDevelopedBy": "<strong>rcubetech</strong> tarafından geliştirilmiştir",
+                "footerFollowUs": "Güncellemeler için bizi takip edin",
                 "contactTitle": "İletişime Geçin",
                 "contactDesc": "Sorularınız veya geri bildirimleriniz mi var? Sizden haber almayı çok isteriz.",
                 "contactNameLabel": "İsim",
@@ -1158,31 +1118,8 @@
                 "contactEmailPlace": "eposta@adresiniz.com",
                 "contactMessageLabel": "Mesaj",
                 "contactMessagePlace": "Size nasıl yardımcı olabiliriz?",
-                "btnSubmit": "Mesaj Gönder"
-            },
-            de: {
-                "cardAISuggestions": "KI-Vorschläge",
-                "cardOneClickSave": "Ein-Klick Speichern",
-                "cardSmartHighlight": "Smartes Markieren",
-                "cardPdfChat": "PDF-Chat",
-                "cardAutoSummary": "Auto-Zusammenfassung",
-                "cardAnnotation": "Anmerkung",
-                "cardDataProcessing": "Datenverarbeitung",
-                "cardCodeGen": "Code-Gen",
-                "cardConceptExtract": "Konzept-Extraktion",
-                "cardDrafting": "Entwurf",
-                "cardAutoFormat": "Auto-Formatierung",
-                "cardMsWordAssistant": "MS Word Assistent",
-                "cardLatexEditor": "LaTeX-Editor",
-                "cardLiveCollab": "Live-Zusammenarbeit",
-                "orbitPdf": "PDF-Reader",
-                "orbitSearch": "Literatursuche",
-                "orbitEditor": "Smart-Editor",
-                "orbitAI": "KI-Tools",
-                "btnSending": "Wird gesendet...",
-                "btnSent": "Gesendet!",
-                "btnError": "Fehler!",
-                "cardAISuggestions": "KI-Vorschläge",
+                "btnSubmit": "Mesaj Gönder"},
+            de: {                "cardAISuggestions": "KI-Vorschläge",
                 "cardOneClickSave": "Ein-Klick Speichern",
                 "cardSmartHighlight": "Smartes Markieren",
                 "cardPdfChat": "PDF-Chat",
@@ -1295,31 +1232,10 @@
                 "contactEmailPlace": "ihre@email.com",
                 "contactMessageLabel": "Nachricht",
                 "contactMessagePlace": "Wie können wir helfen?",
-                "btnSubmit": "Nachricht senden"
+                "btnSubmit": "Nachricht senden",
+                "footerFollowUs": "Folgen Sie uns für Updates",
             },
-            es: {
-                "cardAISuggestions": "Sugerencias de IA",
-                "cardOneClickSave": "Guardar con un clic",
-                "cardSmartHighlight": "Resaltado Inteligente",
-                "cardPdfChat": "Chat de PDF",
-                "cardAutoSummary": "Auto-Resumen",
-                "cardAnnotation": "Anotación",
-                "cardDataProcessing": "Proces. de Datos",
-                "cardCodeGen": "Gen. de Código",
-                "cardConceptExtract": "Extrac. de Conceptos",
-                "cardDrafting": "Borrador",
-                "cardAutoFormat": "Auto-Formato",
-                "cardMsWordAssistant": "Asistente MS Word",
-                "cardLatexEditor": "Editor LaTeX",
-                "cardLiveCollab": "Colab. en Vivo",
-                "orbitPdf": "Lector de PDF",
-                "orbitSearch": "Búsqueda de Literatura",
-                "orbitEditor": "Editor Inteligente",
-                "orbitAI": "Herramientas de IA",
-                "btnSending": "Enviando...",
-                "btnSent": "¡Enviado!",
-                "btnError": "¡Error!",
-                "cardAISuggestions": "Sugerencias de IA",
+            es: {                "cardAISuggestions": "Sugerencias de IA",
                 "cardOneClickSave": "Guardar con un clic",
                 "cardSmartHighlight": "Resaltado Inteligente",
                 "cardPdfChat": "Chat de PDF",
@@ -1432,10 +1348,10 @@
                 "contactEmailPlace": "tu@correo.com",
                 "contactMessageLabel": "Mensaje",
                 "contactMessagePlace": "¿Cómo podemos ayudarte?",
-                "btnSubmit": "Enviar Mensaje"
+                "btnSubmit": "Enviar Mensaje",
+                "footerFollowUs": "Síguenos para actualizaciones",
             },
-            fr: {
-                "cardAISuggestions": "Suggestions IA",
+            fr: {                "cardAISuggestions": "Suggestions IA",
                 "cardOneClickSave": "Sauvegarde en 1 Clic",
                 "cardSmartHighlight": "Surlignage Intel.",
                 "cardPdfChat": "Chat PDF",
@@ -1451,27 +1367,6 @@
                 "cardLiveCollab": "Collab. Direct",
                 "orbitPdf": "Lecteur PDF",
                 "orbitSearch": "Recherche de Littérature",
-                "orbitEditor": "Éditeur Intelligent",
-                "orbitAI": "Outils IA",
-                "btnSending": "Envoi en cours...",
-                "btnSent": "Envoyé !",
-                "btnError": "Erreur !",
-                "cardAISuggestions": "Suggestions IA",
-                "cardOneClickSave": "Sauvegarde 1-Clic",
-                "cardSmartHighlight": "Surlignage Intel.",
-                "cardPdfChat": "Chat PDF",
-                "cardAutoSummary": "Auto-Résumé",
-                "cardAnnotation": "Annotation",
-                "cardDataProcessing": "Traitement Data",
-                "cardCodeGen": "Gén. Code",
-                "cardConceptExtract": "Extrac. Concept",
-                "cardDrafting": "Rédaction",
-                "cardAutoFormat": "Formatage Auto",
-                "cardMsWordAssistant": "Assistant MS Word",
-                "cardLatexEditor": "Éditeur LaTeX",
-                "cardLiveCollab": "Collab. Direct",
-                "orbitPdf": "Lecteur PDF",
-                "orbitSearch": "Recherche Littérature",
                 "orbitEditor": "Éditeur Intelligent",
                 "orbitAI": "Outils IA",
                 "btnSending": "Envoi en cours...",
@@ -1569,10 +1464,10 @@
                 "contactEmailPlace": "votre@email.com",
                 "contactMessageLabel": "Message",
                 "contactMessagePlace": "Comment pouvons-nous vous aider ?",
-                "btnSubmit": "Envoyer le Message"
+                "btnSubmit": "Envoyer le Message",
+                "footerFollowUs": "Suivez-nous pour les mises à jour",
             },
-            ar: {
-                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
+            ar: {                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
                 "cardOneClickSave": "حفظ بنقرة واحدة",
                 "cardSmartHighlight": "تظليل ذكي",
                 "cardPdfChat": "دردشة PDF",
@@ -1593,26 +1488,6 @@
                 "btnSending": "جاري الإرسال...",
                 "btnSent": "تم الإرسال!",
                 "btnError:": "حدث خطأ!",
-                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
-                "cardOneClickSave": "حفظ بنقرة واحدة",
-                "cardSmartHighlight": "تظليل ذكي",
-                "cardPdfChat": "دردشة PDF",
-                "cardAutoSummary": "تلخيص آلي",
-                "cardAnnotation": "تعليق توضيحي",
-                "cardDataProcessing": "معالجة البيانات",
-                "cardCodeGen": "توليد الكود",
-                "cardConceptExtract": "استخراج المفاهيم",
-                "cardDrafting": "صياغة",
-                "cardAutoFormat": "تنسيق آلي",
-                "cardMsWordAssistant": "مساعد MS Word",
-                "cardLatexEditor": "محرر LaTeX",
-                "cardLiveCollab": "تعاون مباشر",
-                "orbitPdf": "قارئ PDF",
-                "orbitSearch": "البحث في المؤلفات",
-                "orbitEditor": "محرر ذكي",
-                "orbitAI": "أدوات الذكاء الاصطناعي",
-                "btnSending": "جاري الإرسال...",
-                "btnSent": "تم الإرسال!",
                 "btnError": "حدث خطأ!",
                 "navAbout": "حول",
                 "navFeatures": "المميزات",
@@ -1706,31 +1581,10 @@
                 "contactEmailPlace": "your@email.com",
                 "contactMessageLabel": "الرسالة",
                 "contactMessagePlace": "كيف يمكننا المساعدة؟",
-                "btnSubmit": "إرسال الرسالة"
+                "btnSubmit": "إرسال الرسالة",
+                "footerFollowUs": "تابعنا للحصول على التحديثات",
             },
-            ja: {
-                "cardAISuggestions": "AIの提案",
-                "cardOneClickSave": "ワンクリック保存",
-                "cardSmartHighlight": "スマートハイライト",
-                "cardPdfChat": "PDFチャット",
-                "cardAutoSummary": "自動要約",
-                "cardAnnotation": "注釈",
-                "cardDataProcessing": "データ処理",
-                "cardCodeGen": "コード生成",
-                "cardConceptExtract": "概念抽出",
-                "cardDrafting": "下書き",
-                "cardAutoFormat": "自動フォーマット",
-                "cardMsWordAssistant": "MS Wordアシスタント",
-                "cardLatexEditor": "LaTeXエディタ",
-                "cardLiveCollab": "リアルタイム共同作業",
-                "orbitPdf": "PDFリーダー",
-                "orbitSearch": "文献検索",
-                "orbitEditor": "スマートエディタ",
-                "orbitAI": "AIツール",
-                "btnSending": "送信中...",
-                "btnSent": "送信完了！",
-                "btnError": "エラーが発生しました",
-                "cardAISuggestions": "AIの提案",
+            ja: {                "cardAISuggestions": "AIの提案",
                 "cardOneClickSave": "ワンクリック保存",
                 "cardSmartHighlight": "スマートハイライト",
                 "cardPdfChat": "PDFチャット",
@@ -1843,31 +1697,10 @@
                 "contactEmailPlace": "your@email.com",
                 "contactMessageLabel": "メッセージ",
                 "contactMessagePlace": "どのようにお手伝いできますか？",
-                "btnSubmit": "メッセージを送信"
+                "btnSubmit": "メッセージを送信",
+                "footerFollowUs": "最新情報をフォローする",
             },
-            zh: {
-                "cardAISuggestions": "AI 建议",
-                "cardOneClickSave": "一键保存",
-                "cardSmartHighlight": "智能高亮",
-                "cardPdfChat": "PDF 聊天",
-                "cardAutoSummary": "自动摘要",
-                "cardAnnotation": "批注",
-                "cardDataProcessing": "数据处理",
-                "cardCodeGen": "代码生成",
-                "cardConceptExtract": "概念提取",
-                "cardDrafting": "起草",
-                "cardAutoFormat": "自动排版",
-                "cardMsWordAssistant": "MS Word 助手",
-                "cardLatexEditor": "LaTeX 编辑器",
-                "cardLiveCollab": "实时协作",
-                "orbitPdf": "PDF 阅读器",
-                "orbitSearch": "文献检索",
-                "orbitEditor": "智能编辑器",
-                "orbitAI": "AI 工具",
-                "btnSending": "发送中...",
-                "btnSent": "已发送！",
-                "btnError": "发送失败！",
-                "cardAISuggestions": "AI 建议",
+            zh: {                "cardAISuggestions": "AI 建议",
                 "cardOneClickSave": "一键保存",
                 "cardSmartHighlight": "智能高亮",
                 "cardPdfChat": "PDF 聊天",
@@ -1980,7 +1813,8 @@
                 "contactEmailPlace": "your@email.com",
                 "contactMessageLabel": "信息",
                 "contactMessagePlace": "我们能如何帮助您？",
-                "btnSubmit": "发送信息"
+                "btnSubmit": "发送信息",
+                "footerFollowUs": "关注我们的动态",
             }
         };
 
@@ -2017,8 +1851,16 @@
                 btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
 
-            lucide.createIcons();
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
 
         // Dropdown toggle for mobile
         document.querySelector('.lang-toggle').addEventListener('click', function (e) {

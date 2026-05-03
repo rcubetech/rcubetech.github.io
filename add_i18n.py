@@ -1,4 +1,5 @@
 import re
+import os
 
 # Dictionary of translations to add
 new_translations = {
@@ -23,7 +24,10 @@ new_translations = {
         'orbitAI': 'AI Tools',
         'btnSending': 'Sending...',
         'btnSent': 'Sent!',
-        'btnError': 'Error!'
+        'btnError': 'Error!',
+        'footerRights': '&copy; 2026 ResearchCube. All rights reserved.',
+        'footerDevelopedBy': 'Developed by <strong>rcubetech</strong>',
+        'footerFollowUs': 'Follow us for updates'
     },
     'tr': {
         'cardAISuggestions': 'Yapay Zeka Önerileri',
@@ -46,190 +50,107 @@ new_translations = {
         'orbitAI': 'Yapay Zeka Araçları',
         'btnSending': 'Gönderiliyor...',
         'btnSent': 'Gönderildi!',
-        'btnError': 'Hata Oluştu!'
+        'btnError': 'Hata Oluştu!',
+        'footerRights': '&copy; 2026 ResearchCube. Tüm hakları saklıdır.',
+        'footerDevelopedBy': '<strong>rcubetech</strong> tarafından geliştirilmiştir',
+        'footerFollowUs': 'Güncellemeler için bizi takip edin'
     },
     'ar': {
-        'cardAISuggestions': 'اقتراحات الذكاء الاصطناعي',
-        'cardOneClickSave': 'حفظ بنقرة واحدة',
-        'cardSmartHighlight': 'تظليل ذكي',
-        'cardPdfChat': 'دردشة PDF',
-        'cardAutoSummary': 'تلخيص آلي',
-        'cardAnnotation': 'تعليق توضيحي',
-        'cardDataProcessing': 'معالجة البيانات',
-        'cardCodeGen': 'توليد الكود',
-        'cardConceptExtract': 'استخراج المفاهيم',
-        'cardDrafting': 'صياغة',
-        'cardAutoFormat': 'تنسيق آلي',
-        'cardMsWordAssistant': 'مساعد MS Word',
-        'cardLatexEditor': 'محرر LaTeX',
-        'cardLiveCollab': 'تعاون مباشر',
-        'orbitPdf': 'قارئ PDF',
-        'orbitSearch': 'البحث في المؤلفات',
-        'orbitEditor': 'محرر ذكي',
-        'orbitAI': 'أدوات الذكاء الاصطناعي',
-        'btnSending': 'جاري الإرسال...',
-        'btnSent': 'تم الإرسال!',
-        'btnError:': 'حدث خطأ!'
+        'footerRights': '&copy; 2026 ResearchCube. جميع الحقوق محفوظة.',
+        'footerDevelopedBy': 'تم التطوير بواسطة <strong>rcubetech</strong>',
+        'footerFollowUs': 'تابعنا للحصول على التحديثات'
     },
     'de': {
-        'cardAISuggestions': 'KI-Vorschläge',
-        'cardOneClickSave': 'Ein-Klick Speichern',
-        'cardSmartHighlight': 'Smartes Markieren',
-        'cardPdfChat': 'PDF-Chat',
-        'cardAutoSummary': 'Auto-Zusammenfassung',
-        'cardAnnotation': 'Anmerkung',
-        'cardDataProcessing': 'Datenverarbeitung',
-        'cardCodeGen': 'Code-Gen',
-        'cardConceptExtract': 'Konzept-Extraktion',
-        'cardDrafting': 'Entwurf',
-        'cardAutoFormat': 'Auto-Formatierung',
-        'cardMsWordAssistant': 'MS Word Assistent',
-        'cardLatexEditor': 'LaTeX-Editor',
-        'cardLiveCollab': 'Live-Zusammenarbeit',
-        'orbitPdf': 'PDF-Reader',
-        'orbitSearch': 'Literatursuche',
-        'orbitEditor': 'Smart-Editor',
-        'orbitAI': 'KI-Tools',
-        'btnSending': 'Wird gesendet...',
-        'btnSent': 'Gesendet!',
-        'btnError': 'Fehler!'
+        'footerRights': '&copy; 2026 ResearchCube. Alle Rechte vorbehalten.',
+        'footerDevelopedBy': 'Entwickelt von <strong>rcubetech</strong>',
+        'footerFollowUs': 'Folgen Sie uns für Updates'
     },
     'es': {
-        'cardAISuggestions': 'Sugerencias de IA',
-        'cardOneClickSave': 'Guardar con un clic',
-        'cardSmartHighlight': 'Resaltado Inteligente',
-        'cardPdfChat': 'Chat de PDF',
-        'cardAutoSummary': 'Auto-Resumen',
-        'cardAnnotation': 'Anotación',
-        'cardDataProcessing': 'Proces. de Datos',
-        'cardCodeGen': 'Gen. de Código',
-        'cardConceptExtract': 'Extrac. de Conceptos',
-        'cardDrafting': 'Borrador',
-        'cardAutoFormat': 'Auto-Formato',
-        'cardMsWordAssistant': 'Asistente MS Word',
-        'cardLatexEditor': 'Editor LaTeX',
-        'cardLiveCollab': 'Colab. en Vivo',
-        'orbitPdf': 'Lector de PDF',
-        'orbitSearch': 'Búsqueda de Literatura',
-        'orbitEditor': 'Editor Inteligente',
-        'orbitAI': 'Herramientas de IA',
-        'btnSending': 'Enviando...',
-        'btnSent': '¡Enviado!',
-        'btnError': '¡Error!'
+        'footerRights': '&copy; 2026 ResearchCube. Todos los derechos reservados.',
+        'footerDevelopedBy': 'Desarrollado por <strong>rcubetech</strong>',
+        'footerFollowUs': 'Síguenos para actualizaciones'
     },
     'fr': {
-        'cardAISuggestions': 'Suggestions IA',
-        'cardOneClickSave': 'Sauvegarde en 1 Clic',
-        'cardSmartHighlight': 'Surlignage Intel.',
-        'cardPdfChat': 'Chat PDF',
-        'cardAutoSummary': 'Auto-Résumé',
-        'cardAnnotation': 'Annotation',
-        'cardDataProcessing': 'Traitement Data',
-        'cardCodeGen': 'Gén. Code',
-        'cardConceptExtract': 'Extrac. Concept',
-        'cardDrafting': 'Rédaction',
-        'cardAutoFormat': 'Formatage Auto',
-        'cardMsWordAssistant': 'Assistant MS Word',
-        'cardLatexEditor': 'Éditeur LaTeX',
-        'cardLiveCollab': 'Collab. Direct',
-        'orbitPdf': 'Lecteur PDF',
-        'orbitSearch': 'Recherche de Littérature',
-        'orbitEditor': 'Éditeur Intelligent',
-        'orbitAI': 'Outils IA',
-        'btnSending': 'Envoi en cours...',
-        'btnSent': 'Envoyé !',
-        'btnError': 'Erreur !'
+        'footerRights': '&copy; 2026 ResearchCube. Tous droits réservés.',
+        'footerDevelopedBy': 'Développé par <strong>rcubetech</strong>',
+        'footerFollowUs': 'Suivez-nous pour les mises à jour'
     },
     'ja': {
-        'cardAISuggestions': 'AIの提案',
-        'cardOneClickSave': 'ワンクリック保存',
-        'cardSmartHighlight': 'スマートハイライト',
-        'cardPdfChat': 'PDFチャット',
-        'cardAutoSummary': '自動要約',
-        'cardAnnotation': '注釈',
-        'cardDataProcessing': 'データ処理',
-        'cardCodeGen': 'コード生成',
-        'cardConceptExtract': '概念抽出',
-        'cardDrafting': '下書き',
-        'cardAutoFormat': '自動フォーマット',
-        'cardMsWordAssistant': 'MS Wordアシスタント',
-        'cardLatexEditor': 'LaTeXエディタ',
-        'cardLiveCollab': 'リアルタイム共同作業',
-        'orbitPdf': 'PDFリーダー',
-        'orbitSearch': '文献検索',
-        'orbitEditor': 'スマートエディタ',
-        'orbitAI': 'AIツール',
-        'btnSending': '送信中...',
-        'btnSent': '送信完了！',
-        'btnError': 'エラーが発生しました'
+        'footerRights': '&copy; 2026 ResearchCube. All rights reserved.',
+        'footerDevelopedBy': 'Developed by <strong>rcubetech</strong>',
+        'footerFollowUs': '最新情報をフォローする'
     },
     'zh': {
-        'cardAISuggestions': 'AI 建议',
-        'cardOneClickSave': '一键保存',
-        'cardSmartHighlight': '智能高亮',
-        'cardPdfChat': 'PDF 聊天',
-        'cardAutoSummary': '自动摘要',
-        'cardAnnotation': '批注',
-        'cardDataProcessing': '数据处理',
-        'cardCodeGen': '代码生成',
-        'cardConceptExtract': '概念提取',
-        'cardDrafting': '起草',
-        'cardAutoFormat': '自动排版',
-        'cardMsWordAssistant': 'MS Word 助手',
-        'cardLatexEditor': 'LaTeX 编辑器',
-        'cardLiveCollab': '实时协作',
-        'orbitPdf': 'PDF 阅读器',
-        'orbitSearch': '文献检索',
-        'orbitEditor': '智能编辑器',
-        'orbitAI': 'AI 工具',
-        'btnSending': '发送中...',
-        'btnSent': '已发送！',
-        'btnError': '发送失败！'
+        'footerRights': '&copy; 2026 ResearchCube. 保留所有权利',
+        'footerDevelopedBy': '由 <strong>rcubetech</strong> 开发',
+        'footerFollowUs': '关注我们的动态'
     }
 }
 
-html_file = r'd:\\RcubeTech\\rcubetech.github.io\\index.html'
+html_file = r'd:\RcubeTech\rcubetech.github.io\index.html'
+
+if not os.path.exists(html_file):
+    print(f"Error: {html_file} not found.")
+    exit(1)
 
 with open(html_file, 'r', encoding='utf-8') as f:
     content = f.read()
 
-# 1. Update the HTML labels with data-i18n tags
+# 1. Update the HTML labels with data-i18n tags if not already present
 html_replacements = {
-    '<span class="card-title">AI Suggestions</span>': '<span class="card-title" data-i18n="cardAISuggestions">AI Suggestions</span>',
-    '<span class="card-title">One-Click Save</span>': '<span class="card-title" data-i18n="cardOneClickSave">One-Click Save</span>',
-    '<span class="card-title">Smart Highlight</span>': '<span class="card-title" data-i18n="cardSmartHighlight">Smart Highlight</span>',
-    '<span class="card-title">PDF Chat</span>': '<span class="card-title" data-i18n="cardPdfChat">PDF Chat</span>',
-    '<span class="card-title">Auto-Summary</span>': '<span class="card-title" data-i18n="cardAutoSummary">Auto-Summary</span>',
-    '<span class="card-title">Annotation</span>': '<span class="card-title" data-i18n="cardAnnotation">Annotation</span>',
-    '<span class="card-title">Data Processing</span>': '<span class="card-title" data-i18n="cardDataProcessing">Data Processing</span>',
-    '<span class="card-title">Code Gen</span>': '<span class="card-title" data-i18n="cardCodeGen">Code Gen</span>',
-    '<span class="card-title">Concept Extract</span>': '<span class="card-title" data-i18n="cardConceptExtract">Concept Extract</span>',
-    '<span class="card-title">Drafting</span>': '<span class="card-title" data-i18n="cardDrafting">Drafting</span>',
-    '<span class="card-title">Auto-Format</span>': '<span class="card-title" data-i18n="cardAutoFormat">Auto-Format</span>',
-    '<span class="card-title">MS Word Assistant</span>': '<span class="card-title" data-i18n="cardMsWordAssistant">MS Word Assistant</span>',
-    '<span class="card-title">LaTeX Editor</span>': '<span class="card-title" data-i18n="cardLatexEditor">LaTeX Editor</span>',
-    '<span class="card-title">Live Collab</span>': '<span class="card-title" data-i18n="cardLiveCollab">Live Collab</span>'
+    'AI Suggestions': 'cardAISuggestions',
+    'One-Click Save': 'cardOneClickSave',
+    'Smart Highlight': 'cardSmartHighlight',
+    'PDF Chat': 'cardPdfChat',
+    'Auto-Summary': 'cardAutoSummary',
+    'Annotation': 'cardAnnotation',
+    'Data Processing': 'cardDataProcessing',
+    'Code Gen': 'cardCodeGen',
+    'Concept Extract': 'cardConceptExtract',
+    'Drafting': 'cardDrafting',
+    'Auto-Format': 'cardAutoFormat',
+    'MS Word Assistant': 'cardMsWordAssistant',
+    'LaTeX Editor': 'cardLatexEditor',
+    'Live Collab': 'cardLiveCollab'
 }
 
-for old, new in html_replacements.items():
-    content = content.replace(old, new)
+for text, key in html_replacements.items():
+    # Only replace if it doesn't already have data-i18n
+    pattern = rf'<span class="card-title">{text}</span>'
+    replacement = f'<span class="card-title" data-i18n="{key}">{text}</span>'
+    content = content.replace(pattern, replacement)
 
 # 2. Inject the translations into the javascript dictionary
 # We'll look for blocks like `en: {` or `"en": {`
-# and insert our new pairs right after the opening brace.
+# and insert only MISSING pairs.
 
 for lang, trans_dict in new_translations.items():
-    # Format the additions
-    additions = "\n                " + ",\n                ".join([f'"{k}": "{v}"' for k, v in trans_dict.items()]) + ","
+    # Find the language block
+    lang_pattern = rf'(\b{lang}\b:?\s*{{)'
+    match = re.search(lang_pattern, content)
     
-    # Try different regex for finding the language block
-    pattern1 = rf'(\b{lang}\b:\s*{{)'
-    pattern2 = rf'("{lang}":\s*{{)'
-    
-    if re.search(pattern1, content):
-        content = re.sub(pattern1, r'\1' + additions, content, count=1)
-    elif re.search(pattern2, content):
-        content = re.sub(pattern2, r'\1' + additions, content, count=1)
+    if match:
+        start_idx = match.end()
+        # Find end of block (assuming no nested braces)
+        end_idx = content.find('}', start_idx)
+        if end_idx != -1:
+            body = content[start_idx:end_idx]
+            
+            # Check which keys are missing
+            additions = []
+            for k, v in trans_dict.items():
+                if f'"{k}":' not in body and f"'{k}':" not in body:
+                    additions.append(f'                "{k}": "{v}"')
+            
+            if additions:
+                new_body = body.rstrip()
+                if not new_body.endswith(',') and new_body.strip():
+                    new_body += ','
+                new_body += '\n' + ',\n'.join(additions) + ','
+                content = content[:start_idx] + new_body + content[end_idx:]
+                print(f"Added {len(additions)} keys to {lang}")
+            else:
+                print(f"No keys to add for {lang}")
     else:
         print(f"Warning: Could not find language block for {lang}")
 
