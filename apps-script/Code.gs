@@ -15,6 +15,7 @@
 const SHEET_ID = '12g78hz0z791RZm_wbAHhjDVEyux2YjlDyLtJwYVt0pY';
 const SHEET_NAME = 'Keys';               // tab name inside the Sheet
 const NOTIFY_EMAIL = 'info@rcubetech.com'; // gets a copy of every issued key; set to '' to disable
+const MICROSOFT_STORE_URL = 'https://apps.microsoft.com/detail/9N5K085SCDVZ?hl=en&gl=TR&ocid=pdpshare';
 
 // Accept exact @itu.edu.tr and any subdomain (e.g. @grad.itu.edu.tr)
 const ALLOWED_EXACT_DOMAIN = 'itu.edu.tr';
@@ -151,6 +152,9 @@ Lisans Anahtarınız
 
 ${licenseKey}
 
+Uygulamayı Microsoft Store'dan indirebilirsiniz:
+${MICROSOFT_STORE_URL}
+
 Bu lisans anahtarı kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.
 
 ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.
@@ -177,6 +181,7 @@ AI-Powered Research Workspace`;
     <p>İTÜ ile gerçekleştirdiğimiz iş birliği kapsamında ResearchCube Pro sürümünü ücretsiz kullanabilirsiniz.</p>
     <p style="margin-bottom:4px;"><strong>Lisans Anahtarınız</strong></p>
     <p style="font-size:20px; font-weight:bold; letter-spacing:1px; background:#f0f6ff; padding:14px 18px; border-radius:8px; text-align:center; margin:8px 0 20px;">${licenseKey}</p>
+    <p style="text-align:center; margin:0 0 20px;"><a href="${MICROSOFT_STORE_URL}" style="display:inline-block; background:#2563eb; color:#ffffff; text-decoration:none; font-weight:bold; padding:12px 24px; border-radius:8px;">Microsoft Store'dan İndirin</a></p>
     <p>Bu lisans anahtarı kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.</p>
     <p>ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.</p>
     <p>Bu yolculuğun henüz başındayız.</p>
