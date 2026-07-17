@@ -848,7 +848,10 @@
                 <div class="form-group">
                     <label for="contact-email" data-i18n="contactEmailLabel">Email</label>
                     <input type="email" id="contact-email" data-i18n-placeholder="contactEmailPlace"
-                        placeholder="your@email.com" required>
+                        placeholder="your@email.com" oninput="toggleItuLicenseHint(this.value)" required>
+                    <span class="form-hint" id="itu-license-hint" data-i18n="ituLicenseHint"
+                        style="display:none;">İTÜ e-postanızla yazıyorsanız, ücretsiz Pro lisansınızı almak için
+                        mesajınıza "Lisans" yazmanız yeterlidir.</span>
                 </div>
                 <div class="form-group">
                     <label for="contact-message" data-i18n="contactMessageLabel">Message</label>
@@ -1004,6 +1007,7 @@
                 "contactNamePlace": "Your Name",
                 "contactEmailLabel": "Email",
                 "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "If you're writing from an ITU email address, just include the word \"Lisans\" in your message to get your free Pro license.",
                 "contactMessageLabel": "Message",
                 "contactMessagePlace": "How can we help?",
                 "btnSubmit": "Send Message",
@@ -1120,6 +1124,7 @@
                 "contactNamePlace": "Adınız",
                 "contactEmailLabel": "E-posta",
                 "contactEmailPlace": "eposta@adresiniz.com",
+                "ituLicenseHint": "İTÜ e-postanızla yazıyorsanız, ücretsiz Pro lisansınızı almak için mesajınıza \"Lisans\" yazmanız yeterlidir.",
                 "contactMessageLabel": "Mesaj",
                 "contactMessagePlace": "Size nasıl yardımcı olabiliriz?",
                 "btnSubmit": "Mesaj Gönder",
@@ -1235,6 +1240,7 @@
                 "contactNamePlace": "Ihr Name",
                 "contactEmailLabel": "E-Mail",
                 "contactEmailPlace": "ihre@email.com",
+                "ituLicenseHint": "Wenn Sie von einer ITU-E-Mail-Adresse schreiben, geben Sie einfach das Wort \"Lisans\" in Ihrer Nachricht an, um Ihre kostenlose Pro-Lizenz zu erhalten.",
                 "contactMessageLabel": "Nachricht",
                 "contactMessagePlace": "Wie können wir helfen?",
                 "btnSubmit": "Nachricht senden",
@@ -1352,6 +1358,7 @@
                 "contactNamePlace": "Tu Nombre",
                 "contactEmailLabel": "Correo",
                 "contactEmailPlace": "tu@correo.com",
+                "ituLicenseHint": "Si escribes desde una dirección de correo de la ITU, basta con incluir la palabra \"Lisans\" en tu mensaje para obtener tu licencia Pro gratuita.",
                 "contactMessageLabel": "Mensaje",
                 "contactMessagePlace": "¿Cómo podemos ayudarte?",
                 "btnSubmit": "Enviar Mensaje",
@@ -1469,6 +1476,7 @@
                 "contactNamePlace": "Votre Nom",
                 "contactEmailLabel": "E-mail",
                 "contactEmailPlace": "votre@email.com",
+                "ituLicenseHint": "Si vous écrivez depuis une adresse e-mail ITU, il suffit d'inclure le mot \"Lisans\" dans votre message pour recevoir votre licence Pro gratuite.",
                 "contactMessageLabel": "Message",
                 "contactMessagePlace": "Comment pouvons-nous vous aider ?",
                 "btnSubmit": "Envoyer le Message",
@@ -1587,6 +1595,7 @@
                 "contactNamePlace": "اسمك",
                 "contactEmailLabel": "البريد الإلكتروني",
                 "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "إذا كنت تكتب من عنوان بريد إلكتروني تابع لجامعة ITU، فقط أضف كلمة \"Lisans\" في رسالتك للحصول على ترخيص Pro المجاني.",
                 "contactMessageLabel": "الرسالة",
                 "contactMessagePlace": "كيف يمكننا المساعدة؟",
                 "btnSubmit": "إرسال الرسالة",
@@ -1704,6 +1713,7 @@
                 "contactNamePlace": "あなたの名前",
                 "contactEmailLabel": "メールアドレス",
                 "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "ITUのメールアドレスからお書きの場合、メッセージに「Lisans」という単語を含めるだけで、無料のPro版ライセンスを受け取れます。",
                 "contactMessageLabel": "メッセージ",
                 "contactMessagePlace": "どのようにお手伝いできますか？",
                 "btnSubmit": "メッセージを送信",
@@ -1821,6 +1831,7 @@
                 "contactNamePlace": "您的姓名",
                 "contactEmailLabel": "电子邮件",
                 "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "如果您使用 ITU 邮箱地址发送信息，只需在消息中包含“Lisans”一词，即可获得免费的 Pro 许可证。",
                 "contactMessageLabel": "信息",
                 "contactMessagePlace": "我们能如何帮助您？",
                 "btnSubmit": "发送信息",
@@ -1907,6 +1918,21 @@
             document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Google Apps Script Web App URL that handles every contact form submission:
+        // Turkish reply (+ optional free license) for @itu.edu.tr senders, English
+        // reply for everyone else. See apps-script/README.md for deployment steps.
+        const CONTACT_BACKEND_ENDPOINT = "https://script.google.com/macros/s/AKfycbwz1yBIJKVBByCIiBGdOSKNJ7pzbuKtVEXLWZCzdSgJrqSTs-S3j8P66l2CS1VeYA/exec";
+
+        function isItuEmailClient(email) {
+            const domain = (email.split('@')[1] || '').toLowerCase();
+            return domain === 'itu.edu.tr' || domain.endsWith('.itu.edu.tr');
+        }
+
+        function toggleItuLicenseHint(email) {
+            const hint = document.getElementById('itu-license-hint');
+            hint.style.display = isItuEmailClient(email) ? 'block' : 'none';
+        }
+
         function handleContactSubmit(event) {
             event.preventDefault();
             const btn = event.target.querySelector('button');
@@ -1922,24 +1948,16 @@
             const email = document.getElementById('contact-email').value;
             const message = document.getElementById('contact-message').value;
 
-            // Send via Web3Forms AJAX
-            fetch("https://api.web3forms.com/submit", {
+            fetch(CONTACT_BACKEND_ENDPOINT, {
                 method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    access_key: "82f1ddc1-0df1-419d-be04-248234364601",
-                    name: name,
-                    email: email,
-                    message: message,
-                    subject: "ResearchCube Feedback/Contact",
-                    from_name: "ResearchCube Web Form"
-                })
+                body: JSON.stringify({ name: name, email: email, message: message })
             })
                 .then(response => response.json())
                 .then(data => {
+                    if (data.status === 'error') {
+                        // Apps Script rejected it (already redeemed, out of stock, etc.)
+                        throw new Error(data.message || data.code || 'error');
+                    }
                     // Success
                     btn.innerText = t['btnSent'] || ((currentLang === 'tr') ? 'Gönderildi!' : 'Sent!');
                     btn.style.background = 'var(--accent)';
