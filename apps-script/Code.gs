@@ -33,6 +33,12 @@ const LICENSE_KEYWORD = 'lisans';
 // (bots that hit the endpoint directly either omit loadedAt or fire instantly).
 const MIN_FORM_FILL_MS = 2000;
 
+// reCAPTCHA v3: never expose RECAPTCHA_SECRET_KEY to the client - verification
+// happens here, server-side, which is what makes it a real check (unlike the
+// honeypot/timing gate, which a targeted bot could read out of the page source).
+const RECAPTCHA_SECRET_KEY = '6Lfib3ctAAAAANxASh2RrlN3am_iLm3ciZUJKqkq';
+const RECAPTCHA_MIN_SCORE = 0.5;
+
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
@@ -43,12 +49,14 @@ function doPost(e) {
     const message = (body.message || '').toString().trim();
     const honeypot = (body.hp || '').toString().trim();
     const loadedAt = Number(body.loadedAt);
+    const recaptchaToken = (body.recaptchaToken || '').toString();
 
     // Silently pretend success so bots get no signal to adapt to - no email
     // sent, sheet untouched, no notification, just a fake "ok" response.
     const looksLikeBot = honeypot !== ''
       || !loadedAt
-      || (Date.now() - loadedAt) < MIN_FORM_FILL_MS;
+      || (Date.now() - loadedAt) < MIN_FORM_FILL_MS
+      || !verifyRecaptcha(recaptchaToken);
     if (looksLikeBot) {
       return jsonResponse({ status: 'ok' });
     }
@@ -137,6 +145,27 @@ function doPost(e) {
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Verifies a reCAPTCHA v3 token with Google. An empty token (e.g. the script
+// was blocked client-side) fails closed - treated the same as a bot, since a
+// missing token is exactly what a bot bypassing the frontend would send too.
+function verifyRecaptcha(token) {
+  if (!token) return false;
+  try {
+    const response = UrlFetchApp.fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'post',
+      payload: { secret: RECAPTCHA_SECRET_KEY, response: token },
+      muteHttpExceptions: true
+    });
+    const result = JSON.parse(response.getContentText());
+    return result.success === true
+      && (typeof result.score !== 'number' || result.score >= RECAPTCHA_MIN_SCORE);
+  } catch (err) {
+    // Our call to Google failed (network blip, quota, etc.) - that's not
+    // evidence the sender is a bot, so don't penalize them for our hiccup.
+    return true;
+  }
 }
 
 // Turkish-safe keyword check. JS's default (locale-independent) toLowerCase()

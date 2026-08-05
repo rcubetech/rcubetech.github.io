@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="style_roadmap.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.418.0/dist/umd/lucide.min.js"></script>
+    <!-- reCAPTCHA v3 (invisible) - protects the contact form against bots -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfib3ctAAAAAGO5hT0jZZGGvMAk4nha5QApRk-N" async
+        defer></script>
     <style>
         /* RTL Support and Global UI Tweaks */
         [dir="rtl"] {
@@ -1932,6 +1935,23 @@
         // never see or fill it; simple bots that auto-fill every field do).
         const CONTACT_FORM_LOADED_AT = Date.now();
 
+        const RECAPTCHA_SITE_KEY = "6Lfib3ctAAAAAGO5hT0jZZGGvMAk4nha5QApRk-N";
+
+        // Resolves to a fresh v3 token, or "" if reCAPTCHA didn't load (e.g. blocked
+        // by an ad/privacy blocker). The backend treats a missing token as a bot
+        // signal and drops the submission - that's the same thing a bot bypassing
+        // this script would send, so we can't tell the two apart server-side.
+        function getRecaptchaToken() {
+            if (!window.grecaptcha) return Promise.resolve("");
+            return new Promise(resolve => {
+                grecaptcha.ready(() => {
+                    grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "contact_submit" })
+                        .then(resolve)
+                        .catch(() => resolve(""));
+                });
+            });
+        }
+
         function isItuEmailClient(email) {
             const domain = (email.split('@')[1] || '').toLowerCase();
             return domain === 'itu.edu.tr' || domain.endsWith('.itu.edu.tr');
@@ -1958,13 +1978,14 @@
             const message = document.getElementById('contact-message').value;
             const hp = document.getElementById('contact-hp').value;
 
-            fetch(CONTACT_BACKEND_ENDPOINT, {
-                method: "POST",
-                body: JSON.stringify({
-                    name: name, email: email, message: message,
-                    hp: hp, loadedAt: CONTACT_FORM_LOADED_AT
-                })
-            })
+            getRecaptchaToken()
+                .then(recaptchaToken => fetch(CONTACT_BACKEND_ENDPOINT, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name: name, email: email, message: message,
+                        hp: hp, loadedAt: CONTACT_FORM_LOADED_AT, recaptchaToken: recaptchaToken
+                    })
+                }))
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'error') {
