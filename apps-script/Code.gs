@@ -28,6 +28,11 @@ const COL_KEY = 1, COL_STATUS = 2, COL_EMAIL = 3, COL_DATE = 4;
 // else from an @itu.edu.tr sender is treated as plain feedback (no key sent/resent).
 const LICENSE_KEYWORD = 'lisans';
 
+// Anti-bot: the hidden "website" field must stay empty (real visitors never
+// see it) and the form must have been open at least this long before submit
+// (bots that hit the endpoint directly either omit loadedAt or fire instantly).
+const MIN_FORM_FILL_MS = 2000;
+
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
@@ -36,6 +41,17 @@ function doPost(e) {
     const name = (body.name || '').toString().trim();
     const email = (body.email || '').toString().trim().toLowerCase();
     const message = (body.message || '').toString().trim();
+    const honeypot = (body.hp || '').toString().trim();
+    const loadedAt = Number(body.loadedAt);
+
+    // Silently pretend success so bots get no signal to adapt to - no email
+    // sent, sheet untouched, no notification, just a fake "ok" response.
+    const looksLikeBot = honeypot !== ''
+      || !loadedAt
+      || (Date.now() - loadedAt) < MIN_FORM_FILL_MS;
+    if (looksLikeBot) {
+      return jsonResponse({ status: 'ok' });
+    }
 
     if (!isValidEmail(email)) {
       return jsonResponse({ status: 'error', code: 'INVALID_EMAIL', message: 'Please enter a valid email address.' });

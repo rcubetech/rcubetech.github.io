@@ -840,6 +840,9 @@
         </div>
         <div class="contact-container">
             <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <input type="text" name="website" id="contact-hp" tabindex="-1" autocomplete="off"
+                    aria-hidden="true"
+                    style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0;">
                 <div class="form-group">
                     <label for="contact-name" data-i18n="contactNameLabel">Name</label>
                     <input type="text" id="contact-name" data-i18n-placeholder="contactNamePlace"
@@ -1923,6 +1926,12 @@
         // reply for everyone else. See apps-script/README.md for deployment steps.
         const CONTACT_BACKEND_ENDPOINT = "https://script.google.com/macros/s/AKfycbwz1yBIJKVBByCIiBGdOSKNJ7pzbuKtVEXLWZCzdSgJrqSTs-S3j8P66l2CS1VeYA/exec";
 
+        // Anti-bot: timestamp the moment the form became interactive. Combined
+        // with the hidden honeypot field, the backend rejects submissions that
+        // arrive implausibly fast or with the honeypot filled in (real visitors
+        // never see or fill it; simple bots that auto-fill every field do).
+        const CONTACT_FORM_LOADED_AT = Date.now();
+
         function isItuEmailClient(email) {
             const domain = (email.split('@')[1] || '').toLowerCase();
             return domain === 'itu.edu.tr' || domain.endsWith('.itu.edu.tr');
@@ -1947,10 +1956,14 @@
             const name = document.getElementById('contact-name').value;
             const email = document.getElementById('contact-email').value;
             const message = document.getElementById('contact-message').value;
+            const hp = document.getElementById('contact-hp').value;
 
             fetch(CONTACT_BACKEND_ENDPOINT, {
                 method: "POST",
-                body: JSON.stringify({ name: name, email: email, message: message })
+                body: JSON.stringify({
+                    name: name, email: email, message: message,
+                    hp: hp, loadedAt: CONTACT_FORM_LOADED_AT
+                })
             })
                 .then(response => response.json())
                 .then(data => {
