@@ -1653,6 +1653,16 @@ footer {
     color: var(--text-muted);
 }
 
+.form-hint a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Required disclosure text (below) replaces this floating badge */
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 @media (max-width: 768px) {
     .contact-container {
         padding: 2rem 1.5rem;

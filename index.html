@@ -865,6 +865,13 @@
                         placeholder="How can we help?" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width large" data-i18n="btnSubmit">Send Message</button>
+                <p class="form-hint" style="text-align:center;">
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+                    and
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+                    apply.
+                </p>
             </form>
         </div>
     </section>
@@ -1927,7 +1934,7 @@
         // Google Apps Script Web App URL that handles every contact form submission:
         // Turkish reply (+ optional free license) for @itu.edu.tr senders, English
         // reply for everyone else. See apps-script/README.md for deployment steps.
-        const CONTACT_BACKEND_ENDPOINT = "https://script.google.com/macros/s/AKfycbwz1yBIJKVBByCIiBGdOSKNJ7pzbuKtVEXLWZCzdSgJrqSTs-S3j8P66l2CS1VeYA/exec";
+        const CONTACT_BACKEND_ENDPOINT = "https://script.google.com/macros/s/AKfycby2f2pHK3QvbYh5cfgrWqeyV8gKFDu7ZFYq6zco6bPguwXv4UzoH6aDi9lwiz_uVVM/exec";
 
         // Anti-bot: timestamp the moment the form became interactive. Combined
         // with the hidden honeypot field, the backend rejects submissions that
