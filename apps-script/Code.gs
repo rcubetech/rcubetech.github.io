@@ -15,7 +15,13 @@
 const SHEET_ID = '12g78hz0z791RZm_wbAHhjDVEyux2YjlDyLtJwYVt0pY';
 const SHEET_NAME = 'Keys';               // tab name inside the Sheet
 const NOTIFY_EMAIL = 'info@rcubetech.com'; // gets a copy of every issued key; set to '' to disable
-const MICROSOFT_STORE_URL = 'https://apps.microsoft.com/detail/9N5K085SCDVZ?hl=en&gl=TR&ocid=pdpshare';
+// The keys handed out are ResearchCube promotion codes (ITU-XXXXX-XXXXX), typed in the app under
+// Account -> Plan. They are created in Supabase (researchcube-web/docs/promo-codes.md). The old
+// "ResearchCube Pro Desktop" Store keys are no longer handed out.
+const LICENSE_APP_URL = 'https://app.rcubetech.com';
+const LICENSE_STORE_URL = '';                                       // the new ResearchCube's Store link; '' = no Store button
+const LICENSE_PRO_TEXT = 'kodu kullandığınız günden itibaren 1 yıl';  // keep in line with the codes' pro_days
+const isPromoCode = key => /^ITU-/.test(String(key));
 
 // Accept exact @itu.edu.tr and any subdomain (e.g. @grad.itu.edu.tr)
 const ALLOWED_EXACT_DOMAIN = 'itu.edu.tr';
@@ -36,7 +42,8 @@ const MIN_FORM_FILL_MS = 2000;
 // reCAPTCHA v3: never expose RECAPTCHA_SECRET_KEY to the client - verification
 // happens here, server-side, which is what makes it a real check (unlike the
 // honeypot/timing gate, which a targeted bot could read out of the page source).
-const RECAPTCHA_SECRET_KEY = '6Lfib3ctAAAAANxASh2RrlN3am_iLm3ciZUJKqkq';
+// Kept in Project Settings -> Script Properties (RECAPTCHA_SECRET_KEY), never in this file.
+const RECAPTCHA_SECRET_KEY = PropertiesService.getScriptProperties().getProperty('RECAPTCHA_SECRET_KEY') || '';
 const RECAPTCHA_MIN_SCORE = 0.5;
 
 function doPost(e) {
@@ -97,7 +104,8 @@ function doPost(e) {
     // instead of erroring out (covers "I lost the email" / spam-folder / retry cases)
     // without letting repeated submissions drain the pool.
     for (let i = 1; i < data.length; i++) {
-      if (String(data[i][COL_EMAIL - 1]).toLowerCase() === email) {
+      // (an old desktop Store key is not resent: a new promotion code is issued below)
+      if (String(data[i][COL_EMAIL - 1]).toLowerCase() === email && isPromoCode(data[i][COL_KEY - 1])) {
         const existingKey = data[i][COL_KEY - 1];
         sendLicenseEmail(email, name, existingKey);
         if (NOTIFY_EMAIL) {
@@ -110,7 +118,7 @@ function doPost(e) {
 
     let targetRow = -1;
     for (let i = 1; i < data.length; i++) {
-      if (String(data[i][COL_STATUS - 1]).toUpperCase() === 'AVAILABLE') {
+      if (String(data[i][COL_STATUS - 1]).toUpperCase() === 'AVAILABLE' && isPromoCode(data[i][COL_KEY - 1])) {
         targetRow = i;
         break;
       }
@@ -151,6 +159,8 @@ function isValidEmail(email) {
 // was blocked client-side) fails closed - treated the same as a bot, since a
 // missing token is exactly what a bot bypassing the frontend would send too.
 function verifyRecaptcha(token) {
+  // a missing secret would silently treat every visitor as a bot: fail loudly instead
+  if (!RECAPTCHA_SECRET_KEY) throw new Error('Script property RECAPTCHA_SECRET_KEY is not set');
   if (!token) return false;
   try {
     const response = UrlFetchApp.fetch('https://www.google.com/recaptcha/api/siteverify', {
@@ -184,56 +194,64 @@ function isItuEmail(email) {
 }
 
 function sendLicenseEmail(toEmail, name, licenseKey) {
-  const subject = 'ResearchCube Pro - Lisans Anahtarınız';
+  const subject = 'ResearchCube Pro - Promosyon Kodunuz';
   const greeting = name ? `Merhaba ${name},` : 'Merhaba,';
+  const storeLine = LICENSE_STORE_URL ? `\nWindows için Microsoft Store: ${LICENSE_STORE_URL}` : '';
 
   const body = `${greeting}
 
 ResearchCube ailesine hoş geldiniz!
 
-İTÜ ile gerçekleştirdiğimiz iş birliği kapsamında ResearchCube Pro sürümünü ücretsiz kullanabilirsiniz.
+İTÜ ile gerçekleştirdiğimiz iş birliği kapsamında ResearchCube Pro'yu ücretsiz kullanabilirsiniz.
 
-Lisans Anahtarınız
+Promosyon kodunuz:
 
 ${licenseKey}
 
-Uygulamayı Microsoft Store'dan indirebilirsiniz:
-${MICROSOFT_STORE_URL}
+Nasıl kullanılır?
+1. ResearchCube'u açın: ${LICENSE_APP_URL}${storeLine}
+2. Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.
+3. Hesap > Plan bölümünde "Promosyon kodun var mı?" alanına kodu yazıp "Kodu kullan"a basın.
 
-Bu lisans anahtarı kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.
+Pro, ${LICENSE_PRO_TEXT} açık kalır. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.
 
-ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.
+Bu kod kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.
 
-Bu yolculuğun henüz başındayız.
+ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Tarayıcıda, Windows'ta ve Mac'te çalışır; projeleriniz kendi Google Drive'ınızda durur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.
 
-İTÜ ile gerçekleştirdiğimiz bu iş birliği bizim için oldukça değerli. Sizlerden gelecek öneri, eleştiri ve geri bildirimler, ResearchCube'un gelişiminde doğrudan etkili olacak. Ürünü birlikte şekillendireceğimize inanıyoruz.
+İTÜ ile gerçekleştirdiğimiz bu iş birliği bizim için oldukça değerli. Sizlerden gelecek öneri, eleştiri ve geri bildirimler, ResearchCube'un gelişiminde doğrudan etkili olacak.
 
 Her türlü görüş, öneri ve hata bildiriminizi bizimle paylaşabilirsiniz.
 
 📧 info@rcubetech.com
-
-ResearchCube'u tercih ettiğiniz ve bu yolculukta bizimle olduğunuz için teşekkür ederiz.
 
 Keyifli araştırmalar dileriz.
 
 ResearchCube Team
 AI-Powered Research Workspace`;
 
+  const button = (href, label, primary) =>
+    `<a href="${href}" style="display:inline-block; background:${primary ? '#2563eb' : '#ffffff'}; color:${primary ? '#ffffff' : '#2563eb'}; border:1px solid #2563eb; text-decoration:none; font-weight:bold; padding:12px 24px; border-radius:8px; margin:4px;">${label}</a>`;
   const htmlBody = `<div style="font-family:Arial,Helvetica,sans-serif; max-width:600px; margin:0 auto; color:#0f172a; font-size:15px; line-height:1.6;">
     <img src="cid:banner" alt="ResearchCube x ITU" style="width:100%; max-width:600px; display:block; margin-bottom:28px; border-radius:8px;">
     <p>${greeting}</p>
     <p>ResearchCube ailesine hoş geldiniz!</p>
-    <p>İTÜ ile gerçekleştirdiğimiz iş birliği kapsamında ResearchCube Pro sürümünü ücretsiz kullanabilirsiniz.</p>
-    <p style="margin-bottom:4px;"><strong>Lisans Anahtarınız</strong></p>
+    <p>İTÜ ile gerçekleştirdiğimiz iş birliği kapsamında ResearchCube Pro'yu ücretsiz kullanabilirsiniz.</p>
+    <p style="margin-bottom:4px;"><strong>Promosyon kodunuz</strong></p>
     <p style="font-size:20px; font-weight:bold; letter-spacing:1px; background:#f0f6ff; padding:14px 18px; border-radius:8px; text-align:center; margin:8px 0 20px;">${licenseKey}</p>
-    <p style="text-align:center; margin:0 0 20px;"><a href="${MICROSOFT_STORE_URL}" style="display:inline-block; background:#2563eb; color:#ffffff; text-decoration:none; font-weight:bold; padding:12px 24px; border-radius:8px;">Microsoft Store'dan İndirin</a></p>
-    <p>Bu lisans anahtarı kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.</p>
-    <p>ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.</p>
-    <p>Bu yolculuğun henüz başındayız.</p>
-    <p>İTÜ ile gerçekleştirdiğimiz bu iş birliği bizim için oldukça değerli. Sizlerden gelecek öneri, eleştiri ve geri bildirimler, ResearchCube'un gelişiminde doğrudan etkili olacak. Ürünü birlikte şekillendireceğimize inanıyoruz.</p>
+    <p style="text-align:center; margin:0 0 20px;">${button(LICENSE_APP_URL, 'ResearchCube\'u Açın', true)}${LICENSE_STORE_URL ? button(LICENSE_STORE_URL, 'Microsoft Store', false) : ''}</p>
+    <p style="margin-bottom:4px;"><strong>Nasıl kullanılır?</strong></p>
+    <ol style="margin-top:4px;">
+      <li>ResearchCube'u açın (<a href="${LICENSE_APP_URL}">app.rcubetech.com</a>${LICENSE_STORE_URL ? ' ya da Microsoft Store' : ''}).</li>
+      <li>Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.</li>
+      <li><strong>Hesap &gt; Plan</strong> bölümünde "Promosyon kodun var mı?" alanına kodu yazıp <strong>Kodu kullan</strong>'a basın.</li>
+    </ol>
+    <p>Pro, ${LICENSE_PRO_TEXT} açık kalır. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.</p>
+    <p>Bu kod kişiye özeldir, tek kullanımlıktır ve yalnızca sizin kullanımınız için oluşturulmuştur. Lütfen üçüncü kişilerle paylaşmayınız.</p>
+    <p>ResearchCube, araştırmacılar için geliştirilen yeni nesil AI destekli akademik çalışma platformudur. Tarayıcıda, Windows'ta ve Mac'te çalışır; projeleriniz kendi Google Drive'ınızda durur. Amacımız, yapay zekânın bugün ulaştığı en ileri imkânları araştırma süreçlerine entegre ederek literatür taramayı, PDF okumayı, not almayı ve bilimsel üretimi daha verimli hale getirmektir.</p>
+    <p>İTÜ ile gerçekleştirdiğimiz bu iş birliği bizim için oldukça değerli. Sizlerden gelecek öneri, eleştiri ve geri bildirimler, ResearchCube'un gelişiminde doğrudan etkili olacak.</p>
     <p>Her türlü görüş, öneri ve hata bildiriminizi bizimle paylaşabilirsiniz.</p>
     <p>📧 <a href="mailto:info@rcubetech.com">info@rcubetech.com</a></p>
-    <p>ResearchCube'u tercih ettiğiniz ve bu yolculukta bizimle olduğunuz için teşekkür ederiz.</p>
     <p>Keyifli araştırmalar dileriz.</p>
     <p>ResearchCube Team<br>AI-Powered Research Workspace</p>
   </div>`;
@@ -246,7 +264,8 @@ AI-Powered Research Workspace`;
     body: body,
     htmlBody: htmlBody,
     inlineImages: { banner: bannerBlob },
-    name: 'ResearchCube Team'
+    name: 'ResearchCube Team',
+    replyTo: 'info@rcubetech.com'
   });
 }
 
@@ -258,7 +277,7 @@ function sendFeedbackAckEmail(toEmail, name) {
 
 Mesajınız için teşekkür ederiz! Görüş ve geri bildiriminizi aldık, ekibimiz en kısa sürede değerlendirecek.
 
-Not: İTÜ iş birliği kapsamında ücretsiz ResearchCube Pro lisansınızı almak isterseniz, bu adrese göndereceğiniz mesajın içine "Lisans" yazmanız yeterli.
+Not: İTÜ iş birliği kapsamında ücretsiz ResearchCube Pro promosyon kodunuzu almak isterseniz, bu adrese göndereceğiniz mesajın içine "Lisans" yazmanız yeterli.
 
 ResearchCube Team
 AI-Powered Research Workspace`;
@@ -267,7 +286,7 @@ AI-Powered Research Workspace`;
     <img src="cid:banner" alt="ResearchCube x ITU" style="width:100%; max-width:600px; display:block; margin-bottom:28px; border-radius:8px;">
     <p>${greeting}</p>
     <p>Mesajınız için teşekkür ederiz! Görüş ve geri bildiriminizi aldık, ekibimiz en kısa sürede değerlendirecek.</p>
-    <p style="color:#64748b; font-size:13px;">Not: İTÜ iş birliği kapsamında ücretsiz ResearchCube Pro lisansınızı almak isterseniz, bu adrese göndereceğiniz mesajın içine <strong>"Lisans"</strong> yazmanız yeterli.</p>
+    <p style="color:#64748b; font-size:13px;">Not: İTÜ iş birliği kapsamında ücretsiz ResearchCube Pro promosyon kodunuzu almak isterseniz, bu adrese göndereceğiniz mesajın içine <strong>"Lisans"</strong> yazmanız yeterli.</p>
     <p>ResearchCube Team<br>AI-Powered Research Workspace</p>
   </div>`;
 

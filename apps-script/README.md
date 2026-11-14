@@ -94,3 +94,22 @@ already posts every submission here — no other frontend change is needed.
   stop one person from using several different `@itu.edu.tr` addresses,
   though — there's no identity check beyond the domain.
 - To add more keys later, just append more `AVAILABLE` rows to the sheet.
+
+## One-off: moving the old desktop Pro users to the new ResearchCube (`Migration.gs`)
+
+The old "ResearchCube Pro Desktop" Store keys do not work in the new ResearchCube. Every İTÜ user who
+redeemed one gets their own email with their own single-use ResearchCube promotion code (typed in the
+app under Account -> Plan; the codes are created in Supabase first, see
+`researchcube-web/docs/promo-codes.md`).
+
+1. In the same Sheet, add a tab named `Migration` with the header `Email | Code | Status | SentAt` and
+   import the prepared CSV (File -> Import -> "Insert new sheet" or "Replace current sheet"). The CSV
+   lives outside this repository; never commit it. `Status` = `HOLD` means "never send" (the Store
+   buyer whose email is unknown).
+2. In the Apps Script project, add a file `Migration` and paste in `Migration.gs`. Check the settings
+   at its top (`NEW_STORE_URL`, `PRO_PERIOD_TEXT`, `REDEEM_BY_TEXT`, `TEST_EMAIL`).
+3. Run `sendMigrationTest()` (a sample to `TEST_EMAIL`) and read it.
+4. Run `sendMigrationEmails()`. Each row gets `SENT` and a date; running it again skips them, so a
+   stop halfway is safe. A summary goes to `NOTIFY_EMAIL`.
+
+No new deployment is needed: these functions are run by hand from the editor.
