@@ -116,6 +116,20 @@ function doPost(e) {
       }
     }
 
+    // An old desktop Pro user already has their own code in the Migration tab (Migration.gs):
+    // send that one again instead of taking a second code from the pool.
+    const migration = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Migration');
+    const moved = migration ? migration.getDataRange().getValues().slice(1)
+      .find(r => String(r[0]).trim().toLowerCase() === email && isPromoCode(r[1])) : null;
+    if (moved) {
+      sendLicenseEmail(email, name, String(moved[1]).trim());
+      if (NOTIFY_EMAIL) {
+        MailApp.sendEmail(NOTIFY_EMAIL, 'ResearchCube: ITU geçiş kodu tekrar gönderildi',
+          `${email} lisans istedi; eski masaüstü kullanıcısı olduğu için geçiş kodu ${moved[1]} tekrar gönderildi.`);
+      }
+      return jsonResponse({ status: 'ok', resent: true });
+    }
+
     let targetRow = -1;
     for (let i = 1; i < data.length; i++) {
       if (String(data[i][COL_STATUS - 1]).toUpperCase() === 'AVAILABLE' && isPromoCode(data[i][COL_KEY - 1])) {
@@ -210,7 +224,7 @@ ${licenseKey}
 
 Nasıl kullanılır?
 1. ResearchCube'u açın: ${LICENSE_APP_URL}${storeLine}
-2. Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.
+2. "Hesap oluştur" ile e-posta adresiniz ve bir şifreyle yeni bir hesap açın (eski masaüstü uygulamasının lisansı yeni uygulamaya taşınmaz, yeni bir hesap gerekir). Gelen "Confirm your email" e-postasındaki bağlantıya tıklayarak adresinizi onaylayın, sonra giriş yapıp Google Drive'ı bağlayın.
 3. Hesap > Plan bölümünde "Promosyon kodun var mı?" alanına kodu yazıp "Kodu kullan"a basın.
 
 Pro, ${LICENSE_PRO_TEXT} açık kalır. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.
@@ -243,7 +257,7 @@ AI-Powered Research Workspace`;
     <p style="margin-bottom:4px;"><strong>Nasıl kullanılır?</strong></p>
     <ol style="margin-top:4px;">
       <li>ResearchCube'u açın (<a href="${LICENSE_APP_URL}">app.rcubetech.com</a>${LICENSE_STORE_URL ? ' ya da Microsoft Store' : ''}).</li>
-      <li>Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.</li>
+      <li><strong>Hesap oluştur</strong> ile e-posta adresiniz ve bir şifreyle yeni bir hesap açın (eski masaüstü uygulamasının lisansı yeni uygulamaya taşınmaz, yeni bir hesap gerekir). Gelen onay e-postasındaki bağlantıya tıklayarak adresinizi onaylayın, sonra giriş yapıp Google Drive'ı bağlayın.</li>
       <li><strong>Hesap &gt; Plan</strong> bölümünde "Promosyon kodun var mı?" alanına kodu yazıp <strong>Kodu kullan</strong>'a basın.</li>
     </ol>
     <p>Pro, ${LICENSE_PRO_TEXT} açık kalır. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.</p>

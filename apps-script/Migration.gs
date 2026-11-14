@@ -79,7 +79,7 @@ ${code}
 
 Nasıl kullanılır?
 1. ResearchCube'u açın: ${APP_URL}${storeLine}
-2. Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.
+2. "Hesap oluştur" ile e-posta adresiniz ve bir şifreyle yeni bir hesap açın (eski masaüstü uygulamasının lisansı yeni uygulamaya taşınmaz, yeni bir hesap gerekir). Gelen "Confirm your email" e-postasındaki bağlantıya tıklayarak adresinizi onaylayın, sonra giriş yapıp Google Drive'ı bağlayın.
 3. Hesap > Plan bölümünde "Promosyon kodun var mı?" alanına kodu yazıp "Kodu kullan"a basın.
 
 Pro, ${PRO_PERIOD_TEXT} açık kalır. Kod en geç ${REDEEM_BY_TEXT} tarihine kadar kullanılabilir. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.
@@ -105,7 +105,7 @@ AI-Powered Research Workspace`;
     <p style="margin-bottom:4px;"><strong>Nasıl kullanılır?</strong></p>
     <ol style="margin-top:4px;">
       <li>ResearchCube'u açın (<a href="${APP_URL}">app.rcubetech.com</a>${NEW_STORE_URL ? ' ya da Microsoft Store' : ''}).</li>
-      <li>Google hesabınızla giriş yapın ve Google Drive'ı bağlayın.</li>
+      <li><strong>Hesap oluştur</strong> ile e-posta adresiniz ve bir şifreyle yeni bir hesap açın (eski masaüstü uygulamasının lisansı yeni uygulamaya taşınmaz, yeni bir hesap gerekir). Gelen onay e-postasındaki bağlantıya tıklayarak adresinizi onaylayın, sonra giriş yapıp Google Drive'ı bağlayın.</li>
       <li><strong>Hesap &gt; Plan</strong> bölümünde "Promosyon kodun var mı?" alanına kodu yazıp <strong>Kodu kullan</strong>'a basın.</li>
     </ol>
     <p>Pro, ${PRO_PERIOD_TEXT} açık kalır. Kod en geç ${REDEEM_BY_TEXT} tarihine kadar kullanılabilir. Süre bitince hesabınız ücretsiz plana geçer, verileriniz yerinde kalır.</p>
