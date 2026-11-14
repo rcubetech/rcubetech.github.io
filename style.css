@@ -135,6 +135,7 @@ p {
 }
 
 .nav-links a {
+    color: var(--text-muted);
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
@@ -1457,6 +1458,23 @@ footer {
     font-weight: 800;
     color: var(--text-main);
     margin: 1rem 0;
+}
+
+.price small {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.price .price-alt {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.nav-links a.nav-app {
+    color: var(--primary);
 }
 
 .price span {
