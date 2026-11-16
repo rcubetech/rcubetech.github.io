@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="de" data-page-lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LC2D9P9HK7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LC2D9P9HK7');
+    </script>
+    
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.">
+    <meta name="author" content="rcubetech">
+    <link rel="canonical" href="https://rcubetech.com/de/">
+    <link rel="alternate" hreflang="en" href="https://rcubetech.com/">
+    <link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/">
+    <link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/">
+    <link rel="alternate" hreflang="fr" href="https://rcubetech.com/fr/">
+    <link rel="alternate" hreflang="es" href="https://rcubetech.com/es/">
+    <link rel="alternate" hreflang="de" href="https://rcubetech.com/de/">
+    <link rel="alternate" hreflang="zh" href="https://rcubetech.com/zh/">
+    <link rel="alternate" hreflang="ja" href="https://rcubetech.com/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://rcubetech.com/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="ResearchCube – Kostenloser Forschungsarbeitsplatz: Literaturverwaltung, PDF-Reader, LaTeX und KI">
+    <meta property="og:description" content="Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://rcubetech.com/de/">
+    <meta property="og:image" content="https://rcubetech.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ResearchCube">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ResearchCube – Kostenloser Forschungsarbeitsplatz: Literaturverwaltung, PDF-Reader, LaTeX und KI">
+    <meta name="twitter:description" content="Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.">
+    <meta name="twitter:image" content="https://rcubetech.com/assets/og-image.png">
+
+    <title>ResearchCube – Kostenloser Forschungsarbeitsplatz: Literaturverwaltung, PDF-Reader, LaTeX und KI</title>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ResearchCube",
+  "url": "https://app.rcubetech.com",
+  "applicationCategory": "EducationalApplication",
+  "applicationSubCategory": "Reference management, PDF reader, LaTeX editor",
+  "operatingSystem": "Web, Windows, macOS, Android, iOS",
+  "description": "Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro (monthly)",
+      "price": "4.99",
+      "priceCurrency": "USD"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "rcubetech",
+    "url": "https://rcubetech.com",
+    "email": "info@rcubetech.com"
+  }
+}
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style_roadmap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.418.0/dist/umd/lucide.min.js"></script>
+    <!-- reCAPTCHA v3 (invisible) - protects the contact form against bots -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfib3ctAAAAAGO5hT0jZZGGvMAk4nha5QApRk-N" async
+        defer></script>
+    <style>
+        /* RTL Support and Global UI Tweaks */
+        [dir="rtl"] {
+            font-family: 'Inter', sans-serif;
+            /* Could add Arabic font here if needed */
+        }
+
+        [dir="rtl"] .logo,
+        [dir="rtl"] .nav-links,
+        [dir="rtl"] .hero-actions,
+        [dir="rtl"] .spec-list li,
+        [dir="rtl"] .pricing-features li,
+        [dir="rtl"] .footer-logo {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .nav-links {
+            gap: 2rem;
+        }
+
+        [dir="rtl"] .badge,
+        [dir="rtl"] .section-header,
+        [dir="rtl"] .pricing-footer {
+            text-align: right;
+        }
+
+        [dir="rtl"] .hero,
+        [dir="rtl"] .navbar,
+        [dir="rtl"] .footer-content {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .hero-content {
+            text-align: right;
+        }
+
+        [dir="rtl"] .about-text-card {
+            border-left: none;
+            border-right: 4px solid var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/logo_white.png" alt="ResearchCube Logo" class="logo-dark" style="height: 128px;">
+            <img src="../assets/logo.png" alt="ResearchCube Logo" class="logo-light" style="height: 128px;">
+        </div>
+        <div class="nav-links">
+            <a href="#about" data-i18n="navAbout">Über</a>
+            <a href="#features" data-i18n="navFeatures">Funktionen</a>
+            <a href="#pricing" data-i18n="navPricing">Preise</a>
+            <a href="https://app.rcubetech.com" class="nav-app" data-i18n="navOpenApp">App öffnen</a>
+            <div class="lang-dropdown">
+                <button id="theme-toggle" onclick="toggleTheme()" class="lang-toggle" style="margin-right: 8px;">
+                    <i data-lucide="sun" style="width: 16px; height: 16px;"></i>
+                </button>
+            </div>
+            <div class="lang-dropdown">
+                <button class="lang-toggle">
+                    <i data-lucide="languages" style="width: 16px; height: 16px;"></i>
+                    <span id="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown-content">
+                    <button onclick="goLanguage('ar')" data-lang="ar">العربية</button>
+                    <button onclick="goLanguage('de')" data-lang="de">Deutsch</button>
+                    <button onclick="goLanguage('en')" data-lang="en">English</button>
+                    <button onclick="goLanguage('es')" data-lang="es">Español</button>
+                    <button onclick="goLanguage('fr')" data-lang="fr">Français</button>
+                    <button onclick="goLanguage('ja')" data-lang="ja">日本語</button>
+                    <button onclick="goLanguage('zh')" data-lang="zh">简体中文</button>
+                    <button onclick="goLanguage('tr')" data-lang="tr">Türkçe</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge" data-i18n="heroBadge">ResearchCube · Für akademische und industrielle Forschung</div>
+            <h1 data-i18n="heroTitle">Jede Phase Ihrer Forschung.<br><span class="gradient-text">Ein professioneller Arbeitsbereich.</span></h1>
+            <p class="hero-sub" data-i18n="heroSub">Verlieren Sie sich nicht länger zwischen Anwendungen. Literatur suchen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX schreiben und eine KI fragen, die Ihre Bibliothek kennt – in einem Arbeitsbereich im Web und unter Windows. Ihre Projekte bleiben in Ihrem eigenen Google Drive.</p>
+            <div class="hero-actions">
+                <a href="https://app.rcubetech.com" class="btn-primary large"
+                    style="text-decoration:none;">
+                    <i data-lucide="zap" style="margin-right:8px;"></i> <span data-i18n="btnStartFree">Kostenlos starten</span>
+                </a>
+                <button class="btn-secondary large" onclick="scrollToAbout()">
+                    <i data-lucide="play-circle"></i> <span data-i18n="btnWatchTour">Entdecken Sie die Architektur</span>
+                </button>
+            </div>
+            <p class="small-note" data-i18n="heroNote">✓ Ihre Dateien bleiben in Ihrem Google Drive  ✓ Web, Windows, Mac und Smartphone  ✓ Kostenloser Plan ohne Zeitlimit</p>
+        </div>
+
+        <!-- VISUAL -->
+        <div class="hero-visual">
+            <div class="carousel-container">
+                <!-- Slide 1: Main ReOS (existing) -->
+                <div class="carousel-slide active" id="slide-1">
+                    <div class="hero-scene">
+                        <!-- Floating Dashboard Cards -->
+                        <div class="feature-cards-container">
+
+                            <!-- Top Left: PDF Reader -->
+                            <div class="floating-card card-tl">
+                                <div class="card-icon blue"><i data-lucide="file-text"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitPdf">PDF-Reader</span>
+                                    <div class="mock-line short"></div>
+                                    <div class="mock-line long"></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Left: Literature Search -->
+                            <div class="floating-card card-bl">
+                                <div class="card-icon purple"><i data-lucide="search"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitSearch">Literatursuche</span>
+                                    <div class="mock-search"><i data-lucide="search"
+                                            style="width:10px;height:10px;"></i></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Top Right: AI Tools -->
+                            <div class="floating-card card-tr">
+                                <div class="card-icon accent"><i data-lucide="cpu"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitAI">KI-Tools</span>
+                                    <div class="mock-dots"><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Right: Editor -->
+                            <div class="floating-card card-br">
+                                <div class="card-icon green"><i data-lucide="edit-3"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title" data-i18n="orbitEditor">Smart-Editor</span>
+                                    <div class="mock-type">|<span class="blink">_</span></div>
+                                </div>
+                                <div class="connection-line-svg">
+                                    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- SVG Defs for Gradients -->
+                        <svg width="0" height="0" style="position:absolute;">
+                            <defs>
+                                <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="purple-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="accent-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                                </linearGradient>
+                                <linearGradient id="green-grad" x1="100%" y1="100%" x2="0%" y2="0%">
+                                    <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <div class="app-window glassy">
+                            <div class="window-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <!-- Mockup Content -->
+                            <div class="window-body">
+                                <div class="sidebar">
+                                    <div class="nav-item active"><i data-lucide="home"></i></div>
+                                    <div class="nav-item"><i data-lucide="library"></i></div>
+                                </div>
+                                <div class="main-view">
+                                    <h3 data-i18n="mockupSyncStatus"><i data-lucide="layers" class="text-accent"></i> Research Operating System (ReOS)</h3>
+                                    <div class="file-card">
+                                        <i data-lucide="file-text"></i>
+                                        <div>
+                                            <h4 data-i18n="mockupFileName">Aktive_Sitzungsdaten</h4>
+                                            <span data-i18n="mockupFileStatus">Nahtloser Forschungsfluss aktiviert</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End hero-scene -->
+                </div> <!-- End Slide 1 -->
+
+                <!-- Slide 2: Literature Search -->
+                <div class="carousel-slide" id="slide-2">
+                    <div class="hero-scene feature-scene search-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon purple"><i data-lucide="globe"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardAISuggestions">KI-Vorschläge</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+
+                            <div class="floating-card card-br">
+                                <div class="card-icon purple"><i data-lucide="download"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardOneClickSave">Ein-Klick Speichern</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#purple-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitSearch"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">Literatursuche</div>
+                            </div>
+                            <div class="window-body search-body" style="flex-direction: column; padding: 15px;">
+                                <div class="search-bar">
+                                    <i data-lucide="search"
+                                        style="width: 14px; height: 14px; color: var(--text-main);"></i>
+                                    <div class="search-text"></div>
+                                </div>
+                                <div class="search-results">
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="res-title"></div>
+                                        <div class="res-meta"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: PDF Reader -->
+                <div class="carousel-slide" id="slide-3">
+                    <div class="hero-scene feature-scene pdf-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon blue"><i data-lucide="highlighter"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardSmartHighlight">Smartes Markieren</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon blue"><i data-lucide="message-square"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardPdfChat">PDF-Chat</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon blue"><i data-lucide="zap"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAutoSummary">Auto-Zusammenfassung</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon blue"><i data-lucide="bookmark"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAnnotation">Anmerkung</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#blue-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitPdf"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">PDF-Reader</div>
+                            </div>
+                            <div class="window-body">
+                                <div class="sidebar pdf-sidebar">
+                                    <div class="pdf-thumb active"></div>
+                                    <div class="pdf-thumb"></div>
+                                    <div class="pdf-thumb"></div>
+                                </div>
+                                <div class="main-view pdf-main" style="align-items: flex-start; padding: 20px;">
+                                    <div class="pdf-line title"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line"></div>
+                                    <div class="pdf-line highlight"></div>
+                                    <div class="pdf-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: AI Tools -->
+                <div class="carousel-slide" id="slide-4">
+                    <div class="hero-scene feature-scene ai-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon accent"><i data-lucide="database"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardDataProcessing">Forschungsradar</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon accent"><i data-lucide="code"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardCodeGen">Call for Papers</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon accent"><i data-lucide="brain"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardConceptExtract">Konzept-Extraktion</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon accent"><i data-lucide="pen-tool"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardDrafting">Entwurf</span>
+                                </div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#accent-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitAI"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">KI-Tools</div>
+                            </div>
+                            <div class="window-body ai-body" style="flex-direction: column; padding: 15px;">
+                                <div class="ai-chat">
+                                    <div class="chat-msg user">
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg ai"><i data-lucide="cpu" class="text-accent"
+                                            style="width: 14px; height: 14px;"></i>
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg user">
+                                        <div class="msg-box"></div>
+                                    </div>
+                                    <div class="chat-msg ai"><i data-lucide="cpu" class="text-accent"
+                                            style="width: 14px; height: 14px;"></i>
+                                        <div class="msg-box typing"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                                <div class="ai-input">
+                                    <div class="input-box"></div>
+                                    <div class="send-btn"><i data-lucide="send"
+                                            style="width: 12px; height: 12px; transform: translateX(-1px) translateY(1px);"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Smart Editor -->
+                <div class="carousel-slide" id="slide-5">
+                    <div class="hero-scene feature-scene editor-scene">
+                        <div class="feature-cards-container">
+                            <div class="floating-card card-tl">
+                                <div class="card-icon green"><i data-lucide="align-left"></i></div>
+                                <div class="card-info"><span class="card-title"
+                                        data-i18n="cardAutoFormat">Auto-Formatierung</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,100 C50,100 50,0 0,0" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-bl">
+                                <div class="card-icon green"><i data-lucide="file-text"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardMsWordAssistant">Zeitschriftenvorlagen</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M100,0 C50,0 50,100 0,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-tr">
+                                <div class="card-icon green"><i data-lucide="file-code"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardLatexEditor">LaTeX-Editor</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,100 C50,100 50,0 100,0" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                            <div class="floating-card card-br">
+                                <div class="card-icon green"><i data-lucide="users"></i></div>
+                                <div class="card-info"><span class="card-title" data-i18n="cardLiveCollab">Live-Zusammenarbeit</span></div>
+                                <div class="connection-line-svg"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M0,0 C50,0 50,100 100,100" stroke="url(#green-grad)" stroke-width="2"
+                                            fill="none" stroke-dasharray="4" class="dash-anim reverse" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div class="app-window glassy"
+                            style="box-shadow: 0 0 40px rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3);">
+                            <div class="window-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                                <div class="header-title" data-i18n="orbitEditor"
+                                    style="margin-left: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-main);">Smart-Editor</div>
+                            </div>
+                            <div class="window-body editor-body" style="flex-direction: column;">
+                                <div class="editor-toolbar">
+                                    <div class="tool-icon"></div>
+                                    <div class="tool-icon"></div>
+                                    <div class="tool-icon"></div>
+                                </div>
+                                <div class="editor-content">
+                                    <div class="ed-title"></div>
+                                    <div class="ed-p">
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line half"></div>
+                                    </div>
+                                    <div class="ed-p" style="margin-top: 10px;">
+                                        <div class="ed-line"></div>
+                                        <div class="ed-line"></div>
+                                        <div class="mock-type" style="margin-top: 4px;">|<span class="blink">_</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End carousel-container -->
+
+            <div class="carousel-pagination">
+                <span class="carousel-dot active" onclick="goToSlide(1)"></span>
+                <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                <span class="carousel-dot" onclick="goToSlide(4)"></span>
+                <span class="carousel-dot" onclick="goToSlide(5)"></span>
+            </div>
+
+            <div class="glow-effect"></div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION (What is ResearchCube?) -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2 data-i18n="aboutTitle">Was ist ResearchCube?</h2>
+            <p data-i18n="aboutDesc">ResearchCube ist ein Forschungsarbeitsbereich, der Literatursuche, eine Bibliothek mit PDF-Lektüre, LaTeX-Schreiben, Zusammenarbeit und einen KI-Assistenten an einem Ort vereint. Er läuft im Browser und als App unter Windows; Ihre Projekte liegen in Ihrem eigenen Google Drive.</p>
+        </div>
+
+        <div class="video-wrapper">
+            <div class="video-container glassy">
+                <iframe src="https://www.youtube.com/embed/wqa__Hcy1oM" title="ResearchCube Introduction Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="width: 100%; height: 100%; border: none;">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text-card">
+                <h3 data-i18n="aboutVisionTitle">Ihr Drive, Ihre Daten</h3>
+                <p data-i18n="aboutVisionText">Ihre Forschung gehört Ihnen. Projekte, PDFs und Manuskripte liegen in Ihrem eigenen Google Drive, nicht auf unseren Servern, und öffnen sich auf jedem Gerät. ResearchCube sieht nur die Dateien, die es erstellt oder die Sie damit geöffnet haben.</p>
+            </div>
+            <div class="about-text-card">
+                <h3 data-i18n="aboutControlTitle">Ein Gehirn, das sich an den Kontext erinnert</h3>
+                <p data-i18n="aboutControlText">Während Standard-KI-Modelle nur Ihre aktuelle Eingabe sehen, versteht die ResearchCube-KI Ihre gesamte Bibliothek, Ihre Markierungen und Ihre Entwürfe. Es ist ein Forschungspartner, der Ihre Bibliothek tatsächlich gelesen hat.</p>
+            </div>
+        </div>
+
+        <div class="about-text-card about-google" id="google-data">
+            <h3 data-i18n="googleTitle">ResearchCube und Ihr Google-Konto</h3>
+            <ul>
+                <li data-i18n="googleText1"><strong>Google Drive:</strong> ResearchCube fragt nur die Google-Drive-Berechtigungen <code>drive.file</code> und <code>drive.appdata</code> an. Es speichert Ihre Projekte (Bibliothek, PDFs, Manuskripte, Notizen) in einem ResearchCube-Ordner in Ihrem eigenen Drive und sieht nur die Dateien, die es erstellt oder die Sie damit geöffnet haben.</li>
+                <li data-i18n="googleText2"><strong>Nicht auf unseren Servern:</strong> Ihre Dateien bleiben in Ihrem Drive. Unser Server speichert nur Ihr Konto, die Drive-Verbindung und die Liste der Personen, mit denen Sie ein Projekt teilen.</li>
+                <li data-i18n="googleText3"><strong>Niemals verkauft:</strong> Wir verkaufen Ihre Daten nicht, nutzen sie nicht für Werbung und verwenden Google-Nutzerdaten nicht zum Trainieren von KI-Modellen. Lesen Sie die <a href="https://app.rcubetech.com/privacy.html">ResearchCube-Datenschutzerklärung</a>.</li>
+            </ul>
+            <p class="about-google-links"><a href="https://app.rcubetech.com">app.rcubetech.com</a> · <a href="https://app.rcubetech.com/privacy.html">Privacy Policy</a> · <a href="https://app.rcubetech.com/terms.html">Terms of Use</a></p>
+        </div>
+    </section>
+
+    <!-- VALUE PROPS (BYOS) -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 data-i18n="featuresTitle">Konsolidieren Sie Ihr akademisches Leben</h2>
+            <p data-i18n="featuresDesc">Hören Sie auf, 30% Ihrer Zeit mit Kopieren und Einfügen zwischen Tabs zu verschwenden. Alles, was Sie brauchen, ist unter einem Dach. Verlieren Sie sich nicht in Tabs, verlieren Sie sich in den Tiefen Ihrer Forschung.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="icon-box blue"><i data-lucide="boxes"></i></div>
+                <h3 data-i18n="cardSpeedTitle">Kein App-Wechsel mehr</h3>
+                <p data-i18n="cardSpeedDesc">Durchsuchen Sie über 250 Millionen wissenschaftliche Arbeiten (OpenAlex) per Stichwort oder in natürlicher Sprache: Die KI plant die Suchen und ordnet, was zu Ihrem Projekt passt. PDFs lesen und Notizen am selben Ort.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box green"><i data-lucide="hard-drive"></i></div>
+                <h3 data-i18n="cardPrivacyTitle">Volles Eigentum</h3>
+                <p data-i18n="cardPrivacyDesc">Sie bleiben der alleinige Eigentümer Ihrer Forschungsdateien und Daten.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box purple"><i data-lucide="brain"></i></div>
+                <h3 data-i18n="cardBYOSTitle">Kontextbewusster Assistent</h3>
+                <p data-i18n="cardBYOSDesc">Eine KI, die Ihre Bibliothek gelesen hat und Ihren Forschungskontext kennt. Mehr als ein Chatbot; es ist ein engagierter Forschungsmitarbeiter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SPECS -->
+    <section class="tech-specs">
+        <div class="content">
+            <h2 data-i18n="specsTitle">Integrierte Schreibsuite</h2>
+            <p data-i18n="specsDesc">Von den Quellen zum Manuskript, ohne den Arbeitsbereich zu verlassen: ein LaTeX-Editor, der in der App kompiliert, Zeitschriften- und Abschlussarbeitsvorlagen und Zitate direkt aus Ihrer Bibliothek.</p>
+
+            <ul class="spec-list">
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specLatex"><strong>LaTeX- & Markdown-Editor:</strong> Kompiliert in der App; Vorlagen von IEEE, Elsevier, Springer, ACM und für Abschlussarbeiten; gemeinsames Schreiben in Echtzeit, Kommentare und Änderungsvorschläge.</span>
+                </li>
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specBibtex"><strong>Smarte Zitationen:</strong> Fortschrittliche Referenzverwaltung, vollständig kompatibel mit BibTeX und globalen Bibliotheksstandards.</span>
+                </li>
+                <li>
+                    <i data-lucide="check" class="text-green"></i>
+                    <span data-i18n="specAI"><strong>KI-Schreibmodus:</strong> Eine Passage akademischer, kürzer oder länger machen, übersetzen oder einen Kompilierfehler erklären und beheben lassen; zitiert nur Arbeiten aus Ihrer Bibliothek.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tech-visual">
+            <div class="connection-node"><span class="label">Markdown</span></div>
+            <div class="connection-line"></div>
+            <div class="connection-node center"><span class="label">ResearchCube</span></div>
+            <div class="connection-line"></div>
+            <div class="connection-node"><span class="label">LaTeX</span></div>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2 data-i18n="compTitle">Warum ResearchCube?</h2>
+            <p data-i18n="compDesc">Ihr eigenes Drive und eine KI, die Ihr Projekt kennt – im Vergleich zu Tools, die Ihre Arbeit auf ihren Servern speichern.</p>
+        </div>
+        <div class="comparison-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="compHeadFeature">Funktion</th>
+                        <th class="product-rc" data-i18n="compHeadRC">ResearchCube</th>
+                        <th data-i18n="compHeadCloud">Traditionelle Cloud-Lösungen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatOwnership">Dateneigentum</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Ownership">Volle Kontrolle. Ihr eigenes Google Drive.</td>
+                        <td data-i18n="compCloud_Ownership">Drittanbieter. Liegt auf Servern des Anbieters.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatAI">KI-Engine</td>
+                        <td class="product-rc highlight" data-i18n="compRC_AI">Kontextbewusst. Kennt Ihre Bibliothek.</td>
+                        <td data-i18n="compCloud_AI">Generisch. Nur Anbieter-Modelle.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatFormat">Format-Unterstützung</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Format">LaTeX & Markdown, in der App kompiliert, mit Vorlagen.</td>
+                        <td data-i18n="compCloud_Format">Getrennte Tools für Literatur, Lesen und Schreiben.</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name" data-i18n="compFeatOffline">Arbeitsablauf</td>
+                        <td class="product-rc highlight" data-i18n="compRC_Offline">Integriert. All-in-One Forschungs-Betriebssystem.</td>
+                        <td data-i18n="compCloud_Offline">Fragmentiert. 4-5 verschiedene Apps.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section class="roadmap-section">
+        <div class="section-header">
+            <h2 data-i18n="roadmapTitle">Die Zukunft der Forschung</h2>
+            <p data-i18n="roadmapDesc">Wir bauen die nächste Generation akademischer Werkzeuge. Hier ist, was als Nächstes kommt.</p>
+        </div>
+
+        <div class="roadmap-grid">
+            <!-- Feature 1: Data Integration -->
+            <div class="roadmap-card">
+                <h3 data-i18n="mapGraphTitle">Disziplinübergreifende Datenintegration</h3>
+                <p data-i18n="mapGraphDesc">Importieren Sie Ihre Analyseergebnisse direkt aus spezieller Software (SPSS, MATLAB, Python, LabVIEW usw.) ohne Datenverlust in Ihren Arbeitsbereich.</p>
+                <div class="integration-visual">
+                    <div class="int-source source-1"><i data-lucide="pie-chart" style="width:14px;height:14px;"></i>
+                    </div>
+                    <div class="int-source source-2"><i data-lucide="bar-chart" style="width:14px;height:14px;"></i>
+                    </div>
+                    <div class="int-source source-3"><i data-lucide="code" style="width:14px;height:14px;"></i></div>
+
+                    <div class="int-line line-1"></div>
+                    <div class="int-line line-2"></div>
+                    <div class="int-line line-3"></div>
+
+                    <div class="int-core">
+                        <i data-lucide="database" style="color:var(--accent); width:20px;height:20px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Publication Ready -->
+            <div class="roadmap-card">
+                <h3 data-i18n="mapExportTitle">Publikationsbereite Zusammenstellung</h3>
+                <p data-i18n="mapExportDesc">Verwandeln Sie Ihre importierten Rohdaten, Tabellen und Erkenntnisse in ein professionelles wissenschaftliches Format, das den Richtlinien Ihrer Zielzeitschrift perfekt entspricht.</p>
+                <div class="assembly-visual">
+                    <div class="assembly-raw">
+                        <div class="raw-data-item w-full"></div>
+                        <div class="raw-data-item w-half"></div>
+                        <div class="raw-data-chart"></div>
+                        <div class="raw-data-item w-full"></div>
+                    </div>
+
+                    <div class="assembly-flow">
+                        <div class="particles">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <i data-lucide="settings" class="spin-slow"></i>
+                    </div>
+
+                    <div class="export-doc formatted shadow-glow">
+                        <div class="doc-header"></div>
+                        <div class="doc-columns">
+                            <div class="col">
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                                <div class="mini-chart"></div>
+                            </div>
+                            <div class="col">
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line w-half"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <h2 data-i18n="pricingTitle">Professionelle Pläne</h2>
+            <p data-i18n="pricingDesc">Ihre Projekte liegen in Ihrem eigenen Google Drive, deshalb bleibt ResearchCube schlank und günstig. Starten Sie kostenlos, ohne Zeitlimit.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- FREE TIER -->
+            <div class="pricing-card">
+                <div class="tier-header">
+                    <h3 data-i18n="tierFreeTitle">Kostenlos</h3>
+                    <div class="price" data-i18n="tierFreePrice">0 €</div>
+                    <p data-i18n="tierFreeSub">Für immer kostenlos, keine Karte nötig. Im Web, unter Windows, auf dem Mac und dem Smartphone.</p>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="featFree1"><i data-lucide="check"></i> 5 Projekte</li>
+                    <li data-i18n="featFree2"><i data-lucide="check"></i> 2 Mitwirkende pro Projekt</li>
+                    <li data-i18n="featFree3"><i data-lucide="check"></i> 5 KI-Anfragen pro Tag (Ihr kostenloser Gemini-Schlüssel)</li>
+                    <li data-i18n="featFree4"><i data-lucide="check"></i> 5 Literatursuchen pro Tag (unbegrenzt mit kostenlosem OpenAlex-Schlüssel)</li>
+                </ul>
+                <a href="https://app.rcubetech.com"
+                    class="btn-secondary full-width" style="text-decoration:none; text-align:center;"
+                    data-i18n="btnFree">Kostenlos im Web starten</a>
+            </div>
+
+            <!-- PRO TIER -->
+            <div class="pricing-card featured">
+                <div class="tier-badge-featured" data-i18n="tierProBadge">Am beliebtesten</div>
+                <div class="tier-header">
+                    <h3 data-i18n="tierProTitle">Pro</h3>
+                    <p data-i18n="tierProSub">Monats- oder Jahresabo, abgeschlossen in der ResearchCube-App aus dem Microsoft Store (in Kürze). Jederzeit kündbar; gilt überall, wo Sie sich anmelden.</p>
+                </div>
+
+                <div class="price" data-i18n="tierProPrice">4,99 $<small> / Monat</small><div class="price-alt">oder 47,99 $ / Jahr</div></div>
+
+                <ul class="pricing-features">
+                    <li data-i18n="featPro1"><i data-lucide="check"></i> Unbegrenzte Projekte</li>
+                    <li data-i18n="featPro2"><i data-lucide="check"></i> Unbegrenzt viele Mitwirkende</li>
+                    <li data-i18n="featPro3"><i data-lucide="check"></i> Unbegrenzte KI-Anfragen (Ihr eigener Gemini-Schlüssel)</li>
+                    <li data-i18n="featPro4"><i data-lucide="check"></i> Unbegrenzte Literatursuchen</li>
+                </ul>
+                <a href="https://app.rcubetech.com" data-loc="pricing-pro"
+                    class="btn-primary full-width" style="text-decoration:none; text-align:center;"
+                    data-i18n="btnPro">Kostenlos starten, später zu Pro</a>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p data-i18n="pricingContact">Für Unternehmenslizenzen und KI-Integrationen kontaktieren Sie uns bitte unter <a href="mailto:info@rcubetech.com">info@rcubetech.com</a>.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT & FEEDBACK SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2 data-i18n="contactTitle">Kontaktieren Sie uns</h2>
+            <p data-i18n="contactDesc">Haben Sie Fragen oder Feedback? Wir würden uns freuen, von Ihnen zu hören.</p>
+        </div>
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <input type="text" name="website" id="contact-hp" tabindex="-1" autocomplete="off"
+                    aria-hidden="true"
+                    style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0;">
+                <div class="form-group">
+                    <label for="contact-name" data-i18n="contactNameLabel">Name</label>
+                    <input type="text" id="contact-name" data-i18n-placeholder="contactNamePlace"
+                        placeholder="Ihr Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email" data-i18n="contactEmailLabel">E-Mail</label>
+                    <input type="email" id="contact-email" data-i18n-placeholder="contactEmailPlace"
+                        placeholder="ihre@email.com" oninput="toggleItuLicenseHint(this.value)" required>
+                    <span class="form-hint" id="itu-license-hint" data-i18n="ituLicenseHint"
+                        style="display:none;">Wenn Sie von einer ITU-E-Mail-Adresse schreiben, geben Sie einfach das Wort "Lisans" in Ihrer Nachricht an, um Ihre kostenlose Pro-Lizenz zu erhalten.</span>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message" data-i18n="contactMessageLabel">Nachricht</label>
+                    <textarea id="contact-message" data-i18n-placeholder="contactMessagePlace"
+                        placeholder="Wie können wir helfen?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width large" data-i18n="btnSubmit">Nachricht senden</button>
+                <p class="form-hint" style="text-align:center;">
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+                    and
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+                    apply.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="../assets/logo_white.png" alt="Logo" class="logo-dark" width="40">
+                    <img src="../assets/logo.png" alt="Logo" class="logo-light" width="40">
+                    <span>ResearchCube</span>
+                </div>
+                <p data-i18n="footerRights" style="margin-top: 15px;">&copy; 2026 ResearchCube. Alle Rechte vorbehalten.</p>
+                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;" data-i18n="footerDevelopedBy">Entwickelt von <strong>rcubetech</strong></p>
+                <div style="margin-top: 10px;">
+                    <a href="https://app.rcubetech.com/privacy.html" data-i18n="footerPrivacy" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s;">Datenschutzerklärung</a>
+                </div>
+            </div>
+            
+            <div class="footer-socials">
+                <p data-i18n="footerFollowUs" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 12px; color: var(--text-main);">Folgen Sie uns für Updates</p>
+                <div class="socials">
+                    <a href="https://x.com/ResearchCubePro" target="_blank" rel="noopener noreferrer" title="Follow us on X (Twitter)" class="social-btn x-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/rcubetechcenter/" target="_blank" rel="noopener noreferrer" title="Follow us on LinkedIn" class="social-btn linkedin-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.981 0 1.775-.773 1.775-1.729V1.729C24 .774 23.206 0 22.222 0z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "metaTitle": "ResearchCube – Free Research Workspace: Library, PDF Reader, LaTeX Editor and AI",
+                "metaDesc": "A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.",
+                "cardAISuggestions": "AI Suggestions",
+                "cardOneClickSave": "One-Click Save",
+                "cardSmartHighlight": "Smart Highlight",
+                "cardPdfChat": "PDF Chat",
+                "cardAutoSummary": "Auto-Summary",
+                "cardAnnotation": "Annotation",
+                "cardDataProcessing": "Research Radar",
+                "cardCodeGen": "Calls for Papers",
+                "cardConceptExtract": "Concept Extract",
+                "cardDrafting": "Drafting",
+                "cardAutoFormat": "Auto-Format",
+                "cardMsWordAssistant": "Journal Templates",
+                "cardLatexEditor": "LaTeX Editor",
+                "cardLiveCollab": "Live Collab",
+                "orbitPdf": "PDF Reader",
+                "orbitSearch": "Literature Search",
+                "orbitEditor": "Smart Editor",
+                "orbitAI": "AI Tools",
+                "btnSending": "Sending...",
+                "btnSent": "Sent!",
+                "btnError": "Error!",
+                "navAbout": "About",
+                "navFeatures": "Features",
+                "heroTitle": "Every Stage of Your Research.<br><span class=\"gradient-text\">One Professional Workspace.</span>",
+                "heroBadge": "ResearchCube · For Academic and Industrial Research",
+                "btnStartFree": "Start for Free",
+                "step1": "Source.pdf",
+                "step2": "Analyzing...",
+                "step3": "Creating Draft",
+                "heroSub": "Stop getting lost between applications. Search the literature, read and annotate PDFs, write in LaTeX with your co-authors and ask an AI that knows your library, in one workspace on the web and on Windows. Your projects stay in your own Google Drive.",
+                "btnWatchTour": "Explore the Architecture",
+                "heroNote": "✓ Your files stay in your Google Drive  ✓ Web, Windows, Mac and phone  ✓ Free plan with no time limit",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Research Operating System (ReOS)",
+                "mockupFileName": "Active_Session_Data",
+                "mockupFileStatus": "Seamless research flow engaged",
+                "aboutTitle": "What is ResearchCube?",
+                "aboutDesc": "ResearchCube is a research workspace that brings literature search, a library with PDF reading, LaTeX writing, collaboration and an AI assistant into one place. It runs in the browser and as an app on Windows; your projects live in your own Google Drive.",
+                "videoPlaceholder": "Introduction video coming soon",
+                "aboutVisionTitle": "Your Drive, Your Data",
+                "aboutVisionText": "Your research belongs to you. Projects, PDFs and manuscripts are kept in your own Google Drive, not on our servers, and open on every device. ResearchCube can see only the files it created or you opened with it.",
+                "aboutControlTitle": "An Intelligence That Grasps Context",
+                "aboutControlText": "While standard AI models only see your current prompt, ResearchCube AI understands your entire library, your highlights, and your drafts. It acts as a dedicated research partner that has actually read your materials.",
+                "googleText3": "<strong>Never sold:</strong> we do not sell your data, use it for advertising or use Google user data to train AI models. Read the <a href=\"https://app.rcubetech.com/privacy.html\">ResearchCube Privacy Policy</a>.",
+                "googleText2": "<strong>Not on our servers:</strong> your files stay in your Drive. Our server keeps only your account, the Drive connection and the list of people you share a project with.",
+                "googleText1": "<strong>Google Drive:</strong> ResearchCube asks only for the Google Drive permissions <code>drive.file</code> and <code>drive.appdata</code>. It keeps your projects (library, PDFs, manuscripts, notes) in a ResearchCube folder in your own Drive and can see only the files it created or that you opened with it.",
+                "googleTitle": "ResearchCube and your Google account",
+                "featuresTitle": "Unify Your Academic Workflow",
+                "featuresDesc": "Transition to a professional ecosystem that eliminates the clutter in your research process. By consolidating every stage from literature review to manuscript submission in a single center, use your time with maximum efficiency.",
+                "cardSpeedTitle": "No More App Switching",
+                "cardSpeedDesc": "Search more than 250 million scholarly works (OpenAlex), by keywords or in plain language: the AI plans the searches and ranks what fits your project. Read the PDFs and keep notes in the same place.",
+                "cardPrivacyTitle": "Full Ownership",
+                "cardPrivacyDesc": "You remain the sole owner of your research files and data.",
+                "cardBYOSTitle": "Context-Aware Assistant",
+                "cardBYOSDesc": "An AI that has analyzed your library and understands your research context. Far more than a standard chatbot; it's a dedicated academic assistant.",
+                "specsTitle": "Integrated Writing Suite",
+                "specsDesc": "Move from your sources to your manuscript without leaving the workspace: a LaTeX editor that compiles in the app, journal and thesis templates, and citations straight from your library.",
+                "specLatex": "<strong>LaTeX & Markdown Editor:</strong> Compiles in the app; IEEE, Elsevier, Springer, ACM and thesis templates; real-time co-writing, comments and suggested changes.",
+                "specBibtex": "<strong>Smart Citations:</strong> Advanced reference management fully compatible with BibTeX and global library standards.",
+                "specAI": "<strong>AI Writing Mode:</strong> Make a passage more academic, shorter or longer, translate it, or let the AI explain and fix a compile error; it cites only papers from your library.",
+                "navPricing": "Pricing",
+                "navOpenApp": "Open the app",
+                "pricingTitle": "Professional Plans",
+                "pricingDesc": "Your projects live in your own Google Drive, so we can keep ResearchCube lean and affordable. Start free, with no time limit.",
+                "tierFreeTitle": "Free",
+                "tierFreePrice": "$0",
+                "tierFreeSub": "Free forever, no card needed. On the web, on Windows, Mac and phone.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 projects",
+                "featFree2": "<i data-lucide=\"check\"></i> 2 collaborators per project",
+                "featFree3": "<i data-lucide=\"check\"></i> 5 AI requests a day (your free Gemini key)",
+                "featFree4": "<i data-lucide=\"check\"></i> 5 literature searches a day (unlimited with a free OpenAlex key)",
+                "btnFree": "Start free on the web",
+                "tierProTitle": "Pro",
+                "tierProPrice": "$4.99<small> / month</small><div class=\"price-alt\">or $47.99 / year</div>",
+                "tierProSub": "Monthly or yearly subscription, bought in the ResearchCube app from the Microsoft Store (coming soon). Cancel any time; works everywhere you sign in.",
+                "tierProBadge": "Most Popular",
+                "featPro1": "<i data-lucide=\"check\"></i> Unlimited projects",
+                "featPro2": "<i data-lucide=\"check\"></i> Unlimited collaborators",
+                "featPro3": "<i data-lucide=\"check\"></i> Unlimited AI requests (your own Gemini key)",
+                "featPro4": "<i data-lucide=\"check\"></i> Unlimited literature searches",
+                "btnPro": "Start free, go Pro later",
+                "pricingContact": "For corporate licensing and AI integrations, please contact us at <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                "compTitle": "Why ResearchCube?",
+                "compDesc": "Your own Drive and an AI that knows your project, compared with tools that keep your work on their servers.",
+                "compHeadFeature": "Feature",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "Traditional Cloud Solutions",
+                "compFeatOwnership": "Data Ownership",
+                "compRC_Ownership": "Full Ownership. Your own Google Drive.",
+                "compCloud_Ownership": "Third-Party. Resides on provider servers.",
+                "compFeatAI": "AI Engine",
+                "compRC_AI": "Context-Aware. Knows your library.",
+                "compCloud_AI": "Generic. Only provider models.",
+                "compFeatFormat": "Format Support",
+                "compRC_Format": "LaTeX & Markdown, compiled in the app, with templates.",
+                "compCloud_Format": "Separate tools for references, reading and writing.",
+                "compFeatOffline": "Workflow",
+                "compRC_Offline": "Integrated. All-in-One Research Operating System.",
+                "compCloud_Offline": "Fragmented. 4-5 different apps.",
+                "roadmapTitle": "Future of Research",
+                "roadmapDesc": "We are building the next generation of academic tools. Here is what's coming next.",
+                "mapGraphTitle": "Cross-Disciplinary Data Integration",
+                "mapGraphDesc": "Import your analysis results directly from specialized software (SPSS, MATLAB, Python, LabVIEW, etc.) into your workspace without any data loss.",
+                "mapExportTitle": "Publication-Ready Assembly",
+                "mapExportDesc": "Transform your imported raw data, tables, and findings into a professional scientific format that perfectly complies with your target journal's guidelines.",
+                "footerRights": "&copy; 2026 ResearchCube. All rights reserved.",
+                "footerDevelopedBy": "Developed by <strong>rcubetech</strong>",
+                "footerFollowUs": "Follow us for updates",
+                "contactTitle": "Get in Touch",
+                "contactDesc": "Have questions or feedback? We'd love to hear from you.",
+                "contactNameLabel": "Name",
+                "contactNamePlace": "Your Name",
+                "contactEmailLabel": "Email",
+                "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "If you're writing from an ITU email address, just include the word \"Lisans\" in your message to get your free Pro license.",
+                "contactMessageLabel": "Message",
+                "contactMessagePlace": "How can we help?",
+                "btnSubmit": "Send Message",
+                "footerPrivacy": "Privacy Policy"},
+            tr: {
+                "metaTitle": "ResearchCube – Ücretsiz Araştırma Ortamı: Kaynak Yönetimi, PDF Okuyucu, LaTeX ve Yapay Zekâ",
+                "metaDesc": "Tarayıcıda ücretsiz araştırma ortamı: 250 milyondan fazla akademik yayında arayın, kütüphanenizi düzenleyin, PDF'leri okuyup not alın, ortak yazarlarınızla LaTeX veya Markdown'da yazın ve kaynaklarınızı bilen bir yapay zekâya danışın. Dosyalarınız kendi Google Drive'ınızda kalır.",
+                "cardAISuggestions": "Yapay Zeka Önerileri",
+                "cardOneClickSave": "Tek Tıkla Kaydet",
+                "cardSmartHighlight": "Akıllı Vurgu",
+                "cardPdfChat": "PDF Sohbeti",
+                "cardAutoSummary": "Oto-Özet",
+                "cardAnnotation": "Not Alma",
+                "cardDataProcessing": "Araştırma Radarı",
+                "cardCodeGen": "Bildiri Çağrıları",
+                "cardConceptExtract": "Kavram Çıkarımı",
+                "cardDrafting": "Taslak Hazırlama",
+                "cardAutoFormat": "Oto-Biçimlendirme",
+                "cardMsWordAssistant": "Dergi Şablonları",
+                "cardLatexEditor": "LaTeX Editörü",
+                "cardLiveCollab": "Canlı Çalışma",
+                "orbitPdf": "PDF Okuyucu",
+                "orbitSearch": "Literatür Taraması",
+                "orbitEditor": "Akıllı Editör",
+                "orbitAI": "Yapay Zeka Araçları",
+                "btnSending": "Gönderiliyor...",
+                "btnSent": "Gönderildi!",
+                "btnError": "Hata Oluştu!",
+                "navAbout": "Hakkında",
+                "navFeatures": "Özellikler",
+                "heroTitle": "Araştırmanızın Her Aşaması.<br><span class=\"gradient-text\">Tek Bir Profesyonel Çalışma Alanı.</span>",
+                "heroBadge": "ResearchCube · Akademik ve Endüstriyel Araştırmalar İçin",
+                "btnStartFree": "Ücretsiz Başlayın",
+                "step1": "Kaynak.pdf",
+                "step2": "Analiz Ediliyor...",
+                "step3": "Taslak Oluşturuluyor",
+                "heroSub": "Uygulamalar arasında kaybolmaya son verin. Literatürü tarayın, PDF'leri okuyup not alın, ortak yazarlarınızla LaTeX'te yazın ve kütüphanenizi tanıyan bir yapay zekâya danışın; hepsi web'de ve Windows'ta tek bir çalışma alanında. Projeleriniz kendi Google Drive'ınızda kalır.",
+                "btnWatchTour": "Mimariyi Keşfedin",
+                "heroNote": "✓ Dosyalarınız Google Drive'ınızda kalır  ✓ Web, Windows, Mac ve telefon  ✓ Süresiz ücretsiz plan",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Araştırma İşletim Sistemi (ReOS)",
+                "mockupFileName": "Aktif_Oturum_Verileri",
+                "mockupFileStatus": "Kesintisiz araştırma akışı devrede",
+                "aboutTitle": "ResearchCube nedir?",
+                "aboutDesc": "ResearchCube; literatür taramasını, PDF okumalı kütüphaneyi, LaTeX yazımını, ortak çalışmayı ve yapay zekâ asistanını tek yerde toplayan bir araştırma çalışma alanıdır. Tarayıcıda ve Windows'ta uygulama olarak çalışır; projeleriniz kendi Google Drive'ınızda durur.",
+                "videoPlaceholder": "Tanıtım videosu yakında gelecek",
+                "aboutVisionTitle": "Sizin Drive'ınız, Sizin Verileriniz",
+                "aboutVisionText": "Araştırmanız size aittir. Projeler, PDF'ler ve yazılar bizim sunucularımızda değil, kendi Google Drive'ınızda durur ve her cihazda açılır. ResearchCube yalnızca kendi oluşturduğu ya da sizin açtığınız dosyaları görebilir.",
+                "aboutControlTitle": "Bağlamı Kavrayan Bir Zeka",
+                "aboutControlText": "Standart yapay zeka modelleri sadece o anki mesajınızı görürken, ResearchCube AI tüm kütüphanenizi, vurgularınızı ve taslaklarınızı anlar. Kütüphanenizi okumuş bir araştırma ortağıdır.",
+                "googleText3": "<strong>Asla satılmaz:</strong> verilerinizi satmayız, reklam için kullanmayız ve Google kullanıcı verilerini yapay zekâ modeli eğitmek için kullanmayız. <a href=\"https://app.rcubetech.com/privacy.html\">ResearchCube Gizlilik Politikası</a>'nı okuyun.",
+                "googleText2": "<strong>Sunucularımızda değil:</strong> dosyalarınız Drive'ınızda kalır. Sunucumuz yalnızca hesabınızı, Drive bağlantısını ve bir projeyi paylaştığınız kişilerin listesini tutar.",
+                "googleText1": "<strong>Google Drive:</strong> ResearchCube yalnızca <code>drive.file</code> ve <code>drive.appdata</code> Google Drive izinlerini ister. Projelerinizi (kütüphane, PDF'ler, yazılar, notlar) kendi Drive'ınızdaki bir ResearchCube klasöründe tutar ve yalnızca kendi oluşturduğu ya da sizin onunla açtığınız dosyaları görebilir.",
+                "googleTitle": "ResearchCube ve Google hesabınız",
+                "featuresTitle": "Akademik İş Akışınızı Bütünleştirin",
+                "featuresDesc": "Araştırma sürecinizdeki dağınıklığı ortadan kaldıran profesyonel bir ekosisteme geçiş yapın. Literatür taramasından makale teslimine kadar tüm aşamaları tek bir merkezde toplayarak zamanınızı en etkin şekilde kullanın.",
+                "cardSpeedTitle": "Uygulama Değiştirmeye Son",
+                "cardSpeedDesc": "250 milyondan fazla akademik yayında (OpenAlex) anahtar kelimeyle ya da doğal dille arayın: yapay zekâ aramaları planlar ve projenize uyanları sıralar. PDF'leri okuyup notlarınızı aynı yerde tutun.",
+                "cardPrivacyTitle": "Tam Sahiplik",
+                "cardPrivacyDesc": "Araştırma dosyalarınızın ve verilerinizin tek sahibi sizsiniz.",
+                "cardBYOSTitle": "Bağlamı Kavrayan Asistan",
+                "cardBYOSDesc": "Kütüphanenizi analiz etmiş ve araştırma bağlamınızı bilen bir yapay zeka. Standart bir sohbet botundan çok daha fazlası; özel bir akademik asistan.",
+                "specsTitle": "Bütünleşik Yazım Paketi",
+                "specsDesc": "Kaynaklarınızdan makalenize çalışma alanından çıkmadan geçin: uygulamanın içinde derlenen LaTeX editörü, dergi ve tez şablonları ve doğrudan kütüphanenizden gelen atıflar.",
+                "specLatex": "<strong>LaTeX ve Markdown Editörü:</strong> Uygulamanın içinde derlenir; IEEE, Elsevier, Springer, ACM ve tez şablonları; gerçek zamanlı ortak yazım, yorumlar ve önerilen değişiklikler.",
+                "specBibtex": "<strong>Akıllı Atıflar:</strong> BibTeX ve küresel kütüphane standartlarıyla tam uyumlu gelişmiş referans yönetimi.",
+                "specAI": "<strong>AI Yazma Modu:</strong> Bir bölümü akademikleştirin, kısaltın, genişletin, çevirin ya da derleme hatasını yapay zekâya açıklatıp düzelttirin; yalnızca kütüphanenizdeki makalelere atıf yapar.",
+                "navPricing": "Fiyatlandırma",
+                "navOpenApp": "Uygulamayı aç",
+                "pricingTitle": "Profesyonel Planlar",
+                "pricingDesc": "Projeleriniz kendi Google Drive'ınızda durduğu için ResearchCube'u sade ve uygun fiyatlı tutabiliyoruz. Süre sınırı olmadan ücretsiz başlayın.",
+                "tierFreeTitle": "Ücretsiz",
+                "tierFreePrice": "$0",
+                "tierFreeSub": "Süresiz ücretsiz, kart gerekmez. Web'de, Windows'ta, Mac'te ve telefonda.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 proje",
+                "featFree2": "<i data-lucide=\"check\"></i> Proje başına 2 ortak çalışan",
+                "featFree3": "<i data-lucide=\"check\"></i> Günde 5 AI isteği (ücretsiz Gemini anahtarınızla)",
+                "featFree4": "<i data-lucide=\"check\"></i> Günde 5 literatür araması (ücretsiz OpenAlex anahtarıyla sınırsız)",
+                "btnFree": "Web'de ücretsiz başla",
+                "tierProTitle": "Pro",
+                "tierProPrice": "4,99 $<small> / ay</small><div class=\"price-alt\">ya da yıllık 47,99 $</div>",
+                "tierProSub": "Aylık ya da yıllık abonelik; Microsoft Store'daki ResearchCube uygulamasından alınır (yakında). İstediğiniz zaman iptal edin; giriş yaptığınız her yerde geçerli.",
+                "tierProBadge": "En Popüler",
+                "featPro1": "<i data-lucide=\"check\"></i> Sınırsız proje",
+                "featPro2": "<i data-lucide=\"check\"></i> Sınırsız ortak çalışan",
+                "featPro3": "<i data-lucide=\"check\"></i> Sınırsız AI isteği (kendi Gemini anahtarınızla)",
+                "featPro4": "<i data-lucide=\"check\"></i> Sınırsız literatür araması",
+                "btnPro": "Ücretsiz başlayın, sonra Pro'ya geçin",
+                "pricingContact": "Kurumsal alımlar ve AI entegrasyonları için lütfen <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a> adresinden bizimle iletişime geçiniz.",
+                "compTitle": "Neden ResearchCube?",
+                "compDesc": "Kendi Drive'ınız ve projenizi tanıyan bir yapay zekâ; çalışmanızı kendi sunucularında tutan araçlarla karşılaştırma.",
+                "compHeadFeature": "Özellik",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "Geleneksel Bulut Çözümleri",
+                "compFeatOwnership": "Veri Sahipliği",
+                "compRC_Ownership": "Tam Sahiplik. Kendi Google Drive'ınız.",
+                "compCloud_Ownership": "Üçüncü Taraf. Servis sağlayıcı sunucularında.",
+                "compFeatAI": "AI Motoru",
+                "compRC_AI": "Bağlam Farkındalı. Kütüphanenizi bilir.",
+                "compCloud_AI": "Genel. Sadece sağlayıcı modelleri.",
+                "compFeatFormat": "Format Desteği",
+                "compRC_Format": "LaTeX ve Markdown; uygulamada derlenir, şablonlarla.",
+                "compCloud_Format": "Kaynakça, okuma ve yazım için ayrı araçlar.",
+                "compFeatOffline": "İş Akışı",
+                "compRC_Offline": "Bütünleşik. Hepsi Bir Arada Araştırma İşletim Sistemi.",
+                "compCloud_Offline": "Parçalanmış. 4-5 farklı uygulama.",
+                "roadmapTitle": "Araştırmanın Geleceği",
+                "roadmapDesc": "Akademik araçların gelecek neslini inşa ediyoruz. İşte sırada gelenler.",
+                "mapGraphTitle": "Çok Disiplinli Veri Entegrasyonu",
+                "mapGraphDesc": "Analiz sonuçlarınızı kullandığınız özel yazılımlardan (SPSS, MATLAB, Python, LabVIEW vb.) doğrudan çalışma alanınıza kayıpsız olarak aktarın.",
+                "mapExportTitle": "Yayına Hazır Makale Derleme",
+                "mapExportDesc": "İçe aktarılan ham verilerinizi, tablolarınızı ve bulgularınızı, hedef derginizin yayın kurallarına tam uyumlu, profesyonel bir bilimsel formata dönüştürün.",
+                "footerRights": "&copy; 2026 ResearchCube. Tüm hakları saklıdır.",
+                "footerDevelopedBy": "<strong>rcubetech</strong> tarafından geliştirilmiştir",
+                "footerFollowUs": "Güncellemeler için bizi takip edin",
+                "contactTitle": "İletişime Geçin",
+                "contactDesc": "Sorularınız veya geri bildirimleriniz mi var? Sizden haber almayı çok isteriz.",
+                "contactNameLabel": "İsim",
+                "contactNamePlace": "Adınız",
+                "contactEmailLabel": "E-posta",
+                "contactEmailPlace": "eposta@adresiniz.com",
+                "ituLicenseHint": "İTÜ e-postanızla yazıyorsanız, ücretsiz Pro lisansınızı almak için mesajınıza \"Lisans\" yazmanız yeterlidir.",
+                "contactMessageLabel": "Mesaj",
+                "contactMessagePlace": "Size nasıl yardımcı olabiliriz?",
+                "btnSubmit": "Mesaj Gönder",
+                "footerPrivacy": "Gizlilik Politikası"},
+            de: {
+                "metaTitle": "ResearchCube – Kostenloser Forschungsarbeitsplatz: Literaturverwaltung, PDF-Reader, LaTeX und KI",
+                "metaDesc": "Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.",
+                "cardAISuggestions": "KI-Vorschläge",
+                "cardOneClickSave": "Ein-Klick Speichern",
+                "cardSmartHighlight": "Smartes Markieren",
+                "cardPdfChat": "PDF-Chat",
+                "cardAutoSummary": "Auto-Zusammenfassung",
+                "cardAnnotation": "Anmerkung",
+                "cardDataProcessing": "Forschungsradar",
+                "cardCodeGen": "Call for Papers",
+                "cardConceptExtract": "Konzept-Extraktion",
+                "cardDrafting": "Entwurf",
+                "cardAutoFormat": "Auto-Formatierung",
+                "cardMsWordAssistant": "Zeitschriftenvorlagen",
+                "cardLatexEditor": "LaTeX-Editor",
+                "cardLiveCollab": "Live-Zusammenarbeit",
+                "orbitPdf": "PDF-Reader",
+                "orbitSearch": "Literatursuche",
+                "orbitEditor": "Smart-Editor",
+                "orbitAI": "KI-Tools",
+                "btnSending": "Wird gesendet...",
+                "btnSent": "Gesendet!",
+                "btnError": "Fehler!",
+                "navAbout": "Über",
+                "navFeatures": "Funktionen",
+                "heroTitle": "Jede Phase Ihrer Forschung.<br><span class=\"gradient-text\">Ein professioneller Arbeitsbereich.</span>",
+                "heroBadge": "ResearchCube · Für akademische und industrielle Forschung",
+                "btnStartFree": "Kostenlos starten",
+                "step1": "Quelle.pdf",
+                "step2": "Wird analysiert...",
+                "step3": "Entwurf",
+                "heroSub": "Verlieren Sie sich nicht länger zwischen Anwendungen. Literatur suchen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX schreiben und eine KI fragen, die Ihre Bibliothek kennt – in einem Arbeitsbereich im Web und unter Windows. Ihre Projekte bleiben in Ihrem eigenen Google Drive.",
+                "btnWatchTour": "Entdecken Sie die Architektur",
+                "heroNote": "✓ Ihre Dateien bleiben in Ihrem Google Drive  ✓ Web, Windows, Mac und Smartphone  ✓ Kostenloser Plan ohne Zeitlimit",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Research Operating System (ReOS)",
+                "mockupFileName": "Aktive_Sitzungsdaten",
+                "mockupFileStatus": "Nahtloser Forschungsfluss aktiviert",
+                "aboutTitle": "Was ist ResearchCube?",
+                "aboutDesc": "ResearchCube ist ein Forschungsarbeitsbereich, der Literatursuche, eine Bibliothek mit PDF-Lektüre, LaTeX-Schreiben, Zusammenarbeit und einen KI-Assistenten an einem Ort vereint. Er läuft im Browser und als App unter Windows; Ihre Projekte liegen in Ihrem eigenen Google Drive.",
+                "videoPlaceholder": "Einführungsvideo kommt bald",
+                "aboutVisionTitle": "Ihr Drive, Ihre Daten",
+                "aboutVisionText": "Ihre Forschung gehört Ihnen. Projekte, PDFs und Manuskripte liegen in Ihrem eigenen Google Drive, nicht auf unseren Servern, und öffnen sich auf jedem Gerät. ResearchCube sieht nur die Dateien, die es erstellt oder die Sie damit geöffnet haben.",
+                "aboutControlTitle": "Ein Gehirn, das sich an den Kontext erinnert",
+                "aboutControlText": "Während Standard-KI-Modelle nur Ihre aktuelle Eingabe sehen, versteht die ResearchCube-KI Ihre gesamte Bibliothek, Ihre Markierungen und Ihre Entwürfe. Es ist ein Forschungspartner, der Ihre Bibliothek tatsächlich gelesen hat.",
+                "googleText3": "<strong>Niemals verkauft:</strong> Wir verkaufen Ihre Daten nicht, nutzen sie nicht für Werbung und verwenden Google-Nutzerdaten nicht zum Trainieren von KI-Modellen. Lesen Sie die <a href=\"https://app.rcubetech.com/privacy.html\">ResearchCube-Datenschutzerklärung</a>.",
+                "googleText2": "<strong>Nicht auf unseren Servern:</strong> Ihre Dateien bleiben in Ihrem Drive. Unser Server speichert nur Ihr Konto, die Drive-Verbindung und die Liste der Personen, mit denen Sie ein Projekt teilen.",
+                "googleText1": "<strong>Google Drive:</strong> ResearchCube fragt nur die Google-Drive-Berechtigungen <code>drive.file</code> und <code>drive.appdata</code> an. Es speichert Ihre Projekte (Bibliothek, PDFs, Manuskripte, Notizen) in einem ResearchCube-Ordner in Ihrem eigenen Drive und sieht nur die Dateien, die es erstellt oder die Sie damit geöffnet haben.",
+                "googleTitle": "ResearchCube und Ihr Google-Konto",
+                "featuresTitle": "Konsolidieren Sie Ihr akademisches Leben",
+                "featuresDesc": "Hören Sie auf, 30% Ihrer Zeit mit Kopieren und Einfügen zwischen Tabs zu verschwenden. Alles, was Sie brauchen, ist unter einem Dach. Verlieren Sie sich nicht in Tabs, verlieren Sie sich in den Tiefen Ihrer Forschung.",
+                "cardSpeedTitle": "Kein App-Wechsel mehr",
+                "cardSpeedDesc": "Durchsuchen Sie über 250 Millionen wissenschaftliche Arbeiten (OpenAlex) per Stichwort oder in natürlicher Sprache: Die KI plant die Suchen und ordnet, was zu Ihrem Projekt passt. PDFs lesen und Notizen am selben Ort.",
+                "cardPrivacyTitle": "Volles Eigentum",
+                "cardPrivacyDesc": "Sie bleiben der alleinige Eigentümer Ihrer Forschungsdateien und Daten.",
+                "cardBYOSTitle": "Kontextbewusster Assistent",
+                "cardBYOSDesc": "Eine KI, die Ihre Bibliothek gelesen hat und Ihren Forschungskontext kennt. Mehr als ein Chatbot; es ist ein engagierter Forschungsmitarbeiter.",
+                "specsTitle": "Integrierte Schreibsuite",
+                "specsDesc": "Von den Quellen zum Manuskript, ohne den Arbeitsbereich zu verlassen: ein LaTeX-Editor, der in der App kompiliert, Zeitschriften- und Abschlussarbeitsvorlagen und Zitate direkt aus Ihrer Bibliothek.",
+                "specLatex": "<strong>LaTeX- & Markdown-Editor:</strong> Kompiliert in der App; Vorlagen von IEEE, Elsevier, Springer, ACM und für Abschlussarbeiten; gemeinsames Schreiben in Echtzeit, Kommentare und Änderungsvorschläge.",
+                "specBibtex": "<strong>Smarte Zitationen:</strong> Fortschrittliche Referenzverwaltung, vollständig kompatibel mit BibTeX und globalen Bibliotheksstandards.",
+                "specAI": "<strong>KI-Schreibmodus:</strong> Eine Passage akademischer, kürzer oder länger machen, übersetzen oder einen Kompilierfehler erklären und beheben lassen; zitiert nur Arbeiten aus Ihrer Bibliothek.",
+                "navPricing": "Preise",
+                "navOpenApp": "App öffnen",
+                "pricingTitle": "Professionelle Pläne",
+                "pricingDesc": "Ihre Projekte liegen in Ihrem eigenen Google Drive, deshalb bleibt ResearchCube schlank und günstig. Starten Sie kostenlos, ohne Zeitlimit.",
+                "tierFreeTitle": "Kostenlos",
+                "tierFreePrice": "0 €",
+                "tierFreeSub": "Für immer kostenlos, keine Karte nötig. Im Web, unter Windows, auf dem Mac und dem Smartphone.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 Projekte",
+                "featFree2": "<i data-lucide=\"check\"></i> 2 Mitwirkende pro Projekt",
+                "featFree3": "<i data-lucide=\"check\"></i> 5 KI-Anfragen pro Tag (Ihr kostenloser Gemini-Schlüssel)",
+                "featFree4": "<i data-lucide=\"check\"></i> 5 Literatursuchen pro Tag (unbegrenzt mit kostenlosem OpenAlex-Schlüssel)",
+                "btnFree": "Kostenlos im Web starten",
+                "tierProTitle": "Pro",
+                "tierProPrice": "4,99 $<small> / Monat</small><div class=\"price-alt\">oder 47,99 $ / Jahr</div>",
+                "tierProSub": "Monats- oder Jahresabo, abgeschlossen in der ResearchCube-App aus dem Microsoft Store (in Kürze). Jederzeit kündbar; gilt überall, wo Sie sich anmelden.",
+                "tierProBadge": "Am beliebtesten",
+                "featPro1": "<i data-lucide=\"check\"></i> Unbegrenzte Projekte",
+                "featPro2": "<i data-lucide=\"check\"></i> Unbegrenzt viele Mitwirkende",
+                "featPro3": "<i data-lucide=\"check\"></i> Unbegrenzte KI-Anfragen (Ihr eigener Gemini-Schlüssel)",
+                "featPro4": "<i data-lucide=\"check\"></i> Unbegrenzte Literatursuchen",
+                "btnPro": "Kostenlos starten, später zu Pro",
+                "pricingContact": "Für Unternehmenslizenzen und KI-Integrationen kontaktieren Sie uns bitte unter <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                "compTitle": "Warum ResearchCube?",
+                "compDesc": "Ihr eigenes Drive und eine KI, die Ihr Projekt kennt – im Vergleich zu Tools, die Ihre Arbeit auf ihren Servern speichern.",
+                "compHeadFeature": "Funktion",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "Traditionelle Cloud-Lösungen",
+                "compFeatOwnership": "Dateneigentum",
+                "compRC_Ownership": "Volle Kontrolle. Ihr eigenes Google Drive.",
+                "compCloud_Ownership": "Drittanbieter. Liegt auf Servern des Anbieters.",
+                "compFeatAI": "KI-Engine",
+                "compRC_AI": "Kontextbewusst. Kennt Ihre Bibliothek.",
+                "compCloud_AI": "Generisch. Nur Anbieter-Modelle.",
+                "compFeatFormat": "Format-Unterstützung",
+                "compRC_Format": "LaTeX & Markdown, in der App kompiliert, mit Vorlagen.",
+                "compCloud_Format": "Getrennte Tools für Literatur, Lesen und Schreiben.",
+                "compFeatOffline": "Arbeitsablauf",
+                "compRC_Offline": "Integriert. All-in-One Forschungs-Betriebssystem.",
+                "compCloud_Offline": "Fragmentiert. 4-5 verschiedene Apps.",
+                "roadmapTitle": "Die Zukunft der Forschung",
+                "roadmapDesc": "Wir bauen die nächste Generation akademischer Werkzeuge. Hier ist, was als Nächstes kommt.",
+                "mapGraphTitle": "Disziplinübergreifende Datenintegration",
+                "mapGraphDesc": "Importieren Sie Ihre Analyseergebnisse direkt aus spezieller Software (SPSS, MATLAB, Python, LabVIEW usw.) ohne Datenverlust in Ihren Arbeitsbereich.",
+                "mapExportTitle": "Publikationsbereite Zusammenstellung",
+                "mapExportDesc": "Verwandeln Sie Ihre importierten Rohdaten, Tabellen und Erkenntnisse in ein professionelles wissenschaftliches Format, das den Richtlinien Ihrer Zielzeitschrift perfekt entspricht.",
+                "footerRights": "&copy; 2026 ResearchCube. Alle Rechte vorbehalten.",
+                "footerDevelopedBy": "Entwickelt von <strong>rcubetech</strong>",
+                "contactTitle": "Kontaktieren Sie uns",
+                "contactDesc": "Haben Sie Fragen oder Feedback? Wir würden uns freuen, von Ihnen zu hören.",
+                "contactNameLabel": "Name",
+                "contactNamePlace": "Ihr Name",
+                "contactEmailLabel": "E-Mail",
+                "contactEmailPlace": "ihre@email.com",
+                "ituLicenseHint": "Wenn Sie von einer ITU-E-Mail-Adresse schreiben, geben Sie einfach das Wort \"Lisans\" in Ihrer Nachricht an, um Ihre kostenlose Pro-Lizenz zu erhalten.",
+                "contactMessageLabel": "Nachricht",
+                "contactMessagePlace": "Wie können wir helfen?",
+                "btnSubmit": "Nachricht senden",
+                "footerPrivacy": "Datenschutzerklärung",
+                "footerFollowUs": "Folgen Sie uns für Updates",
+            },
+            es: {
+                "metaTitle": "ResearchCube – Espacio de investigación gratuito: gestor de referencias, lector de PDF, LaTeX e IA",
+                "metaDesc": "Un espacio de investigación gratuito en tu navegador: busca en más de 250 millones de trabajos académicos, organiza tu biblioteca, lee y anota PDF, escribe en LaTeX o Markdown con tus coautores y consulta a una IA que conoce tus fuentes. Tus archivos se quedan en tu propio Google Drive.",
+                "cardAISuggestions": "Sugerencias de IA",
+                "cardOneClickSave": "Guardar con un clic",
+                "cardSmartHighlight": "Resaltado Inteligente",
+                "cardPdfChat": "Chat de PDF",
+                "cardAutoSummary": "Auto-Resumen",
+                "cardAnnotation": "Anotación",
+                "cardDataProcessing": "Radar de investigación",
+                "cardCodeGen": "Convocatorias",
+                "cardConceptExtract": "Extrac. de Conceptos",
+                "cardDrafting": "Borrador",
+                "cardAutoFormat": "Auto-Formato",
+                "cardMsWordAssistant": "Plantillas de revistas",
+                "cardLatexEditor": "Editor LaTeX",
+                "cardLiveCollab": "Colab. en Vivo",
+                "orbitPdf": "Lector de PDF",
+                "orbitSearch": "Búsqueda de Literatura",
+                "orbitEditor": "Editor Inteligente",
+                "orbitAI": "Herramientas de IA",
+                "btnSending": "Enviando...",
+                "btnSent": "¡Enviado!",
+                "btnError": "¡Error!",
+                "navAbout": "Sobre",
+                "navFeatures": "Funciones",
+                "heroTitle": "Cada etapa de tu investigación.<br><span class=\"gradient-text\">Un espacio de trabajo profesional único.</span>",
+                "heroBadge": "ResearchCube · Para investigación académica e industrial",
+                "btnStartFree": "Empieza gratis",
+                "step1": "Fuente.pdf",
+                "step2": "Analizando...",
+                "step3": "Redactando",
+                "heroSub": "Deja de perderte entre aplicaciones. Busca literatura, lee y anota PDF, escribe en LaTeX con tus coautores y consulta a una IA que conoce tu biblioteca, en un solo espacio de trabajo en la web y en Windows. Tus proyectos se quedan en tu propio Google Drive.",
+                "btnWatchTour": "Explorar la arquitectura",
+                "heroNote": "✓ Tus archivos se quedan en tu Google Drive  ✓ Web, Windows, Mac y móvil  ✓ Plan gratuito sin límite de tiempo",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Sistema Operativo de Investigación (ReOS)",
+                "mockupFileName": "Datos_Sesion_Activa",
+                "mockupFileStatus": "Flujo de investigación continuo activado",
+                "aboutTitle": "¿Qué es ResearchCube?",
+                "aboutDesc": "ResearchCube es un espacio de trabajo de investigación que reúne la búsqueda de literatura, una biblioteca con lectura de PDF, la escritura en LaTeX, la colaboración y un asistente de IA en un solo lugar. Funciona en el navegador y como app en Windows; tus proyectos viven en tu propio Google Drive.",
+                "videoPlaceholder": "Video de introducción próximamente",
+                "aboutVisionTitle": "Tu Drive, tus datos",
+                "aboutVisionText": "Tu investigación te pertenece. Proyectos, PDF y manuscritos se guardan en tu propio Google Drive, no en nuestros servidores, y se abren en cualquier dispositivo. ResearchCube solo ve los archivos que creó o que abriste con él.",
+                "aboutControlTitle": "Un cerebro que recuerda el contexto",
+                "aboutControlText": "Mientras que los modelos de IA estándar solo ven tu solicitud actual, la IA de ResearchCube entiende toda tu biblioteca, tus resaltados y tus borradores. Es un compañero de investigación que realmente ha leído tu biblioteca.",
+                "googleText3": "<strong>Nunca se venden:</strong> no vendemos tus datos, no los usamos para publicidad ni usamos datos de usuarios de Google para entrenar modelos de IA. Lee la <a href=\"https://app.rcubetech.com/privacy.html\">Política de privacidad de ResearchCube</a>.",
+                "googleText2": "<strong>No en nuestros servidores:</strong> tus archivos se quedan en tu Drive. Nuestro servidor solo guarda tu cuenta, la conexión con Drive y la lista de personas con las que compartes un proyecto.",
+                "googleText1": "<strong>Google Drive:</strong> ResearchCube solo pide los permisos de Google Drive <code>drive.file</code> y <code>drive.appdata</code>. Guarda tus proyectos (biblioteca, PDF, manuscritos, notas) en una carpeta ResearchCube de tu propio Drive y solo ve los archivos que creó o que abriste con él.",
+                "googleTitle": "ResearchCube y tu cuenta de Google",
+                "featuresTitle": "Consolida tu vida académica",
+                "featuresDesc": "Deja de perder el 30% de tu tiempo copiando y pegando entre pestañas. Todo lo que necesitas está bajo un mismo techo. No te pierdas en las pestañas, piérdete en las profundidades de tu investigación.",
+                "cardSpeedTitle": "No más cambios de aplicación",
+                "cardSpeedDesc": "Busca en más de 250 millones de trabajos académicos (OpenAlex) por palabras clave o en lenguaje natural: la IA planifica las búsquedas y ordena lo que encaja con tu proyecto. Lee los PDF y toma notas en el mismo lugar.",
+                "cardPrivacyTitle": "Propiedad Total",
+                "cardPrivacyDesc": "Sigues siendo el único dueño de tus archivos y datos de investigación.",
+                "cardBYOSTitle": "Asistente Consciente del Contexto",
+                "cardBYOSDesc": "Una IA que ha leído tu biblioteca y conoce tu contexto de investigación. Más que un chatbot; es un asociado de investigación dedicado.",
+                "specsTitle": "Suite de Escritura Integrada",
+                "specsDesc": "Pasa de tus fuentes a tu manuscrito sin salir del espacio de trabajo: un editor LaTeX que compila en la app, plantillas de revistas y tesis, y citas directamente desde tu biblioteca.",
+                "specLatex": "<strong>Editor LaTeX y Markdown:</strong> Compila en la app; plantillas de IEEE, Elsevier, Springer, ACM y de tesis; coescritura en tiempo real, comentarios y cambios sugeridos.",
+                "specBibtex": "<strong>Citas Inteligentes:</strong> Gestión de referencias avanzada compatible con BibTeX y estándares globales de bibliotecas.",
+                "specAI": "<strong>Modo de escritura con IA:</strong> Haz un pasaje más académico, más corto o más largo, tradúcelo o deja que la IA explique y corrija un error de compilación; solo cita trabajos de tu biblioteca.",
+                "navPricing": "Precios",
+                "navOpenApp": "Abrir la app",
+                "pricingTitle": "Planes Profesionales",
+                "pricingDesc": "Tus proyectos viven en tu propio Google Drive, así que podemos mantener ResearchCube ligero y asequible. Empieza gratis, sin límite de tiempo.",
+                "tierFreeTitle": "Gratis",
+                "tierFreePrice": "0 €",
+                "tierFreeSub": "Gratis para siempre, sin tarjeta. En la web, Windows, Mac y móvil.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 proyectos",
+                "featFree2": "<i data-lucide=\"check\"></i> 2 colaboradores por proyecto",
+                "featFree3": "<i data-lucide=\"check\"></i> 5 solicitudes de IA al día (tu clave gratuita de Gemini)",
+                "featFree4": "<i data-lucide=\"check\"></i> 5 búsquedas de literatura al día (ilimitadas con una clave gratuita de OpenAlex)",
+                "btnFree": "Empieza gratis en la web",
+                "tierProTitle": "Pro",
+                "tierProPrice": "4,99 $<small> / mes</small><div class=\"price-alt\">o 47,99 $ / año</div>",
+                "tierProSub": "Suscripción mensual o anual, contratada en la app ResearchCube de Microsoft Store (próximamente). Cancela cuando quieras; funciona en todos los lugares donde inicies sesión.",
+                "tierProBadge": "Más Popular",
+                "featPro1": "<i data-lucide=\"check\"></i> Proyectos ilimitados",
+                "featPro2": "<i data-lucide=\"check\"></i> Colaboradores ilimitados",
+                "featPro3": "<i data-lucide=\"check\"></i> Solicitudes de IA ilimitadas (tu propia clave de Gemini)",
+                "featPro4": "<i data-lucide=\"check\"></i> Búsquedas de literatura ilimitadas",
+                "btnPro": "Empieza gratis, pásate a Pro después",
+                "pricingContact": "Para licencias corporativas e integraciones de IA, contáctanos en <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                "compTitle": "¿Por qué ResearchCube?",
+                "compDesc": "Tu propio Drive y una IA que conoce tu proyecto, frente a herramientas que guardan tu trabajo en sus servidores.",
+                "compHeadFeature": "Característica",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "Soluciones Cloud Tradicionales",
+                "compFeatOwnership": "Propiedad de Datos",
+                "compRC_Ownership": "Propiedad total. Tu propio Google Drive.",
+                "compCloud_Ownership": "Terceros. Reside en servidores del proveedor.",
+                "compFeatAI": "Motor de IA",
+                "compRC_AI": "Consciente del Contexto. Conoce tu biblioteca.",
+                "compCloud_AI": "Genérico. Solo modelos de proveedores.",
+                "compFeatFormat": "Soporte de Formato",
+                "compRC_Format": "LaTeX y Markdown, compilados en la app, con plantillas.",
+                "compCloud_Format": "Herramientas separadas para referencias, lectura y escritura.",
+                "compFeatOffline": "Flujo de trabajo",
+                "compRC_Offline": "Integrado. Sistema Operativo de Investigación Todo en Uno.",
+                "compCloud_Offline": "Fragmentado. 4-5 aplicaciones diferentes.",
+                "roadmapTitle": "El Futuro de la Investigación",
+                "roadmapDesc": "Estamos construyendo la próxima generación de herramientas académicas. Aquí está lo que viene.",
+                "mapGraphTitle": "Integración de Datos Multidisciplinaria",
+                "mapGraphDesc": "Importa los resultados de tus análisis directamente desde software especializado (SPSS, MATLAB, Python, LabVIEW, etc.) a tu espacio de trabajo sin pérdida de datos.",
+                "mapExportTitle": "Ensamblaje Listo para Publicación",
+                "mapExportDesc": "Transforma tus datos en bruto, tablas y hallazgos en un formato científico profesional que cumple perfectamente con las pautas de la revista objetivo.",
+                "footerRights": "&copy; 2026 ResearchCube. Todos los derechos reservados.",
+                "footerDevelopedBy": "Desarrollado por <strong>rcubetech</strong>",
+                "contactTitle": "Ponte en Contacto",
+                "contactDesc": "¿Tienes preguntas o sugerencias? Nos encantaría saber de ti.",
+                "contactNameLabel": "Nombre",
+                "contactNamePlace": "Tu Nombre",
+                "contactEmailLabel": "Correo",
+                "contactEmailPlace": "tu@correo.com",
+                "ituLicenseHint": "Si escribes desde una dirección de correo de la ITU, basta con incluir la palabra \"Lisans\" en tu mensaje para obtener tu licencia Pro gratuita.",
+                "contactMessageLabel": "Mensaje",
+                "contactMessagePlace": "¿Cómo podemos ayudarte?",
+                "btnSubmit": "Enviar Mensaje",
+                "footerPrivacy": "Política de Privacidad",
+                "footerFollowUs": "Síguenos para actualizaciones",
+            },
+            fr: {
+                "metaTitle": "ResearchCube – Espace de recherche gratuit : gestion bibliographique, lecteur PDF, LaTeX et IA",
+                "metaDesc": "Un espace de recherche gratuit dans votre navigateur : cherchez parmi plus de 250 millions de travaux scientifiques, organisez votre bibliothèque, lisez et annotez vos PDF, rédigez en LaTeX ou Markdown avec vos coauteurs et interrogez une IA qui connaît vos sources. Vos fichiers restent dans votre propre Google Drive.",
+                "cardAISuggestions": "Suggestions IA",
+                "cardOneClickSave": "Sauvegarde en 1 Clic",
+                "cardSmartHighlight": "Surlignage Intel.",
+                "cardPdfChat": "Chat PDF",
+                "cardAutoSummary": "Auto-Résumé",
+                "cardAnnotation": "Annotation",
+                "cardDataProcessing": "Radar de recherche",
+                "cardCodeGen": "Appels à communications",
+                "cardConceptExtract": "Extrac. Concept",
+                "cardDrafting": "Rédaction",
+                "cardAutoFormat": "Formatage Auto",
+                "cardMsWordAssistant": "Modèles de revues",
+                "cardLatexEditor": "Éditeur LaTeX",
+                "cardLiveCollab": "Collab. Direct",
+                "orbitPdf": "Lecteur PDF",
+                "orbitSearch": "Recherche de Littérature",
+                "orbitEditor": "Éditeur Intelligent",
+                "orbitAI": "Outils IA",
+                "btnSending": "Envoi en cours...",
+                "btnSent": "Envoyé !",
+                "btnError": "Erreur !",
+                "navAbout": "À propos",
+                "navFeatures": "Fonctionnalités",
+                "heroTitle": "Chaque étape de votre recherche.<br><span class=\"gradient-text\">Un seul espace professionnel.</span>",
+                "heroBadge": "ResearchCube · Pour la recherche académique et industrielle",
+                "btnStartFree": "Commencer gratuitement",
+                "step1": "Source.pdf",
+                "step2": "Analyse en cours...",
+                "step3": "Rédaction",
+                "heroSub": "Ne vous perdez plus entre les applications. Recherchez la littérature, lisez et annotez vos PDF, rédigez en LaTeX avec vos coauteurs et interrogez une IA qui connaît votre bibliothèque, dans un seul espace de travail sur le web et sous Windows. Vos projets restent dans votre propre Google Drive.",
+                "btnWatchTour": "Explorer l'architecture",
+                "heroNote": "✓ Vos fichiers restent dans votre Google Drive  ✓ Web, Windows, Mac et mobile  ✓ Offre gratuite sans limite de durée",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Système d'Exploitation de Recherche (ReOS)",
+                "mockupFileName": "Donnees_Session_Active",
+                "mockupFileStatus": "Flux de recherche continu activé",
+                "aboutTitle": "Qu'est-ce que ResearchCube ?",
+                "aboutDesc": "ResearchCube est un espace de travail de recherche qui réunit la recherche bibliographique, une bibliothèque avec lecture de PDF, la rédaction LaTeX, la collaboration et un assistant IA. Il fonctionne dans le navigateur et comme application sous Windows ; vos projets restent dans votre propre Google Drive.",
+                "videoPlaceholder": "Vidéo de présentation à venir",
+                "aboutVisionTitle": "Votre Drive, vos données",
+                "aboutVisionText": "Votre recherche vous appartient. Projets, PDF et manuscrits sont conservés dans votre propre Google Drive, pas sur nos serveurs, et s'ouvrent sur tous vos appareils. ResearchCube ne voit que les fichiers qu'il a créés ou que vous avez ouverts avec lui.",
+                "aboutControlTitle": "Un cerveau qui se souvient du contexte",
+                "aboutControlText": "Alors que les modèles d'IA standards ne voient que votre instruction actuelle, ResearchCube AI comprend l'ensemble de votre bibliothèque, vos surlignages et vos brouillons. C'est un partenaire de recherche qui a vraiment lu votre bibliothèque.",
+                "googleText3": "<strong>Jamais vendues :</strong> nous ne vendons pas vos données, ne les utilisons pas pour la publicité et n'utilisons pas les données des utilisateurs Google pour entraîner des modèles d'IA. Lisez la <a href=\"https://app.rcubetech.com/privacy.html\">politique de confidentialité de ResearchCube</a>.",
+                "googleText2": "<strong>Pas sur nos serveurs :</strong> vos fichiers restent dans votre Drive. Notre serveur ne conserve que votre compte, la connexion à Drive et la liste des personnes avec qui vous partagez un projet.",
+                "googleText1": "<strong>Google Drive :</strong> ResearchCube ne demande que les autorisations Google Drive <code>drive.file</code> et <code>drive.appdata</code>. Il conserve vos projets (bibliothèque, PDF, manuscrits, notes) dans un dossier ResearchCube de votre propre Drive et ne voit que les fichiers qu'il a créés ou que vous avez ouverts avec lui.",
+                "googleTitle": "ResearchCube et votre compte Google",
+                "featuresTitle": "Consolidez votre vie académique",
+                "featuresDesc": "Arrêtez de perdre 30 % de votre temps à copier-coller entre les onglets. Tout ce dont vous avez besoin est réuni. Ne vous perdez pas dans les onglets, plongez dans les profondeurs de votre recherche.",
+                "cardSpeedTitle": "Fini les changements d'application",
+                "cardSpeedDesc": "Cherchez parmi plus de 250 millions de travaux scientifiques (OpenAlex), par mots-clés ou en langage naturel : l'IA planifie les recherches et classe ce qui correspond à votre projet. Lisez les PDF et prenez des notes au même endroit.",
+                "cardPrivacyTitle": "Pleine Propriété",
+                "cardPrivacyDesc": "Vous restez le seul propriétaire de vos fichiers de recherche et de vos données.",
+                "cardBYOSTitle": "Assistant Conscient du Contexte",
+                "cardBYOSDesc": "Une IA qui a lu votre bibliothèque et connaît votre contexte de recherche. Plus qu'un chatbot ; c'est un associé de recherche dédié.",
+                "specsTitle": "Suite de Rédaction Intégrée",
+                "specsDesc": "Passez de vos sources à votre manuscrit sans quitter l'espace de travail : un éditeur LaTeX qui compile dans l'application, des modèles de revues et de thèses, et des citations directement depuis votre bibliothèque.",
+                "specLatex": "<strong>Éditeur LaTeX et Markdown :</strong> Compile dans l'application ; modèles IEEE, Elsevier, Springer, ACM et de thèse ; corédaction en temps réel, commentaires et modifications suggérées.",
+                "specBibtex": "<strong>Citations Intelligentes :</strong> Gestion avancée des références entièrement compatible avec BibTeX et les normes des bibliothèques mondiales.",
+                "specAI": "<strong>Mode d'écriture IA :</strong> Rendez un passage plus académique, plus court ou plus long, traduisez-le, ou laissez l'IA expliquer et corriger une erreur de compilation ; elle ne cite que des travaux de votre bibliothèque.",
+                "navPricing": "Tarifs",
+                "navOpenApp": "Ouvrir l'app",
+                "pricingTitle": "Plans Professionnels",
+                "pricingDesc": "Vos projets sont dans votre propre Google Drive : ResearchCube reste léger et abordable. Commencez gratuitement, sans limite de durée.",
+                "tierFreeTitle": "Gratuit",
+                "tierFreePrice": "0 €",
+                "tierFreeSub": "Gratuit pour toujours, sans carte. Sur le web, Windows, Mac et mobile.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 projets",
+                "featFree2": "<i data-lucide=\"check\"></i> 2 collaborateurs par projet",
+                "featFree3": "<i data-lucide=\"check\"></i> 5 requêtes IA par jour (votre clé Gemini gratuite)",
+                "featFree4": "<i data-lucide=\"check\"></i> 5 recherches bibliographiques par jour (illimitées avec une clé OpenAlex gratuite)",
+                "btnFree": "Commencer gratuitement sur le web",
+                "tierProTitle": "Pro",
+                "tierProPrice": "4,99 $<small> / mois</small><div class=\"price-alt\">ou 47,99 $ / an</div>",
+                "tierProSub": "Abonnement mensuel ou annuel, souscrit dans l'app ResearchCube du Microsoft Store (bientôt disponible). Résiliable à tout moment ; valable partout où vous vous connectez.",
+                "tierProBadge": "Le Plus Populaire",
+                "featPro1": "<i data-lucide=\"check\"></i> Projets illimités",
+                "featPro2": "<i data-lucide=\"check\"></i> Collaborateurs illimités",
+                "featPro3": "<i data-lucide=\"check\"></i> Requêtes IA illimitées (votre propre clé Gemini)",
+                "featPro4": "<i data-lucide=\"check\"></i> Recherches bibliographiques illimitées",
+                "btnPro": "Commencer gratuitement, passer à Pro plus tard",
+                "pricingContact": "Pour des licences d'entreprise et des intégrations d'IA, veuillez nous contacter à <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                "compTitle": "Pourquoi ResearchCube ?",
+                "compDesc": "Votre propre Drive et une IA qui connaît votre projet, comparés aux outils qui gardent votre travail sur leurs serveurs.",
+                "compHeadFeature": "Fonctionnalité",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "Solutions Cloud Traditionnelles",
+                "compFeatOwnership": "Propriété des données",
+                "compRC_Ownership": "Propriété totale. Votre propre Google Drive.",
+                "compCloud_Ownership": "Tiers. Réside sur les serveurs du fournisseur.",
+                "compFeatAI": "Moteur d'IA",
+                "compRC_AI": "Conscient du Contexte. Connaît votre bibliothèque.",
+                "compCloud_AI": "Générique. Seulement les modèles du fournisseur.",
+                "compFeatFormat": "Support des formats",
+                "compRC_Format": "LaTeX et Markdown, compilés dans l'app, avec modèles.",
+                "compCloud_Format": "Des outils séparés pour les références, la lecture et l'écriture.",
+                "compFeatOffline": "Flux de travail",
+                "compRC_Offline": "Intégré. Système d'Exploitation de Recherche Tout-en-un.",
+                "compCloud_Offline": "Fragmenté. 4-5 applications différentes.",
+                "roadmapTitle": "L'Avenir de la Recherche",
+                "roadmapDesc": "Nous construisons la prochaine génération d'outils académiques. Voici ce qui arrive.",
+                "mapGraphTitle": "Intégration de Données Multidisciplinaire",
+                "mapGraphDesc": "Importez vos résultats d'analyse directement à partir de logiciels spécialisés (SPSS, MATLAB, Python, LabVIEW, etc.) dans votre espace de travail sans perte de données.",
+                "mapExportTitle": "Assemblage Prêt pour Publication",
+                "mapExportDesc": "Transformez vos données brutes, tableaux et conclusions importés dans un format scientifique professionnel conforme aux directives de votre revue cible.",
+                "footerRights": "&copy; 2026 ResearchCube. Tous droits réservés.",
+                "footerDevelopedBy": "Développé par <strong>rcubetech</strong>",
+                "contactTitle": "Contactez-Nous",
+                "contactDesc": "Vous avez des questions ou des commentaires ? Nous serions ravis d'avoir de vos nouvelles.",
+                "contactNameLabel": "Nom",
+                "contactNamePlace": "Votre Nom",
+                "contactEmailLabel": "E-mail",
+                "contactEmailPlace": "votre@email.com",
+                "ituLicenseHint": "Si vous écrivez depuis une adresse e-mail ITU, il suffit d'inclure le mot \"Lisans\" dans votre message pour recevoir votre licence Pro gratuite.",
+                "contactMessageLabel": "Message",
+                "contactMessagePlace": "Comment pouvons-nous vous aider ?",
+                "btnSubmit": "Envoyer le Message",
+                "footerPrivacy": "Politique de Confidentialité",
+                "footerFollowUs": "Suivez-nous pour les mises à jour",
+            },
+            ar: {
+                "metaTitle": "ResearchCube – مساحة عمل بحثية مجانية: إدارة المراجع وقارئ PDF ومحرر LaTeX والذكاء الاصطناعي",
+                "metaDesc": "مساحة عمل بحثية مجانية في متصفحك: ابحث في أكثر من 250 مليون عمل علمي، ونظّم مكتبتك، واقرأ ملفات PDF وعلّق عليها، واكتب بلغة LaTeX أو Markdown مع شركائك في التأليف، واسأل ذكاءً اصطناعيًا يعرف مصادرك. تبقى ملفاتك في Google Drive الخاص بك.",
+                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
+                "cardOneClickSave": "حفظ بنقرة واحدة",
+                "cardSmartHighlight": "تظليل ذكي",
+                "cardPdfChat": "دردشة PDF",
+                "cardAutoSummary": "تلخيص آلي",
+                "cardAnnotation": "تعليق توضيحي",
+                "cardDataProcessing": "رادار الأبحاث",
+                "cardCodeGen": "دعوات تقديم الأوراق",
+                "cardConceptExtract": "استخراج المفاهيم",
+                "cardDrafting": "صياغة",
+                "cardAutoFormat": "تنسيق آلي",
+                "cardMsWordAssistant": "قوالب المجلات",
+                "cardLatexEditor": "محرر LaTeX",
+                "cardLiveCollab": "تعاون مباشر",
+                "orbitPdf": "قارئ PDF",
+                "orbitSearch": "البحث في المؤلفات",
+                "orbitEditor": "محرر ذكي",
+                "orbitAI": "أدوات الذكاء الاصطناعي",
+                "btnSending": "جاري الإرسال...",
+                "btnSent": "تم الإرسال!",
+                "btnError:": "حدث خطأ!",
+                "btnError": "حدث خطأ!",
+                "navAbout": "حول",
+                "navFeatures": "المميزات",
+                "heroTitle": "كل مرحلة من مراحل بحثك.<br><span class=\"gradient-text\">مساحة عمل احترافية واحدة.</span>",
+                "heroBadge": "ResearchCube · للبحوث الأكاديمية والصناعية",
+                "btnStartFree": "ابدأ مجانًا",
+                "step1": "المصدر.pdf",
+                "step2": "جاري التحليل...",
+                "step3": "جاري الصياغة",
+                "heroSub": "توقف عن الضياع بين التطبيقات. ابحث في المؤلفات، واقرأ ملفات PDF وعلّق عليها، واكتب بلغة LaTeX مع شركائك في التأليف، واسأل ذكاءً اصطناعيًا يعرف مكتبتك، في مساحة عمل واحدة على الويب وعلى Windows. تبقى مشاريعك في Google Drive الخاص بك.",
+                "btnWatchTour": "اكتشف المعمارية",
+                "heroNote": "✓ تبقى ملفاتك في Google Drive الخاص بك  ✓ الويب وWindows وMac والهاتف  ✓ خطة مجانية بلا حد زمني",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> نظام تشغيل الأبحاث (ReOS)",
+                "mockupFileName": "بيانات_الجلسة_النشطة",
+                "mockupFileStatus": "تدفق بحث سلس قيد التشغيل",
+                "aboutTitle": "ما هو ResearchCube؟",
+                "aboutDesc": "ResearchCube مساحة عمل بحثية تجمع البحث في المؤلفات، ومكتبة مع قراءة ملفات PDF، والكتابة بلغة LaTeX، والتعاون، ومساعدًا بالذكاء الاصطناعي في مكان واحد. يعمل في المتصفح وكتطبيق على Windows، وتبقى مشاريعك في Google Drive الخاص بك.",
+                "videoPlaceholder": "فيديو تعريفي قريباً",
+                "aboutVisionTitle": "Drive الخاص بك، بياناتك",
+                "aboutVisionText": "بحثك ملك لك. تُحفظ المشاريع وملفات PDF والمخطوطات في Google Drive الخاص بك وليس على خوادمنا، وتُفتح على كل جهاز. لا يرى ResearchCube إلا الملفات التي أنشأها أو التي فتحتها به.",
+                "aboutControlTitle": "دماغ يتذكر السياق",
+                "aboutControlText": "بينما ترى نماذج الذكاء الاصطناعي القياسية طلبك الحالي فقط، فإن ResearchCube AI يفهم مكتبتك بأكملها، وتظليلاتك، ومسوداتك. إنه شريك بحثي قرأ مكتبتك بالفعل.",
+                "googleText3": "<strong>لا تُباع أبدًا:</strong> لا نبيع بياناتك ولا نستخدمها للإعلانات ولا نستخدم بيانات مستخدمي Google لتدريب نماذج الذكاء الاصطناعي. اقرأ <a href=\"https://app.rcubetech.com/privacy.html\">سياسة الخصوصية لـ ResearchCube</a>.",
+                "googleText2": "<strong>ليست على خوادمنا:</strong> تبقى ملفاتك في Drive الخاص بك. لا يحتفظ خادمنا إلا بحسابك واتصال Drive وقائمة الأشخاص الذين تشاركهم مشروعًا.",
+                "googleText1": "<strong>Google Drive:</strong> لا يطلب ResearchCube إلا إذني Google Drive <code>drive.file</code> و<code>drive.appdata</code>. يحفظ مشاريعك (المكتبة وملفات PDF والمخطوطات والملاحظات) في مجلد ResearchCube داخل Drive الخاص بك، ولا يرى إلا الملفات التي أنشأها أو التي فتحتها به.",
+                "googleTitle": "ResearchCube وحسابك في Google",
+                "featuresTitle": "عزز حياتك الأكاديمية",
+                "featuresDesc": "توقف عن إضاعة 30٪ من وقتك في النسخ واللصق بين علامات التبويب. كل ما تحتاجه تحت سقف واحد. لا تضع في علامات التبويب، اغص في أعماق بحثك.",
+                "cardSpeedTitle": "لا مزيد من التبديل بين التطبيقات",
+                "cardSpeedDesc": "ابحث في أكثر من 250 مليون عمل علمي (OpenAlex) بالكلمات المفتاحية أو باللغة الطبيعية: يخطط الذكاء الاصطناعي لعمليات البحث ويرتب ما يناسب مشروعك. اقرأ ملفات PDF ودوّن ملاحظاتك في المكان نفسه.",
+                "cardPrivacyTitle": "ملكية كاملة",
+                "cardPrivacyDesc": "أنت المالك الوحيد لملفاتك وبياناتك البحثية.",
+                "cardBYOSTitle": "مساعد واعي بالسياق",
+                "cardBYOSDesc": "ذكاء اصطناعي قرأ مكتبتك ويعرف سياق بحثك. أكثر من مجرد روبوت محادثة؛ إنه مساعد باحث مخصص.",
+                "specsTitle": "مجموعة كتابة متكاملة",
+                "specsDesc": "انتقل من مصادرك إلى مخطوطتك دون مغادرة مساحة العمل: محرر LaTeX يُترجم داخل التطبيق، وقوالب للمجلات والأطروحات، واستشهادات مباشرة من مكتبتك.",
+                "specLatex": "<strong>محرر LaTeX وMarkdown:</strong> يُترجم داخل التطبيق؛ قوالب IEEE وElsevier وSpringer وACM والأطروحات؛ كتابة مشتركة فورية وتعليقات وتعديلات مقترحة.",
+                "specBibtex": "<strong>اقتباسات ذكية:</strong> إدارة مراجع متقدمة متوافقة تماماً مع BibTeX ومعايير المكتبات العالمية.",
+                "specAI": "<strong>وضع الكتابة بالذكاء الاصطناعي:</strong> اجعل فقرة أكثر أكاديمية أو أقصر أو أطول، أو ترجمها، أو دع الذكاء الاصطناعي يشرح خطأ الترجمة ويصلحه؛ ولا يستشهد إلا بأعمال من مكتبتك.",
+                "navPricing": "الأسعار",
+                "navOpenApp": "افتح التطبيق",
+                "pricingTitle": "الخطط الاحترافية",
+                "pricingDesc": "تبقى مشاريعك في Google Drive الخاص بك، لذا نستطيع إبقاء ResearchCube خفيفًا وبسعر مناسب. ابدأ مجانًا وبلا حد زمني.",
+                "tierFreeTitle": "مجاني",
+                "tierFreePrice": "$0",
+                "tierFreeSub": "مجاني دائمًا ودون بطاقة. على الويب وWindows وMac والهاتف.",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 مشاريع",
+                "featFree2": "<i data-lucide=\"check\"></i> شريكان في كل مشروع",
+                "featFree3": "<i data-lucide=\"check\"></i> 5 طلبات ذكاء اصطناعي يوميًا (بمفتاح Gemini المجاني الخاص بك)",
+                "featFree4": "<i data-lucide=\"check\"></i> 5 عمليات بحث في المؤلفات يوميًا (غير محدودة بمفتاح OpenAlex مجاني)",
+                "btnFree": "ابدأ مجانًا على الويب",
+                "tierProTitle": "Pro",
+                "tierProPrice": "4.99 $<small> / شهريًا</small><div class=\"price-alt\">أو 47.99 $ / سنويًا</div>",
+                "tierProSub": "اشتراك شهري أو سنوي يُشترى من تطبيق ResearchCube في Microsoft Store (قريبًا). يمكنك الإلغاء في أي وقت، ويعمل أينما سجّلت الدخول.",
+                "tierProBadge": "الأكثر شعبية",
+                "featPro1": "<i data-lucide=\"check\"></i> مشاريع غير محدودة",
+                "featPro2": "<i data-lucide=\"check\"></i> عدد غير محدود من الشركاء",
+                "featPro3": "<i data-lucide=\"check\"></i> طلبات ذكاء اصطناعي غير محدودة (بمفتاح Gemini الخاص بك)",
+                "featPro4": "<i data-lucide=\"check\"></i> عمليات بحث غير محدودة في المؤلفات",
+                "btnPro": "ابدأ مجانًا وانتقل إلى Pro لاحقًا",
+                "pricingContact": "لتراخيص الشركات ودمج الذكاء الاصطناعي، يرجى الاتصال بنا على <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
+                "compTitle": "لماذا ResearchCube؟",
+                "compDesc": "Drive الخاص بك وذكاء اصطناعي يعرف مشروعك، مقارنة بأدوات تحتفظ بعملك على خوادمها.",
+                "compHeadFeature": "الميزة",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "الحلول السحابية التقليدية",
+                "compFeatOwnership": "ملكية البيانات",
+                "compRC_Ownership": "ملكية كاملة. Google Drive الخاص بك.",
+                "compCloud_Ownership": "طرف ثالث. توجد على خوادم المزود.",
+                "compFeatAI": "محرك الذكاء الاصطناعي",
+                "compRC_AI": "واعي بالسياق. يعرف مكتبتك.",
+                "compCloud_AI": "عام. نماذج مزودين فقط.",
+                "compFeatFormat": "دعم التنسيق",
+                "compRC_Format": "LaTeX وMarkdown، تُترجم داخل التطبيق، مع قوالب.",
+                "compCloud_Format": "أدوات منفصلة للمراجع والقراءة والكتابة.",
+                "compFeatOffline": "سير العمل",
+                "compRC_Offline": "متكامل. نظام تشغيل أبحاث شامل.",
+                "compCloud_Offline": "مجزأ. 4-5 تطبيقات مختلفة.",
+                "roadmapTitle": "مستقبل البحث",
+                "roadmapDesc": "نحن نبني الجيل القادم من الأدوات الأكاديمية. إليك ما هو قادم.",
+                "mapGraphTitle": "تكامل البيانات متعدد التخصصات",
+                "mapGraphDesc": "استورد نتائج تحليلك مباشرة من البرامج المتخصصة (SPSS، MATLAB، Python، LabVIEW، إلخ) إلى مساحة عملك دون أي فقدان للبيانات.",
+                "mapExportTitle": "تجميع جاهز للنشر",
+                "mapExportDesc": "حول بياناتك الخام المستوردة وجداولك ونتائجك إلى تنسيق علمي احترافي يتوافق تماماً مع إرشادات المجلة المستهدفة.",
+                "footerRights": "&copy; 2026 ResearchCube. جميع الحقوق محفوظة.",
+                "footerDevelopedBy": "تم التطوير بواسطة <strong>rcubetech</strong>",
+                "contactTitle": "تواصل معنا",
+                "contactDesc": "هل لديك أسئلة أو ملاحظات؟ نود أن نسمع منك.",
+                "contactNameLabel": "الاسم",
+                "contactNamePlace": "اسمك",
+                "contactEmailLabel": "البريد الإلكتروني",
+                "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "إذا كنت تكتب من عنوان بريد إلكتروني تابع لجامعة ITU، فقط أضف كلمة \"Lisans\" في رسالتك للحصول على ترخيص Pro المجاني.",
+                "contactMessageLabel": "الرسالة",
+                "contactMessagePlace": "كيف يمكننا المساعدة؟",
+                "btnSubmit": "إرسال الرسالة",
+                "footerPrivacy": "سياسة الخصوصية",
+                "footerFollowUs": "تابعنا للحصول على التحديثات",
+            },
+            ja: {
+                "metaTitle": "ResearchCube – 無料の研究ワークスペース：文献管理、PDFリーダー、LaTeX、AI",
+                "metaDesc": "ブラウザで使える無料の研究ワークスペース。2億5,000万件以上の学術文献を検索し、ライブラリを整理し、PDFを読んで注釈を付け、共著者とLaTeXやMarkdownで執筆し、あなたの文献を理解するAIに質問できます。ファイルはあなた自身のGoogleドライブに保存されます。",
+                "cardAISuggestions": "AIの提案",
+                "cardOneClickSave": "ワンクリック保存",
+                "cardSmartHighlight": "スマートハイライト",
+                "cardPdfChat": "PDFチャット",
+                "cardAutoSummary": "自動要約",
+                "cardAnnotation": "注釈",
+                "cardDataProcessing": "研究レーダー",
+                "cardCodeGen": "論文募集",
+                "cardConceptExtract": "概念抽出",
+                "cardDrafting": "下書き",
+                "cardAutoFormat": "自動フォーマット",
+                "cardMsWordAssistant": "論文誌テンプレート",
+                "cardLatexEditor": "LaTeXエディタ",
+                "cardLiveCollab": "リアルタイム共同作業",
+                "orbitPdf": "PDFリーダー",
+                "orbitSearch": "文献検索",
+                "orbitEditor": "スマートエディタ",
+                "orbitAI": "AIツール",
+                "btnSending": "送信中...",
+                "btnSent": "送信完了！",
+                "btnError": "エラーが発生しました",
+                "navAbout": "概要",
+                "navFeatures": "特徴",
+                "heroTitle": "研究のすべての段階を。<br><span class=\"gradient-text\">一つのプロフェッショナルなワークスペースで。</span>",
+                "heroBadge": "ResearchCube · 学術および産業研究向け",
+                "btnStartFree": "無料で始める",
+                "step1": "Source.pdf",
+                "step2": "分析中...",
+                "step3": "下書き中",
+                "heroSub": "アプリ間を行き来するのはもう終わりにしましょう。文献検索、PDFの閲覧と注釈、共著者とのLaTeX執筆、そしてあなたのライブラリを理解するAIへの相談を、Webと Windows の一つのワークスペースで。プロジェクトはあなた自身の Google ドライブに保存されます。",
+                "btnWatchTour": "アーキテクチャを探索",
+                "heroNote": "✓ ファイルはあなたの Google ドライブに  ✓ Web・Windows・Mac・スマートフォン  ✓ 期限のない無料プラン",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> 研究オペレーティングシステム (ReOS)",
+                "mockupFileName": "アクティブ・セッション・データ",
+                "mockupFileStatus": "シームレスな研究フローが有効化されました",
+                "aboutTitle": "ResearchCube とは？",
+                "aboutDesc": "ResearchCube は、文献検索、PDF閲覧付きのライブラリ、LaTeX執筆、共同作業、AIアシスタントを一つにまとめた研究ワークスペースです。ブラウザでも Windows アプリでも動作し、プロジェクトはあなた自身の Google ドライブに保存されます。",
+                "videoPlaceholder": "紹介ビデオは近日公開予定",
+                "aboutVisionTitle": "あなたのドライブ、あなたのデータ",
+                "aboutVisionText": "研究はあなたのものです。プロジェクト、PDF、原稿は私たちのサーバーではなくあなた自身の Google ドライブに保存され、どのデバイスでも開けます。ResearchCube が見られるのは、自ら作成したファイルかあなたが開いたファイルだけです。",
+                "aboutControlTitle": "コンテキストを記憶する頭脳",
+                "aboutControlText": "標準的なAIモデルが現在のプロンプトしか見ないのに対し、ResearchCube AIはあなたのライブラリ全体、ハイライト、ドラフトを理解します。それは実際にあなたのライブラリを読んだ研究パートナーです。",
+                "googleText3": "<strong>販売しません：</strong>データを販売したり広告に使用したりせず、Google ユーザーデータを AI モデルの学習に使用することもありません。<a href=\"https://app.rcubetech.com/privacy.html\">ResearchCube プライバシーポリシー</a>をご覧ください。",
+                "googleText2": "<strong>サーバーには保存しません：</strong>ファイルはあなたのドライブに残ります。サーバーが保持するのは、アカウント、ドライブとの接続、プロジェクトを共有している相手のリストだけです。",
+                "googleText1": "<strong>Google ドライブ：</strong>ResearchCube が求める Google ドライブの権限は <code>drive.file</code> と <code>drive.appdata</code> だけです。プロジェクト（ライブラリ、PDF、原稿、メモ）はあなた自身のドライブの ResearchCube フォルダに保存され、アプリが見られるのは自ら作成したファイルかあなたが開いたファイルだけです。",
+                "googleTitle": "ResearchCube と Google アカウント",
+                "featuresTitle": "あなたの学術生活を統合する",
+                "featuresDesc": "タブ間のコピー＆ペーストに時間の30％を無駄にするのはやめましょう。必要なものはすべて一つの屋根の下にあります。タブの中で迷子にならず、研究の深みに没頭してください。",
+                "cardSpeedTitle": "もうアプリを切り替えない",
+                "cardSpeedDesc": "2億5千万件以上の学術文献（OpenAlex）をキーワードや自然な文章で検索。AIが検索を組み立て、プロジェクトに合う論文を順位付けします。PDFの閲覧とメモも同じ場所で。",
+                "cardPrivacyTitle": "完全な所有権",
+                "cardPrivacyDesc": "あなたは、あなたの研究ファイルとデータの唯一の所有者であり続けます。",
+                "cardBYOSTitle": "コンテキスト認識アシスタント",
+                "cardBYOSDesc": "あなたのライブラリを読み、研究のコンテキストを知っているAI。単なるチャットボット以上の、専任の研究アシスタントです。",
+                "specsTitle": "統合ライティングスイート",
+                "specsDesc": "ワークスペースを離れずに資料から原稿へ。アプリ内でコンパイルできる LaTeX エディター、論文誌と学位論文のテンプレート、ライブラリから直接入る引用。",
+                "specLatex": "<strong>LaTeX & Markdown エディター：</strong>アプリ内でコンパイル。IEEE・Elsevier・Springer・ACM・学位論文テンプレート。リアルタイム共同執筆、コメント、変更提案。",
+                "specBibtex": "<strong>スマート引用:</strong> BibTeXおよび世界のライブラリ標準と完全に互換性のある高度な参考文献管理。",
+                "specAI": "<strong>AI 執筆モード：</strong>文章をより学術的に、短く、長く、翻訳。コンパイルエラーの説明と修正も。引用はあなたのライブラリの論文だけ。",
+                "navPricing": "価格設定",
+                "navOpenApp": "アプリを開く",
+                "pricingTitle": "プロフェッショナルプラン",
+                "pricingDesc": "プロジェクトはあなた自身の Google ドライブにあるため、ResearchCube を軽量かつ手頃な価格で提供できます。期限なしで無料で始めましょう。",
+                "tierFreeTitle": "無料",
+                "tierFreePrice": "￥0",
+                "tierFreeSub": "ずっと無料、カード不要。Web・Windows・Mac・スマートフォンで。",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 プロジェクト",
+                "featFree2": "<i data-lucide=\"check\"></i> 1プロジェクトにつき共同作業者2名",
+                "featFree3": "<i data-lucide=\"check\"></i> AIリクエスト1日5回（無料の Gemini キー）",
+                "featFree4": "<i data-lucide=\"check\"></i> 文献検索1日5回（無料の OpenAlex キーで無制限）",
+                "btnFree": "Webで無料で始める",
+                "tierProTitle": "Pro",
+                "tierProPrice": "$4.99<small> / 月</small><div class=\"price-alt\">または $47.99 / 年</div>",
+                "tierProSub": "月額または年額サブスクリプション。Microsoft Store の ResearchCube アプリで購入できます（近日公開）。いつでも解約可能。サインインするすべての場所で有効。",
+                "tierProBadge": "最も人気",
+                "featPro1": "<i data-lucide=\"check\"></i> プロジェクト無制限",
+                "featPro2": "<i data-lucide=\"check\"></i> 共同作業者無制限",
+                "featPro3": "<i data-lucide=\"check\"></i> AIリクエスト無制限（ご自身の Gemini キー）",
+                "featPro4": "<i data-lucide=\"check\"></i> 文献検索無制限",
+                "btnPro": "無料で始めて、あとから Pro へ",
+                "pricingContact": "企業向けライセンスやAI統合については、<a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>までお問い合わせください。",
+                "compTitle": "なぜResearchCubeなのか？",
+                "compDesc": "あなた自身のドライブとプロジェクトを理解するAI。作業を自社サーバーに保存するツールとの比較。",
+                "compHeadFeature": "機能",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "従来のクラウドソリューション",
+                "compFeatOwnership": "データの所有権",
+                "compRC_Ownership": "完全な所有権。あなた自身の Google ドライブ。",
+                "compCloud_Ownership": "サードパーティ。プロバイダーのサーバー上に存在。",
+                "compFeatAI": "AIエンジン",
+                "compRC_AI": "コンテキスト認識。あなたのライブラリを知っている。",
+                "compCloud_AI": "一般的。プロバイダーのモデルのみ。",
+                "compFeatFormat": "フォーマットのサポート",
+                "compRC_Format": "LaTeX と Markdown。アプリ内でコンパイル、テンプレート付き。",
+                "compCloud_Format": "文献管理・閲覧・執筆で別々のツール。",
+                "compFeatOffline": "ワークフロー",
+                "compRC_Offline": "統合済み。オールインワンの研究オペレーティングシステム。",
+                "compCloud_Offline": "断片化。4〜5の異なるアプリ。",
+                "roadmapTitle": "研究の未来",
+                "roadmapDesc": "私たちは次世代の学術ツールを構築しています。次に予定されていることはこちらです。",
+                "mapGraphTitle": "分野横断的なデータ統合",
+                "mapGraphDesc": "特殊なソフトウェア（SPSS、MATLAB、Python、LabVIEWなど）からの分析結果を、データを損失することなく直接ワークスペースにインポートします。",
+                "mapExportTitle": "公開可能な組み立て",
+                "mapExportDesc": "インポートした生データ、表、調査結果を、対象ジャーナルのガイドラインに完全に準拠した専門的な科学的フォーマットに変換します。",
+                "footerRights": "&copy; 2026 ResearchCube. All rights reserved.",
+                "footerDevelopedBy": "Developed by <strong>rcubetech</strong>",
+                "contactTitle": "お問い合わせ",
+                "contactDesc": "ご質問やご意見がありますか？ぜひお聞かせください。",
+                "contactNameLabel": "名前",
+                "contactNamePlace": "あなたの名前",
+                "contactEmailLabel": "メールアドレス",
+                "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "ITUのメールアドレスからお書きの場合、メッセージに「Lisans」という単語を含めるだけで、無料のPro版ライセンスを受け取れます。",
+                "contactMessageLabel": "メッセージ",
+                "contactMessagePlace": "どのようにお手伝いできますか？",
+                "btnSubmit": "メッセージを送信",
+                "footerPrivacy": "プライバシーポリシー",
+                "footerFollowUs": "最新情報をフォローする",
+            },
+            zh: {
+                "metaTitle": "ResearchCube – 免费科研工作空间：文献管理、PDF 阅读器、LaTeX 与 AI",
+                "metaDesc": "浏览器中的免费科研工作空间：检索 2.5 亿多篇学术文献，整理文献库，阅读并批注 PDF，与合著者用 LaTeX 或 Markdown 写作，并向了解您文献的 AI 提问。文件始终保存在您自己的 Google 云端硬盘中。",
+                "cardAISuggestions": "AI 建议",
+                "cardOneClickSave": "一键保存",
+                "cardSmartHighlight": "智能高亮",
+                "cardPdfChat": "PDF 聊天",
+                "cardAutoSummary": "自动摘要",
+                "cardAnnotation": "批注",
+                "cardDataProcessing": "研究雷达",
+                "cardCodeGen": "征稿信息",
+                "cardConceptExtract": "概念提取",
+                "cardDrafting": "起草",
+                "cardAutoFormat": "自动排版",
+                "cardMsWordAssistant": "期刊模板",
+                "cardLatexEditor": "LaTeX 编辑器",
+                "cardLiveCollab": "实时协作",
+                "orbitPdf": "PDF 阅读器",
+                "orbitSearch": "文献检索",
+                "orbitEditor": "智能编辑器",
+                "orbitAI": "AI 工具",
+                "btnSending": "发送中...",
+                "btnSent": "已发送！",
+                "btnError": "发送失败！",
+                "navAbout": "关于",
+                "navFeatures": "功能",
+                "heroTitle": "研究的每个阶段。<br><span class=\"gradient-text\">一个专业工作区。</span>",
+                "heroBadge": "ResearchCube · 面向学术与产业研究",
+                "btnStartFree": "免费开始",
+                "step1": "源文件.pdf",
+                "step2": "分析中...",
+                "step3": "起草中",
+                "heroSub": "不再在各种应用之间迷失。检索文献、阅读并批注 PDF、与合著者一起用 LaTeX 写作，并向了解您文献库的 AI 提问——全部在网页和 Windows 上的同一个工作区完成。您的项目始终保存在您自己的 Google 云端硬盘中。",
+                "btnWatchTour": "探索架构",
+                "heroNote": "✓ 文件保存在您的 Google 云端硬盘  ✓ 网页、Windows、Mac 和手机  ✓ 无时间限制的免费方案",
+                "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> 研究操作系统 (ReOS)",
+                "mockupFileName": "活跃_会话_数据",
+                "mockupFileStatus": "无缝研究流已启动",
+                "aboutTitle": "什么是 ResearchCube？",
+                "aboutDesc": "ResearchCube 是一个研究工作区，将文献检索、带 PDF 阅读的文献库、LaTeX 写作、协作和 AI 助手集中在一处。它可在浏览器中运行，也可作为 Windows 应用使用；您的项目保存在您自己的 Google 云端硬盘中。",
+                "videoPlaceholder": "介绍视频即将推出",
+                "aboutVisionTitle": "您的云端硬盘，您的数据",
+                "aboutVisionText": "您的研究属于您。项目、PDF 和稿件保存在您自己的 Google 云端硬盘中，而不是我们的服务器上，并可在任何设备上打开。ResearchCube 只能看到它创建的或您用它打开的文件。",
+                "aboutControlTitle": "一个记住上下文的大脑",
+                "aboutControlText": "当标准 AI 模型只看到您当前的提示时，ResearchCube AI 了解您的整个资料库、您的重点和您的草稿。它是一个真正读过您的资料库的研究伙伴。",
+                "googleText3": "<strong>绝不出售：</strong>我们不出售您的数据，不将其用于广告，也不使用 Google 用户数据训练 AI 模型。请阅读 <a href=\"https://app.rcubetech.com/privacy.html\">ResearchCube 隐私政策</a>。",
+                "googleText2": "<strong>不在我们的服务器上：</strong>您的文件保留在您的云端硬盘中。我们的服务器只保存您的帐号、云端硬盘连接以及您共享项目的人员名单。",
+                "googleText1": "<strong>Google 云端硬盘：</strong>ResearchCube 只请求 Google 云端硬盘权限 <code>drive.file</code> 和 <code>drive.appdata</code>。它将您的项目（文献库、PDF、稿件、笔记）保存在您自己云端硬盘中的 ResearchCube 文件夹里，并且只能看到它创建的或您用它打开的文件。",
+                "googleTitle": "ResearchCube 与您的 Google 帐号",
+                "featuresTitle": "整合您的学术生活",
+                "featuresDesc": "停止在标签页之间浪费30%的时间复制和粘贴。您需要的一切都在一个屋檐下。不要迷失在标签页中，迷失在您研究的深处吧。",
+                "cardSpeedTitle": "不再切换应用",
+                "cardSpeedDesc": "通过关键词或自然语言检索超过 2.5 亿篇学术文献（OpenAlex）：AI 规划检索并对符合您项目的结果进行排序。在同一处阅读 PDF 并记笔记。",
+                "cardPrivacyTitle": "完全所有权",
+                "cardPrivacyDesc": "您始终是您的研究文件和数据的唯一所有者。",
+                "cardBYOSTitle": "上下文感知助手",
+                "cardBYOSDesc": "一个读过您的资料库并了解您研究背景的 AI。不仅仅是一个聊天机器人；它是一个专属的研究助理。",
+                "specsTitle": "集成写作套件",
+                "specsDesc": "无需离开工作区即可从资料到稿件：在应用内编译的 LaTeX 编辑器、期刊和学位论文模板，以及直接来自文献库的引用。",
+                "specLatex": "<strong>LaTeX 与 Markdown 编辑器：</strong>在应用内编译；IEEE、Elsevier、Springer、ACM 及学位论文模板；实时协同写作、评论和修改建议。",
+                "specBibtex": "<strong>智能引用：</strong> 完全兼容 BibTeX 和全球图书馆标准的高级参考管理。",
+                "specAI": "<strong>AI 写作模式：</strong>让段落更学术、更简洁或更充实，进行翻译，或让 AI 解释并修复编译错误；只引用您文献库中的文献。",
+                "navPricing": "定价",
+                "navOpenApp": "打开应用",
+                "pricingTitle": "专业计划",
+                "pricingDesc": "您的项目保存在您自己的 Google 云端硬盘中，因此我们能让 ResearchCube 保持精简且价格实惠。免费开始，没有时间限制。",
+                "tierFreeTitle": "免费版",
+                "tierFreePrice": "¥0",
+                "tierFreeSub": "永久免费，无需银行卡。支持网页、Windows、Mac 和手机。",
+                "featFree1": "<i data-lucide=\"check\"></i> 5 个项目",
+                "featFree2": "<i data-lucide=\"check\"></i> 每个项目 2 位协作者",
+                "featFree3": "<i data-lucide=\"check\"></i> 每天 5 次 AI 请求（使用您免费的 Gemini 密钥）",
+                "featFree4": "<i data-lucide=\"check\"></i> 每天 5 次文献检索（使用免费 OpenAlex 密钥则不限）",
+                "btnFree": "在网页上免费开始",
+                "tierProTitle": "Pro",
+                "tierProPrice": "$4.99<small> / 月</small><div class=\"price-alt\">或 $47.99 / 年</div>",
+                "tierProSub": "按月或按年订阅，在 Microsoft Store 的 ResearchCube 应用中购买（即将推出）。可随时取消；在您登录的任何地方都有效。",
+                "tierProBadge": "最受欢迎",
+                "featPro1": "<i data-lucide=\"check\"></i> 无限项目",
+                "featPro2": "<i data-lucide=\"check\"></i> 无限协作者",
+                "featPro3": "<i data-lucide=\"check\"></i> 无限 AI 请求（使用您自己的 Gemini 密钥）",
+                "featPro4": "<i data-lucide=\"check\"></i> 无限文献检索",
+                "btnPro": "免费开始，随时升级 Pro",
+                "pricingContact": "有关企业授权和 AI 整合事宜，请联系 <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>。",
+                "compTitle": "为什么选择 ResearchCube？",
+                "compDesc": "您自己的云端硬盘和了解您项目的 AI，与将您的工作保存在其服务器上的工具相比。",
+                "compHeadFeature": "功能",
+                "compHeadRC": "ResearchCube",
+                "compHeadCloud": "传统云解决方案",
+                "compFeatOwnership": "数据所有权",
+                "compRC_Ownership": "完全拥有。您自己的 Google 云端硬盘。",
+                "compCloud_Ownership": "第三方。存在于供应商的服务器上。",
+                "compFeatAI": "AI 引擎",
+                "compRC_AI": "上下文感知。了解您的资料库。",
+                "compCloud_AI": "通用。仅限供应商模型。",
+                "compFeatFormat": "格式支持",
+                "compRC_Format": "LaTeX 与 Markdown，在应用内编译，附带模板。",
+                "compCloud_Format": "参考文献、阅读和写作需要不同的工具。",
+                "compFeatOffline": "工作流",
+                "compRC_Offline": "集成。一体化研究操作系统。",
+                "compCloud_Offline": "碎片化。4-5 个不同的应用程序。",
+                "roadmapTitle": "研究的未来",
+                "roadmapDesc": "我们正在构建下一代学术工具。这是接下来要推出的内容。",
+                "mapGraphTitle": "跨学科数据整合",
+                "mapGraphDesc": "将您的分析结果从专用软件（SPSS、MATLAB、Python、LabVIEW 等）直接导入您的工作区，而不会丢失任何数据。",
+                "mapExportTitle": "出版就绪组装",
+                "mapExportDesc": "将您导入的原始数据、表格和发现转换为完美符合目标期刊指南的专业科学格式。",
+                "footerRights": "&copy; 2026 ResearchCube. 保留所有权利。",
+                "footerDevelopedBy": "由 <strong>rcubetech</strong> 开发",
+                "contactTitle": "保持联系",
+                "contactDesc": "有任何问题或反馈吗？我们很乐意听取您的意见。",
+                "contactNameLabel": "姓名",
+                "contactNamePlace": "您的姓名",
+                "contactEmailLabel": "电子邮件",
+                "contactEmailPlace": "your@email.com",
+                "ituLicenseHint": "如果您使用 ITU 邮箱地址发送信息，只需在消息中包含“Lisans”一词，即可获得免费的 Pro 许可证。",
+                "contactMessageLabel": "信息",
+                "contactMessagePlace": "我们能如何帮助您？",
+                "btnSubmit": "发送信息",
+                "footerPrivacy": "隐私政策",
+                "footerFollowUs": "关注我们的动态",
+            }
+        };
+
+
+        const supportedLangs = ['en', 'tr', 'ar', 'fr', 'es', 'de', 'zh', 'ja'];
+        const browserLang = navigator.language.split('-')[0];
+        // A language page (/tr/, /de/ …, made by tools/build_lang_pages.py) is in its language; the main page
+        // follows the visitor's earlier choice, else the browser's language
+        const pageLang = document.documentElement.dataset.pageLang;
+        let savedLang = null;
+        try { savedLang = localStorage.getItem('lang'); } catch (e) { /* storage blocked */ }
+        let currentLang = pageLang || (supportedLangs.includes(savedLang) ? savedLang
+            : supportedLangs.includes(browserLang) ? browserLang : 'en');
+
+        // The language menu: go to that language's page (its own address, which search engines list)
+        function goLanguage(lang) {
+            try { localStorage.setItem('lang', lang); } catch (e) { /* storage blocked */ }
+            if (location.protocol === 'file:') { setLanguage(lang); return; }
+            location.href = (lang === 'en' ? '/' : '/' + lang + '/') + location.hash;
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[currentLang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.innerHTML = t[key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key]) {
+                    el.placeholder = t[key];
+                }
+            });
+
+            document.getElementById('current-lang').innerText = currentLang.toUpperCase();
+
+            // Highlight active lang in dropdown
+            document.querySelectorAll('.lang-dropdown-content button').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // Dropdown toggle for mobile
+        document.querySelector('.lang-toggle').addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.parentElement.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function () {
+            document.querySelector('.lang-dropdown').classList.remove('show');
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateThemeAssets(isLight);
+        }
+
+        function updateThemeAssets(isLight) {
+            const icon = document.querySelector('#theme-toggle i');
+
+            if (isLight) {
+                icon.setAttribute('data-lucide', 'moon');
+            } else {
+                icon.setAttribute('data-lucide', 'sun');
+            }
+            lucide.createIcons();
+        }
+
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Google Apps Script Web App URL that handles every contact form submission:
+        // Turkish reply (+ optional free license) for @itu.edu.tr senders, English
+        // reply for everyone else. See apps-script/README.md for deployment steps.
+        const CONTACT_BACKEND_ENDPOINT = "https://script.google.com/macros/s/AKfycbyqjs4EcRYONzRANsuwekat1RNrumNZdlHYm7UzXFLVy0c3vq8nnLACHqOxNt5BQxk/exec";
+
+        // Anti-bot: timestamp the moment the form became interactive. Combined
+        // with the hidden honeypot field, the backend rejects submissions that
+        // arrive implausibly fast or with the honeypot filled in (real visitors
+        // never see or fill it; simple bots that auto-fill every field do).
+        const CONTACT_FORM_LOADED_AT = Date.now();
+
+        const RECAPTCHA_SITE_KEY = "6Lfib3ctAAAAAGO5hT0jZZGGvMAk4nha5QApRk-N";
+
+        // Resolves to a fresh v3 token, or "" if reCAPTCHA didn't load (e.g. blocked
+        // by an ad/privacy blocker). The backend treats a missing token as a bot
+        // signal and drops the submission - that's the same thing a bot bypassing
+        // this script would send, so we can't tell the two apart server-side.
+        function getRecaptchaToken() {
+            if (!window.grecaptcha) return Promise.resolve("");
+            return new Promise(resolve => {
+                grecaptcha.ready(() => {
+                    grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "contact_submit" })
+                        .then(resolve)
+                        .catch(() => resolve(""));
+                });
+            });
+        }
+
+        function isItuEmailClient(email) {
+            const domain = (email.split('@')[1] || '').toLowerCase();
+            return domain === 'itu.edu.tr' || domain.endsWith('.itu.edu.tr');
+        }
+
+        function toggleItuLicenseHint(email) {
+            const hint = document.getElementById('itu-license-hint');
+            hint.style.display = isItuEmailClient(email) ? 'block' : 'none';
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button');
+            const originalText = btn.innerText;
+            const t = translations[currentLang] || translations['en'];
+
+            // Loading state
+            btn.innerText = t['btnSending'] || ((currentLang === 'tr') ? 'Gönderiliyor...' : 'Sending...');
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            const hp = document.getElementById('contact-hp').value;
+
+            getRecaptchaToken()
+                .then(recaptchaToken => fetch(CONTACT_BACKEND_ENDPOINT, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name: name, email: email, message: message,
+                        hp: hp, loadedAt: CONTACT_FORM_LOADED_AT, recaptchaToken: recaptchaToken
+                    })
+                }))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'error') {
+                        // Apps Script rejected it (already redeemed, out of stock, etc.)
+                        throw new Error(data.message || data.code || 'error');
+                    }
+                    // Success
+                    btn.innerText = t['btnSent'] || ((currentLang === 'tr') ? 'Gönderildi!' : 'Sent!');
+                    btn.style.background = 'var(--accent)';
+                    btn.style.opacity = '1';
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        event.target.reset();
+                    }, 3000);
+                })
+                .catch(error => {
+                    // Error
+                    btn.innerText = t['btnError'] || ((currentLang === 'tr') ? 'Hata Oluştu!' : 'Error!');
+                    btn.style.background = '#ef4444'; // red
+                    btn.style.opacity = '1';
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
+                });
+        }
+
+        // Carousel Logic
+        let currentSlide = 1;
+        const totalSlides = 5;
+        let slideInterval;
+
+        function goToSlide(slideIndex) {
+            // Hide all slides
+            document.querySelectorAll('.carousel-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            // Uncheck all dots
+            document.querySelectorAll('.carousel-dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            // Show current slide
+            document.getElementById(`slide-${slideIndex}`).classList.add('active');
+            // Check current dot
+            document.querySelectorAll('.carousel-dot')[slideIndex - 1].classList.add('active');
+
+            currentSlide = slideIndex;
+            resetSlideInterval();
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next > totalSlides) next = 1;
+            goToSlide(next);
+        }
+
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Initialize content
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            updateThemeAssets(true);
+        }
+        setLanguage(currentLang);
+
+        // Clicks that open the app: GA4 event "open_app" (where on the page, in which language)
+        document.addEventListener('click', e => {
+            const a = e.target.closest && e.target.closest('a[href^="https://app.rcubetech.com"]');
+            if (!a || /privacy|terms/.test(a.getAttribute('href')) || typeof gtag !== 'function') return;
+            const section = a.closest('section[id], nav, header, footer');
+            gtag('event', 'open_app', { link_location: a.dataset.loc || (section && (section.id || section.tagName.toLowerCase())) || 'page', page_language: currentLang });
+        });
+        resetSlideInterval(); // Start carousel
+    </script>
+</body>
+
+</html>

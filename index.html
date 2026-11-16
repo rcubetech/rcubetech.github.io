@@ -16,23 +16,68 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ResearchCube is the ultimate all-in-one academic workstation. Unify literature search, PDF reading, data management, and AI-assisted drafting in a single local-first environment.">
-    <meta name="keywords" content="ResearchCube, academic software, literature review, AI research assistant, PDF reader, LaTeX editor, reference manager">
+    <meta name="description" content="A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.">
     <meta name="author" content="rcubetech">
-    
+    <link rel="canonical" href="https://rcubetech.com/">
+    <link rel="alternate" hreflang="en" href="https://rcubetech.com/">
+    <link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/">
+    <link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/">
+    <link rel="alternate" hreflang="fr" href="https://rcubetech.com/fr/">
+    <link rel="alternate" hreflang="es" href="https://rcubetech.com/es/">
+    <link rel="alternate" hreflang="de" href="https://rcubetech.com/de/">
+    <link rel="alternate" hreflang="zh" href="https://rcubetech.com/zh/">
+    <link rel="alternate" hreflang="ja" href="https://rcubetech.com/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://rcubetech.com/">
+
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="ResearchCube - The Ultimate Academic Workstation">
-    <meta property="og:description" content="Unify literature search, PDF reading, data management, and AI-assisted drafting in a single local-first environment.">
+    <meta property="og:title" content="ResearchCube – Free Research Workspace: Library, PDF Reader, LaTeX Editor and AI">
+    <meta property="og:description" content="A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rcubetech.github.io/">
-    <meta property="og:image" content="https://rcubetech.github.io/assets/preview.png">
-    
+    <meta property="og:url" content="https://rcubetech.com/">
+    <meta property="og:image" content="https://rcubetech.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ResearchCube">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ResearchCube - The Ultimate Academic Workstation">
-    <meta name="twitter:description" content="Unify literature search, PDF reading, data management, and AI-assisted drafting in a single local-first environment.">
-    
-    <title>ResearchCube - All-in-One Research Operating System</title>
+    <meta name="twitter:title" content="ResearchCube – Free Research Workspace: Library, PDF Reader, LaTeX Editor and AI">
+    <meta name="twitter:description" content="A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.">
+    <meta name="twitter:image" content="https://rcubetech.com/assets/og-image.png">
+
+    <title>ResearchCube – Free Research Workspace: Library, PDF Reader, LaTeX Editor and AI</title>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ResearchCube",
+  "url": "https://app.rcubetech.com",
+  "applicationCategory": "EducationalApplication",
+  "applicationSubCategory": "Reference management, PDF reader, LaTeX editor",
+  "operatingSystem": "Web, Windows, macOS, Android, iOS",
+  "description": "A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro (monthly)",
+      "price": "4.99",
+      "priceCurrency": "USD"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "rcubetech",
+    "url": "https://rcubetech.com",
+    "email": "info@rcubetech.com"
+  }
+}
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_roadmap.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -107,14 +152,14 @@
                     <span id="current-lang">EN</span>
                 </button>
                 <div class="lang-dropdown-content">
-                    <button onclick="setLanguage('ar')" data-lang="ar">العربية</button>
-                    <button onclick="setLanguage('de')" data-lang="de">Deutsch</button>
-                    <button onclick="setLanguage('en')" data-lang="en">English</button>
-                    <button onclick="setLanguage('es')" data-lang="es">Español</button>
-                    <button onclick="setLanguage('fr')" data-lang="fr">Français</button>
-                    <button onclick="setLanguage('ja')" data-lang="ja">日本語</button>
-                    <button onclick="setLanguage('zh')" data-lang="zh">简体中文</button>
-                    <button onclick="setLanguage('tr')" data-lang="tr">Türkçe</button>
+                    <button onclick="goLanguage('ar')" data-lang="ar">العربية</button>
+                    <button onclick="goLanguage('de')" data-lang="de">Deutsch</button>
+                    <button onclick="goLanguage('en')" data-lang="en">English</button>
+                    <button onclick="goLanguage('es')" data-lang="es">Español</button>
+                    <button onclick="goLanguage('fr')" data-lang="fr">Français</button>
+                    <button onclick="goLanguage('ja')" data-lang="ja">日本語</button>
+                    <button onclick="goLanguage('zh')" data-lang="zh">简体中文</button>
+                    <button onclick="goLanguage('tr')" data-lang="tr">Türkçe</button>
                 </div>
             </div>
         </div>
@@ -799,7 +844,7 @@
                 <div class="tier-badge-featured" data-i18n="tierProBadge">Most Popular</div>
                 <div class="tier-header">
                     <h3 data-i18n="tierProTitle">Pro</h3>
-                    <p data-i18n="tierProSub">Monthly or yearly subscription through the Microsoft Store. Cancel any time; works everywhere you sign in.</p>
+                    <p data-i18n="tierProSub">Monthly or yearly subscription, bought in the ResearchCube app from the Microsoft Store (coming soon). Cancel any time; works everywhere you sign in.</p>
                 </div>
 
                 <div class="price" data-i18n="tierProPrice">$4.99<small> / month</small><div class="price-alt">or $47.99 / year</div></div>
@@ -810,9 +855,9 @@
                     <li data-i18n="featPro3"><i data-lucide="check"></i> Unlimited AI requests (your own Gemini key)</li>
                     <li data-i18n="featPro4"><i data-lucide="check"></i> Unlimited literature searches</li>
                 </ul>
-                <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank"
+                <a href="https://app.rcubetech.com" data-loc="pricing-pro"
                     class="btn-primary full-width" style="text-decoration:none; text-align:center;"
-                    data-i18n="btnPro">Get Pro in the Microsoft Store</a>
+                    data-i18n="btnPro">Start free, go Pro later</a>
             </div>
         </div>
 
@@ -895,7 +940,10 @@
 
     <script>
         const translations = {
-            en: {                "cardAISuggestions": "AI Suggestions",
+            en: {
+                "metaTitle": "ResearchCube – Free Research Workspace: Library, PDF Reader, LaTeX Editor and AI",
+                "metaDesc": "A free research workspace in your browser: search 250M+ scholarly works, organize your library, read and annotate PDFs, write in LaTeX or Markdown with co-authors, and ask an AI that knows your sources. Your files stay in your own Google Drive.",
+                "cardAISuggestions": "AI Suggestions",
                 "cardOneClickSave": "One-Click Save",
                 "cardSmartHighlight": "Smart Highlight",
                 "cardPdfChat": "PDF Chat",
@@ -918,7 +966,6 @@
                 "btnError": "Error!",
                 "navAbout": "About",
                 "navFeatures": "Features",
-                "navGetEarlyAccess": "Get from Microsoft Store",
                 "heroTitle": "Every Stage of Your Research.<br><span class=\"gradient-text\">One Professional Workspace.</span>",
                 "heroBadge": "ResearchCube · For Academic and Industrial Research",
                 "btnStartFree": "Start for Free",
@@ -926,7 +973,6 @@
                 "step2": "Analyzing...",
                 "step3": "Creating Draft",
                 "heroSub": "Stop getting lost between applications. Search the literature, read and annotate PDFs, write in LaTeX with your co-authors and ask an AI that knows your library, in one workspace on the web and on Windows. Your projects stay in your own Google Drive.",
-                "btnDownload": "Get from Microsoft Store",
                 "btnWatchTour": "Explore the Architecture",
                 "heroNote": "✓ Your files stay in your Google Drive  ✓ Web, Windows, Mac and phone  ✓ Free plan with no time limit",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Research Operating System (ReOS)",
@@ -970,13 +1016,13 @@
                 "btnFree": "Start free on the web",
                 "tierProTitle": "Pro",
                 "tierProPrice": "$4.99<small> / month</small><div class=\"price-alt\">or $47.99 / year</div>",
-                "tierProSub": "Monthly or yearly subscription through the Microsoft Store. Cancel any time; works everywhere you sign in.",
+                "tierProSub": "Monthly or yearly subscription, bought in the ResearchCube app from the Microsoft Store (coming soon). Cancel any time; works everywhere you sign in.",
                 "tierProBadge": "Most Popular",
                 "featPro1": "<i data-lucide=\"check\"></i> Unlimited projects",
                 "featPro2": "<i data-lucide=\"check\"></i> Unlimited collaborators",
                 "featPro3": "<i data-lucide=\"check\"></i> Unlimited AI requests (your own Gemini key)",
                 "featPro4": "<i data-lucide=\"check\"></i> Unlimited literature searches",
-                "btnPro": "Get Pro in the Microsoft Store",
+                "btnPro": "Start free, go Pro later",
                 "pricingContact": "For corporate licensing and AI integrations, please contact us at <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
                 "compTitle": "Why ResearchCube?",
                 "compDesc": "Your own Drive and an AI that knows your project, compared with tools that keep your work on their servers.",
@@ -1015,7 +1061,10 @@
                 "contactMessagePlace": "How can we help?",
                 "btnSubmit": "Send Message",
                 "footerPrivacy": "Privacy Policy"},
-            tr: {                "cardAISuggestions": "Yapay Zeka Önerileri",
+            tr: {
+                "metaTitle": "ResearchCube – Ücretsiz Araştırma Ortamı: Kaynak Yönetimi, PDF Okuyucu, LaTeX ve Yapay Zekâ",
+                "metaDesc": "Tarayıcıda ücretsiz araştırma ortamı: 250 milyondan fazla akademik yayında arayın, kütüphanenizi düzenleyin, PDF'leri okuyup not alın, ortak yazarlarınızla LaTeX veya Markdown'da yazın ve kaynaklarınızı bilen bir yapay zekâya danışın. Dosyalarınız kendi Google Drive'ınızda kalır.",
+                "cardAISuggestions": "Yapay Zeka Önerileri",
                 "cardOneClickSave": "Tek Tıkla Kaydet",
                 "cardSmartHighlight": "Akıllı Vurgu",
                 "cardPdfChat": "PDF Sohbeti",
@@ -1038,7 +1087,6 @@
                 "btnError": "Hata Oluştu!",
                 "navAbout": "Hakkında",
                 "navFeatures": "Özellikler",
-                "navGetEarlyAccess": "Microsoft Store'dan Edin",
                 "heroTitle": "Araştırmanızın Her Aşaması.<br><span class=\"gradient-text\">Tek Bir Profesyonel Çalışma Alanı.</span>",
                 "heroBadge": "ResearchCube · Akademik ve Endüstriyel Araştırmalar İçin",
                 "btnStartFree": "Ücretsiz Başlayın",
@@ -1046,7 +1094,6 @@
                 "step2": "Analiz Ediliyor...",
                 "step3": "Taslak Oluşturuluyor",
                 "heroSub": "Uygulamalar arasında kaybolmaya son verin. Literatürü tarayın, PDF'leri okuyup not alın, ortak yazarlarınızla LaTeX'te yazın ve kütüphanenizi tanıyan bir yapay zekâya danışın; hepsi web'de ve Windows'ta tek bir çalışma alanında. Projeleriniz kendi Google Drive'ınızda kalır.",
-                "btnDownload": "Microsoft Store'dan İndir",
                 "btnWatchTour": "Mimariyi Keşfedin",
                 "heroNote": "✓ Dosyalarınız Google Drive'ınızda kalır  ✓ Web, Windows, Mac ve telefon  ✓ Süresiz ücretsiz plan",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Araştırma İşletim Sistemi (ReOS)",
@@ -1090,13 +1137,13 @@
                 "btnFree": "Web'de ücretsiz başla",
                 "tierProTitle": "Pro",
                 "tierProPrice": "4,99 $<small> / ay</small><div class=\"price-alt\">ya da yıllık 47,99 $</div>",
-                "tierProSub": "Microsoft Store üzerinden aylık ya da yıllık abonelik. İstediğiniz zaman iptal edin; giriş yaptığınız her yerde geçerli.",
+                "tierProSub": "Aylık ya da yıllık abonelik; Microsoft Store'daki ResearchCube uygulamasından alınır (yakında). İstediğiniz zaman iptal edin; giriş yaptığınız her yerde geçerli.",
                 "tierProBadge": "En Popüler",
                 "featPro1": "<i data-lucide=\"check\"></i> Sınırsız proje",
                 "featPro2": "<i data-lucide=\"check\"></i> Sınırsız ortak çalışan",
                 "featPro3": "<i data-lucide=\"check\"></i> Sınırsız AI isteği (kendi Gemini anahtarınızla)",
                 "featPro4": "<i data-lucide=\"check\"></i> Sınırsız literatür araması",
-                "btnPro": "Pro'yu Microsoft Store'dan alın",
+                "btnPro": "Ücretsiz başlayın, sonra Pro'ya geçin",
                 "pricingContact": "Kurumsal alımlar ve AI entegrasyonları için lütfen <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a> adresinden bizimle iletişime geçiniz.",
                 "compTitle": "Neden ResearchCube?",
                 "compDesc": "Kendi Drive'ınız ve projenizi tanıyan bir yapay zekâ; çalışmanızı kendi sunucularında tutan araçlarla karşılaştırma.",
@@ -1135,7 +1182,10 @@
                 "contactMessagePlace": "Size nasıl yardımcı olabiliriz?",
                 "btnSubmit": "Mesaj Gönder",
                 "footerPrivacy": "Gizlilik Politikası"},
-            de: {                "cardAISuggestions": "KI-Vorschläge",
+            de: {
+                "metaTitle": "ResearchCube – Kostenloser Forschungsarbeitsplatz: Literaturverwaltung, PDF-Reader, LaTeX und KI",
+                "metaDesc": "Ein kostenloser Forschungsarbeitsplatz im Browser: über 250 Mio. wissenschaftliche Werke durchsuchen, Ihre Bibliothek ordnen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX oder Markdown schreiben und eine KI fragen, die Ihre Quellen kennt. Ihre Dateien bleiben in Ihrem eigenen Google Drive.",
+                "cardAISuggestions": "KI-Vorschläge",
                 "cardOneClickSave": "Ein-Klick Speichern",
                 "cardSmartHighlight": "Smartes Markieren",
                 "cardPdfChat": "PDF-Chat",
@@ -1158,7 +1208,6 @@
                 "btnError": "Fehler!",
                 "navAbout": "Über",
                 "navFeatures": "Funktionen",
-                "navGetEarlyAccess": "Vom Microsoft Store erhalten",
                 "heroTitle": "Jede Phase Ihrer Forschung.<br><span class=\"gradient-text\">Ein professioneller Arbeitsbereich.</span>",
                 "heroBadge": "ResearchCube · Für akademische und industrielle Forschung",
                 "btnStartFree": "Kostenlos starten",
@@ -1166,7 +1215,6 @@
                 "step2": "Wird analysiert...",
                 "step3": "Entwurf",
                 "heroSub": "Verlieren Sie sich nicht länger zwischen Anwendungen. Literatur suchen, PDFs lesen und annotieren, mit Ko-Autoren in LaTeX schreiben und eine KI fragen, die Ihre Bibliothek kennt – in einem Arbeitsbereich im Web und unter Windows. Ihre Projekte bleiben in Ihrem eigenen Google Drive.",
-                "btnDownload": "Vom Microsoft Store herunterladen",
                 "btnWatchTour": "Entdecken Sie die Architektur",
                 "heroNote": "✓ Ihre Dateien bleiben in Ihrem Google Drive  ✓ Web, Windows, Mac und Smartphone  ✓ Kostenloser Plan ohne Zeitlimit",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Research Operating System (ReOS)",
@@ -1210,13 +1258,13 @@
                 "btnFree": "Kostenlos im Web starten",
                 "tierProTitle": "Pro",
                 "tierProPrice": "4,99 $<small> / Monat</small><div class=\"price-alt\">oder 47,99 $ / Jahr</div>",
-                "tierProSub": "Monats- oder Jahresabo über den Microsoft Store. Jederzeit kündbar; gilt überall, wo Sie sich anmelden.",
+                "tierProSub": "Monats- oder Jahresabo, abgeschlossen in der ResearchCube-App aus dem Microsoft Store (in Kürze). Jederzeit kündbar; gilt überall, wo Sie sich anmelden.",
                 "tierProBadge": "Am beliebtesten",
                 "featPro1": "<i data-lucide=\"check\"></i> Unbegrenzte Projekte",
                 "featPro2": "<i data-lucide=\"check\"></i> Unbegrenzt viele Mitwirkende",
                 "featPro3": "<i data-lucide=\"check\"></i> Unbegrenzte KI-Anfragen (Ihr eigener Gemini-Schlüssel)",
                 "featPro4": "<i data-lucide=\"check\"></i> Unbegrenzte Literatursuchen",
-                "btnPro": "Pro im Microsoft Store holen",
+                "btnPro": "Kostenlos starten, später zu Pro",
                 "pricingContact": "Für Unternehmenslizenzen und KI-Integrationen kontaktieren Sie uns bitte unter <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
                 "compTitle": "Warum ResearchCube?",
                 "compDesc": "Ihr eigenes Drive und eine KI, die Ihr Projekt kennt – im Vergleich zu Tools, die Ihre Arbeit auf ihren Servern speichern.",
@@ -1256,7 +1304,10 @@
                 "footerPrivacy": "Datenschutzerklärung",
                 "footerFollowUs": "Folgen Sie uns für Updates",
             },
-            es: {                "cardAISuggestions": "Sugerencias de IA",
+            es: {
+                "metaTitle": "ResearchCube – Espacio de investigación gratuito: gestor de referencias, lector de PDF, LaTeX e IA",
+                "metaDesc": "Un espacio de investigación gratuito en tu navegador: busca en más de 250 millones de trabajos académicos, organiza tu biblioteca, lee y anota PDF, escribe en LaTeX o Markdown con tus coautores y consulta a una IA que conoce tus fuentes. Tus archivos se quedan en tu propio Google Drive.",
+                "cardAISuggestions": "Sugerencias de IA",
                 "cardOneClickSave": "Guardar con un clic",
                 "cardSmartHighlight": "Resaltado Inteligente",
                 "cardPdfChat": "Chat de PDF",
@@ -1279,7 +1330,6 @@
                 "btnError": "¡Error!",
                 "navAbout": "Sobre",
                 "navFeatures": "Funciones",
-                "navGetEarlyAccess": "Obtener de Microsoft Store",
                 "heroTitle": "Cada etapa de tu investigación.<br><span class=\"gradient-text\">Un espacio de trabajo profesional único.</span>",
                 "heroBadge": "ResearchCube · Para investigación académica e industrial",
                 "btnStartFree": "Empieza gratis",
@@ -1287,7 +1337,6 @@
                 "step2": "Analizando...",
                 "step3": "Redactando",
                 "heroSub": "Deja de perderte entre aplicaciones. Busca literatura, lee y anota PDF, escribe en LaTeX con tus coautores y consulta a una IA que conoce tu biblioteca, en un solo espacio de trabajo en la web y en Windows. Tus proyectos se quedan en tu propio Google Drive.",
-                "btnDownload": "Obtener de Microsoft Store",
                 "btnWatchTour": "Explorar la arquitectura",
                 "heroNote": "✓ Tus archivos se quedan en tu Google Drive  ✓ Web, Windows, Mac y móvil  ✓ Plan gratuito sin límite de tiempo",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Sistema Operativo de Investigación (ReOS)",
@@ -1331,13 +1380,13 @@
                 "btnFree": "Empieza gratis en la web",
                 "tierProTitle": "Pro",
                 "tierProPrice": "4,99 $<small> / mes</small><div class=\"price-alt\">o 47,99 $ / año</div>",
-                "tierProSub": "Suscripción mensual o anual a través de Microsoft Store. Cancela cuando quieras; funciona en todos los lugares donde inicies sesión.",
+                "tierProSub": "Suscripción mensual o anual, contratada en la app ResearchCube de Microsoft Store (próximamente). Cancela cuando quieras; funciona en todos los lugares donde inicies sesión.",
                 "tierProBadge": "Más Popular",
                 "featPro1": "<i data-lucide=\"check\"></i> Proyectos ilimitados",
                 "featPro2": "<i data-lucide=\"check\"></i> Colaboradores ilimitados",
                 "featPro3": "<i data-lucide=\"check\"></i> Solicitudes de IA ilimitadas (tu propia clave de Gemini)",
                 "featPro4": "<i data-lucide=\"check\"></i> Búsquedas de literatura ilimitadas",
-                "btnPro": "Consigue Pro en Microsoft Store",
+                "btnPro": "Empieza gratis, pásate a Pro después",
                 "pricingContact": "Para licencias corporativas e integraciones de IA, contáctanos en <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
                 "compTitle": "¿Por qué ResearchCube?",
                 "compDesc": "Tu propio Drive y una IA que conoce tu proyecto, frente a herramientas que guardan tu trabajo en sus servidores.",
@@ -1377,7 +1426,10 @@
                 "footerPrivacy": "Política de Privacidad",
                 "footerFollowUs": "Síguenos para actualizaciones",
             },
-            fr: {                "cardAISuggestions": "Suggestions IA",
+            fr: {
+                "metaTitle": "ResearchCube – Espace de recherche gratuit : gestion bibliographique, lecteur PDF, LaTeX et IA",
+                "metaDesc": "Un espace de recherche gratuit dans votre navigateur : cherchez parmi plus de 250 millions de travaux scientifiques, organisez votre bibliothèque, lisez et annotez vos PDF, rédigez en LaTeX ou Markdown avec vos coauteurs et interrogez une IA qui connaît vos sources. Vos fichiers restent dans votre propre Google Drive.",
+                "cardAISuggestions": "Suggestions IA",
                 "cardOneClickSave": "Sauvegarde en 1 Clic",
                 "cardSmartHighlight": "Surlignage Intel.",
                 "cardPdfChat": "Chat PDF",
@@ -1400,7 +1452,6 @@
                 "btnError": "Erreur !",
                 "navAbout": "À propos",
                 "navFeatures": "Fonctionnalités",
-                "navGetEarlyAccess": "Obtenir sur Microsoft Store",
                 "heroTitle": "Chaque étape de votre recherche.<br><span class=\"gradient-text\">Un seul espace professionnel.</span>",
                 "heroBadge": "ResearchCube · Pour la recherche académique et industrielle",
                 "btnStartFree": "Commencer gratuitement",
@@ -1408,7 +1459,6 @@
                 "step2": "Analyse en cours...",
                 "step3": "Rédaction",
                 "heroSub": "Ne vous perdez plus entre les applications. Recherchez la littérature, lisez et annotez vos PDF, rédigez en LaTeX avec vos coauteurs et interrogez une IA qui connaît votre bibliothèque, dans un seul espace de travail sur le web et sous Windows. Vos projets restent dans votre propre Google Drive.",
-                "btnDownload": "Obtenir sur Microsoft Store",
                 "btnWatchTour": "Explorer l'architecture",
                 "heroNote": "✓ Vos fichiers restent dans votre Google Drive  ✓ Web, Windows, Mac et mobile  ✓ Offre gratuite sans limite de durée",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> Système d'Exploitation de Recherche (ReOS)",
@@ -1452,13 +1502,13 @@
                 "btnFree": "Commencer gratuitement sur le web",
                 "tierProTitle": "Pro",
                 "tierProPrice": "4,99 $<small> / mois</small><div class=\"price-alt\">ou 47,99 $ / an</div>",
-                "tierProSub": "Abonnement mensuel ou annuel via le Microsoft Store. Résiliable à tout moment ; valable partout où vous vous connectez.",
+                "tierProSub": "Abonnement mensuel ou annuel, souscrit dans l'app ResearchCube du Microsoft Store (bientôt disponible). Résiliable à tout moment ; valable partout où vous vous connectez.",
                 "tierProBadge": "Le Plus Populaire",
                 "featPro1": "<i data-lucide=\"check\"></i> Projets illimités",
                 "featPro2": "<i data-lucide=\"check\"></i> Collaborateurs illimités",
                 "featPro3": "<i data-lucide=\"check\"></i> Requêtes IA illimitées (votre propre clé Gemini)",
                 "featPro4": "<i data-lucide=\"check\"></i> Recherches bibliographiques illimitées",
-                "btnPro": "Obtenir Pro sur le Microsoft Store",
+                "btnPro": "Commencer gratuitement, passer à Pro plus tard",
                 "pricingContact": "Pour des licences d'entreprise et des intégrations d'IA, veuillez nous contacter à <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
                 "compTitle": "Pourquoi ResearchCube ?",
                 "compDesc": "Votre propre Drive et une IA qui connaît votre projet, comparés aux outils qui gardent votre travail sur leurs serveurs.",
@@ -1498,7 +1548,10 @@
                 "footerPrivacy": "Politique de Confidentialité",
                 "footerFollowUs": "Suivez-nous pour les mises à jour",
             },
-            ar: {                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
+            ar: {
+                "metaTitle": "ResearchCube – مساحة عمل بحثية مجانية: إدارة المراجع وقارئ PDF ومحرر LaTeX والذكاء الاصطناعي",
+                "metaDesc": "مساحة عمل بحثية مجانية في متصفحك: ابحث في أكثر من 250 مليون عمل علمي، ونظّم مكتبتك، واقرأ ملفات PDF وعلّق عليها، واكتب بلغة LaTeX أو Markdown مع شركائك في التأليف، واسأل ذكاءً اصطناعيًا يعرف مصادرك. تبقى ملفاتك في Google Drive الخاص بك.",
+                "cardAISuggestions": "اقتراحات الذكاء الاصطناعي",
                 "cardOneClickSave": "حفظ بنقرة واحدة",
                 "cardSmartHighlight": "تظليل ذكي",
                 "cardPdfChat": "دردشة PDF",
@@ -1522,7 +1575,6 @@
                 "btnError": "حدث خطأ!",
                 "navAbout": "حول",
                 "navFeatures": "المميزات",
-                "navGetEarlyAccess": "احصل عليه من Microsoft Store",
                 "heroTitle": "كل مرحلة من مراحل بحثك.<br><span class=\"gradient-text\">مساحة عمل احترافية واحدة.</span>",
                 "heroBadge": "ResearchCube · للبحوث الأكاديمية والصناعية",
                 "btnStartFree": "ابدأ مجانًا",
@@ -1530,7 +1582,6 @@
                 "step2": "جاري التحليل...",
                 "step3": "جاري الصياغة",
                 "heroSub": "توقف عن الضياع بين التطبيقات. ابحث في المؤلفات، واقرأ ملفات PDF وعلّق عليها، واكتب بلغة LaTeX مع شركائك في التأليف، واسأل ذكاءً اصطناعيًا يعرف مكتبتك، في مساحة عمل واحدة على الويب وعلى Windows. تبقى مشاريعك في Google Drive الخاص بك.",
-                "btnDownload": "احصل عليه من Microsoft Store",
                 "btnWatchTour": "اكتشف المعمارية",
                 "heroNote": "✓ تبقى ملفاتك في Google Drive الخاص بك  ✓ الويب وWindows وMac والهاتف  ✓ خطة مجانية بلا حد زمني",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> نظام تشغيل الأبحاث (ReOS)",
@@ -1574,13 +1625,13 @@
                 "btnFree": "ابدأ مجانًا على الويب",
                 "tierProTitle": "Pro",
                 "tierProPrice": "4.99 $<small> / شهريًا</small><div class=\"price-alt\">أو 47.99 $ / سنويًا</div>",
-                "tierProSub": "اشتراك شهري أو سنوي عبر Microsoft Store. يمكنك الإلغاء في أي وقت، ويعمل أينما سجّلت الدخول.",
+                "tierProSub": "اشتراك شهري أو سنوي يُشترى من تطبيق ResearchCube في Microsoft Store (قريبًا). يمكنك الإلغاء في أي وقت، ويعمل أينما سجّلت الدخول.",
                 "tierProBadge": "الأكثر شعبية",
                 "featPro1": "<i data-lucide=\"check\"></i> مشاريع غير محدودة",
                 "featPro2": "<i data-lucide=\"check\"></i> عدد غير محدود من الشركاء",
                 "featPro3": "<i data-lucide=\"check\"></i> طلبات ذكاء اصطناعي غير محدودة (بمفتاح Gemini الخاص بك)",
                 "featPro4": "<i data-lucide=\"check\"></i> عمليات بحث غير محدودة في المؤلفات",
-                "btnPro": "احصل على Pro من Microsoft Store",
+                "btnPro": "ابدأ مجانًا وانتقل إلى Pro لاحقًا",
                 "pricingContact": "لتراخيص الشركات ودمج الذكاء الاصطناعي، يرجى الاتصال بنا على <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>.",
                 "compTitle": "لماذا ResearchCube؟",
                 "compDesc": "Drive الخاص بك وذكاء اصطناعي يعرف مشروعك، مقارنة بأدوات تحتفظ بعملك على خوادمها.",
@@ -1620,7 +1671,10 @@
                 "footerPrivacy": "سياسة الخصوصية",
                 "footerFollowUs": "تابعنا للحصول على التحديثات",
             },
-            ja: {                "cardAISuggestions": "AIの提案",
+            ja: {
+                "metaTitle": "ResearchCube – 無料の研究ワークスペース：文献管理、PDFリーダー、LaTeX、AI",
+                "metaDesc": "ブラウザで使える無料の研究ワークスペース。2億5,000万件以上の学術文献を検索し、ライブラリを整理し、PDFを読んで注釈を付け、共著者とLaTeXやMarkdownで執筆し、あなたの文献を理解するAIに質問できます。ファイルはあなた自身のGoogleドライブに保存されます。",
+                "cardAISuggestions": "AIの提案",
                 "cardOneClickSave": "ワンクリック保存",
                 "cardSmartHighlight": "スマートハイライト",
                 "cardPdfChat": "PDFチャット",
@@ -1643,7 +1697,6 @@
                 "btnError": "エラーが発生しました",
                 "navAbout": "概要",
                 "navFeatures": "特徴",
-                "navGetEarlyAccess": "Microsoft Storeから入手",
                 "heroTitle": "研究のすべての段階を。<br><span class=\"gradient-text\">一つのプロフェッショナルなワークスペースで。</span>",
                 "heroBadge": "ResearchCube · 学術および産業研究向け",
                 "btnStartFree": "無料で始める",
@@ -1651,7 +1704,6 @@
                 "step2": "分析中...",
                 "step3": "下書き中",
                 "heroSub": "アプリ間を行き来するのはもう終わりにしましょう。文献検索、PDFの閲覧と注釈、共著者とのLaTeX執筆、そしてあなたのライブラリを理解するAIへの相談を、Webと Windows の一つのワークスペースで。プロジェクトはあなた自身の Google ドライブに保存されます。",
-                "btnDownload": "Microsoft Storeからダウンロード",
                 "btnWatchTour": "アーキテクチャを探索",
                 "heroNote": "✓ ファイルはあなたの Google ドライブに  ✓ Web・Windows・Mac・スマートフォン  ✓ 期限のない無料プラン",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> 研究オペレーティングシステム (ReOS)",
@@ -1695,13 +1747,13 @@
                 "btnFree": "Webで無料で始める",
                 "tierProTitle": "Pro",
                 "tierProPrice": "$4.99<small> / 月</small><div class=\"price-alt\">または $47.99 / 年</div>",
-                "tierProSub": "Microsoft Store での月額または年額サブスクリプション。いつでも解約可能。サインインするすべての場所で有効。",
+                "tierProSub": "月額または年額サブスクリプション。Microsoft Store の ResearchCube アプリで購入できます（近日公開）。いつでも解約可能。サインインするすべての場所で有効。",
                 "tierProBadge": "最も人気",
                 "featPro1": "<i data-lucide=\"check\"></i> プロジェクト無制限",
                 "featPro2": "<i data-lucide=\"check\"></i> 共同作業者無制限",
                 "featPro3": "<i data-lucide=\"check\"></i> AIリクエスト無制限（ご自身の Gemini キー）",
                 "featPro4": "<i data-lucide=\"check\"></i> 文献検索無制限",
-                "btnPro": "Microsoft Store で Pro を入手",
+                "btnPro": "無料で始めて、あとから Pro へ",
                 "pricingContact": "企業向けライセンスやAI統合については、<a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>までお問い合わせください。",
                 "compTitle": "なぜResearchCubeなのか？",
                 "compDesc": "あなた自身のドライブとプロジェクトを理解するAI。作業を自社サーバーに保存するツールとの比較。",
@@ -1741,7 +1793,10 @@
                 "footerPrivacy": "プライバシーポリシー",
                 "footerFollowUs": "最新情報をフォローする",
             },
-            zh: {                "cardAISuggestions": "AI 建议",
+            zh: {
+                "metaTitle": "ResearchCube – 免费科研工作空间：文献管理、PDF 阅读器、LaTeX 与 AI",
+                "metaDesc": "浏览器中的免费科研工作空间：检索 2.5 亿多篇学术文献，整理文献库，阅读并批注 PDF，与合著者用 LaTeX 或 Markdown 写作，并向了解您文献的 AI 提问。文件始终保存在您自己的 Google 云端硬盘中。",
+                "cardAISuggestions": "AI 建议",
                 "cardOneClickSave": "一键保存",
                 "cardSmartHighlight": "智能高亮",
                 "cardPdfChat": "PDF 聊天",
@@ -1764,7 +1819,6 @@
                 "btnError": "发送失败！",
                 "navAbout": "关于",
                 "navFeatures": "功能",
-                "navGetEarlyAccess": "从微软商店获取",
                 "heroTitle": "研究的每个阶段。<br><span class=\"gradient-text\">一个专业工作区。</span>",
                 "heroBadge": "ResearchCube · 面向学术与产业研究",
                 "btnStartFree": "免费开始",
@@ -1772,7 +1826,6 @@
                 "step2": "分析中...",
                 "step3": "起草中",
                 "heroSub": "不再在各种应用之间迷失。检索文献、阅读并批注 PDF、与合著者一起用 LaTeX 写作，并向了解您文献库的 AI 提问——全部在网页和 Windows 上的同一个工作区完成。您的项目始终保存在您自己的 Google 云端硬盘中。",
-                "btnDownload": "从微软商店下载",
                 "btnWatchTour": "探索架构",
                 "heroNote": "✓ 文件保存在您的 Google 云端硬盘  ✓ 网页、Windows、Mac 和手机  ✓ 无时间限制的免费方案",
                 "mockupSyncStatus": "<i data-lucide=\"layers\" class=\"text-accent\"></i> 研究操作系统 (ReOS)",
@@ -1816,13 +1869,13 @@
                 "btnFree": "在网页上免费开始",
                 "tierProTitle": "Pro",
                 "tierProPrice": "$4.99<small> / 月</small><div class=\"price-alt\">或 $47.99 / 年</div>",
-                "tierProSub": "通过 Microsoft Store 按月或按年订阅。可随时取消；在您登录的任何地方都有效。",
+                "tierProSub": "按月或按年订阅，在 Microsoft Store 的 ResearchCube 应用中购买（即将推出）。可随时取消；在您登录的任何地方都有效。",
                 "tierProBadge": "最受欢迎",
                 "featPro1": "<i data-lucide=\"check\"></i> 无限项目",
                 "featPro2": "<i data-lucide=\"check\"></i> 无限协作者",
                 "featPro3": "<i data-lucide=\"check\"></i> 无限 AI 请求（使用您自己的 Gemini 密钥）",
                 "featPro4": "<i data-lucide=\"check\"></i> 无限文献检索",
-                "btnPro": "在 Microsoft Store 获取 Pro",
+                "btnPro": "免费开始，随时升级 Pro",
                 "pricingContact": "有关企业授权和 AI 整合事宜，请联系 <a href=\"mailto:info@rcubetech.com\">info@rcubetech.com</a>。",
                 "compTitle": "为什么选择 ResearchCube？",
                 "compDesc": "您自己的云端硬盘和了解您项目的 AI，与将您的工作保存在其服务器上的工具相比。",
@@ -1867,7 +1920,20 @@
 
         const supportedLangs = ['en', 'tr', 'ar', 'fr', 'es', 'de', 'zh', 'ja'];
         const browserLang = navigator.language.split('-')[0];
-        let currentLang = supportedLangs.includes(browserLang) ? browserLang : 'en';
+        // A language page (/tr/, /de/ …, made by tools/build_lang_pages.py) is in its language; the main page
+        // follows the visitor's earlier choice, else the browser's language
+        const pageLang = document.documentElement.dataset.pageLang;
+        let savedLang = null;
+        try { savedLang = localStorage.getItem('lang'); } catch (e) { /* storage blocked */ }
+        let currentLang = pageLang || (supportedLangs.includes(savedLang) ? savedLang
+            : supportedLangs.includes(browserLang) ? browserLang : 'en');
+
+        // The language menu: go to that language's page (its own address, which search engines list)
+        function goLanguage(lang) {
+            try { localStorage.setItem('lang', lang); } catch (e) { /* storage blocked */ }
+            if (location.protocol === 'file:') { setLanguage(lang); return; }
+            location.href = (lang === 'en' ? '/' : '/' + lang + '/') + location.hash;
+        }
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -2076,6 +2142,14 @@
             updateThemeAssets(true);
         }
         setLanguage(currentLang);
+
+        // Clicks that open the app: GA4 event "open_app" (where on the page, in which language)
+        document.addEventListener('click', e => {
+            const a = e.target.closest && e.target.closest('a[href^="https://app.rcubetech.com"]');
+            if (!a || /privacy|terms/.test(a.getAttribute('href')) || typeof gtag !== 'function') return;
+            const section = a.closest('section[id], nav, header, footer');
+            gtag('event', 'open_app', { link_location: a.dataset.loc || (section && (section.id || section.tagName.toLowerCase())) || 'page', page_language: currentLang });
+        });
         resetSlideInterval(); // Start carousel
     </script>
 </body>
