@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rcubetech.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/tr/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -28,7 +28,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/ar/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -41,7 +41,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/fr/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/es/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/de/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/zh/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -93,7 +93,7 @@
   </url>
   <url>
     <loc>https://rcubetech.com/ja/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://rcubetech.com/ar/"/>
@@ -103,5 +103,37 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://rcubetech.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://rcubetech.com/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rcubetech.com/"/>
+  </url>
+  <url>
+    <loc>https://rcubetech.com/features.html</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://rcubetech.com/overleaf-alternative/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/overleaf-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/overleaf-alternatifi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rcubetech.com/overleaf-alternative/"/>
+  </url>
+  <url>
+    <loc>https://rcubetech.com/tr/overleaf-alternatifi/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/overleaf-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/overleaf-alternatifi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rcubetech.com/overleaf-alternative/"/>
+  </url>
+  <url>
+    <loc>https://rcubetech.com/overleaf-alternatives/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/overleaf-alternatives/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/overleaf-alternatifleri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rcubetech.com/overleaf-alternatives/"/>
+  </url>
+  <url>
+    <loc>https://rcubetech.com/tr/overleaf-alternatifleri/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rcubetech.com/overleaf-alternatives/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rcubetech.com/tr/overleaf-alternatifleri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rcubetech.com/overleaf-alternatives/"/>
   </url>
 </urlset>

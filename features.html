@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LC2D9P9HK7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LC2D9P9HK7');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <title>ResearchCube Features: from literature to publication</title>
+    <meta name="description" content="Find papers and their open access PDFs, read and annotate, write in LaTeX with ready templates and co-authors, all in one workspace. Your files stay in your own Google Drive.">
+    <meta property="og:title" content="ResearchCube Features">
+    <meta property="og:description" content="From literature to publication in one workspace. Your files stay in your own Google Drive.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rcubetech.com/features.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="features.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.418.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="index.html">
+            <img src="assets/logo_white.png" alt="ResearchCube" class="logo-dark" style="height: 128px;">
+            <img src="assets/logo.png" alt="ResearchCube" class="logo-light" style="height: 128px;">
+        </a>
+        <div class="nav-links">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="#find" data-i18n="navTour">Tour</a>
+            <a href="index.html#pricing" data-i18n="navPricing">Pricing</a>
+            <a href="https://app.rcubetech.com" class="nav-app" data-i18n="navOpenApp">Open the app</a>
+            <div class="lang-dropdown">
+                <button id="theme-toggle" onclick="toggleTheme()" class="lang-toggle" style="margin-right: 8px;" aria-label="Theme">
+                    <i data-lucide="sun" style="width: 16px; height: 16px;"></i>
+                </button>
+            </div>
+            <div class="lang-dropdown">
+                <button class="lang-toggle f-lang" onclick="setLanguage(currentLang === 'tr' ? 'en' : 'tr')" aria-label="Language">
+                    <i data-lucide="languages" style="width: 16px; height: 16px;"></i>
+                    <span id="current-lang">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="f-hero">
+        <div class="badge" data-i18n="heroBadge">Features</div>
+        <h1 data-i18n="heroTitle">From the first search<br><span class="gradient-text">to the final PDF.</span></h1>
+        <p class="hero-sub" data-i18n="heroSub">Find papers and their open access PDFs, read and annotate them, and write in LaTeX with your co-authors and ready templates: one workspace on the web and on Windows. Your files stay in your own Google Drive.</p>
+        <div class="hero-actions">
+            <a href="https://app.rcubetech.com" class="btn-primary large" style="text-decoration:none;">
+                <i data-lucide="zap" style="margin-right:8px;"></i> <span data-i18n="btnStart">Start for free</span>
+            </a>
+            <a href="https://apps.microsoft.com/search?query=ResearchCube" target="_blank" rel="noopener" class="btn-secondary large" style="text-decoration:none;">
+                <i data-lucide="monitor-down"></i> <span data-i18n="btnStore">Get it from the Microsoft Store</span>
+            </a>
+        </div>
+        <nav class="f-steps" aria-label="Steps">
+            <a href="#find"><span class="num">1</span> <span data-i18n="stepFind">Find</span></a>
+            <span class="arrow">→</span>
+            <a href="#read"><span class="num">2</span> <span data-i18n="stepRead">Read</span></a>
+            <span class="arrow">→</span>
+            <a href="#write"><span class="num">3</span> <span data-i18n="stepWrite">Write</span></a>
+            <span class="arrow">→</span>
+            <a href="#together"><span class="num">4</span> <span data-i18n="stepTogether">Work together</span></a>
+        </nav>
+    </header>
+
+    <!-- 1. FIND -->
+    <section class="f-step" id="find">
+        <div class="f-text">
+            <div class="f-kicker"><i data-lucide="search" style="width:16px;height:16px;"></i> <span data-i18n="findKicker">1 · Find</span></div>
+            <h2 data-i18n="findTitle">Ask in plain words. Get the papers that fit your project.</h2>
+            <p data-i18n="findDesc">Search more than 250 million scholarly works. Describe what you need; the AI plans the searches, reads what comes back and keeps what fits your project.</p>
+            <ul class="f-list">
+                <li><i data-lucide="sparkles"></i><span data-i18n="findLi1"><strong>AI search or keywords:</strong> every result says why it fits, and adds to your library in one click.</span></li>
+                <li><i data-lucide="radar"></i><span data-i18n="findLi2"><strong>Research radar:</strong> new papers in your field and calls for papers, each week, without searching again.</span></li>
+                <li><i data-lucide="file-down"></i><span data-i18n="findLi3"><strong>Open access PDFs, found for you:</strong> one click fetches a paper's legal open copy and saves it in your library.</span></li>
+            </ul>
+        </div>
+        <div class="f-shot"><div class="bar"><span></span><span></span><span></span></div><img src="assets/features/find.webp" alt="AI literature search" loading="lazy" width="1366" height="860"></div>
+    </section>
+
+    <!-- SPOTLIGHT: open access PDFs -->
+    <div class="f-wrap">
+        <div class="f-spotlight">
+            <div class="icon-box"><i data-lucide="file-search"></i></div>
+            <div>
+                <h2 data-i18n="spotTitle">“Find missing PDFs”: one click for the whole library</h2>
+                <p data-i18n="spotDesc">ResearchCube looks up each paper's open access copy by its DOI (OpenAlex, Unpaywall, arXiv), checks that it is really a PDF and saves it to your Google Drive. Papers without an open copy get a link to their page. Free: 5 a day; Pro: no limit.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. READ -->
+    <section class="f-step flip" id="read">
+        <div class="f-text">
+            <div class="f-kicker"><i data-lucide="book-open" style="width:16px;height:16px;"></i> <span data-i18n="readKicker">2 · Read</span></div>
+            <h2 data-i18n="readTitle">Drop your PDFs. The library fills itself in.</h2>
+            <p data-i18n="readDesc">Drag up to 20 PDFs at once: titles, authors, year and DOI are read from the files and checked against OpenAlex, with a progress bar while it works.</p>
+            <ul class="f-list">
+                <li><i data-lucide="highlighter"></i><span data-i18n="readLi1"><strong>Read and annotate:</strong> highlights, notes and reading status next to the PDF, saved with the paper.</span></li>
+                <li><i data-lucide="message-square-text"></i><span data-i18n="readLi2"><strong>Ask the paper:</strong> the AI answers from the PDF you are reading and from your library.</span></li>
+                <li><i data-lucide="tags"></i><span data-i18n="readLi3"><strong>Keep it in order:</strong> categories, filters, BibTeX import and export.</span></li>
+            </ul>
+        </div>
+        <div class="f-shot"><div class="bar"><span></span><span></span><span></span></div><img src="assets/features/read.webp" alt="PDF reader with notes" loading="lazy" width="1366" height="860"></div>
+    </section>
+
+    <!-- 3. WRITE -->
+    <section class="f-step" id="write">
+        <div class="f-text">
+            <div class="f-kicker"><i data-lucide="pen-line" style="width:16px;height:16px;"></i> <span data-i18n="writeKicker">3 · Write</span></div>
+            <h2 data-i18n="writeTitle">Real LaTeX in the browser. Nothing to install.</h2>
+            <p data-i18n="writeDesc">Write and compile LaTeX right in ResearchCube. Cite from your library; the bibliography is built from it on every compile.</p>
+            <ul class="f-list">
+                <li><i data-lucide="layout-template"></i><span data-i18n="writeLi1"><strong>Ready templates:</strong> IEEE, Elsevier, Springer, thesis and Beamer, or upload your own.</span></li>
+                <li><i data-lucide="spell-check"></i><span data-i18n="writeLi2"><strong>Spelling in English and Turkish,</strong> outline, figures (PNG, PDF, EPS) and version history.</span></li>
+                <li><i data-lucide="wand-sparkles"></i><span data-i18n="writeLi3"><strong>AI writing help</strong> that knows your library: draft, rewrite and fix compile errors.</span></li>
+            </ul>
+        </div>
+        <div class="f-shot"><div class="bar"><span></span><span></span><span></span></div><img src="assets/features/write.webp" alt="LaTeX editor" loading="lazy" width="1366" height="860"></div>
+    </section>
+
+    <!-- 4. TOGETHER -->
+    <section class="f-step flip" id="together">
+        <div class="f-text">
+            <div class="f-kicker"><i data-lucide="users" style="width:16px;height:16px;"></i> <span data-i18n="togetherKicker">4 · Work together</span></div>
+            <h2 data-i18n="togetherTitle">Write with your co-authors, live.</h2>
+            <p data-i18n="togetherDesc">Share a project and edit the same file at the same time. You see who is where, and every change is end-to-end encrypted on its way.</p>
+            <ul class="f-list">
+                <li><i data-lucide="git-pull-request-arrow"></i><span data-i18n="togetherLi1"><strong>Suggested changes and comments:</strong> accept or reject them one by one, like in a word processor.</span></li>
+                <li><i data-lucide="share-2"></i><span data-i18n="togetherLi2"><strong>Viewers and editors:</strong> decide who can change the project and who only reads it.</span></li>
+                <li><i data-lucide="undo-2"></i><span data-i18n="togetherLi3"><strong>Nothing is lost:</strong> deletes go to your Drive trash, with “Undo” right after.</span></li>
+            </ul>
+        </div>
+        <div class="f-shot"><div class="bar"><span></span><span></span><span></span></div><img src="assets/features/review.webp" alt="Suggested changes in the LaTeX editor" loading="lazy" width="1366" height="860"></div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="f-section">
+        <div class="section-header">
+            <h2 data-i18n="trustTitle">Your research stays yours</h2>
+            <p data-i18n="trustDesc">We built ResearchCube so that we never need to hold your work.</p>
+        </div>
+        <div class="f-grid-3">
+            <div class="f-card">
+                <i data-lucide="hard-drive"></i>
+                <h3 data-i18n="trust1Title">In your own Google Drive</h3>
+                <p data-i18n="trust1Text">Projects, PDFs and manuscripts are files in your Drive, not on our servers. ResearchCube sees only the files it created or you opened with it.</p>
+            </div>
+            <div class="f-card">
+                <i data-lucide="lock"></i>
+                <h3 data-i18n="trust2Title">End-to-end encrypted live editing</h3>
+                <p data-i18n="trust2Text">What you type travels encrypted between co-authors; the key is in your project folder, and nothing is stored on the way.</p>
+            </div>
+            <div class="f-card">
+                <i data-lucide="shield-check"></i>
+                <h3 data-i18n="trust3Title">Never sold, never trained on</h3>
+                <p data-i18n="trust3Text">We do not sell your data, show ads, or train AI models on it. Read our <a href="https://app.rcubetech.com/privacy.html">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TÜRKİYE -->
+    <section class="f-section">
+        <div class="section-header">
+            <h2 data-i18n="trTitle">Ready for Turkish universities and TÜBİTAK</h2>
+            <p data-i18n="trDesc">Start your thesis or grant proposal from a template that already follows the rules: headings, fonts, page and word limits. Turkish interface and Turkish spelling included.</p>
+        </div>
+        <div class="f-chips">
+            <span>İTÜ lisansüstü tez</span>
+            <span>ITU graduate thesis</span>
+            <span>TÜBİTAK 1001</span>
+            <span>TÜBİTAK 1002-A</span>
+            <span>TÜBİTAK 2209-A</span>
+            <span>TÜBİTAK 3501</span>
+            <span>TÜBİTAK 1515</span>
+            <span data-i18n="trChipArticle">Makale (Türkçe)</span>
+        </div>
+        <div class="f-shot" style="max-width: 980px; margin: 2.5rem auto 0;"><div class="bar"><span></span><span></span><span></span></div><img src="assets/features/templates.webp" alt="Manuscript templates" loading="lazy" width="1366" height="860"></div>
+    </section>
+
+    <!-- PLANS AT A GLANCE -->
+    <section class="f-section">
+        <div class="section-header">
+            <h2 data-i18n="plansTitle">Free to start, no time limit</h2>
+            <p data-i18n="plansDesc">Pro removes the daily limits: $4.99 a month or $47.99 a year through the Microsoft Store.</p>
+        </div>
+        <table class="f-plans">
+            <thead>
+                <tr><th></th><th data-i18n="plansFree">Free</th><th data-i18n="plansPro">Pro</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-i18n="planRow1">Projects</td><td>5</td><td class="pro" data-i18n="unlimited">Unlimited</td></tr>
+                <tr><td data-i18n="planRow2">Collaborators per project</td><td>2</td><td class="pro" data-i18n="unlimited">Unlimited</td></tr>
+                <tr><td data-i18n="planRow3">AI requests</td><td data-i18n="perDay5">5 a day</td><td class="pro" data-i18n="unlimited">Unlimited</td></tr>
+                <tr><td data-i18n="planRow4">Literature searches</td><td data-i18n="perDay5">5 a day</td><td class="pro" data-i18n="unlimited">Unlimited</td></tr>
+                <tr><td data-i18n="planRow5">Open access PDFs found for you</td><td data-i18n="perDay5">5 a day</td><td class="pro" data-i18n="unlimited">Unlimited</td></tr>
+                <tr><td data-i18n="planRow6">Library, reader, LaTeX editor, templates, live editing</td><td>✓</td><td class="pro">✓</td></tr>
+            </tbody>
+        </table>
+        <p class="f-center"><a href="index.html#pricing" data-i18n="plansMore">All plan details →</a></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="f-section">
+        <div class="section-header">
+            <h2 data-i18n="faqTitle">Questions</h2>
+        </div>
+        <div class="f-faq">
+            <details>
+                <summary data-i18n="faq1Q">Where are my files kept?</summary>
+                <p data-i18n="faq1A">In a ResearchCube folder in your own Google Drive. Our server keeps only your account, your plan, the Drive connection and the list of people you share a project with.</p>
+            </details>
+            <details>
+                <summary data-i18n="faq2Q">I used the ResearchCube desktop app. What happens to my projects?</summary>
+                <p data-i18n="faq2A">Nothing changes in your Drive: the web app opens the same projects (library, PDFs, reports) as they are. Sign in with the same Google account.</p>
+            </details>
+            <details>
+                <summary data-i18n="faq3Q">Can I bring my existing references and LaTeX files?</summary>
+                <p data-i18n="faq3A">Yes. Import a BibTeX file or drop your PDFs into the library, and upload your .tex files, figures and your own template to the editor.</p>
+            </details>
+            <details>
+                <summary data-i18n="faq4Q">Which devices does it run on?</summary>
+                <p data-i18n="faq4A">In any modern browser on Windows, Mac, Linux and phones, and as an app from the Microsoft Store. Updates arrive by themselves.</p>
+            </details>
+            <details>
+                <summary data-i18n="faq5Q">Is the open access PDF finder legal?</summary>
+                <p data-i18n="faq5A">It only fetches copies that publishers, repositories or authors made openly available (as listed by OpenAlex, Unpaywall and arXiv). When a copy cannot be downloaded automatically, you get a link to its page.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="f-final">
+        <h2 data-i18n="finalTitle">Start your next project in ResearchCube</h2>
+        <p data-i18n="finalDesc" style="color: var(--text-muted);">Free, no card needed. Sign in with Google and your first project is ready.</p>
+        <div class="hero-actions">
+            <a href="https://app.rcubetech.com" class="btn-primary large" style="text-decoration:none;">
+                <i data-lucide="zap" style="margin-right:8px;"></i> <span data-i18n="btnStart">Start for free</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/logo_white.png" alt="Logo" class="logo-dark" width="40">
+                    <img src="assets/logo.png" alt="Logo" class="logo-light" width="40">
+                    <span>ResearchCube</span>
+                </div>
+                <p data-i18n="footerRights" style="margin-top: 15px;">&copy; 2026 ResearchCube. All rights reserved.</p>
+                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;" data-i18n="footerDevelopedBy">Developed by <strong>rcubetech</strong></p>
+                <div style="margin-top: 10px;">
+                    <a href="https://app.rcubetech.com/privacy.html" data-i18n="footerPrivacy" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                navHome: 'Ana sayfa',
+                navTour: 'Tur',
+                navPricing: 'Fiyatlar',
+                navOpenApp: 'Uygulamayı aç',
+                heroBadge: 'Özellikler',
+                heroTitle: 'İlk aramadan<br><span class="gradient-text">son PDF’e kadar.</span>',
+                heroSub: 'Yayınları ve açık erişimli PDF’lerini bul, oku ve not al, ortak yazarlarınla hazır şablonlarla LaTeX’te yaz: web’de ve Windows’ta tek bir çalışma alanı. Dosyaların kendi Google Drive’ında kalır.',
+                btnStart: 'Ücretsiz başla',
+                btnStore: 'Microsoft Store’dan indir',
+                stepFind: 'Bul',
+                stepRead: 'Oku',
+                stepWrite: 'Yaz',
+                stepTogether: 'Birlikte çalış',
+                findKicker: '1 · Bul',
+                findTitle: 'Düz cümleyle sor. Projene uyan yayınları al.',
+                findDesc: '250 milyondan fazla akademik yayında ara. Ne aradığını anlat; yapay zekâ aramaları planlar, gelenleri okur ve projene uyanları ayırır.',
+                findLi1: '<strong>Yapay zekâ ile ya da anahtar kelimeyle:</strong> her sonuç neden uyduğunu söyler, tek tıkla kütüphaneye eklenir.',
+                findLi2: '<strong>Araştırma radarı:</strong> alanındaki yeni yayınlar ve bildiri çağrıları her hafta önüne gelir.',
+                findLi3: '<strong>Açık erişimli PDF’ler senin için bulunur:</strong> tek tıkla yayının yasal açık kopyası indirilir ve kütüphanene kaydedilir.',
+                spotTitle: '“Eksik PDF’leri bul”: bütün kütüphane için tek tık',
+                spotDesc: 'ResearchCube her yayının açık erişimli kopyasını DOI’siyle arar (OpenAlex, Unpaywall, arXiv), gerçekten PDF olduğunu kontrol eder ve Google Drive’ına kaydeder. Açık kopyası indirilemeyen yayınlar için sayfasının bağlantısı verilir. Ücretsiz: günde 5; Pro: sınırsız.',
+                readKicker: '2 · Oku',
+                readTitle: 'PDF’lerini bırak. Kütüphane kendini doldursun.',
+                readDesc: 'Tek seferde 20 PDF sürükle: başlık, yazarlar, yıl ve DOI dosyalardan okunur ve OpenAlex ile doğrulanır; bu sırada ilerleme çubuğu gösterilir.',
+                readLi1: '<strong>Oku ve işaretle:</strong> vurgular, notlar ve okuma durumu PDF’in yanında, yayınla birlikte kaydedilir.',
+                readLi2: '<strong>Yayına sor:</strong> yapay zekâ okuduğun PDF’ten ve kütüphanenden yanıt verir.',
+                readLi3: '<strong>Düzenli tut:</strong> kategoriler, filtreler, BibTeX içe ve dışa aktarma.',
+                writeKicker: '3 · Yaz',
+                writeTitle: 'Tarayıcıda gerçek LaTeX. Kurulum yok.',
+                writeDesc: 'LaTeX’i doğrudan ResearchCube’da yaz ve derle. Kütüphanenden atıf yap; kaynakça her derlemede ondan oluşturulur.',
+                writeLi1: '<strong>Hazır şablonlar:</strong> IEEE, Elsevier, Springer, tez ve Beamer; ya da kendi şablonunu yükle.',
+                writeLi2: '<strong>Türkçe ve İngilizce yazım denetimi,</strong> ana hat, şekiller (PNG, PDF, EPS) ve sürüm geçmişi.',
+                writeLi3: '<strong>Kütüphaneni bilen yapay zekâ yazım yardımı:</strong> taslak çıkar, yeniden yaz, derleme hatalarını düzelt.',
+                togetherKicker: '4 · Birlikte çalış',
+                togetherTitle: 'Ortak yazarlarınla canlı yaz.',
+                togetherDesc: 'Projeyi paylaş, aynı dosyayı aynı anda düzenleyin. Kimin nerede olduğunu görürsün; her değişiklik yolda uçtan uca şifrelenir.',
+                togetherLi1: '<strong>Önerilen değişiklikler ve yorumlar:</strong> kelime işlemcideki gibi tek tek kabul et ya da reddet.',
+                togetherLi2: '<strong>Okuyucu ve düzenleyici:</strong> projeyi kimin değiştirebileceğine, kimin yalnızca okuyacağına sen karar ver.',
+                togetherLi3: '<strong>Hiçbir şey kaybolmaz:</strong> silinenler Drive çöp kutusuna gider, hemen ardından “Geri al” çıkar.',
+                trustTitle: 'Araştırman sende kalır',
+                trustDesc: 'ResearchCube’u, çalışmanı bizim tutmamıza hiç gerek kalmayacak şekilde kurduk.',
+                trust1Title: 'Kendi Google Drive’ında',
+                trust1Text: 'Projeler, PDF’ler ve makaleler bizim sunucularımızda değil, Drive’ındaki dosyalardır. ResearchCube yalnızca kendi oluşturduğu ya da onunla açtığın dosyaları görür.',
+                trust2Title: 'Uçtan uca şifreli canlı düzenleme',
+                trust2Text: 'Yazdıkların ortak yazarlar arasında şifreli gider; anahtar proje klasöründedir ve yolda hiçbir şey saklanmaz.',
+                trust3Title: 'Satılmaz, yapay zekâ eğitiminde kullanılmaz',
+                trust3Text: 'Verini satmayız, reklam göstermeyiz, onunla yapay zekâ modeli eğitmeyiz. <a href="https://app.rcubetech.com/privacy.html">Gizlilik Politikası</a>’nı oku.',
+                trTitle: 'Türk üniversitelerine ve TÜBİTAK’a hazır',
+                trDesc: 'Tezine ya da proje önerine kurallara zaten uyan bir şablonla başla: başlıklar, yazı tipleri, sayfa ve kelime sınırları. Türkçe arayüz ve Türkçe yazım denetimi dahil.',
+                trChipArticle: 'Makale (Türkçe)',
+                plansTitle: 'Başlamak ücretsiz, süre sınırı yok',
+                plansDesc: 'Pro günlük sınırları kaldırır: Microsoft Store üzerinden aylık 4,99 $ ya da yıllık 47,99 $.',
+                plansFree: 'Ücretsiz',
+                plansPro: 'Pro',
+                planRow1: 'Proje',
+                planRow2: 'Proje başına ortak çalışan',
+                planRow3: 'Yapay zekâ istekleri',
+                planRow4: 'Literatür aramaları',
+                planRow5: 'Senin için bulunan açık erişimli PDF’ler',
+                planRow6: 'Kütüphane, okuyucu, LaTeX editörü, şablonlar, canlı düzenleme',
+                perDay5: 'Günde 5',
+                unlimited: 'Sınırsız',
+                plansMore: 'Tüm plan ayrıntıları →',
+                faqTitle: 'Sorular',
+                faq1Q: 'Dosyalarım nerede tutuluyor?',
+                faq1A: 'Kendi Google Drive’ındaki bir ResearchCube klasöründe. Sunucumuz yalnızca hesabını, planını, Drive bağlantısını ve projeyi paylaştığın kişilerin listesini tutar.',
+                faq2Q: 'ResearchCube masaüstü uygulamasını kullanıyordum. Projelerim ne olacak?',
+                faq2A: 'Drive’ında hiçbir şey değişmez: web uygulaması aynı projeleri (kütüphane, PDF’ler, raporlar) olduğu gibi açar. Aynı Google hesabıyla giriş yapman yeterli.',
+                faq3Q: 'Mevcut kaynaklarımı ve LaTeX dosyalarımı getirebilir miyim?',
+                faq3A: 'Evet. BibTeX dosyanı içe aktar ya da PDF’lerini kütüphaneye bırak; .tex dosyalarını, şekillerini ve kendi şablonunu editöre yükle.',
+                faq4Q: 'Hangi cihazlarda çalışıyor?',
+                faq4A: 'Windows, Mac, Linux ve telefonlarda her güncel tarayıcıda, ayrıca Microsoft Store’dan uygulama olarak. Güncellemeler kendiliğinden gelir.',
+                faq5Q: 'Açık erişimli PDF bulma yasal mı?',
+                faq5A: 'Yalnızca yayıncıların, arşivlerin ya da yazarların açıkça erişime sunduğu kopyaları (OpenAlex, Unpaywall ve arXiv’in listelediği) indirir. Bir kopya otomatik indirilemezse sayfasının bağlantısı verilir.',
+                finalTitle: 'Sıradaki projene ResearchCube’da başla',
+                finalDesc: 'Ücretsiz, kart gerekmez. Google ile giriş yap, ilk projen hazır.',
+                footerRights: '&copy; 2026 ResearchCube. Tüm hakları saklıdır.',
+                footerDevelopedBy: '<strong>rcubetech</strong> tarafından geliştirildi',
+                footerPrivacy: 'Gizlilik Politikası',
+            },
+        };
+
+        // English is what the page is written in; remember it so switching back restores it
+        const english = {};
+        document.querySelectorAll('[data-i18n]').forEach(el => { english[el.getAttribute('data-i18n')] = el.innerHTML; });
+
+        const saved = (() => { try { return localStorage.getItem('rc-site-lang'); } catch { return null; } })();
+        let currentLang = saved || ((navigator.language || 'en').toLowerCase().startsWith('tr') ? 'tr' : 'en');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            try { localStorage.setItem('rc-site-lang', lang); } catch { /* private window */ }
+            const dict = translations[lang] || {};
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerHTML = dict[key] || english[key];
+            });
+            document.getElementById('current-lang').innerText = lang.toUpperCase();
+            document.title = lang === 'tr' ? 'ResearchCube Özellikleri: literatürden yayına' : 'ResearchCube Features: from literature to publication';
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function toggleTheme() {
+            const isLight = document.body.classList.toggle('light-theme');
+            try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch { /* private window */ }
+            updateThemeIcon(isLight);
+        }
+
+        function updateThemeIcon(isLight) {
+            const btn = document.getElementById('theme-toggle');
+            btn.innerHTML = `<i data-lucide="${isLight ? 'moon' : 'sun'}" style="width: 16px; height: 16px;"></i>`;
+            if (window.lucide) lucide.createIcons();
+        }
+
+        try {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-theme');
+                updateThemeIcon(true);
+            }
+        } catch { /* private window */ }
+        setLanguage(currentLang);
+    </script>
+</body>
+
+</html>

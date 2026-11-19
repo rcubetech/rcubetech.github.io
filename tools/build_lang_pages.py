@@ -20,6 +20,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://rcubetech.com'
 LANGS = ['en', 'tr', 'ar', 'fr', 'es', 'de', 'zh', 'ja']
 OG_LOCALE = {'en': 'en_US', 'tr': 'tr_TR', 'ar': 'ar_AR', 'fr': 'fr_FR', 'es': 'es_ES', 'de': 'de_DE', 'zh': 'zh_CN', 'ja': 'ja_JP'}
+STATIC_PAGES = [
+    [('en', '/features.html')],
+    [('en', '/overleaf-alternative/'), ('tr', '/tr/overleaf-alternatifi/')],
+    [('en', '/overleaf-alternatives/'), ('tr', '/tr/overleaf-alternatifleri/')],
+]
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 
 
@@ -144,12 +149,26 @@ def main():
     alt = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{page_url(l)}"/>' for l in LANGS)
     alt += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{page_url("en")}"/>'
     urls = ''.join(f'\n  <url>\n    <loc>{page_url(l)}</loc>\n    <lastmod>{today}</lastmod>{alt}\n  </url>' for l in LANGS)
+
+    # Hand-written pages (search pages, comparisons). Each group lists the same page in its languages;
+    # the first entry is the x-default. lastmod is the file's own modification date.
+    count = len(LANGS)
+    for group in STATIC_PAGES:
+        alt = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{p}"/>' for l, p in group)
+        if len(group) > 1:
+            alt += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{group[0][1]}"/>'
+        for lang, path in group:
+            file = os.path.join(ROOT, path.strip('/').replace('/', os.sep), 'index.html') if path.endswith('/') else os.path.join(ROOT, path.strip('/'))
+            assert os.path.exists(file), f'missing {file}'
+            mod = datetime.date.fromtimestamp(os.path.getmtime(file)).isoformat()
+            urls += f'\n  <url>\n    <loc>{SITE}{path}</loc>\n    <lastmod>{mod}</lastmod>{alt if len(group) > 1 else ""}\n  </url>'
+            count += 1
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
                f'{urls}\n</urlset>\n')
     with io.open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8', newline='') as f:
         f.write(sitemap)
-    print('sitemap.xml', len(LANGS), 'pages')
+    print('sitemap.xml', count, 'pages')
 
 
 if __name__ == '__main__':
