@@ -25,6 +25,12 @@ STATIC_PAGES = [
     [('en', '/overleaf-alternative/'), ('tr', '/tr/overleaf-alternatifi/')],
     [('en', '/overleaf-alternatives/'), ('tr', '/tr/overleaf-alternatifleri/')],
 ]
+# ResearchCube Lab (written by ../social/tools/lab_site.py): the list page and every topic page, found on disk
+_LAB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'tr', 'lab')
+if os.path.isdir(_LAB):
+    STATIC_PAGES.append([('tr', '/tr/lab/')])
+    STATIC_PAGES.extend([[('tr', f'/tr/lab/{d}/')] for d in sorted(os.listdir(_LAB))
+                         if os.path.exists(os.path.join(_LAB, d, 'index.html'))])
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 
 
